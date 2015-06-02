@@ -14,5 +14,7 @@ else()
   message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS "ON")
+
 add_subdirectory(src)
 add_subdirectory(tests)
