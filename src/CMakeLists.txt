@@ -6,4 +6,5 @@ add_library(Solutions
   LongestPalindromicSubstring.hpp LongestPalindromicSubstring.cpp
   ZigZagConversion.hpp ZigZagConversion.cpp
   ReverseInteger.hpp ReverseInteger.cpp
+  StringToInteger.hpp StringToInteger.cpp
 )

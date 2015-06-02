@@ -8,6 +8,7 @@ add_executable(Test main.cpp
   LongestPalindromicSubstringTest.cpp
   ZigZagConversionTest.cpp
   ReverseIntegerTest.cpp
+  StringToIntegerTest.cpp
 )
 
 target_link_libraries(Test Solutions)
