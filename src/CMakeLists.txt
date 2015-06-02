@@ -4,4 +4,5 @@ add_library(Solutions
   LongestSubStringWithoutRepeatingCharacters.hpp LongestSubStringWithoutRepeatingCharacters.cpp
   MedianOfTwoSortedArrays.hpp MedianOfTwoSortedArrays.cpp
   LongestPalindromicSubstring.hpp LongestPalindromicSubstring.cpp
+  ZigZagConversion.hpp ZigZagConversion.cpp
 )

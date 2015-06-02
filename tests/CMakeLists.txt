@@ -6,6 +6,7 @@ add_executable(Test main.cpp
   LongestSubStringWithoutRepeatingCharactersTest.cpp
   MedianOfTwoSortedArraysTest.cpp
   LongestPalindromicSubstringTest.cpp
+  ZigZagConversionTest.cpp
 )
 
 target_link_libraries(Test Solutions)
