@@ -5,4 +5,5 @@ add_library(Solutions
   MedianOfTwoSortedArrays.hpp MedianOfTwoSortedArrays.cpp
   LongestPalindromicSubstring.hpp LongestPalindromicSubstring.cpp
   ZigZagConversion.hpp ZigZagConversion.cpp
+  ReverseInteger.hpp ReverseInteger.cpp
 )

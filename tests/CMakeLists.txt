@@ -7,6 +7,7 @@ add_executable(Test main.cpp
   MedianOfTwoSortedArraysTest.cpp
   LongestPalindromicSubstringTest.cpp
   ZigZagConversionTest.cpp
+  ReverseIntegerTest.cpp
 )
 
 target_link_libraries(Test Solutions)
