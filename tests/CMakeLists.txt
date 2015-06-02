@@ -4,6 +4,7 @@ add_executable(Test main.cpp
   TwoSumTest.cpp
   AddTwoNumbersTest.cpp
   LongestSubStringWithoutRepeatingCharactersTest.cpp
+  MedianOfTwoSortedArraysTest.cpp
 )
 
 target_link_libraries(Test Solutions)
