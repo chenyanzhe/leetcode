@@ -3,4 +3,5 @@ add_library(Solutions
   AddTwoNumbers.hpp AddTwoNumbers.cpp
   LongestSubStringWithoutRepeatingCharacters.hpp LongestSubStringWithoutRepeatingCharacters.cpp
   MedianOfTwoSortedArrays.hpp MedianOfTwoSortedArrays.cpp
+  LongestPalindromicSubstring.hpp LongestPalindromicSubstring.cpp
 )
