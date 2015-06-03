@@ -8,4 +8,5 @@ add_library(Solutions
   ReverseInteger.hpp ReverseInteger.cpp
   StringToInteger.hpp StringToInteger.cpp
   PalindromeNumber.hpp PalindromeNumber.cpp
+  RegularExpressionMatching.hpp RegularExpressionMatching.cpp
 )

@@ -10,6 +10,7 @@ add_executable(Test main.cpp
   ReverseIntegerTest.cpp
   StringToIntegerTest.cpp
   PalindromeNumberTest.cpp
+  RegularExpressionMatchingTest.cpp
 )
 
 target_link_libraries(Test Solutions)
