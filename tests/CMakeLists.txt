@@ -9,6 +9,7 @@ add_executable(Test main.cpp
   ZigZagConversionTest.cpp
   ReverseIntegerTest.cpp
   StringToIntegerTest.cpp
+  PalindromeNumberTest.cpp
 )
 
 target_link_libraries(Test Solutions)

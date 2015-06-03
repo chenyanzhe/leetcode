@@ -7,4 +7,5 @@ add_library(Solutions
   ZigZagConversion.hpp ZigZagConversion.cpp
   ReverseInteger.hpp ReverseInteger.cpp
   StringToInteger.hpp StringToInteger.cpp
+  PalindromeNumber.hpp PalindromeNumber.cpp
 )
