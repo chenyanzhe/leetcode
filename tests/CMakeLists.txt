@@ -11,6 +11,7 @@ add_executable(Test main.cpp
   StringToIntegerTest.cpp
   PalindromeNumberTest.cpp
   RegularExpressionMatchingTest.cpp
+  ContainerWithMostWaterTest.cpp
 )
 
 target_link_libraries(Test Solutions)
