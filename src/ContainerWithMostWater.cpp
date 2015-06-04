@@ -12,27 +12,9 @@ int Solution::maxArea(vector<int>& height)
   int area = min(height[i], height[j]) * (j - i);
 
   while (i < j) {
-    if (height[i] < height[j]) {
-      int k = i + 1;
-      while (k < j) {
-        if (height[k] > height[i] && min(height[k], height[j]) * (j - k) > area)
-          area = min(height[k], height[j]) * (j - k);
-        if (height[k] > height[j]) break;
-        k++;
-      }
-      if (k == j) break;
-      else i = k;
-    } else {
-      int k = j - 1;
-      while (k > i) {
-        if (height[k] > height[j] && min(height[k], height[i]) * (k - i) > area)
-          area = min(height[k], height[i]) * (k - i);
-        if (height[k] > height[i]) break;
-        k--;
-      }
-      if (k == i) break;
-      else j = k;
-    }
+    area = max(area, min(height[i], height[j]) * (j - i));
+    if (height[i] < height[j]) i++;
+    else j--;
   }
   return area;
 }
