@@ -12,4 +12,5 @@ add_library(Solutions
   ContainerWithMostWater.hpp ContainerWithMostWater.cpp
   IntegerToRoman.hpp IntegerToRoman.cpp
   RomanToInteger.hpp RomanToInteger.cpp
+  LongestCommonPrefix.hpp LongestCommonPrefix.cpp
 )

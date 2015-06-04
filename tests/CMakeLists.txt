@@ -14,6 +14,7 @@ add_executable(Test main.cpp
   ContainerWithMostWaterTest.cpp
   IntegerToRomanTest.cpp
   RomanToIntegerTest.cpp
+  LongestCommonPrefixTest.cpp
 )
 
 target_link_libraries(Test Solutions)
