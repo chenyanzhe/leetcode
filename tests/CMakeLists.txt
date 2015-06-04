@@ -13,6 +13,7 @@ add_executable(Test main.cpp
   RegularExpressionMatchingTest.cpp
   ContainerWithMostWaterTest.cpp
   IntegerToRomanTest.cpp
+  RomanToIntegerTest.cpp
 )
 
 target_link_libraries(Test Solutions)

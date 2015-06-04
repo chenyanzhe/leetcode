@@ -11,4 +11,5 @@ add_library(Solutions
   RegularExpressionMatching.hpp RegularExpressionMatching.cpp
   ContainerWithMostWater.hpp ContainerWithMostWater.cpp
   IntegerToRoman.hpp IntegerToRoman.cpp
+  RomanToInteger.hpp RomanToInteger.cpp
 )
