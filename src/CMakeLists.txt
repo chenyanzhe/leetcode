@@ -10,4 +10,5 @@ add_library(Solutions
   PalindromeNumber.hpp PalindromeNumber.cpp
   RegularExpressionMatching.hpp RegularExpressionMatching.cpp
   ContainerWithMostWater.hpp ContainerWithMostWater.cpp
+  IntegerToRoman.hpp IntegerToRoman.cpp
 )
