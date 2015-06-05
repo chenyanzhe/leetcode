@@ -15,4 +15,5 @@ add_library(Solutions
   LongestCommonPrefix.hpp LongestCommonPrefix.cpp
   3Sum.hpp 3Sum.cpp
   3SumClosest.hpp 3SumClosest.cpp
+  LetterCombinationsOfAPhoneNumber.hpp LetterCombinationsOfAPhoneNumber.cpp
 )

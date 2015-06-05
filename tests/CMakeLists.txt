@@ -17,6 +17,7 @@ add_executable(Test main.cpp
   LongestCommonPrefixTest.cpp
   3SumTest.cpp
   3SumClosestTest.cpp
+  LetterCombinationsOfAPhoneNumberTest.cpp
 )
 
 target_link_libraries(Test Solutions)
