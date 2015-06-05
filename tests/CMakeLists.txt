@@ -16,6 +16,7 @@ add_executable(Test main.cpp
   RomanToIntegerTest.cpp
   LongestCommonPrefixTest.cpp
   3SumTest.cpp
+  3SumClosestTest.cpp
 )
 
 target_link_libraries(Test Solutions)
