@@ -13,4 +13,5 @@ add_library(Solutions
   IntegerToRoman.hpp IntegerToRoman.cpp
   RomanToInteger.hpp RomanToInteger.cpp
   LongestCommonPrefix.hpp LongestCommonPrefix.cpp
+  3Sum.hpp 3Sum.cpp
 )
