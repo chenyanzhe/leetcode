@@ -18,6 +18,7 @@ add_executable(Test main.cpp
   3SumTest.cpp
   3SumClosestTest.cpp
   LetterCombinationsOfAPhoneNumberTest.cpp
+  4SumTest.cpp
 )
 
 target_link_libraries(Test Solutions)
