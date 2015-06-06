@@ -1,21 +1,19 @@
 #include "3Sum.hpp"
 
 #include <algorithm>
-#include <set>
 using namespace std;
 
 vector<vector<int>> Solution::threeSum(vector<int>& nums)
 {
   vector<vector<int>> ret;
-  set<int> visited;
   if (nums.size() < 3) return ret;
 
   sort(nums.begin(), nums.end());
+
   for (int i = 0; i < nums.size(); i++) {
-    if (visited.find(nums[i]) != visited.end())
+    if (i > 0 && nums[i] == nums[i - 1])
       continue;
-    else
-      visited.insert(nums[i]);
+
     int target = -nums[i];
     int j = i + 1;
     int k = nums.size() - 1;
