@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int Solution::romanToInt(string s)
+int RomanToInteger::romanToInt(string s)
 {
   if (s.empty()) return 0;
 

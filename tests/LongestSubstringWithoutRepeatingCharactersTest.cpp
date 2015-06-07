@@ -3,7 +3,7 @@
 #include "LongestSubstringWithoutRepeatingCharacters.hpp"
 
 TEST_CASE("Longest Substring Without Repeating Characters") {
-  Solution s;
+  LongestSubstringWithoutRepeatingCharacters s;
 
   SECTION("Sample test") {
     REQUIRE(s.lengthOfLongestSubstring("abcabcbb") == 3);

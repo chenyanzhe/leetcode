@@ -3,7 +3,7 @@
 #include "MergeTwoSortedLists.hpp"
 
 TEST_CASE("Merge Two Sorted Lists") {
-  Solution s;
+  MergeTwoSortedLists s;
 
   ListNode* h = nullptr;
   ListNode* h1 = nullptr;

@@ -1,6 +1,6 @@
 #include "LongestPalindromicSubstring.hpp"
 
-string Solution::longestPalindrome(string s)
+string LongestPalindromicSubstring::longestPalindrome(string s)
 {
   if (s.size() <= 2) return s;
 

@@ -3,7 +3,7 @@
 #include "RemoveNthNodeFromEndOfList.hpp"
 
 TEST_CASE("Remove Nth Node From End Of List") {
-  Solution s;
+  RemoveNthNodeFromEndOfList s;
 
   ListNode *h = nullptr;
 

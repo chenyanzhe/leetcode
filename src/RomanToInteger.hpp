@@ -1,9 +1,12 @@
+#ifndef ROMAN_TO_INTEGER_HPP
+#define ROMAN_TO_INTEGER_HPP
+
 #include <string>
 #include <vector>
 #include <unordered_map>
 using namespace std;
 
-class Solution {
+class RomanToInteger {
 public:
   int romanToInt(string s);
 private:
@@ -17,3 +20,5 @@ private:
     {{"M", 1000}, {"MM", 2000}, {"MMM", 3000}}
   };
 };
+
+#endif // ROMAN_TO_INTEGER_HPP

@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int Solution::myAtoi(string str)
+int StringToInteger::myAtoi(string str)
 {
   int i = -1;
   while (i + 1 < str.size() && str[i + 1] == ' ')

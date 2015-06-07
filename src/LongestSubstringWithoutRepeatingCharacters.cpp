@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-int Solution::lengthOfLongestSubstring(string s)
+int LongestSubstringWithoutRepeatingCharacters::lengthOfLongestSubstring(string s)
 {
   if (s.size() == 0) return 0;
 

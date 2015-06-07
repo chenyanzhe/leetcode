@@ -3,7 +3,7 @@
 #include "ZigZagConversion.hpp"
 
 TEST_CASE("ZigZag Conversion") {
-  Solution s;
+  ZigZagConversion s;
 
   SECTION("Sample test") {
     REQUIRE(s.convert("PAYPALISHIRING", 3) == "PAHNAPLSIIGYIR");

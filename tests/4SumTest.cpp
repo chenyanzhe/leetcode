@@ -3,7 +3,7 @@
 #include "4Sum.hpp"
 
 TEST_CASE("4Sum") {
-  Solution s;
+  FourSum s;
 
   SECTION("Sample test") {
     vector<int> nums {1, 0, -1, 0, -2, 2};

@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-string Solution::convert(string s, int numRows)
+string ZigZagConversion::convert(string s, int numRows)
 {
   if (numRows == 1) return s;
 

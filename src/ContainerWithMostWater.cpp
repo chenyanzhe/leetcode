@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-int Solution::maxArea(vector<int>& height)
+int ContainerWithMostWater::maxArea(vector<int>& height)
 {
   if (height.size() < 2) return 0;
 

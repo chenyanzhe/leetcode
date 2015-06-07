@@ -1,6 +1,6 @@
 #include "PalindromeNumber.hpp"
 
-bool Solution::isPalindrome(int x)
+bool PalindromeNumber::isPalindrome(int x)
 {
   if (x < 0) return false;
 
@@ -20,7 +20,7 @@ bool Solution::isPalindrome(int x)
   return true;
 }
 
-int Solution::getDigit(int x, int i)
+int PalindromeNumber::getDigit(int x, int i)
 {
   if (i > 10) return 0;
 

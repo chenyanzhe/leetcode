@@ -3,7 +3,7 @@
 #include "TwoSum.hpp"
 
 TEST_CASE("Two Sum") {
-  Solution s;
+  TwoSum s;
 
   SECTION("Sample test") {
     vector<int> numbers {2, 7, 11, 15};

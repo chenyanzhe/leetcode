@@ -3,7 +3,7 @@
 #include "IntegerToRoman.hpp"
 
 TEST_CASE("Integer To Roman") {
-  Solution s;
+  IntegerToRoman s;
 
   SECTION("Base tests") {
     REQUIRE(s.intToRoman(1) == "I");

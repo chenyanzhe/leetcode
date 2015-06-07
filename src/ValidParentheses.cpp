@@ -3,7 +3,7 @@
 #include <stack>
 using namespace std;
 
-bool Solution::isValid(string s)
+bool ValidParentheses::isValid(string s)
 {
   stack<char> stk;
 
@@ -17,7 +17,7 @@ bool Solution::isValid(string s)
   return stk.empty();
 }
 
-bool Solution::isPair(char a, char b)
+bool ValidParentheses::isPair(char a, char b)
 {
   if (a == '(' && b == ')') return true;
   if (a == '{' && b == '}') return true;

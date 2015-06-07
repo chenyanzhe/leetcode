@@ -5,7 +5,7 @@
 using namespace std;
 
 TEST_CASE("Letter Combinations Of A Phone Number") {
-  Solution s;
+  LetterCombinationsOfAPhoneNumber s;
 
   SECTION("Sample test") {
     string digits = "23";

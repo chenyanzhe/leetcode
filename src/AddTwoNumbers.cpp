@@ -1,6 +1,6 @@
 #include "AddTwoNumbers.hpp"
 
-ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2)
+ListNode* AddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2)
 {
   ListNode* item = nullptr;
   ListNode* l3 = nullptr;

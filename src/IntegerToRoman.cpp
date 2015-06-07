@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-string Solution::intToRoman(int num)
+string IntegerToRoman::intToRoman(int num)
 {
   string ret;
   int l = 1;
@@ -15,7 +15,7 @@ string Solution::intToRoman(int num)
   return ret;
 }
 
-string Solution::digitToRoman(int digit, int level)
+string IntegerToRoman::digitToRoman(int digit, int level)
 {
   vector<string> encode {"", "0", "00", "000", "01", "1", "10", "100", "1000", "02"};
   vector<char> base(3);

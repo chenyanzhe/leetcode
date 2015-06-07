@@ -5,7 +5,7 @@
 #include <stdlib.h>
 using namespace std;
 
-int Solution::threeSumClosest(vector<int>& nums, int target)
+int ThreeSumClosest::threeSumClosest(vector<int>& nums, int target)
 {
   if (nums.size() < 3) return 0;
 

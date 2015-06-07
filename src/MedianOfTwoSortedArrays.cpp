@@ -1,6 +1,6 @@
 #include "MedianOfTwoSortedArrays.hpp"
 
-double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+double MedianOfTwoSortedArrays::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 {
   if (nums1.empty() && nums2.empty())
     return 0;
@@ -8,7 +8,7 @@ double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
   return findMedianSortedArrays(nums1.data(), nums1.size(), nums2.data(), nums2.size());
 }
 
-double Solution::findMedianSortedArrays(const int* nums1, int sz1, const int* nums2, int sz2)
+double MedianOfTwoSortedArrays::findMedianSortedArrays(const int* nums1, int sz1, const int* nums2, int sz2)
 {
   int sz = sz1 + sz2;
   if (sz % 2 == 1)
@@ -18,7 +18,7 @@ double Solution::findMedianSortedArrays(const int* nums1, int sz1, const int* nu
             findKth(nums1, sz1, nums2, sz2, sz / 2 + 1)) / 2;
 }
 
-double Solution::findKth(const int* nums1, int sz1, const int* nums2, int sz2, int k)
+double MedianOfTwoSortedArrays::findKth(const int* nums1, int sz1, const int* nums2, int sz2, int k)
 {
   if (sz1 > sz2)
     return findKth(nums2, sz2, nums1, sz1, k);

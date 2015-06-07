@@ -3,7 +3,7 @@
 #include "LongestCommonPrefix.hpp"
 
 TEST_CASE("Longest Common Prefix") {
-  Solution s;
+  LongestCommonPrefix s;
 
   SECTION("Normal tests") {
     vector<string> strs {"aeda", "aedasdf", "aedgcgs"};

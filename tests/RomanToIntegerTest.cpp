@@ -3,7 +3,7 @@
 #include "RomanToInteger.hpp"
 
 TEST_CASE("Roman To Integer") {
-  Solution s;
+  RomanToInteger s;
 
   SECTION("Base tests") {
     REQUIRE(s.romanToInt("I") == 1);

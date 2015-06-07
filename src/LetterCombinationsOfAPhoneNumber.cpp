@@ -3,13 +3,13 @@
 #include <iostream>
 using namespace std;
 
-const vector<vector<char> > Solution::keyMap = {
+const vector<vector<char> > LetterCombinationsOfAPhoneNumber::keyMap = {
   {' '}, {}, {'a', 'b', 'c'}, {'d', 'e', 'f'},
   {'g', 'h', 'i'}, {'j', 'k', 'l'}, {'m', 'n', 'o'},
   {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'}
 };
 
-vector<string> Solution::letterCombinations(string digits)
+vector<string> LetterCombinationsOfAPhoneNumber::letterCombinations(string digits)
 {
   vector<string> ret;
   if (digits.size() == 0)

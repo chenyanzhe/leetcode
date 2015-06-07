@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-vector<vector<int>> Solution::threeSum(vector<int>& nums)
+vector<vector<int>> ThreeSum::threeSum(vector<int>& nums)
 {
   vector<vector<int>> ret;
   if (nums.size() < 3) return ret;

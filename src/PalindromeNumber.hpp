@@ -1,4 +1,7 @@
-class Solution {
+#ifndef PALINDROME_NUMBER_HPP_
+#define PALINDROME_NUMBER_HPP_
+
+class PalindromeNumber {
 public:
   bool isPalindrome(int x);
 private:
@@ -9,3 +12,5 @@ private:
   //   e.g. getDigit(x, 11) = 0 when int is 32-bit
   int getDigit(int x, int i);
 };
+
+#endif // PALINDROME_NUMBER_HPP_

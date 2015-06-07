@@ -3,7 +3,7 @@
 #include "LongestPalindromicSubstring.hpp"
 
 TEST_CASE("Longest Palindromic Substring") {
-  Solution s;
+  LongestPalindromicSubstring s;
 
   SECTION("Single element") {
     REQUIRE(s.longestPalindrome("a") == "a");

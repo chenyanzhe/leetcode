@@ -1,6 +1,6 @@
 #include "MergeTwoSortedLists.hpp"
 
-ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
+ListNode* MergeTwoSortedLists::mergeTwoLists(ListNode* l1, ListNode* l2)
 {
   ListNode *l = nullptr;
   ListNode *i = nullptr;

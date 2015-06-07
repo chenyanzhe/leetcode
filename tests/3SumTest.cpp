@@ -6,7 +6,7 @@
 using namespace std;
 
 TEST_CASE("3Sum") {
-  Solution s;
+  ThreeSum s;
 
   SECTION("Sample tests") {
     vector<int> nums1 {-1, 0, 1, 2, -1, -4};

@@ -3,7 +3,7 @@
 #include "ValidParentheses.hpp"
 
 TEST_CASE("Valid Parentheses") {
-  Solution s;
+  ValidParentheses s;
 
   SECTION("Sample tests") {
     REQUIRE(s.isValid("()"));

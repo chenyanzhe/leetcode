@@ -1,6 +1,6 @@
 #include "RegularExpressionMatching.hpp"
 
-bool Solution::isMatch(string s, string p)
+bool RegularExpressionMatching::isMatch(string s, string p)
 {
   if (p.empty()) return s.empty();
   if (s.empty()) return p.empty() || (p.size() >= 2 && p[1] == '*' && isMatch(s, p.substr(2)));

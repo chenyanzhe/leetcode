@@ -5,7 +5,7 @@
 #include <algorithm>
 
 TEST_CASE("Container With Most Water") {
-  Solution s;
+  ContainerWithMostWater s;
 
   SECTION("Normal tests") {
     vector<int> h1 {3, 7, 1, 6};

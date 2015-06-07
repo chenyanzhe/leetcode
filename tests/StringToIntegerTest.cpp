@@ -3,7 +3,7 @@
 #include "StringToInteger.hpp"
 
 TEST_CASE("String To Integer") {
-  Solution s;
+  StringToInteger s;
 
   SECTION("Normal tests") {
     REQUIRE(s.myAtoi("1") == 1);

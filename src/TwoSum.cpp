@@ -3,7 +3,7 @@
 #include <unordered_map>
 using namespace std;
 
-vector<int> Solution::twoSum(vector<int> &nums, int target)
+vector<int> TwoSum::twoSum(vector<int> &nums, int target)
 {
   unordered_map<int, int> indexMap;
   vector<int> ans;

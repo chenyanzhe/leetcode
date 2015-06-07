@@ -4,7 +4,7 @@
 #include <climits>
 using namespace std;
 
-int Solution::reverse(int x)
+int ReverseInteger::reverse(int x)
 {
   if (x == 0) return 0;
 

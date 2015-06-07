@@ -3,7 +3,7 @@
 #include "ReverseInteger.hpp"
 
 TEST_CASE("Reverse Integer") {
-  Solution s;
+  ReverseInteger s;
 
   SECTION("Sample test") {
     REQUIRE(s.reverse(123) == 321);

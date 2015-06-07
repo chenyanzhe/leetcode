@@ -1,6 +1,6 @@
 #include "RemoveNthNodeFromEndOfList.hpp"
 
-ListNode* Solution::removeNthFromEnd(ListNode* head, int n)
+ListNode* RemoveNthNodeFromEndOfList::removeNthFromEnd(ListNode* head, int n)
 {
   if (head == nullptr) return nullptr;
 

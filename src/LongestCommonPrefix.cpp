@@ -1,6 +1,6 @@
 #include "LongestCommonPrefix.hpp"
 
-string Solution::longestCommonPrefix(vector<string>& strs)
+string LongestCommonPrefix::longestCommonPrefix(vector<string>& strs)
 {
   if (strs.empty()) return "";
 

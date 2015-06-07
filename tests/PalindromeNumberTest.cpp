@@ -3,7 +3,7 @@
 #include "PalindromeNumber.hpp"
 
 TEST_CASE("Palindrome Number") {
-  Solution s;
+  PalindromeNumber s;
 
   SECTION("Negative numbers are not palindrome numbers") {
     REQUIRE(s.isPalindrome(-1) == false);

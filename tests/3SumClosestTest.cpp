@@ -3,7 +3,7 @@
 #include "3SumClosest.hpp"
 
 TEST_CASE("3Sum Closest") {
-  Solution s;
+  ThreeSumClosest s;
 
   SECTION("Sample test") {
     vector<int> nums {-1, 2, 1, -4};

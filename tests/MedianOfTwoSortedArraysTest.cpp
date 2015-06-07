@@ -3,7 +3,7 @@
 #include "MedianOfTwoSortedArrays.hpp"
 
 TEST_CASE("Median Of Two Sorted Arrays") {
-  Solution s;
+  MedianOfTwoSortedArrays s;
 
   SECTION("Two nums are empty") {
     vector<int> nums1;

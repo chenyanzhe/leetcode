@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-vector<vector<int>> Solution::fourSum(vector<int>& nums, int target)
+vector<vector<int>> FourSum::fourSum(vector<int>& nums, int target)
 {
   vector<vector<int>> ret;
   if (nums.size() < 4) return ret;

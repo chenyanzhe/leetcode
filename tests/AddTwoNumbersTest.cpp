@@ -3,7 +3,7 @@
 #include "AddTwoNumbers.hpp"
 
 TEST_CASE("Add Two Numbers") {
-  Solution s;
+  AddTwoNumbers s;
 
   ListNode* l1 = nullptr;
   ListNode* l2 = nullptr;
