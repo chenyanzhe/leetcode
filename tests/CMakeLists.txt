@@ -20,6 +20,7 @@ add_executable(Test main.cpp
   LetterCombinationsOfAPhoneNumberTest.cpp
   4SumTest.cpp
   RemoveNthNodeFromEndOfListTest.cpp
+  ValidParenthesesTest.cpp
 )
 
 target_link_libraries(Test Solutions)

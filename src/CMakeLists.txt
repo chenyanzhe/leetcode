@@ -18,4 +18,5 @@ add_library(Solutions
   LetterCombinationsOfAPhoneNumber.hpp LetterCombinationsOfAPhoneNumber.cpp
   4Sum.hpp 4Sum.cpp
   RemoveNthNodeFromEndOfList.hpp RemoveNthNodeFromEndOfList.cpp
+  ValidParentheses.hpp ValidParentheses.cpp
 )
