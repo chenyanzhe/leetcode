@@ -19,4 +19,5 @@ add_library(Solutions
   4Sum.hpp 4Sum.cpp
   RemoveNthNodeFromEndOfList.hpp RemoveNthNodeFromEndOfList.cpp
   ValidParentheses.hpp ValidParentheses.cpp
+  MergeTwoSortedLists.hpp MergeTwoSortedLists.cpp
 )

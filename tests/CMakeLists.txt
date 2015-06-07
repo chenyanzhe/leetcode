@@ -21,6 +21,7 @@ add_executable(Test main.cpp
   4SumTest.cpp
   RemoveNthNodeFromEndOfListTest.cpp
   ValidParenthesesTest.cpp
+  MergeTwoSortedListsTest.cpp
 )
 
 target_link_libraries(Test Solutions)
