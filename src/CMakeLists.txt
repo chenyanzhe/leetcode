@@ -20,4 +20,5 @@ add_library(Solutions
   RemoveNthNodeFromEndOfList.hpp RemoveNthNodeFromEndOfList.cpp
   ValidParentheses.hpp ValidParentheses.cpp
   MergeTwoSortedLists.hpp MergeTwoSortedLists.cpp
+  GenerateParentheses.hpp GenerateParentheses.cpp
 )
