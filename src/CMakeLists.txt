@@ -17,4 +17,5 @@ add_library(Solutions
   3SumClosest.hpp 3SumClosest.cpp
   LetterCombinationsOfAPhoneNumber.hpp LetterCombinationsOfAPhoneNumber.cpp
   4Sum.hpp 4Sum.cpp
+  RemoveNthNodeFromEndOfList.hpp RemoveNthNodeFromEndOfList.cpp
 )

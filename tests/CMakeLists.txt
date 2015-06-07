@@ -19,6 +19,7 @@ add_executable(Test main.cpp
   3SumClosestTest.cpp
   LetterCombinationsOfAPhoneNumberTest.cpp
   4SumTest.cpp
+  RemoveNthNodeFromEndOfListTest.cpp
 )
 
 target_link_libraries(Test Solutions)
