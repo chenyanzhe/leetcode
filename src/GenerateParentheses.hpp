@@ -8,14 +8,17 @@ using namespace std;
 class GenerateParentheses {
 public:
   vector<string> generateParenthesis(int n);
+
+private:
+  void search(int l);
+  bool isValidCandidate();
+
 private:
   int N;
   vector<string> ret;
   vector<int> field;
-
-  void search(int l);
-  bool passSanityCheck(int l);
-  bool isValidParenthesis (string str);
+  int nlbs;
+  int nrbs;
 };
 
 #endif // GENERTATE_PARENTHESES_HPP_
