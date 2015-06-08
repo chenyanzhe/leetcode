@@ -23,4 +23,5 @@ add_library(Solutions
   GenerateParentheses.hpp GenerateParentheses.cpp
   MergeKSortedLists.hpp MergeKSortedLists.cpp
   SwapNodesInPairs.hpp SwapNodesInPairs.cpp
+  ReverseNodesInKGroup.hpp ReverseNodesInKGroup.cpp
 )

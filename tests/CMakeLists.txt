@@ -25,6 +25,7 @@ add_executable(Test main.cpp
   GenerateParenthesesTest.cpp
   MergeKSortedListsTest.cpp
   SwapNodesInPairsTest.cpp
+  ReverseNodesInKGroupTest.cpp
 )
 
 target_link_libraries(Test Solutions)
