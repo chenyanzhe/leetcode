@@ -24,6 +24,7 @@ add_executable(Test main.cpp
   MergeTwoSortedListsTest.cpp
   GenerateParenthesesTest.cpp
   MergeKSortedListsTest.cpp
+  SwapNodesInPairsTest.cpp
 )
 
 target_link_libraries(Test Solutions)

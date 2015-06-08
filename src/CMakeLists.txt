@@ -22,4 +22,5 @@ add_library(Solutions
   MergeTwoSortedLists.hpp MergeTwoSortedLists.cpp
   GenerateParentheses.hpp GenerateParentheses.cpp
   MergeKSortedLists.hpp MergeKSortedLists.cpp
+  SwapNodesInPairs.hpp SwapNodesInPairs.cpp
 )
