@@ -21,4 +21,5 @@ add_library(Solutions
   ValidParentheses.hpp ValidParentheses.cpp
   MergeTwoSortedLists.hpp MergeTwoSortedLists.cpp
   GenerateParentheses.hpp GenerateParentheses.cpp
+  MergeKSortedLists.hpp MergeKSortedLists.cpp
 )

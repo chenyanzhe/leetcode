@@ -23,6 +23,7 @@ add_executable(Test main.cpp
   ValidParenthesesTest.cpp
   MergeTwoSortedListsTest.cpp
   GenerateParenthesesTest.cpp
+  MergeKSortedListsTest.cpp
 )
 
 target_link_libraries(Test Solutions)
