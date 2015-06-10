@@ -26,6 +26,7 @@ add_executable(Test main.cpp
   MergeKSortedListsTest.cpp
   SwapNodesInPairsTest.cpp
   ReverseNodesInKGroupTest.cpp
+  RemoveDuplicatesFromSortedArrayTest.cpp
 )
 
 target_link_libraries(Test Solutions)

@@ -24,4 +24,5 @@ add_library(Solutions
   MergeKSortedLists.hpp MergeKSortedLists.cpp
   SwapNodesInPairs.hpp SwapNodesInPairs.cpp
   ReverseNodesInKGroup.hpp ReverseNodesInKGroup.cpp
+  RemoveDuplicatesFromSortedArray.hpp RemoveDuplicatesFromSortedArray.cpp
 )
