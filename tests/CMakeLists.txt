@@ -28,6 +28,7 @@ add_executable(Test main.cpp
   ReverseNodesInKGroupTest.cpp
   RemoveDuplicatesFromSortedArrayTest.cpp
   RemoveElementTest.cpp
+  ImplementStrStrTest.cpp
 )
 
 target_link_libraries(Test Solutions)

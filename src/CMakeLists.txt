@@ -26,4 +26,5 @@ add_library(Solutions
   ReverseNodesInKGroup.hpp ReverseNodesInKGroup.cpp
   RemoveDuplicatesFromSortedArray.hpp RemoveDuplicatesFromSortedArray.cpp
   RemoveElement.hpp RemoveElement.cpp
+  ImplementStrStr.hpp ImplementStrStr.cpp
 )
