@@ -27,6 +27,7 @@ add_executable(Test main.cpp
   SwapNodesInPairsTest.cpp
   ReverseNodesInKGroupTest.cpp
   RemoveDuplicatesFromSortedArrayTest.cpp
+  RemoveElementTest.cpp
 )
 
 target_link_libraries(Test Solutions)

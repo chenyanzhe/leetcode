@@ -25,4 +25,5 @@ add_library(Solutions
   SwapNodesInPairs.hpp SwapNodesInPairs.cpp
   ReverseNodesInKGroup.hpp ReverseNodesInKGroup.cpp
   RemoveDuplicatesFromSortedArray.hpp RemoveDuplicatesFromSortedArray.cpp
+  RemoveElement.hpp RemoveElement.cpp
 )
