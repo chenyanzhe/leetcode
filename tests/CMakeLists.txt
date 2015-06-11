@@ -29,6 +29,7 @@ add_executable(Test main.cpp
   RemoveDuplicatesFromSortedArrayTest.cpp
   RemoveElementTest.cpp
   ImplementStrStrTest.cpp
+  DivideTwoIntegersTest.cpp
 )
 
 target_link_libraries(Test Solutions)

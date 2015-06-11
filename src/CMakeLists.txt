@@ -27,4 +27,5 @@ add_library(Solutions
   RemoveDuplicatesFromSortedArray.hpp RemoveDuplicatesFromSortedArray.cpp
   RemoveElement.hpp RemoveElement.cpp
   ImplementStrStr.hpp ImplementStrStr.cpp
+  DivideTwoIntegers.hpp DivideTwoIntegers.cpp
 )
