@@ -28,4 +28,5 @@ add_library(Solutions
   RemoveElement.hpp RemoveElement.cpp
   ImplementStrStr.hpp ImplementStrStr.cpp
   DivideTwoIntegers.hpp DivideTwoIntegers.cpp
+  SubstringWithConcatenationOfAllWords.hpp SubstringWithConcatenationOfAllWords.cpp
 )

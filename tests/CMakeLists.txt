@@ -30,6 +30,7 @@ add_executable(Test main.cpp
   RemoveElementTest.cpp
   ImplementStrStrTest.cpp
   DivideTwoIntegersTest.cpp
+  SubstringWithConcatenationOfAllWordsTest.cpp
 )
 
 target_link_libraries(Test Solutions)
