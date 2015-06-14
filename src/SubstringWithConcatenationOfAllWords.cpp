@@ -6,32 +6,48 @@ using namespace std;
 vector<int> SubstringWithConcatenationOfAllWords::findSubstring(string s, vector<string>& words)
 {
   vector<int> ret;
-  size_t strlen = s.size();
-  size_t numw = words.size();
+  size_t slen = s.size();
+  size_t wslen = words.size();
 
-  if (strlen == 0 || numw == 0) return ret;
+  if (slen == 0 || wslen == 0) return ret;
 
   size_t wlen = words[0].size();
-  size_t substrlen = numw * wlen;
+  size_t sslen = wlen * wslen;
 
-  if (wlen == 0 || substrlen > strlen) return ret;
+  if (wlen == 0 || sslen > slen) return ret;
 
   unordered_map<string, int> records;
   for (auto w : words)
     records[w]++;
 
-  for (int p = 0; p + substrlen - 1 < strlen; p++) {
-    unordered_map<string, int> local = records;
-    int q;
-    for (q = 0; q < numw; q++) {
-      string seg = s.substr(p + q * wlen, wlen);
-      if (local.find(seg) == local.end() || local[seg] == 0)
-        break;
-      else
-        local[seg]--;
+  for (int h = 0; h < wlen && h + sslen <= slen; h++) {
+    int lp = h;
+    int rp = h;
+    unordered_map<string, int> occurs;
+    while (lp + sslen <= slen) {
+      string seg = s.substr(rp, wlen);
+      if (records.find(seg) == records.end()) {
+        for (; lp < rp; lp += wlen)
+          occurs[s.substr(lp, wlen)]--;
+        lp = rp + wlen;
+        rp = lp;
+      }
+      else if (occurs[seg] == records[seg]) {
+        for (; s.substr(lp, wlen) != seg; lp += wlen)
+          occurs[s.substr(lp, wlen)]--;
+        lp += wlen;
+        rp += wlen;
+      }
+      else {
+        occurs[seg]++;
+        rp += wlen;
+        if (rp - lp == sslen) {
+          ret.push_back(lp);
+          occurs[s.substr(lp, wlen)]--;
+          lp += wlen;
+        }
+      }
     }
-    if (q == numw)
-      ret.push_back(p);
   }
 
   return ret;
