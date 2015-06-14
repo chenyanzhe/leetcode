@@ -31,6 +31,7 @@ add_executable(Test main.cpp
   ImplementStrStrTest.cpp
   DivideTwoIntegersTest.cpp
   SubstringWithConcatenationOfAllWordsTest.cpp
+  NextPermutationTest.cpp
 )
 
 target_link_libraries(Test Solutions)

@@ -29,4 +29,5 @@ add_library(Solutions
   ImplementStrStr.hpp ImplementStrStr.cpp
   DivideTwoIntegers.hpp DivideTwoIntegers.cpp
   SubstringWithConcatenationOfAllWords.hpp SubstringWithConcatenationOfAllWords.cpp
+  NextPermutation.hpp NextPermutation.cpp
 )
