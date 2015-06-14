@@ -32,6 +32,7 @@ add_executable(Test main.cpp
   DivideTwoIntegersTest.cpp
   SubstringWithConcatenationOfAllWordsTest.cpp
   NextPermutationTest.cpp
+  LongestValidParenthesesTest.cpp
 )
 
 target_link_libraries(Test Solutions)

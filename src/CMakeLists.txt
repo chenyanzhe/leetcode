@@ -30,4 +30,5 @@ add_library(Solutions
   DivideTwoIntegers.hpp DivideTwoIntegers.cpp
   SubstringWithConcatenationOfAllWords.hpp SubstringWithConcatenationOfAllWords.cpp
   NextPermutation.hpp NextPermutation.cpp
+  LongestValidParentheses.hpp LongestValidParentheses.cpp
 )
