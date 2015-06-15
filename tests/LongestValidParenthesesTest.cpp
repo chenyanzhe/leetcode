@@ -19,5 +19,15 @@ TEST_CASE("Longest Valid Parentheses") {
 
     string str2 = ")(()())";
     REQUIRE(s.longestValidParentheses(str2) == 6);
+
+    string str3 = "()(()";
+    REQUIRE(s.longestValidParentheses(str3) == 2);
+
+    string str4 = "(()(((()";
+    REQUIRE(s.longestValidParentheses(str4) == 2);
+  }
+
+  SECTION("Empty string") {
+    REQUIRE(s.longestValidParentheses("") == 0);
   }
 }
