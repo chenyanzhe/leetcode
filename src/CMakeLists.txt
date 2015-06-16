@@ -31,4 +31,5 @@ add_library(Solutions
   SubstringWithConcatenationOfAllWords.hpp SubstringWithConcatenationOfAllWords.cpp
   NextPermutation.hpp NextPermutation.cpp
   LongestValidParentheses.hpp LongestValidParentheses.cpp
+  SearchInRotatedSortedArray.hpp SearchInRotatedSortedArray.cpp
 )

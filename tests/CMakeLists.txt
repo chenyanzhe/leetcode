@@ -33,6 +33,7 @@ add_executable(Test main.cpp
   SubstringWithConcatenationOfAllWordsTest.cpp
   NextPermutationTest.cpp
   LongestValidParenthesesTest.cpp
+  SearchInRotatedSortedArrayTest.cpp
 )
 
 target_link_libraries(Test Solutions)
