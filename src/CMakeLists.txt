@@ -32,4 +32,5 @@ add_library(Solutions
   NextPermutation.hpp NextPermutation.cpp
   LongestValidParentheses.hpp LongestValidParentheses.cpp
   SearchInRotatedSortedArray.hpp SearchInRotatedSortedArray.cpp
+  SearchForARange.hpp SearchForARange.cpp
 )
