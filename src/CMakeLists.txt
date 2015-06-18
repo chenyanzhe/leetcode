@@ -35,4 +35,5 @@ add_library(Solutions
   SearchForARange.hpp SearchForARange.cpp
   SearchInsertPosition.hpp SearchInsertPosition.cpp
   ValidSudoku.hpp ValidSudoku.cpp
+  SudokuSolver.hpp SudokuSolver.cpp
 )

@@ -37,6 +37,7 @@ add_executable(Test main.cpp
   SearchForARangeTest.cpp
   SearchInsertPositionTest.cpp
   ValidSudokuTest.cpp
+  SudokuSolverTest.cpp
 )
 
 target_link_libraries(Test Solutions)
