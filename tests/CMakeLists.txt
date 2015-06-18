@@ -35,6 +35,7 @@ add_executable(Test main.cpp
   LongestValidParenthesesTest.cpp
   SearchInRotatedSortedArrayTest.cpp
   SearchForARangeTest.cpp
+  SearchInsertPositionTest.cpp
 )
 
 target_link_libraries(Test Solutions)

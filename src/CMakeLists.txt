@@ -33,4 +33,5 @@ add_library(Solutions
   LongestValidParentheses.hpp LongestValidParentheses.cpp
   SearchInRotatedSortedArray.hpp SearchInRotatedSortedArray.cpp
   SearchForARange.hpp SearchForARange.cpp
+  SearchInsertPosition.hpp SearchInsertPosition.cpp
 )
