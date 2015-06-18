@@ -36,6 +36,7 @@ add_executable(Test main.cpp
   SearchInRotatedSortedArrayTest.cpp
   SearchForARangeTest.cpp
   SearchInsertPositionTest.cpp
+  ValidSudokuTest.cpp
 )
 
 target_link_libraries(Test Solutions)

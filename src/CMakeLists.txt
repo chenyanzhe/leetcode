@@ -34,4 +34,5 @@ add_library(Solutions
   SearchInRotatedSortedArray.hpp SearchInRotatedSortedArray.cpp
   SearchForARange.hpp SearchForARange.cpp
   SearchInsertPosition.hpp SearchInsertPosition.cpp
+  ValidSudoku.hpp ValidSudoku.cpp
 )
