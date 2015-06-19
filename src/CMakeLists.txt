@@ -36,4 +36,5 @@ add_library(Solutions
   SearchInsertPosition.hpp SearchInsertPosition.cpp
   ValidSudoku.hpp ValidSudoku.cpp
   SudokuSolver.hpp SudokuSolver.cpp
+  CountAndSay.hpp CountAndSay.cpp
 )

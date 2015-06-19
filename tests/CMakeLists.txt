@@ -38,6 +38,7 @@ add_executable(Test main.cpp
   SearchInsertPositionTest.cpp
   ValidSudokuTest.cpp
   SudokuSolverTest.cpp
+  CountAndSayTest.cpp
 )
 
 target_link_libraries(Test Solutions)
