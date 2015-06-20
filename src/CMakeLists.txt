@@ -37,4 +37,5 @@ add_library(Solutions
   ValidSudoku.hpp ValidSudoku.cpp
   SudokuSolver.hpp SudokuSolver.cpp
   CountAndSay.hpp CountAndSay.cpp
+  CombinationSum.hpp CombinationSum.cpp
 )
