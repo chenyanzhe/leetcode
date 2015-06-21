@@ -38,4 +38,5 @@ add_library(Solutions
   SudokuSolver.hpp SudokuSolver.cpp
   CountAndSay.hpp CountAndSay.cpp
   CombinationSum.hpp CombinationSum.cpp
+  CombinationSumII.hpp CombinationSumII.cpp
 )

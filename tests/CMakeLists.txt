@@ -40,6 +40,7 @@ add_executable(Test main.cpp
   SudokuSolverTest.cpp
   CountAndSayTest.cpp
   CombinationSumTest.cpp
+  CombinationSumIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
