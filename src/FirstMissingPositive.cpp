@@ -5,17 +5,23 @@ using namespace std;
 
 int FirstMissingPositive::firstMissingPositive(vector<int>& nums)
 {
-  if (nums.empty()) return 1;
+  for (auto n : nums) {
+    if (n <= 0 || n > nums.size())
+      continue;
+    int r = nums[n - 1];
+    while (r != n) {
+      nums[n - 1] = n;
+      if (r <= 0 || r > nums.size())
+        break;
+      else {
+        n = r;
+        r = nums[r - 1];
+      }
+    }
+  }
 
-  sort(nums.begin(), nums.end());
-  int i = 0;
-  while (i < nums.size() && nums[i] <= 0)
-    i++;
-
-  if (i == nums.size() || nums[i] != 1) return 1;
-
-  while (i + 1 < nums.size() && (nums[i] == nums[i + 1] || nums[i] + 1 == nums[i + 1]))
-    i++;
-  
-  return nums[i] + 1;
+  for (int i = 0; i < nums.size(); i++)
+    if (i + 1 != nums[i])
+      return i + 1;
+  return nums.size() + 1;
 }
