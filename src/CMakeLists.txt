@@ -39,4 +39,5 @@ add_library(Solutions
   CountAndSay.hpp CountAndSay.cpp
   CombinationSum.hpp CombinationSum.cpp
   CombinationSumII.hpp CombinationSumII.cpp
+  FirstMissingPositive.hpp FirstMissingPositive.cpp
 )

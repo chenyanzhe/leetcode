@@ -41,6 +41,7 @@ add_executable(Test main.cpp
   CountAndSayTest.cpp
   CombinationSumTest.cpp
   CombinationSumIITest.cpp
+  FirstMissingPositiveTest.cpp
 )
 
 target_link_libraries(Test Solutions)
