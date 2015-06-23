@@ -40,4 +40,5 @@ add_library(Solutions
   CombinationSum.hpp CombinationSum.cpp
   CombinationSumII.hpp CombinationSumII.cpp
   FirstMissingPositive.hpp FirstMissingPositive.cpp
+  TrappingRainWater.hpp TrappingRainWater.cpp
 )
