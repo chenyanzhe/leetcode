@@ -43,6 +43,7 @@ add_executable(Test main.cpp
   CombinationSumIITest.cpp
   FirstMissingPositiveTest.cpp
   TrappingRainWaterTest.cpp
+  MultiplyStringsTest.cpp
 )
 
 target_link_libraries(Test Solutions)
