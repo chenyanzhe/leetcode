@@ -1,7 +1,6 @@
 #include "MultiplyStrings.hpp"
 
 #include <vector>
-#include <iostream>
 using namespace std;
 
 string MultiplyStrings::multiply(string num1, string num2)
