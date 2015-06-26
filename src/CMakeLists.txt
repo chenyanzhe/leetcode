@@ -42,4 +42,5 @@ add_library(Solutions
   FirstMissingPositive.hpp FirstMissingPositive.cpp
   TrappingRainWater.hpp TrappingRainWater.cpp
   MultiplyStrings.hpp MultiplyStrings.cpp
+  WildcardMatching.hpp WildcardMatching.cpp
 )

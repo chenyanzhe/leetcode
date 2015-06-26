@@ -44,6 +44,7 @@ add_executable(Test main.cpp
   FirstMissingPositiveTest.cpp
   TrappingRainWaterTest.cpp
   MultiplyStringsTest.cpp
+  WildcardMatchingTest.cpp
 )
 
 target_link_libraries(Test Solutions)
