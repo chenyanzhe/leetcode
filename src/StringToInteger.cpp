@@ -2,7 +2,6 @@
 
 #include <cctype>
 #include <climits>
-#include <iostream>
 using namespace std;
 
 int StringToInteger::myAtoi(string str)

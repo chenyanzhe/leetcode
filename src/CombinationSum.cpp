@@ -1,7 +1,6 @@
 #include "CombinationSum.hpp"
 
 #include <algorithm>
-#include <iostream>
 using namespace std;
 
 vector<vector<int>> CombinationSum::combinationSum(vector<int>& candidates, int target)

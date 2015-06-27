@@ -1,8 +1,5 @@
 #include "TrappingRainWater.hpp"
 
-#include <iostream>
-using namespace std;
-
 int TrappingRainWater::trap(vector<int>& height)
 {
   int width = height.size();

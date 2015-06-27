@@ -1,8 +1,5 @@
 #include "SearchInsertPosition.hpp"
 
-#include <iostream>
-using namespace std;
-
 int SearchInsertPosition::searchInsert(vector<int>& nums, int target)
 {
   if (nums.empty()) return 0;

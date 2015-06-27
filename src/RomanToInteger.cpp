@@ -1,8 +1,5 @@
 #include "RomanToInteger.hpp"
 
-#include <iostream>
-using namespace std;
-
 int RomanToInteger::romanToInt(string s)
 {
   if (s.empty()) return 0;

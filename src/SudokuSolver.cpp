@@ -1,8 +1,5 @@
 #include "SudokuSolver.hpp"
 
-#include <iostream>
-using namespace std;
-
 void SudokuSolver::solveSudoku(vector<vector<char>>& board)
 {
   if (board.empty() || board.size() != 9 || board[0].size() != 9)
