@@ -1,7 +1,7 @@
 add_library(Solutions
   TwoSum.hpp TwoSum.cpp
   AddTwoNumbers.hpp AddTwoNumbers.cpp
-  LongestSubStringWithoutRepeatingCharacters.hpp LongestSubStringWithoutRepeatingCharacters.cpp
+  LongestSubstringWithoutRepeatingCharacters.hpp LongestSubstringWithoutRepeatingCharacters.cpp
   MedianOfTwoSortedArrays.hpp MedianOfTwoSortedArrays.cpp
   LongestPalindromicSubstring.hpp LongestPalindromicSubstring.cpp
   ZigZagConversion.hpp ZigZagConversion.cpp
