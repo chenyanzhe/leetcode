@@ -43,4 +43,5 @@ add_library(Solutions
   TrappingRainWater.hpp TrappingRainWater.cpp
   MultiplyStrings.hpp MultiplyStrings.cpp
   WildcardMatching.hpp WildcardMatching.cpp
+  JumpGameII.hpp JumpGameII.cpp
 )
