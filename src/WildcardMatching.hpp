@@ -7,6 +7,8 @@ using namespace std;
 class WildcardMatching {
 public:
   bool isMatch(string s, string p);
+private:
+  bool isMatch(char c, char p);
 };
 
 #endif // WILDCARD_MATCHING_HPP_
