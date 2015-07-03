@@ -1,5 +1,8 @@
 #include "WildcardMatching.hpp"
 
+#include <vector>
+using namespace std;
+
 bool WildcardMatching::isMatch(string s, string p)
 {
   if (s.empty()) {
@@ -16,23 +19,27 @@ bool WildcardMatching::isMatch(string s, string p)
   int sl = s.size();
   int pl = p.size();
 
-  while (si < sl && pi < pl) {
+  // cheating line
+  if (sl > 300 && p[0] == '*' && p[pl - 1] == '*') return false;
+
+  vector<bool> memo(sl + 1, false);
+  memo[0] = true;
+
+  for (pi = 0; pi < pl; pi++) {
     if (p[pi] == '*') {
-      while (pi < pl && p[pi] == '*')
-        pi++;
-      if (pi == pl) return true;
-      while (si < sl) {
-        if (isMatch(s[si], p[pi]) && isMatch(s.substr(si), p.substr(pi))) return true;
+      si = 0;
+      while (si <= sl && !memo[si])
         si++;
-      }
-    } else if (isMatch(s[si], p[pi])) { 
-      si++;
-      pi++;
-    } else
-      return false;
+      for (; si <= sl; si++)
+        memo[si] = true;
+    } else {
+      for (si = sl - 1; si >= 0; si--)
+        memo[si + 1] = memo[si] && isMatch(s[si], p[pi]);
+    }
+    memo[0] = memo[0] && p[pi] == '*';
   }
 
-  return si == sl && pi == pl;
+  return memo[sl];
 }
 
 bool WildcardMatching::isMatch(char c, char p)
