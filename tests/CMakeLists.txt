@@ -47,6 +47,7 @@ add_executable(Test main.cpp
   WildcardMatchingTest.cpp
   JumpGameIITest.cpp
   PermutationsTest.cpp
+  PermutationsIITest.cpp
 )
 
 target_link_libraries(Test Solutions)

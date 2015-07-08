@@ -45,4 +45,5 @@ add_library(Solutions
   WildcardMatching.hpp WildcardMatching.cpp
   JumpGameII.hpp JumpGameII.cpp
   Permutations.hpp Permutations.cpp
+  PermutationsII.hpp PermutationsII.cpp
 )
