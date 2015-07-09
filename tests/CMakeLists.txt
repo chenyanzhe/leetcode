@@ -48,6 +48,7 @@ add_executable(Test main.cpp
   JumpGameIITest.cpp
   PermutationsTest.cpp
   PermutationsIITest.cpp
+  RotateImageTest.cpp
 )
 
 target_link_libraries(Test Solutions)
