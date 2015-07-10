@@ -46,4 +46,5 @@ add_library(Solutions
   JumpGameII.hpp JumpGameII.cpp
   Permutations.hpp Permutations.cpp
   PermutationsII.hpp PermutationsII.cpp
+  Anagrams.hpp Anagrams.cpp
 )
