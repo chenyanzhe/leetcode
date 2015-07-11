@@ -50,6 +50,7 @@ add_executable(Test main.cpp
   PermutationsIITest.cpp
   RotateImageTest.cpp
   AnagramsTest.cpp
+  PowxnTest.cpp
 )
 
 target_link_libraries(Test Solutions)

@@ -48,4 +48,5 @@ add_library(Solutions
   PermutationsII.hpp PermutationsII.cpp
   RotateImage.hpp RotateImage.cpp
   Anagrams.hpp Anagrams.cpp
+  Powxn.hpp Powxn.cpp
 )
