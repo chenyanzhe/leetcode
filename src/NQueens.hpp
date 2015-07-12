@@ -2,14 +2,16 @@
 #define NQUEENS_HPP_
 
 #include <vector>
+#include <string>
 using namespace std;
 
 class NQueens {
 public:
   vector<vector<string>> solveNQueens(int n);
 private:
-  void helper(int n, vector<int>& locs, int r);
-  bool legal(int n, vector<int>& locs, int r);
+  int n;
+  void helper(vector<int>& locs, int r, vector<vector<string>>& result);
+  bool legal(vector<int>& locs, int r);
 };
 
 #endif // NQUEENS_HPP_
