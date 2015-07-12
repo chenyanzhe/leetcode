@@ -51,6 +51,7 @@ add_executable(Test main.cpp
   RotateImageTest.cpp
   AnagramsTest.cpp
   PowxnTest.cpp
+  NQueensTest.cpp
 )
 
 target_link_libraries(Test Solutions)

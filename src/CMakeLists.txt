@@ -49,4 +49,5 @@ add_library(Solutions
   RotateImage.hpp RotateImage.cpp
   Anagrams.hpp Anagrams.cpp
   Powxn.hpp Powxn.cpp
+  NQueens.hpp NQueens.cpp
 )
