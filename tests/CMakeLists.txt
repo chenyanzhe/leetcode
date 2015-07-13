@@ -52,6 +52,7 @@ add_executable(Test main.cpp
   AnagramsTest.cpp
   PowxnTest.cpp
   NQueensTest.cpp
+  NQueensIITest.cpp
 )
 
 target_link_libraries(Test Solutions)

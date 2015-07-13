@@ -50,4 +50,5 @@ add_library(Solutions
   Anagrams.hpp Anagrams.cpp
   Powxn.hpp Powxn.cpp
   NQueens.hpp NQueens.cpp
+  NQueensII.hpp NQueensII.cpp
 )
