@@ -51,4 +51,5 @@ add_library(Solutions
   Powxn.hpp Powxn.cpp
   NQueens.hpp NQueens.cpp
   NQueensII.hpp NQueensII.cpp
+  MaximumSubarray.hpp MaximumSubarray.cpp
 )

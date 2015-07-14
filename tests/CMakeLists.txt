@@ -53,6 +53,7 @@ add_executable(Test main.cpp
   PowxnTest.cpp
   NQueensTest.cpp
   NQueensIITest.cpp
+  MaximumSubarrayTest.cpp
 )
 
 target_link_libraries(Test Solutions)
