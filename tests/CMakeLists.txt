@@ -54,6 +54,7 @@ add_executable(Test main.cpp
   NQueensTest.cpp
   NQueensIITest.cpp
   MaximumSubarrayTest.cpp
+  SpiralMatrixTest.cpp
 )
 
 target_link_libraries(Test Solutions)
