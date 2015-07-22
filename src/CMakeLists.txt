@@ -52,5 +52,5 @@ add_library(Solutions
   NQueens.hpp NQueens.cpp
   NQueensII.hpp NQueensII.cpp
   MaximumSubarray.hpp MaximumSubarray.cpp
-  SpiralMatrix.hpp SpiralMatrix.cpp
+  ClimbingStairs.hpp ClimbingStairs.cpp
 )
