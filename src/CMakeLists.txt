@@ -53,4 +53,5 @@ add_library(Solutions
   NQueensII.hpp NQueensII.cpp
   MaximumSubarray.hpp MaximumSubarray.cpp
   ClimbingStairs.hpp ClimbingStairs.cpp
+  HouseRobber.hpp HouseRobber.cpp
 )
