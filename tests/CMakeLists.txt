@@ -56,6 +56,7 @@ add_executable(Test main.cpp
   MaximumSubarrayTest.cpp
   ClimbingStairsTest.cpp
   HouseRobberTest.cpp
+  UniquePathsTest.cpp
 )
 
 target_link_libraries(Test Solutions)

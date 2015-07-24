@@ -54,4 +54,5 @@ add_library(Solutions
   MaximumSubarray.hpp MaximumSubarray.cpp
   ClimbingStairs.hpp ClimbingStairs.cpp
   HouseRobber.hpp HouseRobber.cpp
+  UniquePaths.hpp UniquePaths.cpp
 )
