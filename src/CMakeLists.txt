@@ -56,4 +56,5 @@ add_library(Solutions
   HouseRobber.hpp HouseRobber.cpp
   UniquePaths.hpp UniquePaths.cpp
   UniquePathsII.hpp UniquePathsII.cpp
+  UniqueBinarySearchTrees.hpp UniqueBinarySearchTrees.cpp
 )

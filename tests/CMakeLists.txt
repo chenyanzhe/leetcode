@@ -58,6 +58,7 @@ add_executable(Test main.cpp
   HouseRobberTest.cpp
   UniquePathsTest.cpp
   UniquePathsIITest.cpp
+  UniqueBinarySearchTreesTest.cpp
 )
 
 target_link_libraries(Test Solutions)
