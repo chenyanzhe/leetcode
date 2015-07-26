@@ -52,7 +52,7 @@ bool RegularExpressionMatching::isMatch(string s, string p)
   for (int i = 1; i <= sl; i++) {
     for (int j = 1; j <= pl; j++) {
       if (p[j - 1] == '*')
-        dp[i][j] = dp[i][j - 2] || isMatch(s[i - 1], p[j - 2]) && dp[i - 1][j];
+        dp[i][j] = dp[i][j - 2] || (isMatch(s[i - 1], p[j - 2]) && dp[i - 1][j]);
       else
         dp[i][j] = dp[i - 1][j - 1] && isMatch(s[i - 1], p[j - 1]);
     }
