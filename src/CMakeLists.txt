@@ -57,4 +57,5 @@ add_library(Solutions
   UniquePaths.hpp UniquePaths.cpp
   UniquePathsII.hpp UniquePathsII.cpp
   UniqueBinarySearchTrees.hpp UniqueBinarySearchTrees.cpp
+  WordBreak.hpp WordBreak.cpp
 )
