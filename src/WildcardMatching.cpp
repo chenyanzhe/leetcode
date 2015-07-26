@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 
+#if 0
 bool WildcardMatching::isMatch(string s, string p)
 {
   if (s.empty()) {
@@ -40,6 +41,33 @@ bool WildcardMatching::isMatch(string s, string p)
   }
 
   return memo[sl];
+}
+#endif
+
+bool WildcardMatching::isMatch(string s, string p)
+{
+  int ns = s.size();
+  int np = p.size();
+
+  vector<vector<bool>> dp(ns + 1, vector<bool>(np + 1, false));
+  dp[0][0] = true;
+
+  for (int i = 1; i <= ns; i++)
+    dp[i][0] = false;
+
+  for (int j = 1; j <= np; j++)
+    dp[0][j] = dp[0][j-1] && p[j-1] == '*';
+
+  for (int i = 1; i <= ns; i++) {
+    for (int j = 1; j <= np; j++) {
+      if (p[j-1] != '*')
+        dp[i][j] = dp[i-1][j-1] && isMatch(s[i-1], p[j-1]);
+      else
+        dp[i][j] = dp[i-1][j] || dp[i][j-1];
+    }
+  }
+
+  return dp[ns][np];
 }
 
 bool WildcardMatching::isMatch(char c, char p)
