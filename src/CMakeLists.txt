@@ -55,4 +55,5 @@ add_library(Solutions
   ClimbingStairs.hpp ClimbingStairs.cpp
   HouseRobber.hpp HouseRobber.cpp
   UniquePaths.hpp UniquePaths.cpp
+  UniquePathsII.hpp UniquePathsII.cpp
 )
