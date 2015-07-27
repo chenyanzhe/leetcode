@@ -60,6 +60,7 @@ add_executable(Test main.cpp
   UniquePathsIITest.cpp
   UniqueBinarySearchTreesTest.cpp
   WordBreakTest.cpp
+  MinimumPathSumTest.cpp
 )
 
 target_link_libraries(Test Solutions)
