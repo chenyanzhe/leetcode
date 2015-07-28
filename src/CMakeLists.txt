@@ -60,4 +60,5 @@ add_library(Solutions
   WordBreak.hpp WordBreak.cpp
   MinimumPathSum.hpp MinimumPathSum.cpp
   DecodeWays.hpp DecodeWays.cpp
+  WordBreakII.hpp WordBreakII.cpp
 )

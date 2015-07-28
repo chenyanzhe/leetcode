@@ -62,6 +62,7 @@ add_executable(Test main.cpp
   WordBreakTest.cpp
   MinimumPathSumTest.cpp
   DecodeWaysTest.cpp
+  WordBreakIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
