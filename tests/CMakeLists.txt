@@ -61,6 +61,7 @@ add_executable(Test main.cpp
   UniqueBinarySearchTreesTest.cpp
   WordBreakTest.cpp
   MinimumPathSumTest.cpp
+  DecodeWaysTest.cpp
 )
 
 target_link_libraries(Test Solutions)
