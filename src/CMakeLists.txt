@@ -63,4 +63,5 @@ add_library(Solutions
   WordBreakII.hpp WordBreakII.cpp
   TreeNode.hpp TreeNode.cpp
   UniqueBinarySearchTreesII.hpp UniqueBinarySearchTreesII.cpp
+  Triangle.hpp Triangle.cpp
 )

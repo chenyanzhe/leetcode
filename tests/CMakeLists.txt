@@ -65,6 +65,7 @@ add_executable(Test main.cpp
   WordBreakIITest.cpp
   TreeNodeTest.cpp
   UniqueBinarySearchTreesIITest.cpp
+  TriangleTest.cpp
 )
 
 target_link_libraries(Test Solutions)
