@@ -59,6 +59,8 @@ add_library(Solutions
   UniqueBinarySearchTrees.hpp UniqueBinarySearchTrees.cpp
   WordBreak.hpp WordBreak.cpp
   MinimumPathSum.hpp MinimumPathSum.cpp
+  DecodeWays.hpp DecodeWays.cpp
+  WordBreakII.hpp WordBreakII.cpp
   TreeNode.hpp TreeNode.cpp
   UniqueBinarySearchTreesII.hpp UniqueBinarySearchTreesII.cpp
 )
