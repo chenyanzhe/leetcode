@@ -64,4 +64,5 @@ add_library(Solutions
   TreeNode.hpp TreeNode.cpp
   UniqueBinarySearchTreesII.hpp UniqueBinarySearchTreesII.cpp
   Triangle.hpp Triangle.cpp
+  BestTimeToBuyAndSellStock.hpp BestTimeToBuyAndSellStock.cpp
 )
