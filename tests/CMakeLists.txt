@@ -67,6 +67,7 @@ add_executable(Test main.cpp
   UniqueBinarySearchTreesIITest.cpp
   TriangleTest.cpp
   BestTimeToBuyAndSellStockTest.cpp
+  MaximumProductSubarrayTest.cpp
 )
 
 target_link_libraries(Test Solutions)
