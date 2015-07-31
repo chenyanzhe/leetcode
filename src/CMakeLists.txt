@@ -66,4 +66,5 @@ add_library(Solutions
   Triangle.hpp Triangle.cpp
   BestTimeToBuyAndSellStock.hpp BestTimeToBuyAndSellStock.cpp
   MaximumProductSubarray.hpp MaximumProductSubarray.cpp
+  MaximalSquare.hpp MaximalSquare.cpp
 )

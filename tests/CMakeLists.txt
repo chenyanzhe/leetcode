@@ -68,6 +68,7 @@ add_executable(Test main.cpp
   TriangleTest.cpp
   BestTimeToBuyAndSellStockTest.cpp
   MaximumProductSubarrayTest.cpp
+  MaximalSquareTest.cpp
 )
 
 target_link_libraries(Test Solutions)
