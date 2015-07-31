@@ -67,6 +67,7 @@ add_executable(Test main.cpp
   UniqueBinarySearchTreesIITest.cpp
   TriangleTest.cpp
   BestTimeToBuyAndSellStockTest.cpp
+  HouseRobberIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
