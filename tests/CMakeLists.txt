@@ -67,6 +67,8 @@ add_executable(Test main.cpp
   UniqueBinarySearchTreesIITest.cpp
   TriangleTest.cpp
   BestTimeToBuyAndSellStockTest.cpp
+  MaximumProductSubarrayTest.cpp
+  MaximalSquareTest.cpp
   HouseRobberIITest.cpp
 )
 
