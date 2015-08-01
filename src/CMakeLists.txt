@@ -68,4 +68,5 @@ add_library(Solutions
   MaximumProductSubarray.hpp MaximumProductSubarray.cpp
   MaximalSquare.hpp MaximalSquare.cpp
   HouseRobberII.hpp HouseRobberII.cpp
+  EditDistance.hpp EditDistance.cpp
 )

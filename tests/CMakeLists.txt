@@ -70,6 +70,7 @@ add_executable(Test main.cpp
   MaximumProductSubarrayTest.cpp
   MaximalSquareTest.cpp
   HouseRobberIITest.cpp
+  EditDistanceTest.cpp
 )
 
 target_link_libraries(Test Solutions)
