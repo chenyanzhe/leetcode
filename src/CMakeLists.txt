@@ -69,4 +69,5 @@ add_library(Solutions
   MaximalSquare.hpp MaximalSquare.cpp
   HouseRobberII.hpp HouseRobberII.cpp
   EditDistance.hpp EditDistance.cpp
+  ScrambleString.hpp ScrambleString.cpp
 )

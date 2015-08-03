@@ -71,6 +71,7 @@ add_executable(Test main.cpp
   MaximalSquareTest.cpp
   HouseRobberIITest.cpp
   EditDistanceTest.cpp
+  ScrambleStringTest.cpp
 )
 
 target_link_libraries(Test Solutions)
