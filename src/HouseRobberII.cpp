@@ -20,7 +20,7 @@ int HouseRobberII::helper(vector<int>& nums, int a, int b)
   int sz = b - a + 1;
   vector<int> dp(sz, 0);
   dp[0] = nums[a];
-  dp[1] = max(nums[a], nums[a + 1]); 
+  dp[1] = max(nums[a], nums[a + 1]);
 
   for (int i = 2; i < sz; i++) {
     dp[i] = max(dp[i - 2] + nums[a + i], dp[i - 1]);
