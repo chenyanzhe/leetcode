@@ -70,4 +70,5 @@ add_library(Solutions
   HouseRobberII.hpp HouseRobberII.cpp
   EditDistance.hpp EditDistance.cpp
   ScrambleString.hpp ScrambleString.cpp
+  DistinctSubsequences.hpp DistinctSubsequences.cpp
 )

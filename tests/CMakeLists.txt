@@ -72,6 +72,7 @@ add_executable(Test main.cpp
   HouseRobberIITest.cpp
   EditDistanceTest.cpp
   ScrambleStringTest.cpp
+  DistinctSubsequencesTest.cpp
 )
 
 target_link_libraries(Test Solutions)
