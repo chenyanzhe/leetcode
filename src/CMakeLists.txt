@@ -71,4 +71,5 @@ add_library(Solutions
   EditDistance.hpp EditDistance.cpp
   ScrambleString.hpp ScrambleString.cpp
   DistinctSubsequences.hpp DistinctSubsequences.cpp
+  WordSearch.hpp WordSearch.cpp
 )

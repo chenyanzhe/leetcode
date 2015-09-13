@@ -73,6 +73,7 @@ add_executable(Test main.cpp
   EditDistanceTest.cpp
   ScrambleStringTest.cpp
   DistinctSubsequencesTest.cpp
+  WordSearchTest.cpp
 )
 
 target_link_libraries(Test Solutions)
