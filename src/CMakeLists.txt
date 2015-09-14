@@ -72,4 +72,5 @@ add_library(Solutions
   ScrambleString.hpp ScrambleString.cpp
   DistinctSubsequences.hpp DistinctSubsequences.cpp
   WordSearch.hpp WordSearch.cpp
+  SpiralMatrix.hpp SpiralMatrix.cpp
 )
