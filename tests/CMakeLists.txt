@@ -75,6 +75,7 @@ add_executable(Test main.cpp
   DistinctSubsequencesTest.cpp
   WordSearchTest.cpp
   SpiralMatrixTest.cpp
+  SpiralMatrixIITest.cpp
 )
 
 target_link_libraries(Test Solutions)

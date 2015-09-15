@@ -73,4 +73,5 @@ add_library(Solutions
   DistinctSubsequences.hpp DistinctSubsequences.cpp
   WordSearch.hpp WordSearch.cpp
   SpiralMatrix.hpp SpiralMatrix.cpp
+  SpiralMatrixII.hpp SpiralMatrixII.cpp
 )
