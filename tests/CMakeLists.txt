@@ -76,6 +76,7 @@ add_executable(Test main.cpp
   WordSearchTest.cpp
   SpiralMatrixTest.cpp
   SpiralMatrixIITest.cpp
+  JumpGameTest.cpp
 )
 
 target_link_libraries(Test Solutions)

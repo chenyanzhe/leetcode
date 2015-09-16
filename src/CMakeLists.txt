@@ -74,4 +74,5 @@ add_library(Solutions
   WordSearch.hpp WordSearch.cpp
   SpiralMatrix.hpp SpiralMatrix.cpp
   SpiralMatrixII.hpp SpiralMatrixII.cpp
+  JumpGame.hpp JumpGame.cpp
 )
