@@ -75,4 +75,5 @@ add_library(Solutions
   SpiralMatrix.hpp SpiralMatrix.cpp
   SpiralMatrixII.hpp SpiralMatrixII.cpp
   JumpGame.hpp JumpGame.cpp
+  GrayCode.hpp GrayCode.cpp
 )
