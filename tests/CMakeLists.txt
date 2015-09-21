@@ -80,6 +80,7 @@ add_executable(Test main.cpp
   GrayCodeTest.cpp
   MergeIntervalsTest.cpp
   InsertIntervalTest.cpp
+  LengthOfLastWordTest.cpp
 )
 
 target_link_libraries(Test Solutions)

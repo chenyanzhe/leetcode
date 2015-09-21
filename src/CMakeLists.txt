@@ -78,4 +78,5 @@ add_library(Solutions
   GrayCode.hpp GrayCode.cpp
   MergeIntervals.hpp MergeIntervals.cpp
   InsertInterval.hpp InsertInterval.cpp
+  LengthOfLastWord.hpp LengthOfLastWord.cpp
 )
