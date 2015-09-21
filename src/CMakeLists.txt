@@ -76,4 +76,5 @@ add_library(Solutions
   SpiralMatrixII.hpp SpiralMatrixII.cpp
   JumpGame.hpp JumpGame.cpp
   GrayCode.hpp GrayCode.cpp
+  MergeIntervals.hpp MergeIntervals.cpp
 )
