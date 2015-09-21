@@ -79,6 +79,7 @@ add_executable(Test main.cpp
   JumpGameTest.cpp
   GrayCodeTest.cpp
   MergeIntervalsTest.cpp
+  InsertIntervalTest.cpp
 )
 
 target_link_libraries(Test Solutions)

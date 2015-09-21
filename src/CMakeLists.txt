@@ -77,4 +77,5 @@ add_library(Solutions
   JumpGame.hpp JumpGame.cpp
   GrayCode.hpp GrayCode.cpp
   MergeIntervals.hpp MergeIntervals.cpp
+  InsertInterval.hpp InsertInterval.cpp
 )
