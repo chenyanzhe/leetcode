@@ -81,4 +81,5 @@ add_library(Solutions
   LengthOfLastWord.hpp LengthOfLastWord.cpp
   PermutationSequence.hpp PermutationSequence.cpp
   PlusOne.hpp PlusOne.cpp
+  SqrtX.hpp SqrtX.cpp
 )

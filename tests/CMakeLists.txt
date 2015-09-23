@@ -83,6 +83,7 @@ add_executable(Test main.cpp
   LengthOfLastWordTest.cpp
   PermutationSequenceTest.cpp
   PlusOneTest.cpp
+  SqrtXTest.cpp
 )
 
 target_link_libraries(Test Solutions)
