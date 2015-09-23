@@ -82,6 +82,7 @@ add_executable(Test main.cpp
   InsertIntervalTest.cpp
   LengthOfLastWordTest.cpp
   PermutationSequenceTest.cpp
+  PlusOneTest.cpp
 )
 
 target_link_libraries(Test Solutions)

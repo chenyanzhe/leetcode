@@ -80,4 +80,5 @@ add_library(Solutions
   InsertInterval.hpp InsertInterval.cpp
   LengthOfLastWord.hpp LengthOfLastWord.cpp
   PermutationSequence.hpp PermutationSequence.cpp
+  PlusOne.hpp PlusOne.cpp
 )
