@@ -79,4 +79,5 @@ add_library(Solutions
   MergeIntervals.hpp MergeIntervals.cpp
   InsertInterval.hpp InsertInterval.cpp
   LengthOfLastWord.hpp LengthOfLastWord.cpp
+  PermutationSequence.hpp PermutationSequence.cpp
 )
