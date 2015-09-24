@@ -86,6 +86,7 @@ add_executable(Test main.cpp
   SqrtXTest.cpp
   RotateListTest.cpp
   RemoveDuplicatesFromSortedListTest.cpp
+  SortColorsTest.cpp
 )
 
 target_link_libraries(Test Solutions)

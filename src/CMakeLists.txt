@@ -84,4 +84,5 @@ add_library(Solutions
   SqrtX.hpp SqrtX.cpp
   RotateList.hpp RotateList.cpp
   RemoveDuplicatesFromSortedList.hpp RemoveDuplicatesFromSortedList.cpp
+  SortColors.hpp SortColors.cpp
 )
