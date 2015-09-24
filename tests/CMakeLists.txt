@@ -84,6 +84,7 @@ add_executable(Test main.cpp
   PermutationSequenceTest.cpp
   PlusOneTest.cpp
   SqrtXTest.cpp
+  RotateListTest.cpp
 )
 
 target_link_libraries(Test Solutions)

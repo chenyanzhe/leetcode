@@ -82,4 +82,5 @@ add_library(Solutions
   PermutationSequence.hpp PermutationSequence.cpp
   PlusOne.hpp PlusOne.cpp
   SqrtX.hpp SqrtX.cpp
+  RotateList.hpp RotateList.cpp
 )
