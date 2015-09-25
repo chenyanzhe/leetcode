@@ -85,4 +85,5 @@ add_library(Solutions
   RotateList.hpp RotateList.cpp
   RemoveDuplicatesFromSortedList.hpp RemoveDuplicatesFromSortedList.cpp
   SortColors.hpp SortColors.cpp
+  AddBinary.hpp AddBinary.cpp
 )

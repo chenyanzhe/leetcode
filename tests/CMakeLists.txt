@@ -87,6 +87,7 @@ add_executable(Test main.cpp
   RotateListTest.cpp
   RemoveDuplicatesFromSortedListTest.cpp
   SortColorsTest.cpp
+  AddBinaryTest.cpp
 )
 
 target_link_libraries(Test Solutions)
