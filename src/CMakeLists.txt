@@ -87,4 +87,5 @@ add_library(Solutions
   SortColors.hpp SortColors.cpp
   AddBinary.hpp AddBinary.cpp
   SimplifyPath.hpp SimplifyPath.cpp
+  SetMatrixZeroes.hpp SetMatrixZeroes.cpp
 )

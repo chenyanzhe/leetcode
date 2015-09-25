@@ -89,6 +89,7 @@ add_executable(Test main.cpp
   SortColorsTest.cpp
   AddBinaryTest.cpp
   SimplifyPathTest.cpp
+  SetMatrixZeroesTest.cpp
 )
 
 target_link_libraries(Test Solutions)
