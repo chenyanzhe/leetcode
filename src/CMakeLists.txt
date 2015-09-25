@@ -86,4 +86,5 @@ add_library(Solutions
   RemoveDuplicatesFromSortedList.hpp RemoveDuplicatesFromSortedList.cpp
   SortColors.hpp SortColors.cpp
   AddBinary.hpp AddBinary.cpp
+  SimplifyPath.hpp SimplifyPath.cpp
 )
