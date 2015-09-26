@@ -88,4 +88,5 @@ add_library(Solutions
   AddBinary.hpp AddBinary.cpp
   SimplifyPath.hpp SimplifyPath.cpp
   SetMatrixZeroes.hpp SetMatrixZeroes.cpp
+  SearchA2DMatrix.hpp SearchA2DMatrix.cpp
 )
