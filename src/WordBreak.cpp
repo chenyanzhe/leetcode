@@ -1,7 +1,6 @@
 #include "WordBreak.hpp"
 
 #include <vector>
-#include <iostream>
 using namespace std;
 
 bool WordBreak::wordBreak(string s, unordered_set<string>& wordDict)

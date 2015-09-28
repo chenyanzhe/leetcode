@@ -91,6 +91,7 @@ add_executable(Test main.cpp
   SimplifyPathTest.cpp
   SetMatrixZeroesTest.cpp
   SearchA2DMatrixTest.cpp
+  CombinationsTest.cpp
 )
 
 target_link_libraries(Test Solutions)

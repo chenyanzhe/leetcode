@@ -1,6 +1,4 @@
 #include "SpiralMatrixII.hpp"
-#include <iostream>
-using namespace std;
 
 vector<vector<int>> SpiralMatrixII::generateMatrix(int n) {
 	vector<vector<int>> ret(n, vector<int>(n, 0));
