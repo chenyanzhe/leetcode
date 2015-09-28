@@ -92,6 +92,7 @@ add_executable(Test main.cpp
   SetMatrixZeroesTest.cpp
   SearchA2DMatrixTest.cpp
   CombinationsTest.cpp
+  MergeSortedArrayTest.cpp
 )
 
 target_link_libraries(Test Solutions)

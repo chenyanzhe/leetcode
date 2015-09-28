@@ -90,4 +90,5 @@ add_library(Solutions
   SetMatrixZeroes.hpp SetMatrixZeroes.cpp
   SearchA2DMatrix.hpp SearchA2DMatrix.cpp
   Combinations.hpp Combinations.cpp
+  MergeSortedArray.hpp MergeSortedArray.cpp
 )
