@@ -93,4 +93,5 @@ add_library(Solutions
   MergeSortedArray.hpp MergeSortedArray.cpp
   Subsets.hpp Subsets.cpp
   RemoveDuplicatesFromSortedArrayII.hpp RemoveDuplicatesFromSortedArrayII.cpp
+  SameTree.hpp SameTree.cpp
 )

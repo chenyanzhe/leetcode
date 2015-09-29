@@ -95,6 +95,7 @@ add_executable(Test main.cpp
   MergeSortedArrayTest.cpp
   SubsetsTest.cpp
   RemoveDuplicatesFromSortedArrayIITest.cpp
+  SameTreeTest.cpp
 )
 
 target_link_libraries(Test Solutions)
