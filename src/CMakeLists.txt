@@ -95,4 +95,5 @@ add_library(Solutions
   RemoveDuplicatesFromSortedArrayII.hpp RemoveDuplicatesFromSortedArrayII.cpp
   SameTree.hpp SameTree.cpp
   SearchinRotatedSortedArrayII.hpp SearchinRotatedSortedArrayII.cpp
+  RemoveDuplicatesFromSortedListII.hpp RemoveDuplicatesFromSortedListII.cpp
 )
