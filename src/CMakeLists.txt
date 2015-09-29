@@ -92,4 +92,5 @@ add_library(Solutions
   Combinations.hpp Combinations.cpp
   MergeSortedArray.hpp MergeSortedArray.cpp
   Subsets.hpp Subsets.cpp
+  RemoveDuplicatesFromSortedArrayII.hpp RemoveDuplicatesFromSortedArrayII.cpp
 )
