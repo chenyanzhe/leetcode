@@ -96,4 +96,5 @@ add_library(Solutions
   SameTree.hpp SameTree.cpp
   SearchinRotatedSortedArrayII.hpp SearchinRotatedSortedArrayII.cpp
   RemoveDuplicatesFromSortedListII.hpp RemoveDuplicatesFromSortedListII.cpp
+  BinaryTreeLevelOrderTraversal.hpp BinaryTreeLevelOrderTraversal.cpp
 )

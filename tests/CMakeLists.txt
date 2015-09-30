@@ -98,6 +98,7 @@ add_executable(Test main.cpp
   SameTreeTest.cpp
   SearchinRotatedSortedArrayIITest.cpp
   RemoveDuplicatesFromSortedListIITest.cpp
+  BinaryTreeLevelOrderTraversalTest.cpp
 )
 
 target_link_libraries(Test Solutions)
