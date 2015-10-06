@@ -98,4 +98,6 @@ add_library(Solutions
   RemoveDuplicatesFromSortedListII.hpp RemoveDuplicatesFromSortedListII.cpp
   BinaryTreeLevelOrderTraversal.hpp BinaryTreeLevelOrderTraversal.cpp
   BinaryTreeLevelOrderTraversalII.hpp BinaryTreeLevelOrderTraversalII.cpp
+  LargestRectangleInHistogram.hpp LargestRectangleInHistogram.cpp
+  SegmentTreeMinimumRangeQuery.hpp SegmentTreeMinimumRangeQuery.cpp
 )

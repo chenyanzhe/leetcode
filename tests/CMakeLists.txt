@@ -100,6 +100,8 @@ add_executable(Test main.cpp
   RemoveDuplicatesFromSortedListIITest.cpp
   BinaryTreeLevelOrderTraversalTest.cpp
   BinaryTreeLevelOrderTraversalIITest.cpp
+  LargestRectangleInHistogramTest.cpp
+  SegmentTreeMinimumRangeQueryTest.cpp
 )
 
 target_link_libraries(Test Solutions)
