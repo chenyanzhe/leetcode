@@ -14,6 +14,11 @@ TEST_CASE("Largest Rectangle in Histogram") {
 		vector<int> height;
 		for (int i = 0; i < 20000; i++)
 			height.push_back(i);
-		REQUIRE(s.largestRectangleArea(height) == 100000000);
+		REQUIRE(s.largestRectangleArea(height) == 10000 * 10000);
+	}
+
+	SECTION("Corner case") {
+		vector<int> height {2, 0, 2};
+		REQUIRE(s.largestRectangleArea(height) == 2);
 	}
 }
