@@ -100,4 +100,5 @@ add_library(Solutions
   BinaryTreeLevelOrderTraversalII.hpp BinaryTreeLevelOrderTraversalII.cpp
   LargestRectangleInHistogram.hpp LargestRectangleInHistogram.cpp
   SegmentTreeMinimumRangeQuery.hpp SegmentTreeMinimumRangeQuery.cpp
+  SubsetsII.hpp SubsetsII.cpp
 )
