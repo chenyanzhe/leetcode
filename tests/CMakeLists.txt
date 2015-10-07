@@ -107,6 +107,7 @@ add_executable(Test main.cpp
   MinimumWindowSubstringTest.cpp
   MaximalRectangleTest.cpp
   PartitionListTest.cpp
+  ReverseLinkedListIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
