@@ -102,4 +102,5 @@ add_library(Solutions
   SegmentTreeMinimumRangeQuery.hpp SegmentTreeMinimumRangeQuery.cpp
   SubsetsII.hpp SubsetsII.cpp
   BinaryTreeInorderTraversal.hpp BinaryTreeInorderTraversal.cpp
+  MinimumWindowSubstring.hpp MinimumWindowSubstring.cpp
 )

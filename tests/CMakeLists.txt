@@ -104,6 +104,7 @@ add_executable(Test main.cpp
   SegmentTreeMinimumRangeQueryTest.cpp
   SubsetsIITest.cpp
   BinaryTreeInorderTraversalTest.cpp
+  MinimumWindowSubstringTest.cpp
 )
 
 target_link_libraries(Test Solutions)
