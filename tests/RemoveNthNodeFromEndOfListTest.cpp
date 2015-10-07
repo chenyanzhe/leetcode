@@ -50,9 +50,5 @@ TEST_CASE("Remove Nth Node From End Of List") {
     REQUIRE(result == nullptr);
   }
 
-  while (h != nullptr) {
-    ListNode *n = h;
-    h = h->next;
-    delete n;
-  }
+  list_free(h);
 }

@@ -1,11 +1,7 @@
 #ifndef ADD_TWO_NUMBERS_HPP_
 #define ADD_TWO_NUMBERS_HPP_
 
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
-};
+#include "ListNode.hpp"
 
 class AddTwoNumbers {
 public:

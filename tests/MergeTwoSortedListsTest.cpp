@@ -75,10 +75,5 @@ TEST_CASE("Merge Two Sorted Lists") {
     REQUIRE(i == nullptr);
   }
 
-  ListNode *i = nullptr;
-  while (h != nullptr) {
-    i = h;
-    h = h->next;
-    delete i;
-  }
+  list_free(h);
 }

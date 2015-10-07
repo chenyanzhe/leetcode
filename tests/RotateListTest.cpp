@@ -29,6 +29,5 @@ TEST_CASE("Rotate List") {
     	REQUIRE(item == nullptr);
 	}
 
-	ListNode* item = nullptr;
-	while (l != nullptr) { item = l; l = l->next; delete item; }
+	list_free(l);
 }

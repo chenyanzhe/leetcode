@@ -1,12 +1,7 @@
 #ifndef MERGE_TWO_SORTED_LISTS_HPP_
 #define MERGE_TWO_SORTED_LISTS_HPP_
 
-// Definition for singly-linked list.
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
-};
+#include "ListNode.hpp"
 
 class MergeTwoSortedLists {
 public:

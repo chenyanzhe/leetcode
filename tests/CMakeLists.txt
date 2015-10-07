@@ -106,6 +106,7 @@ add_executable(Test main.cpp
   BinaryTreeInorderTraversalTest.cpp
   MinimumWindowSubstringTest.cpp
   MaximalRectangleTest.cpp
+  PartitionListTest.cpp
 )
 
 target_link_libraries(Test Solutions)

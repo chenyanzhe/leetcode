@@ -64,4 +64,6 @@ TEST_CASE("Merge K Sorted Lists")
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 5); n = n->next;
     REQUIRE(n == nullptr);
   }
+
+  list_free(result);
 }

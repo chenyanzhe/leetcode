@@ -1,6 +1,7 @@
 #include "catch.hpp"
 
 #include "RemoveDuplicatesFromSortedList.hpp"
+#include "ListNode.hpp"
 
 TEST_CASE("Remove Duplicates from Sorted List") {
 	RemoveDuplicatesFromSortedList s;
@@ -37,8 +38,6 @@ TEST_CASE("Remove Duplicates from Sorted List") {
     	REQUIRE(item == nullptr);
 	}
 
-	// deallocate all lists
-	ListNode* item = nullptr;
-	while (l1 != nullptr) { item = l1; l1 = l1->next; delete item; }
-	while (l2 != nullptr) { item = l2; l2 = l2->next; delete item; }
+	list_free(l1);
+	list_free(l2);
 }

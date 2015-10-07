@@ -104,4 +104,6 @@ add_library(Solutions
   BinaryTreeInorderTraversal.hpp BinaryTreeInorderTraversal.cpp
   MinimumWindowSubstring.hpp MinimumWindowSubstring.cpp
   MaximalRectangle.hpp MaximalRectangle.cpp
+  PartitionList.hpp PartitionList.cpp
+  ListNode.hpp ListNode.cpp
 )

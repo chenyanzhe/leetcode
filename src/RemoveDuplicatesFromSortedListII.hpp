@@ -1,11 +1,7 @@
 #ifndef REMOVE_DUPLICATES_FROM_SORTED_LIST_II_HPP_
 #define REMOVE_DUPLICATES_FROM_SORTED_LIST_II_HPP_
 
-struct ListNode {
-	int val;
-	ListNode *next;
-	ListNode(int x) : val(x), next(nullptr) {}
-};
+#include "ListNode.hpp"
 
 class RemoveDuplicatesFromSortedListII {
 public:

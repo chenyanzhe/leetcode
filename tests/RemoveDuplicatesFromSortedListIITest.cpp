@@ -65,7 +65,5 @@ TEST_CASE("Remove Duplicates from Sorted List II") {
     	REQUIRE(item == nullptr);
 	}
 
-	// deallocate the list
-	ListNode* item = nullptr;
-	while (l != nullptr) { item = l; l = l->next; delete item; }
+	list_free(l);
 }

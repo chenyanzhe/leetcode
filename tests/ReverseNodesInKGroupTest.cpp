@@ -93,9 +93,5 @@ TEST_CASE("Reverse Nodes In K Group") {
     REQUIRE(s.reverseKGroup(head, 0) == nullptr);
   }
 
-  while (result) {
-    ListNode* n = result;
-    result = result->next;
-    delete n;
-  }
+  list_free(result);
 }

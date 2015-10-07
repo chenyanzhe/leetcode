@@ -72,10 +72,5 @@ TEST_CASE("Swap Nodes In Pairs") {
     REQUIRE(n == nullptr);
   }
 
-  ListNode* n = nullptr;
-  while (result) {
-    n = result;
-    result = result->next;
-    delete n;
-  }
+  list_free(result);
 }
