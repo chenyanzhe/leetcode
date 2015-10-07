@@ -103,4 +103,5 @@ add_library(Solutions
   SubsetsII.hpp SubsetsII.cpp
   BinaryTreeInorderTraversal.hpp BinaryTreeInorderTraversal.cpp
   MinimumWindowSubstring.hpp MinimumWindowSubstring.cpp
+  MaximalRectangle.hpp MaximalRectangle.cpp
 )
