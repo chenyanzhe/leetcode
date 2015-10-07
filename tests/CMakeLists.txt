@@ -108,6 +108,7 @@ add_executable(Test main.cpp
   MaximalRectangleTest.cpp
   PartitionListTest.cpp
   ReverseLinkedListIITest.cpp
+  RestoreIPAddressesTest.cpp
 )
 
 target_link_libraries(Test Solutions)

@@ -107,4 +107,5 @@ add_library(Solutions
   PartitionList.hpp PartitionList.cpp
   ListNode.hpp ListNode.cpp
   ReverseLinkedListII.hpp ReverseLinkedListII.cpp
+  RestoreIPAddresses.hpp RestoreIPAddresses.cpp
 )
