@@ -5,10 +5,12 @@
 using namespace std;
 
 class Subsets {
+private:
+	vector<vector<int>> res;
 public:
 	vector<vector<int>> subsets(vector<int>& nums);
 private:
-	void helper(vector<vector<int>> &res, const vector<int>& nums, int k);
+	void dfs(vector<int>& nums, int i, vector<int>& node);
 };
 
 #endif // SUBSETS_HPP_

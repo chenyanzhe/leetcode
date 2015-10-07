@@ -5,21 +5,24 @@ using namespace std;
 
 vector<vector<int>> Subsets::subsets(vector<int>& nums)
 {
-	vector<vector<int>> res {{}};
 	sort(nums.begin(), nums.end());
-	helper(res, nums, 0);
+	vector<int> node;
+	dfs(nums, 0, node);
 	return res;
 }
 
-void Subsets::helper(vector<vector<int>> &res, const vector<int>& nums, int k)
+void Subsets::dfs(vector<int>& nums, int i, vector<int>& node)
 {
-	if (k == nums.size()) return;
+	if (i == nums.size()) {
+		res.push_back(node);
+		return;
+	}
 
-	vector<vector<int>> addon = res;
-	for (auto &sub : addon)
-		sub.push_back(nums[k]);
-	for (auto &sub : addon)
-		res.push_back(sub);
+	// choose nums[i]
+	node.push_back(nums[i]);
+	dfs(nums, i + 1, node);
 
-	helper(res, nums, k + 1);
+	// don't choose nums[i]
+	node.pop_back();
+	dfs(nums, i + 1, node);
 }
