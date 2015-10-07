@@ -103,6 +103,7 @@ add_executable(Test main.cpp
   LargestRectangleInHistogramTest.cpp
   SegmentTreeMinimumRangeQueryTest.cpp
   SubsetsIITest.cpp
+  BinaryTreeInorderTraversalTest.cpp
 )
 
 target_link_libraries(Test Solutions)
