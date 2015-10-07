@@ -110,6 +110,7 @@ add_executable(Test main.cpp
   ReverseLinkedListIITest.cpp
   RestoreIPAddressesTest.cpp
   InterleavingStringTest.cpp
+  SymmetricTreeTest.cpp
 )
 
 target_link_libraries(Test Solutions)

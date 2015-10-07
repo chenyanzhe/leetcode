@@ -109,4 +109,5 @@ add_library(Solutions
   ReverseLinkedListII.hpp ReverseLinkedListII.cpp
   RestoreIPAddresses.hpp RestoreIPAddresses.cpp
   InterleavingString.hpp InterleavingString.cpp
+  SymmetricTree.hpp SymmetricTree.cpp
 )
