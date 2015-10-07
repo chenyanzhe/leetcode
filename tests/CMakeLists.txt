@@ -109,6 +109,7 @@ add_executable(Test main.cpp
   PartitionListTest.cpp
   ReverseLinkedListIITest.cpp
   RestoreIPAddressesTest.cpp
+  InterleavingStringTest.cpp
 )
 
 target_link_libraries(Test Solutions)
