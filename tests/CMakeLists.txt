@@ -112,6 +112,7 @@ add_executable(Test main.cpp
   InterleavingStringTest.cpp
   SymmetricTreeTest.cpp
   ValidateBinarySearchTreeTest.cpp
+  RecoverBinarySearchTreeTest.cpp
 )
 
 target_link_libraries(Test Solutions)

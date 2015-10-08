@@ -111,4 +111,5 @@ add_library(Solutions
   InterleavingString.hpp InterleavingString.cpp
   SymmetricTree.hpp SymmetricTree.cpp
   ValidateBinarySearchTree.hpp ValidateBinarySearchTree.cpp
+  RecoverBinarySearchTree.hpp RecoverBinarySearchTree.cpp
 )
