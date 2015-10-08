@@ -111,6 +111,7 @@ add_executable(Test main.cpp
   RestoreIPAddressesTest.cpp
   InterleavingStringTest.cpp
   SymmetricTreeTest.cpp
+  ValidateBinarySearchTreeTest.cpp
 )
 
 target_link_libraries(Test Solutions)

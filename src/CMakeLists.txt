@@ -110,4 +110,5 @@ add_library(Solutions
   RestoreIPAddresses.hpp RestoreIPAddresses.cpp
   InterleavingString.hpp InterleavingString.cpp
   SymmetricTree.hpp SymmetricTree.cpp
+  ValidateBinarySearchTree.hpp ValidateBinarySearchTree.cpp
 )
