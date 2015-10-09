@@ -113,4 +113,5 @@ add_library(Solutions
   ValidateBinarySearchTree.hpp ValidateBinarySearchTree.cpp
   RecoverBinarySearchTree.hpp RecoverBinarySearchTree.cpp
   MaximumDepthOfBinaryTree.hpp MaximumDepthOfBinaryTree.cpp
+  BinaryTreeZigzagLevelOrderTraversal.hpp BinaryTreeZigzagLevelOrderTraversal.cpp
 )
