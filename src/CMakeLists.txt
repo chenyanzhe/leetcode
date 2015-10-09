@@ -112,4 +112,5 @@ add_library(Solutions
   SymmetricTree.hpp SymmetricTree.cpp
   ValidateBinarySearchTree.hpp ValidateBinarySearchTree.cpp
   RecoverBinarySearchTree.hpp RecoverBinarySearchTree.cpp
+  MaximumDepthOfBinaryTree.hpp MaximumDepthOfBinaryTree.cpp
 )

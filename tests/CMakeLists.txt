@@ -113,6 +113,7 @@ add_executable(Test main.cpp
   SymmetricTreeTest.cpp
   ValidateBinarySearchTreeTest.cpp
   RecoverBinarySearchTreeTest.cpp
+  MaximumDepthOfBinaryTreeTest.cpp
 )
 
 target_link_libraries(Test Solutions)
