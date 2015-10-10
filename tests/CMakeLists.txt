@@ -115,6 +115,7 @@ add_executable(Test main.cpp
   RecoverBinarySearchTreeTest.cpp
   MaximumDepthOfBinaryTreeTest.cpp
   BinaryTreeZigzagLevelOrderTraversalTest.cpp
+  ConstructBinaryTreeFromPreorderAndInorderTraversalTest.cpp
 )
 
 target_link_libraries(Test Solutions)
