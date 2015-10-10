@@ -116,4 +116,5 @@ add_library(Solutions
   BinaryTreeZigzagLevelOrderTraversal.hpp BinaryTreeZigzagLevelOrderTraversal.cpp
   ConstructBinaryTreeFromPreorderAndInorderTraversal.hpp ConstructBinaryTreeFromPreorderAndInorderTraversal.cpp
   ConstructBinaryTreeFromInorderAndPostorderTraversal.hpp ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp
+  ConvertSortedArrayToBinarySearchTree.hpp ConvertSortedArrayToBinarySearchTree.cpp
 )
