@@ -118,6 +118,7 @@ add_executable(Test main.cpp
   ConstructBinaryTreeFromPreorderAndInorderTraversalTest.cpp
   ConstructBinaryTreeFromInorderAndPostorderTraversalTest.cpp
   ConvertSortedArrayToBinarySearchTreeTest.cpp
+  ConvertSortedListToBinarySearchTreeTest.cpp
 )
 
 target_link_libraries(Test Solutions)

@@ -117,4 +117,5 @@ add_library(Solutions
   ConstructBinaryTreeFromPreorderAndInorderTraversal.hpp ConstructBinaryTreeFromPreorderAndInorderTraversal.cpp
   ConstructBinaryTreeFromInorderAndPostorderTraversal.hpp ConstructBinaryTreeFromInorderAndPostorderTraversal.cpp
   ConvertSortedArrayToBinarySearchTree.hpp ConvertSortedArrayToBinarySearchTree.cpp
+  ConvertSortedListToBinarySearchTree.hpp ConvertSortedListToBinarySearchTree.cpp
 )

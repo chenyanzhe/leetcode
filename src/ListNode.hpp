@@ -10,6 +10,7 @@ struct ListNode {
   ListNode(int x) : val(x), next(nullptr) {}
 };
 
+int list_len(ListNode *head);
 string list_serialize(ListNode *head);
 void list_free(ListNode *head);
 
