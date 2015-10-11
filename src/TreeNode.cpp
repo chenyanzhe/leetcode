@@ -1,7 +1,18 @@
 #include "TreeNode.hpp"
 
 #include <queue>
+#include <algorithm>
 using namespace std;
+
+int tree_height(TreeNode *root)
+{
+  if (root == nullptr) return 0;
+
+  int left_height = tree_height(root->left);
+  int right_height = tree_height(root->right);
+
+  return max(left_height, right_height) + 1;
+}
 
 static void tree_serialize_helper(TreeNode *p, string &ans)
 {

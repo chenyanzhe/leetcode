@@ -12,7 +12,7 @@ struct TreeNode {
   TreeNode(int x, TreeNode *l, TreeNode *r) : val(x), left(l), right(r) {}
 };
 
-// debug only
+int tree_height(TreeNode *root);
 string tree_serialize(TreeNode *root);
 void tree_free(TreeNode *root);
 
