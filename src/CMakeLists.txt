@@ -120,4 +120,5 @@ add_library(Solutions
   ConvertSortedListToBinarySearchTree.hpp ConvertSortedListToBinarySearchTree.cpp
   BalancedBinaryTree.hpp BalancedBinaryTree.cpp
   MinimumDepthOfBinaryTree.hpp MinimumDepthOfBinaryTree.cpp
+  PathSum.hpp PathSum.cpp
 )
