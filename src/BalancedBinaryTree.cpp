@@ -1,16 +1,34 @@
 #include "BalancedBinaryTree.hpp"
 
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+
 bool BalancedBinaryTree::isBalanced(TreeNode* root)
 {
 	if (root == nullptr) return true;
 
-	int leftHeight = tree_height(root->left);
-	int rightHeight = tree_height(root->right);
+	int leftHeight = depth(root->left);
+	int rightHeight = depth(root->right);
 
-	int delta = leftHeight - rightHeight;
+	if (leftHeight == -1 || rightHeight == -1)
+		return false;
 
-	bool leftIsBalanced = isBalanced(root->left);
-	bool rightIsBalanced = isBalanced(root->right);
+	return abs(leftHeight - rightHeight) <= 1;
+}
 
-	return leftIsBalanced && rightIsBalanced && -1 <= delta && delta <= 1;
+int BalancedBinaryTree::depth(TreeNode* root)
+{
+	if (root == nullptr) return 0;
+
+	int leftHeight = depth(root->left);
+	int rightHeight = depth(root->right);
+
+	if (leftHeight == -1 || rightHeight == -1)
+		return -1;
+
+	if (abs(leftHeight - rightHeight) > 1)
+		return -1;
+
+	return max(leftHeight, rightHeight) + 1;
 }
