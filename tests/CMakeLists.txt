@@ -121,6 +121,7 @@ add_executable(Test main.cpp
   ConvertSortedListToBinarySearchTreeTest.cpp
   MinimumDepthOfBinaryTreeTest.cpp
   PathSumTest.cpp
+  PathSumIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
