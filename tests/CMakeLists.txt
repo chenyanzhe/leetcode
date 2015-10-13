@@ -123,6 +123,7 @@ add_executable(Test main.cpp
   PathSumTest.cpp
   PathSumIITest.cpp
   FlattenBinaryTreeToLinkedListTest.cpp
+  PopulatingNextRightPointersInEachNodeTest.cpp
 )
 
 target_link_libraries(Test Solutions)
