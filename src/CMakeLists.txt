@@ -122,4 +122,5 @@ add_library(Solutions
   MinimumDepthOfBinaryTree.hpp MinimumDepthOfBinaryTree.cpp
   PathSum.hpp PathSum.cpp
   PathSumII.hpp PathSumII.cpp
+  FlattenBinaryTreeToLinkedList.hpp FlattenBinaryTreeToLinkedList.cpp
 )

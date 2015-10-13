@@ -122,6 +122,7 @@ add_executable(Test main.cpp
   MinimumDepthOfBinaryTreeTest.cpp
   PathSumTest.cpp
   PathSumIITest.cpp
+  FlattenBinaryTreeToLinkedListTest.cpp
 )
 
 target_link_libraries(Test Solutions)
