@@ -124,4 +124,5 @@ add_library(Solutions
   PathSumII.hpp PathSumII.cpp
   FlattenBinaryTreeToLinkedList.hpp FlattenBinaryTreeToLinkedList.cpp
   PopulatingNextRightPointersInEachNode.hpp PopulatingNextRightPointersInEachNode.cpp
+  PopulatingNextRightPointersInEachNodeII.hpp PopulatingNextRightPointersInEachNodeII.cpp
 )
