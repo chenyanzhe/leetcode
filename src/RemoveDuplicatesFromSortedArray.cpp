@@ -2,15 +2,11 @@
 
 int RemoveDuplicatesFromSortedArray::removeDuplicates(vector<int>& nums)
 {
-  if (nums.size() <= 1) return nums.size();
+	int j = 0;
 
-  int p = 0; // 0 ... p are identical
-  int q = 1; // q is next new num
+    for (int i = 0; i < nums.size(); i++)
+        if (j == 0 || nums[i] != nums[j-1])
+            nums[j++] = nums[i];
 
-  for (; q < nums.size(); q++) {
-    if (nums[q] != nums[p])
-      nums[++p] = nums[q];
-  }
-
-  return p + 1;
+    return j;
 }
