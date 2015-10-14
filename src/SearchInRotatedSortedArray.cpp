@@ -2,25 +2,25 @@
 
 int SearchInRotatedSortedArray::search(vector<int>& nums, int target)
 {
-  if (nums.empty()) return -1;
+    int l = 0;
+    int h = nums.size() - 1;
+    while (l <= h) {
+        int m = (l + h) / 2;
+        if (nums[m] == target) return m;
 
-  return partialSearch(nums, 0, nums.size() - 1, target);
-}
+        if (nums[l] <= nums[m]) { // elements from l to m are sorted
+            if (nums[l] <= target && target < nums[m]) // target in this range
+                h = m - 1;
+            else // target not in this range
+                l = m + 1;
+        } else { // elements from m + 1 to h are sorted
+            if (nums[m] < target && target <= nums[h]) // target in this range
+                l = m + 1;
+            else // target not in this range
+                h = m - 1;
+        }
+    }
 
-int SearchInRotatedSortedArray::partialSearch(vector<int>& nums, int p, int q, int target)
-{
-  if (p > q) return -1;
-
-  int m = (p + q) / 2;
-
-  if (nums[m] == target) return m;
-  
-  if (nums[p] > nums[q]) {
-    int left = partialSearch(nums, p, m - 1, target);
-    if (left != -1) return left;
-    else return partialSearch(nums, m + 1, q, target);
-  } else {
-    if (nums[m] < target) return partialSearch(nums, m + 1, q, target);
-    else return partialSearch(nums, p, m - 1, target);
-  }
+    // target not found
+    return -1;
 }
