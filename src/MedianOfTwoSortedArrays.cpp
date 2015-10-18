@@ -1,38 +1,32 @@
 #include "MedianOfTwoSortedArrays.hpp"
 
+#include <algorithm>
+using namespace std;
+
 double MedianOfTwoSortedArrays::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 {
-  if (nums1.empty() && nums2.empty())
-    return 0;
+    int m = nums1.size(), n = nums2.size(), mid = (m + n) / 2;
+    bool even = ((m + n) & 1) == 0;
 
-  return findMedianSortedArrays(nums1.data(), nums1.size(), nums2.data(), nums2.size());
-}
+    if (m == 0 && n == 0) return 0;
+    if (m == 0)
+        return !even ? nums2[mid]: (nums2[mid] + nums2[mid - 1]) / 2.0;
+    if (n == 0)
+        return !even ? nums1[mid]: (nums1[mid] + nums1[mid - 1]) / 2.0;
 
-double MedianOfTwoSortedArrays::findMedianSortedArrays(const int* nums1, int sz1, const int* nums2, int sz2)
-{
-  int sz = sz1 + sz2;
-  if (sz % 2 == 1)
-    return findKth(nums1, sz1, nums2, sz2, sz / 2 + 1);
-  else
-    return (findKth(nums1, sz1, nums2, sz2, sz / 2) +
-            findKth(nums1, sz1, nums2, sz2, sz / 2 + 1)) / 2;
-}
+    int left = max(0, mid - n), right = min(mid, m - 1);
 
-double MedianOfTwoSortedArrays::findKth(const int* nums1, int sz1, const int* nums2, int sz2, int k)
-{
-  if (sz1 > sz2)
-    return findKth(nums2, sz2, nums1, sz1, k);
-  if (sz1 == 0)
-    return nums2[k-1];
-  if (k == 1)
-    return nums1[0] < nums2[0] ? nums1[0] : nums2[0];
+    while (left <= right) {
+        int i = (left + right) / 2, j = mid - 1 - i;
+        if (j >= 0 && nums1[i] < nums2[j]) left = i + 1;
+        else if (j < n - 1 && nums1[i] > nums2[j+1]) right = i - 1;
+        else {
+            if (!even) return nums1[i];
+            else if (j < 0) return (nums1[i-1] + nums1[i]) / 2.0;
+            else if (i <= 0) return (nums2[j] + nums1[i]) / 2.0;
+            else return (max(nums2[j], nums1[i-1]) + nums1[i]) / 2.0;
+        }
+    }
 
-  int p1 = (k / 2 < sz1 ? k / 2 : sz1);
-  int p2 = k - p1;
-  if (nums1[p1 - 1] < nums2[p2 - 1])
-    return findKth(nums1 + p1, sz1 - p1, nums2, sz2, k - p1);
-  if (nums1[p1 - 1] > nums2[p2 - 1])
-    return findKth(nums1, sz1, nums2 + p2, sz2 - p2, k - p2);
-  else
-    return nums1[p1 - 1];
+    return findMedianSortedArrays(nums2, nums1);
 }
