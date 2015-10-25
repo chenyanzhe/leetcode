@@ -6,7 +6,7 @@ using namespace std;
 
 class TwoSum {
 public:
-	vector<int> twoSum(vector<int> &nums, int target);
+    vector<int> twoSum(vector<int> &nums, int target);
 };
 
 #endif // TWO_SUM_HPP_
