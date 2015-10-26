@@ -5,32 +5,36 @@ using namespace std;
 
 vector<vector<int>> ThreeSum::threeSum(vector<int>& nums)
 {
-  vector<vector<int>> ret;
-  if (nums.size() < 3) return ret;
+    vector<vector<int>> result;
 
-  sort(nums.begin(), nums.end());
+    int target = 0;
 
-  for (int i = 0; i < nums.size(); i++) {
-    if (i > 0 && nums[i] == nums[i - 1])
-      continue;
+    auto begin = nums.begin();
+    auto end = nums.end();
 
-    int target = -nums[i];
-    int j = i + 1;
-    int k = nums.size() - 1;
-    while (j < k) {
-      int val = nums[j] + nums[k];
-      if (val == target) {
-        ret.push_back({nums[i], nums[j], nums[k]});
-        do { j++; } while (j < k && nums[j] == nums[j - 1]);
-        do { k--; } while (j < k && nums[k] == nums[k + 1]);
-      }
-      else if (val < target) {
-        do { j++; } while (j < k && nums[j] == nums[j - 1]);
-      } else {
-        do { k--; } while (j < k && nums[k] == nums[k + 1]);
-      }
+    sort(begin, end);
+    
+    for (auto i = begin; i < end - 2; i++) {
+        if (i > begin && *i == *(i - 1)) continue;
+
+        auto j = i + 1;
+        auto k = end - 1;
+
+        while (j < k) {
+            if (*i + *j + *k < target) {
+                j++;
+                while (*j == *(j - 1) && j < k) j++;
+            } else if (*i + *j + *k > target) {
+                k--;
+                while (*k == *(k + 1) && j < k) k--;
+            } else {
+                result.push_back({*i, *j, *k});
+                j++;
+                k--;
+                while (*j == *(j - 1) && *k == *(k + 1) && j < k) j++;
+            }
+        }
     }
-  }
 
-  return ret;
+    return result;
 }
