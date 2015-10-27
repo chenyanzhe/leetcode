@@ -2,13 +2,12 @@
 
 int RemoveElement::removeElement(vector<int>& nums, int val)
 {
-  if (nums.empty()) return 0;
+    int index = 0;
 
-  int p = 0; // 0 .. p - 1 are valid elements
-  int q = 0; // q is the next unchecked element
-  for (; q < nums.size(); q++) {
-    if (nums[q] != val)
-      nums[p++] = nums[q];
-  }
-  return p;
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] != val)
+            nums[index++] = nums[i];
+    }
+
+    return index;
 }
