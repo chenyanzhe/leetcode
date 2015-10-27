@@ -5,35 +5,39 @@ using namespace std;
 
 vector<vector<int>> FourSum::fourSum(vector<int>& nums, int target)
 {
-  vector<vector<int>> ret;
-  if (nums.size() < 4) return ret;
+    vector<vector<int>> result;
 
-  sort(nums.begin(), nums.end());
+    if (nums.size() < 4)
+        return result;
 
-  for (int i = 0; i < nums.size(); i++) {
-    if (i > 0 && nums[i] == nums[i - 1])
-      continue;
+    auto begin = nums.begin();
+    auto end = nums.end();
 
-    for (int j = i + 1; j < nums.size(); j++) {
-      if (j > i + 1 && nums[j] == nums[j - 1])
-        continue;
+    sort(begin, end);
 
-      int k = j + 1;
-      int h = nums.size() - 1;
-      int f2 = nums[i] + nums[j];
-      while (k < h) {
-        int sum = f2 + nums[k] + nums[h];
-        if (sum == target) {
-          ret.push_back({nums[i], nums[j], nums[k], nums[h]});
-          do { k++; } while (k < h && nums[k] == nums[k - 1]);
-          do { h--; } while (k < h && nums[h] == nums[h + 1]);
-        } else if (sum < target)
-          do { k++; } while (k < h && nums[k] == nums[k - 1]);
-        else
-          do { h--; } while (k < h && nums[h] == nums[h + 1]);
-      }
+    for (auto i = begin; i < end - 3; i++) {
+        if (i > begin && *i == *(i - 1)) continue;
+        for (auto j = i + 1; j < end - 2; j++) {
+            if (j > i + 1 && *j == *(j - 1)) continue;
+            auto k = j + 1;
+            auto m = end - 1;
+            while (k < m) {
+                int sum = *i + *j + *k + *m;
+                if (sum == target) {
+                    result.push_back({*i, *j, *k, *m});
+                    k++;
+                    m--;
+                    while (*k == *(k - 1) && *m == *(m + 1) && k < m) k++;
+                } else if (sum < target) {
+                    k++;
+                    while (*k == *(k - 1) && k < m) k++;
+                } else {
+                    m--;
+                    while (*m == *(m + 1) && k < m) m--;
+                }
+            }
+        }
     }
-  }
 
-  return ret;
+    return result;
 }
