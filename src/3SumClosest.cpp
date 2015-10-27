@@ -15,7 +15,9 @@ int ThreeSumClosest::threeSumClosest(vector<int>& nums, int target)
 
     sort(begin, end);
     
-    for (auto i = nums.begin(); i < end - 2; i++) {
+    for (auto i = begin; i < end - 2; i++) {
+        if (i > begin && *i == *(i - 1)) continue;
+        
         auto j = i + 1;
         auto k = end - 1;
 
