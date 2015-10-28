@@ -2,31 +2,35 @@
 
 string PermutationSequence::getPermutation(int n, int k)
 {
-	vector<int> numbers;
-	for (int i = 1; i <= n; i++)
-		numbers.push_back(i);
-
-	return getPermutation(numbers, n, k - 1);
+    string s(n, '0');
+    for (int i = 0; i < n; i++)
+        s[i] += i + 1;
+    return kth_permutation(s, k);
 }
 
-string PermutationSequence::getPermutation(vector<int>& numbers, int n, int k)
+string PermutationSequence::kth_permutation(string seq, int k)
 {
-	if (n <= 0) return "";
-	if (n == 1) return to_string(numbers[0]);
+    int n = seq.size();
+    string S = seq;
+    string result;
 
-	int divider = factorial(n - 1);
-	int groups = k / divider;
-	int remaining = k % divider;
-	string heading = to_string(numbers[groups]);
-	for (int i = groups; i < n - 1; i++)
-		numbers[i] = numbers[i+1];
-	return heading + getPermutation(numbers, n - 1, remaining);
+    int base = factorial(n - 1);
+    --k;
+
+    for (int i = n - 1; i > 0; k %= base, base /= i, i--) {
+        auto a = S.begin() + k / base;
+        result.push_back(*a);
+        S.erase(a);
+    }
+
+    result.push_back(S[0]);
+    return result;
 }
 
 int PermutationSequence::factorial(int n)
 {
-	int ret = 1;
-	for (int i = 1; i <= n; i++)
-		ret *= i;
-	return ret;
+    int ret = 1;
+    for (int i = 1; i <= n; i++)
+        ret *= i;
+    return ret;
 }
