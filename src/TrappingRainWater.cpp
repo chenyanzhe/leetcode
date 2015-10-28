@@ -2,24 +2,29 @@
 
 int TrappingRainWater::trap(vector<int>& height)
 {
-  int width = height.size();
-  if (width == 0) return 0;
+    int sz = height.size();
 
-  int ret = 0;
-  vector<int> dp(width, 0);
+    if (sz <= 2) return 0;
 
-  int max = 0;
-  for (int i = 0; i < width; i++) {
-    dp[i] = max;
-    max = (height[i] > max) ? height[i] : max;
-  }
+    int max = height[0];
+    int max_idx = 0;
 
-  max = 0;
-  for (int i = width - 1; i >= 0; i--) {
-    int h = (dp[i] < max) ? dp[i] : max;
-    ret += (h > height[i]) ? h - height[i] : 0;
-    max = (height[i] > max) ? height[i] : max;
-  }
+    for (int i = 1; i < sz; i++)
+        if (height[i] > max) {
+            max = height[i];
+            max_idx = i;
+        }
 
-  return ret;
+    int result = 0;
+    for (int i = 0, root = height[0]; i < max_idx; i++) {
+        if (root < height[i]) root = height[i];
+        else result += (root - height[i]);
+    }
+
+    for (int i = sz - 1, root = height[sz - 1]; i > max_idx; i--) {
+        if (root < height[i]) root = height[i];
+        else result += (root - height[i]);
+    }
+
+    return result;
 }
