@@ -125,6 +125,7 @@ add_executable(Test main.cpp
     FlattenBinaryTreeToLinkedListTest.cpp
     PopulatingNextRightPointersInEachNodeTest.cpp
     PopulatingNextRightPointersInEachNodeIITest.cpp
+    PascalTriangleTest.cpp
 )
 
 target_link_libraries(Test Solutions)

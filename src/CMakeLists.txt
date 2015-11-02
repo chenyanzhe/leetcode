@@ -125,4 +125,5 @@ add_library(Solutions
     FlattenBinaryTreeToLinkedList.hpp FlattenBinaryTreeToLinkedList.cpp
     PopulatingNextRightPointersInEachNode.hpp PopulatingNextRightPointersInEachNode.cpp
     PopulatingNextRightPointersInEachNodeII.hpp PopulatingNextRightPointersInEachNodeII.cpp
+    PascalTriangle.hpp PascalTriangle.cpp
 )
