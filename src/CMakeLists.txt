@@ -127,4 +127,5 @@ add_library(Solutions
     PopulatingNextRightPointersInEachNodeII.hpp PopulatingNextRightPointersInEachNodeII.cpp
     PascalTriangle.hpp PascalTriangle.cpp
     PascalTriangleII.hpp PascalTriangleII.cpp
+    SurroundedRegions.hpp SurroundedRegions.cpp
 )
