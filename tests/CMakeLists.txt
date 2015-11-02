@@ -126,6 +126,7 @@ add_executable(Test main.cpp
     PopulatingNextRightPointersInEachNodeTest.cpp
     PopulatingNextRightPointersInEachNodeIITest.cpp
     PascalTriangleTest.cpp
+    PascalTriangleIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
