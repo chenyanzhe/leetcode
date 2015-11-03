@@ -129,4 +129,5 @@ add_library(Solutions
     PascalTriangleII.hpp PascalTriangleII.cpp
     SurroundedRegions.hpp SurroundedRegions.cpp
     BestTimeToBuyAndSellStockII.hpp BestTimeToBuyAndSellStockII.cpp
+    BestTimeToBuyAndSellStockIII.hpp BestTimeToBuyAndSellStockIII.cpp
 )
