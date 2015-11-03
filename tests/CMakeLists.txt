@@ -128,6 +128,7 @@ add_executable(Test main.cpp
     PascalTriangleTest.cpp
     PascalTriangleIITest.cpp
     SurroundedRegionsTest.cpp
+    BestTimeToBuyAndSellStockIITest.cpp
 )
 
 target_link_libraries(Test Solutions)
