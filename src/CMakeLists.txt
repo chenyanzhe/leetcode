@@ -130,4 +130,5 @@ add_library(Solutions
     SurroundedRegions.hpp SurroundedRegions.cpp
     BestTimeToBuyAndSellStockII.hpp BestTimeToBuyAndSellStockII.cpp
     BestTimeToBuyAndSellStockIII.hpp BestTimeToBuyAndSellStockIII.cpp
+    BestTimeToBuyAndSellStockIV.hpp BestTimeToBuyAndSellStockIV.cpp
 )

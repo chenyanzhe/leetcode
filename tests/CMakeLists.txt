@@ -130,6 +130,7 @@ add_executable(Test main.cpp
     SurroundedRegionsTest.cpp
     BestTimeToBuyAndSellStockIITest.cpp
     BestTimeToBuyAndSellStockIIITest.cpp
+    BestTimeToBuyAndSellStockIVTest.cpp
 )
 
 target_link_libraries(Test Solutions)
