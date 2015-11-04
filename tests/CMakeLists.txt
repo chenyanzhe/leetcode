@@ -131,6 +131,7 @@ add_executable(Test main.cpp
     BestTimeToBuyAndSellStockIITest.cpp
     BestTimeToBuyAndSellStockIIITest.cpp
     BestTimeToBuyAndSellStockIVTest.cpp
+    ContainsDuplicateTest.cpp
 )
 
 target_link_libraries(Test Solutions)

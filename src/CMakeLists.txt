@@ -131,4 +131,5 @@ add_library(Solutions
     BestTimeToBuyAndSellStockII.hpp BestTimeToBuyAndSellStockII.cpp
     BestTimeToBuyAndSellStockIII.hpp BestTimeToBuyAndSellStockIII.cpp
     BestTimeToBuyAndSellStockIV.hpp BestTimeToBuyAndSellStockIV.cpp
+    ContainsDuplicate.hpp ContainsDuplicate.cpp
 )
