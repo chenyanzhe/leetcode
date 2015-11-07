@@ -1,4 +1,4 @@
-include_directories(${LeetCode_SOURCE_DIR}/src)
+include_directories(${LeetCode_SOURCE_DIR}/include)
 
 file(GLOB SOURCES "*.cpp")
 
