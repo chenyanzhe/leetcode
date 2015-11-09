@@ -2,7 +2,7 @@
 
 int FindMinimumInRotatedSortedArray::findMin(vector<int>& nums)
 {
-    findMin(nums, 0, nums.size() - 1);
+    return findMin(nums, 0, nums.size() - 1);
 }
 
 int FindMinimumInRotatedSortedArray::findMin(vector<int>& nums, int begin, int end)

@@ -2,14 +2,12 @@
 
 #include <cctype>
 #include <algorithm>
-#include <iostream>
 using namespace std;
 
 void ReverseWordsInAString::reverseWords(string &s)
 {
     standardize(s);
     reverseString(s, 0, s.size() - 1);
-    cout << s << endl;
     int i = 0;
     int j = 0;
     for (; j < s.size(); j++) {
