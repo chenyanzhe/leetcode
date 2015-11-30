@@ -1,7 +1,5 @@
 #include "MajorityElement.hpp"
 
-#include <iostream>
-
 int MajorityElement::majorityElement(vector<int>& nums)
 {
     int result = nums[0];
