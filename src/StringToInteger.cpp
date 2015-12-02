@@ -17,7 +17,7 @@ int StringToInteger::myAtoi(string str)
     negative = (str[0] == '-');
     str = str.substr(1);
   }
-  
+
   if (str.size() == 0) return 0;
 
   int j = -1;
@@ -31,7 +31,7 @@ int StringToInteger::myAtoi(string str)
   long long int val = 0;
   for (auto c : str)
     val = val * 10 + (c - '0');
-  
+
   if (negative) {
     return -val < INT_MIN ? INT_MIN : -val;
   } else {

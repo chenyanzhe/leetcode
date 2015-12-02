@@ -10,7 +10,7 @@ TEST_CASE("Remove Duplicates from Sorted List") {
  	ListNode* l2 = nullptr;
 
 	SECTION("Sample tests") {
-		ListNode* item = nullptr; 
+		ListNode* item = nullptr;
 
 	    // l1 (1 -> 1 -> 2)
 	    item = new ListNode(2); item->next = l1; l1 = item;

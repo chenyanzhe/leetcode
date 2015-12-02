@@ -8,8 +8,8 @@ TEST_CASE("Reverse Linked List II") {
 	ListNode* l = nullptr;
 
 	SECTION("Sample test") {
-		ListNode* item = nullptr; 
-		
+		ListNode* item = nullptr;
+
 		// (1 -> 2 -> 3 -> 4 -> 5)
 	    item = new ListNode(5); item->next = l; l = item;
 	    item = new ListNode(4); item->next = l; l = item;
@@ -30,8 +30,8 @@ TEST_CASE("Reverse Linked List II") {
 	}
 
 	SECTION("Corner case 1") {
-		ListNode* item = nullptr; 
-		
+		ListNode* item = nullptr;
+
 		// (1)
 	    item = new ListNode(1); item->next = l; l = item;
 
@@ -44,8 +44,8 @@ TEST_CASE("Reverse Linked List II") {
 	}
 
 	SECTION("Corner case 2") {
-		ListNode* item = nullptr; 
-		
+		ListNode* item = nullptr;
+
 		// (1 -> 2 -> 3 -> 4 -> 5)
 	    item = new ListNode(5); item->next = l; l = item;
 	    item = new ListNode(4); item->next = l; l = item;

@@ -16,7 +16,7 @@ TEST_CASE("Search in Rotated Sorted Array") {
 
     SECTION("Ascending nums") {
         vector<int> nums {0, 1, 2, 4, 5, 6, 7};
-        
+
         for (int i = 0; i < nums.size(); i++)
             REQUIRE(s.search(nums, nums[i]) == i);
 

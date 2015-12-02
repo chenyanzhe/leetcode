@@ -34,6 +34,6 @@ string LongestPalindromicSubstring::longestPalindrome(string s)
       ret = s.substr(i - j, len);
     }
   }
-  
+
   return ret;
 }

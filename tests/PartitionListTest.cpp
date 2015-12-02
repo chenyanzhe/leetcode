@@ -8,8 +8,8 @@ TEST_CASE("Partition List") {
 	ListNode* l = nullptr;
 
 	SECTION("Sample test") {
-		ListNode* item = nullptr; 
-		
+		ListNode* item = nullptr;
+
 		// (1 -> 4 -> 3 -> 2 -> 5 -> 2)
 	    item = new ListNode(2); item->next = l; l = item;
 	    item = new ListNode(5); item->next = l; l = item;

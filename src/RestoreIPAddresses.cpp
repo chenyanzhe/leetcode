@@ -37,6 +37,6 @@ bool RestoreIPAddresses::valid(string segment)
 
 	if (segment[0] == '0' && segment.size() > 1)
 		return false;
-	
+
 	return stoi(segment) <= 255;
 }

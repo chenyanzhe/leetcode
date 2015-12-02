@@ -11,6 +11,6 @@ int BitwiseANDOfNumbersRange::rangeBitwiseAnd(int m, int n)
         n /= 2;
         base *= 2;
     }
-    
+
     return result;
 }

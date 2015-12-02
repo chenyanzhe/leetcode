@@ -16,7 +16,7 @@ TEST_CASE("Swap Nodes In Pairs") {
     n = new ListNode(1); n->next = head; head = n;
 
     result = s.swapPairs(head);
-    
+
     n = result;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 2); n = n->next;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 1); n = n->next;
@@ -38,7 +38,7 @@ TEST_CASE("Swap Nodes In Pairs") {
     n = new ListNode(1); n->next = head; head = n;
 
     result = s.swapPairs(head);
-    
+
     n = result;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 2); n = n->next;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 1); n = n->next;
@@ -53,7 +53,7 @@ TEST_CASE("Swap Nodes In Pairs") {
     n = new ListNode(1); n->next = head; head = n;
 
     result = s.swapPairs(head);
-    
+
     n = result;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 1); n = n->next;
     REQUIRE(n == nullptr);
@@ -65,7 +65,7 @@ TEST_CASE("Swap Nodes In Pairs") {
     n = new ListNode(4); n->next = head; head = n;
 
     result = s.swapPairs(head);
-    
+
     n = result;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 5); n = n->next;
     REQUIRE_FALSE(n == nullptr); REQUIRE(n->val == 4); n = n->next;

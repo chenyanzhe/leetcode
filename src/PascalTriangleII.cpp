@@ -3,7 +3,7 @@
 vector<int> PascalTriangleII::getRow(int rowIndex)
 {
 	vector<int> result(rowIndex + 1, 1);
-	
+
 	if (rowIndex <= 1) return result;
 
 	for (int j = 2; j <= rowIndex; j++) {

@@ -51,7 +51,7 @@ void SurroundedRegions::bfs(vector<vector<char>>& board, int i, int j)
         const int y = s.second;
 
         vector<state_t> candidates {{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}};
-        
+
         for (auto c : candidates) {
             if (isValid(c))
                 result.push_back(c);

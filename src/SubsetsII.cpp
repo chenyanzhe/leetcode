@@ -22,7 +22,7 @@ void SubsetsII::dfs(vector<int>& nums, int i, vector<int>& node)
 	while (j >= 0 && nums[j] == nums[i])
 		j--;
 	int d = i - (j + 1);
-	if (d == 0 || 
+	if (d == 0 ||
 		(node.size() >= d && node[node.size() - d] == nums[i])) {
 		// choose nums[i]
 		node.push_back(nums[i]);

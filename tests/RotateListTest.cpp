@@ -8,8 +8,8 @@ TEST_CASE("Rotate List") {
 	ListNode* l = nullptr;
 
 	SECTION("Sample tests") {
-		ListNode* item = nullptr; 
-		
+		ListNode* item = nullptr;
+
 		// (1 -> 2 -> 3 -> 4 -> 5)
 	    item = new ListNode(5); item->next = l; l = item;
 	    item = new ListNode(4); item->next = l; l = item;

@@ -33,7 +33,7 @@ double MedianOfTwoSortedArrays::findKth(int A[], int m, int B[], int n, int k)
 
     int i = min(k / 2, m);
     int j = k - i;
-    
+
     if (A[i - 1] < B[j - 1])
         return findKth(A + i, m - i, B, n, k - i);
     else if (A[i - 1] > B[j - 1])

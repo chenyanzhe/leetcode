@@ -9,7 +9,7 @@ int NQueensII::totalNQueens(int n)
   vector<int> locs(n + 1, 0);
   int result = 0;
 
-  helper(locs, 1, result); 
+  helper(locs, 1, result);
 
   return result;
 }

@@ -49,6 +49,6 @@ ListNode* RemoveDuplicatesFromSortedListII::deleteDuplicates(ListNode* head)
 		prevItem->next = nextItem;
 		prevItem = nextItem;
 	}
-	
+
 	return head;
 }

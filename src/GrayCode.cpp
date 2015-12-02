@@ -20,7 +20,7 @@ void GrayCode::helper(int n, vector<int>& res)
 		res.push_back(1);
 	} else {
 		helper(n - 1, res);
-		
+
 		int sz = res.size();
 		for (int i = sz - 1; i >= 0; i--) {
 			int val = res[i] | (1 << (n - 1));

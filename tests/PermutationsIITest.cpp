@@ -18,7 +18,7 @@ TEST_CASE("Permutations II") {
     for (int i = 0; i < 6; i++)
       REQUIRE_FALSE(find(expected.begin(), expected.end(), result[i]) == expected.end());
   }
-  
+
   SECTION("Duplicate elements") {
     vector<int> nums {1, 1, 2};
     vector<vector<int>> expected {
@@ -30,4 +30,3 @@ TEST_CASE("Permutations II") {
       REQUIRE_FALSE(find(expected.begin(), expected.end(), result[i]) == expected.end());
   }
 }
-

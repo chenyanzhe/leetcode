@@ -5,7 +5,7 @@ ListNode* RemoveLinkedListElements::removeElements(ListNode* head, int val)
     while (head != nullptr && head->val == val)
         head = head->next;
     if (head == nullptr) return nullptr;
-    
+
     ListNode *p = head;
     ListNode *q = head->next;
     while (q != nullptr) {
@@ -17,6 +17,6 @@ ListNode* RemoveLinkedListElements::removeElements(ListNode* head, int val)
             q = q->next;
         }
     }
-    
+
     return head;
 }

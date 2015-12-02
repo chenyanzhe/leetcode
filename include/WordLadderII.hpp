@@ -11,7 +11,7 @@ class WordLadderII {
 public:
     vector<vector<string>> findLadders(string beginWord, string endWord, unordered_set<string> &wordList);
 private:
-    void backtrace(unordered_map<string, vector<string>> &father, vector<string> &path, 
+    void backtrace(unordered_map<string, vector<string>> &father, vector<string> &path,
         const string &beginWord, const string &endWord, vector<vector<string>> &result);
 };
 

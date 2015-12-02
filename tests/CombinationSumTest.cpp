@@ -21,7 +21,7 @@ TEST_CASE("Combination Sum") {
   SECTION("Normal test") {
     vector<int> candidates {8, 7, 4, 3};
     int target = 11;
-    vector<vector<int>> expected {{3, 4, 4},{3, 8}, {4, 7}}; 
+    vector<vector<int>> expected {{3, 4, 4},{3, 8}, {4, 7}};
     vector<vector<int>> result = s.combinationSum(candidates, target);
 
     REQUIRE(result.size() == 3);

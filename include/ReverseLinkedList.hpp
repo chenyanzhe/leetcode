@@ -5,7 +5,7 @@
 
 class ReverseLinkedList {
 public:
-    ListNode* reverseList(ListNode* head);    
+    ListNode* reverseList(ListNode* head);
 };
 
 #endif // REVERSE_LINKED_LIST_HPP_

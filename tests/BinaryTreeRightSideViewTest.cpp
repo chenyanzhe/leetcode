@@ -6,7 +6,7 @@ TEST_CASE("Binary Tree Right Side View") {
     BinaryTreeRightSideView s;
 
     TreeNode *root = nullptr;
-    
+
     SECTION("Sample test") {
         TreeNode* _5 = new TreeNode(5);
         TreeNode* _4 = new TreeNode(4);

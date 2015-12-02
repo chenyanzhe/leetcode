@@ -25,6 +25,6 @@ int MinimumDepthOfBinaryTree::minDepth(TreeNode* root)
 			if (front->right != nullptr) q.push(front->right);
 		}
 	}
-	
+
 	return depth;
 }

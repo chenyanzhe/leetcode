@@ -8,7 +8,7 @@ int BestTimeToBuyAndSellStockIV::maxProfit(int k, vector<int>& prices)
     /**
      * local[i][j]: i day, j txn, jth txn happened at day i
      * global[i][j]: i day, j txn
-     * 
+     *
      * diff = prices[i] - prices[i-1]
      * local[i][j] = max(global[i-1][j-1] + max(diff, 0), local[i-1][j] + diff)
      * global[i][j] = max(global[i-1][j], local[i][j])

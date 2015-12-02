@@ -10,7 +10,7 @@ TEST_CASE("Add Two Numbers") {
   ListNode* l3 = nullptr;
 
   SECTION("Sample test") {
-    ListNode* item = nullptr; 
+    ListNode* item = nullptr;
 
     // l1 (2 -> 4 -> 3)
     item = new ListNode(3); item->next = l1; l1 = item;
@@ -39,7 +39,7 @@ TEST_CASE("Add Two Numbers") {
   }
 
   SECTION("l1 is an empty list") {
-    ListNode* item = nullptr; 
+    ListNode* item = nullptr;
 
     // l2 (5 -> 6 -> 4)
     item = new ListNode(4); item->next = l2; l2 = item;
@@ -56,7 +56,7 @@ TEST_CASE("Add Two Numbers") {
   }
 
   SECTION("l2 is an empty list") {
-    ListNode* item = nullptr; 
+    ListNode* item = nullptr;
 
     // l1 (2 -> 4 -> 3)
     item = new ListNode(3); item->next = l1; l1 = item;
@@ -73,7 +73,7 @@ TEST_CASE("Add Two Numbers") {
   }
 
   SECTION("Carry to be the highest bit") {
-    ListNode* item = nullptr; 
+    ListNode* item = nullptr;
 
     // l1 (2 -> 4 -> 3)
     item = new ListNode(3); item->next = l1; l1 = item;

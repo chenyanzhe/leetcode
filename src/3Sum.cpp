@@ -13,7 +13,7 @@ vector<vector<int>> ThreeSum::threeSum(vector<int>& nums)
     auto end = nums.end();
 
     sort(begin, end);
-    
+
     for (auto i = begin; i < end - 2; i++) {
         if (i > begin && *i == *(i - 1)) continue;
 

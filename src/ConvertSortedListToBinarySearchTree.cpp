@@ -12,7 +12,7 @@ TreeNode* ConvertSortedListToBinarySearchTree::sortedListToBST(int start, int en
 	if (start > end) return nullptr;
 
 	int mid = (start + end) / 2;
-	
+
 	TreeNode *left = sortedListToBST(start, mid - 1);
 
 	TreeNode *root = new TreeNode(head->val);

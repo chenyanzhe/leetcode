@@ -13,7 +13,7 @@ vector<vector<int>> BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(TreeNo
 
 	q.push(root);
 	ret.push_back({});
-	
+
 	int curLevel = 1;
 	int nextLevel = 0;
 
@@ -45,6 +45,6 @@ vector<vector<int>> BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(TreeNo
 	bool r = false;
 	for (int i = 0; i < ret.size(); i++, r = !r)
 		if (r) reverse(ret[i].begin(), ret[i].end());
-	
+
 	return ret;
 }

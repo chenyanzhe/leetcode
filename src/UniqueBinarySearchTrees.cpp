@@ -13,6 +13,6 @@ int UniqueBinarySearchTrees::numTrees(int n)
   for (int i = 1; i <= n; i++)
     for (int r = 1; r <= i; r++)
       dp[i] += dp[r-1] * dp[i-r];
-  
+
   return dp[n];
 }

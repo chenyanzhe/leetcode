@@ -8,7 +8,7 @@ TEST_CASE("Remove Duplicates from Sorted List II") {
 	ListNode* l = nullptr;
 
 	SECTION("Sample test 1") {
-		ListNode* item = nullptr; 
+		ListNode* item = nullptr;
 
 	    // 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
 	    item = new ListNode(5); item->next = l; l = item;
@@ -30,7 +30,7 @@ TEST_CASE("Remove Duplicates from Sorted List II") {
 	}
 
 	SECTION("Sample test 2") {
-		ListNode* item = nullptr; 
+		ListNode* item = nullptr;
 
 	    // 1 -> 1 -> 1 -> 2 -> 3
 	    item = new ListNode(3); item->next = l; l = item;
@@ -49,7 +49,7 @@ TEST_CASE("Remove Duplicates from Sorted List II") {
 	}
 
 	SECTION("All duplicates") {
-		ListNode* item = nullptr; 
+		ListNode* item = nullptr;
 
 	    // 1 -> 1 -> 1 -> 2 -> 2
 	    item = new ListNode(2); item->next = l; l = item;

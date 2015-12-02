@@ -15,7 +15,7 @@ TEST_CASE("Tree Node") {
      * 50   45 35
      *
      * The serialize result should be:
-     * 30 10 50 # # # 20 45 # # 35 # # 
+     * 30 10 50 # # # 20 45 # # 35 # #
      */
     TreeNode *_50 = new TreeNode(50);
     TreeNode *_45 = new TreeNode(45);

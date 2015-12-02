@@ -65,7 +65,7 @@ vector<vector<string>> WordLadderII::findLadders(string beginWord, string endWor
     return result;
 }
 
-void WordLadderII::backtrace(unordered_map<string, vector<string>> &father, vector<string> &path, 
+void WordLadderII::backtrace(unordered_map<string, vector<string>> &father, vector<string> &path,
         const string &beginWord, const string &endWord, vector<vector<string>> &result)
 {
     path.push_back(endWord);

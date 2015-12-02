@@ -14,7 +14,7 @@ bool WordSearch::exist(vector<vector<char>>& board, string word)
 	for (int i = 0; i < nrows; i++)
 		for (int j = 0; j < ncols; j++)
 			if (findWord(visited, i, j, 0, board, word)) return true;
-	
+
 	return false;
 }
 
