@@ -9,7 +9,7 @@ class CourseSchedule {
 public:
     bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites);
 private:
-    bool canFinishDFS(vector<vector<int>> &graph, vector<int> &visit, int i);
+    bool dfs(vector<vector<int>> &graph, vector<bool> &marked, vector<bool> &onStack, int v);
 };
 
 #endif // COURSE_SCHEDULE_HPP_
