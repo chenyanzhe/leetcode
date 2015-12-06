@@ -1,11 +1,12 @@
 #include "ImplementTrie.hpp"
 
-TrieNode::TrieNode()
+TrieNode::TrieNode() : children(vector<TrieNode *>(26, nullptr)), isWord(false)
+{}
+
+TrieNode::~TrieNode()
 {
-    children = new TrieNode*[26];
-    for (int i = 0; i < 26; i++)
-        children[i] = NULL;
-    ending = false;
+    for (auto child : children)
+        if (child != nullptr) delete child;
 }
 
 Trie::Trie()
@@ -13,53 +14,47 @@ Trie::Trie()
     root = new TrieNode();
 }
 
+Trie::~Trie()
+{
+    delete root;
+}
+
 void Trie::insert(string word)
 {
-    insert(root, word);
+    TrieNode *now = root;
+    for (int i = 0; i < word.size(); i++) {
+        int idx = word[i] - 'a';
+        if (now->children[idx] == nullptr)
+            now->children[idx] = new TrieNode();
+        now = now->children[idx];
+    }
+    now->isWord = true;
 }
 
 bool Trie::search(string word)
 {
-    return search(root, word);
+    return search(root, word.c_str());
 }
 
 bool Trie::startsWith(string prefix)
 {
-    return startsWith(root, prefix);
+    return startsWith(root, prefix.c_str());
 }
 
-void Trie::insert(TrieNode *root, string word)
+bool Trie::search(TrieNode *root, const char *head)
 {
-    if (word.size() == 0) return;
-    int idx = word[0] - 'a';
-    if (root->children[idx] == NULL)
-        root->children[idx] = new TrieNode();
-    if (word.size() == 1)
-        root->children[idx]->ending = true;
-    else
-        insert(root->children[idx], word.substr(1));
+    if (root == nullptr) return false;
+    if (*head == '\0') return root->isWord;
+
+    int idx = *head - 'a';
+    return search(root->children[idx], head + 1);
 }
 
-bool Trie::search(TrieNode *root, string word)
+bool Trie::startsWith(TrieNode *root, const char *head)
 {
-    if (word.size() == 0) return false;
-    int idx = word[0] - 'a';
-    if (root->children[idx] == NULL)
-        return false;
-    else if (word.size() == 1)
-        return root->children[idx]->ending;
-    else
-        return search(root->children[idx], word.substr(1));
-}
+    if (root == nullptr) return false;
+    if (*head == '\0') return true;
 
-bool Trie::startsWith(TrieNode *root, string prefix)
-{
-    if (prefix.size() == 0) return false;
-    int idx = prefix[0] - 'a';
-    if (root->children[idx] == NULL)
-        return false;
-    else if (prefix.size() == 1)
-        return true;
-    else
-        return startsWith(root->children[idx], prefix.substr(1));
+    int idx = *head - 'a';
+    return startsWith(root->children[idx], head + 1);
 }

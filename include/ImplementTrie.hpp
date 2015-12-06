@@ -2,19 +2,22 @@
 #define IMPLEMENT_TRIE_HPP_
 
 #include <string>
+#include <vector>
 using namespace std;
 
 class TrieNode {
 public:
     // Initialize your data structure here.
     TrieNode();
-    TrieNode **children;
-    bool ending;
+    ~TrieNode();
+    vector<TrieNode *> children;
+    bool isWord;
 };
 
 class Trie {
 public:
     Trie();
+    ~Trie();
 
     // Inserts a word into the trie.
     void insert(string word);
@@ -29,11 +32,9 @@ public:
 private:
     TrieNode* root;
 
-    void insert(TrieNode *root, string word);
+    bool search(TrieNode *root, const char *head);
 
-    bool search(TrieNode *root, string word);
-
-    bool startsWith(TrieNode *root, string prefix);
+    bool startsWith(TrieNode *root, const char *head);
 };
 
 #endif // IMPLEMENT_TRIE_HPP_
