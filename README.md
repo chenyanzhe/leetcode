@@ -1,5 +1,7 @@
 # LeetCode
 
-Solutions to [LeetCode OJ](https://leetcode.com/problemset/algorithms/)
+Solutions to [LeetCode OJ](https://leetcode.com/problemset/algorithms/).
 
-Managed by [CMake](http://www.cmake.org) and [Catch](http://catch-lib.net)
+Managed by [CMake](http://www.cmake.org) and [Catch](http://catch-lib.net).
+
+Please feel free to let me know if you have any problem or better solutions.
