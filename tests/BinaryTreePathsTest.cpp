@@ -24,4 +24,6 @@ TEST_CASE("Binary Tree Paths") {
         for (int i = 0; i < result.size(); i++)
           REQUIRE_FALSE(find(expected.begin(), expected.end(), result[i]) == expected.end());
     }
+    
+    tree_free(root);
 }
