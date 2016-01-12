@@ -7,12 +7,9 @@ vector<string>ExpressionAddOperators::addOperators(string num, int target)
   return res;
 }
 
-void ExpressionAddOperators::dfs(string          num,
-                                 int             target,
-                                 string          expr,
-                                 long            currRes,
-                                 long            prevNum,
-                                 vector<string>& res) {
+void ExpressionAddOperators::dfs(string num, int target, string expr,
+                                 long currRes, long prevNum, vector<string>& res)
+{
   if ((currRes == target) && (num.size() == 0)) {
     res.push_back(expr);
     return;
@@ -31,28 +28,12 @@ void ExpressionAddOperators::dfs(string          num,
 
     if (expr.size() != 0) {
       // *
-      dfs(next,
-          target,
-          expr + "*" + currStr,
-          (currRes - prevNum) + prevNum * currNum,
-          prevNum * currNum,
-          res);
-
+      dfs(next, target, expr + "*" + currStr,
+          (currRes - prevNum) + prevNum * currNum, prevNum * currNum, res);
       // +
-      dfs(next,
-          target,
-          expr + "+" + currStr,
-          currRes + currNum,
-          currNum,
-          res);
-
+      dfs(next, target, expr + "+" + currStr, currRes + currNum, currNum, res);
       // -
-      dfs(next,
-          target,
-          expr + "-" + currStr,
-          currRes - currNum,
-          -currNum,
-          res);
+      dfs(next, target, expr + "-" + currStr, currRes - currNum, -currNum, res);
     } else {
       dfs(next, target, currStr, currNum, currNum, res);
     }

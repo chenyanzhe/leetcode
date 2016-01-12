@@ -5,14 +5,15 @@
 #include <string>
 using namespace std;
 
-class RestoreIPAddresses {
+class RestoreIPAddresses
+{
 private:
-	vector<string> res;
+  vector<string> res;
 public:
-	vector<string> restoreIpAddresses(string s);
+  vector<string> restoreIpAddresses(string s);
 private:
-	void bt(string s, int i, int segment, string addr);
-	bool valid(string segment);
+  void bt(string s, int i, int segment, string addr);
+  bool valid(string segment);
 };
 
 #endif // RESTORE_IP_ADDRESSES_HPP_

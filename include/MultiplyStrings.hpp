@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class MultiplyStrings {
+class MultiplyStrings
+{
 public:
   string multiply(string num1, string num2);
 private:

@@ -3,9 +3,10 @@
 
 #include "TreeNode.hpp"
 
-class SameTree {
+class SameTree
+{
 public:
-	bool isSameTree(TreeNode* p, TreeNode* q);
+  bool isSameTree(TreeNode* p, TreeNode* q);
 };
 
 #endif // SAME_TREE_HPP_

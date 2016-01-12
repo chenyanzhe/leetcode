@@ -3,7 +3,8 @@
 #include <algorithm>
 using namespace std;
 
-vector<vector<int>> CombinationSum::combinationSum(vector<int>& candidates, int target)
+vector<vector<int>> CombinationSum::combinationSum(vector<int>& candidates,
+                 int target)
 {
   vector<vector<int>> ret;
   vector<int> result;
@@ -12,13 +13,16 @@ vector<vector<int>> CombinationSum::combinationSum(vector<int>& candidates, int 
   return ret;
 }
 
-void CombinationSum::helper(vector<int>& candidates, int target, vector<int>& result, int l, vector<vector<int>>& global)
+void CombinationSum::helper(vector<int>& candidates, int target,
+                            vector<int>& result, int l, vector<vector<int>>& global)
 {
-  if (l >= candidates.size() || candidates[l] > target)
+  if (l >= candidates.size() || candidates[l] > target) {
     return;
+  }
 
   for (int i = l; i < candidates.size(); i++) {
     int c = candidates[i];
+
     if (c == target) {
       global.push_back(result);
       global[global.size() - 1].push_back(c);

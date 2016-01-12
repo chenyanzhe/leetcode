@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class BestTimeToBuyAndSellStockII {
+class BestTimeToBuyAndSellStockII
+{
 public:
-	int maxProfit(vector<int>& prices);
+  int maxProfit(vector<int>& prices);
 };
 
 #endif // BEST_TIME_TO_BUY_AND_SELL_STOCK_II_HPP_

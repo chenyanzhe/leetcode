@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class ImplementStrStr {
+class ImplementStrStr
+{
 public:
   int strStr(string haystack, string needle);
 };

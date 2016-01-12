@@ -2,9 +2,9 @@
 
 #include "Triangle.hpp"
 
-TEST_CASE("Triangle") {
+TEST_CASE("Triangle")
+{
   Triangle s;
-
   SECTION("Sample test") {
     vector<vector<int>> triangle {
       {2},

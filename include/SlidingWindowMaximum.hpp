@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class SlidingWindowMaximum {
+class SlidingWindowMaximum
+{
 public:
   vector<int> maxSlidingWindow(vector<int>& nums, int k);
 };

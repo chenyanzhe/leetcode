@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class CountAndSay {
+class CountAndSay
+{
 public:
   string countAndSay(int n);
 };

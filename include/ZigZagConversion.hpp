@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class ZigZagConversion {
+class ZigZagConversion
+{
 public:
   string convert(string s, int numRows);
 };

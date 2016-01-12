@@ -5,9 +5,10 @@
 #include <string>
 using namespace std;
 
-class DifferentWaysToAddParentheses {
+class DifferentWaysToAddParentheses
+{
 public:
-  vector<int> diffWaysToCompute(string input);  
+  vector<int> diffWaysToCompute(string input);
 };
 
 #endif // DIFFERENT_WAYS_TO_ADD_PARENTHESES_HPP_

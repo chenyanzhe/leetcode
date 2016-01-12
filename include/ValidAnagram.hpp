@@ -4,9 +4,10 @@
 #include <string>
 using namespace std;
 
-class ValidAnagram {
+class ValidAnagram
+{
 public:
-  bool isAnagram(string s, string t);  
+  bool isAnagram(string s, string t);
 };
 
 #endif // VALID_ANAGRAM_HPP_

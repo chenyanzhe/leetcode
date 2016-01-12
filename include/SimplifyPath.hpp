@@ -5,11 +5,12 @@
 #include <vector>
 using namespace std;
 
-class SimplifyPath {
+class SimplifyPath
+{
 public:
-	string simplifyPath(string path);
+  string simplifyPath(string path);
 private:
-	void tokenize(const string &path, vector<string>& tokens);
+  void tokenize(const string& path, vector<string>& tokens);
 };
 
 #endif // SIMPLIFY_PATH_HPP_

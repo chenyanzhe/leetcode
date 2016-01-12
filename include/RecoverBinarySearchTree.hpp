@@ -6,15 +6,16 @@
 #include <vector>
 using namespace std;
 
-class RecoverBinarySearchTree {
+class RecoverBinarySearchTree
+{
 private:
-	vector<TreeNode*> nodePtrs;
-	vector<int> nodeVals;
+  vector<TreeNode*> nodePtrs;
+  vector<int> nodeVals;
 
 public:
-	void recoverTree(TreeNode* root);
+  void recoverTree(TreeNode* root);
 private:
-	void inOrderTraversal(TreeNode* root);
+  void inOrderTraversal(TreeNode* root);
 };
 
 #endif // RECOVER_BINARY_SEARCH_TREE_HPP_

@@ -7,7 +7,9 @@ int MaximumSubarray::maxSubArray(vector<int>& nums)
 {
   int sz = nums.size();
 
-  if (sz == 0) return 0;
+  if (sz == 0) {
+    return 0;
+  }
 
   vector<int> dp(sz, 0);
   dp[0] = nums[0];

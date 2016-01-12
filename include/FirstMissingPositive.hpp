@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class FirstMissingPositive {
+class FirstMissingPositive
+{
 public:
   int firstMissingPositive(vector<int>& nums);
 };

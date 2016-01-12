@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class RegularExpressionMatching {
+class RegularExpressionMatching
+{
 public:
   bool isMatch(string s, string p);
 private:

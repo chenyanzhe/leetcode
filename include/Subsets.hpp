@@ -4,13 +4,14 @@
 #include <vector>
 using namespace std;
 
-class Subsets {
+class Subsets
+{
 private:
-	vector<vector<int>> res;
+  vector<vector<int>> res;
 public:
-	vector<vector<int>> subsets(vector<int>& nums);
+  vector<vector<int>> subsets(vector<int>& nums);
 private:
-	void dfs(vector<int>& nums, int i, vector<int>& node);
+  void dfs(vector<int>& nums, int i, vector<int>& node);
 };
 
 #endif // SUBSETS_HPP_

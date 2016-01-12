@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-class Anagrams {
+class Anagrams
+{
 public:
   vector<string> anagrams(vector<string>& strs);
 };

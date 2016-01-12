@@ -3,12 +3,13 @@
 
 #include "TreeNode.hpp"
 
-class ValidateBinarySearchTree {
+class ValidateBinarySearchTree
+{
 public:
-	bool isValidBST(TreeNode* root);
+  bool isValidBST(TreeNode* root);
 private:
-	int minNodeVal(TreeNode* root);
-	int maxNodeVal(TreeNode* root);
+  int minNodeVal(TreeNode* root);
+  int maxNodeVal(TreeNode* root);
 };
 
 #endif // VALIDATE_BINARY_SEARCH_TREE_HPP_

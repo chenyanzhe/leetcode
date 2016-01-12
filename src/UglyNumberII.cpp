@@ -7,15 +7,15 @@ using namespace std;
 
 int UglyNumberII::nthUglyNumber(int n)
 {
-  if (n == 1) return 1;
+  if (n == 1) {
+    return 1;
+  }
 
   queue<uint64_t> q2;
   queue<uint64_t> q3;
   queue<uint64_t> q5;
-
   int count = 1;
   int next;
-
   q2.push(2);
   q3.push(3);
   q5.push(5);
@@ -39,6 +39,7 @@ int UglyNumberII::nthUglyNumber(int n)
       q5.push(val * 5);
       q5.pop();
     }
+
     count++;
   }
 

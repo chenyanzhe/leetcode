@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class PascalTriangleII {
+class PascalTriangleII
+{
 public:
-    vector<int> getRow(int rowIndex);
+  vector<int> getRow(int rowIndex);
 };
 
 #endif // PASCAL_TRIANGLE_II_HPP_

@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class DistinctSubsequences {
+class DistinctSubsequences
+{
 public:
   int numDistinct(string s, string t);
 };

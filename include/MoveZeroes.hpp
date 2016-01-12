@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class MoveZeroes {
+class MoveZeroes
+{
 public:
 
   void moveZeroes(vector<int>& nums);

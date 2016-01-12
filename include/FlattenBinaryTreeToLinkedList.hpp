@@ -3,9 +3,10 @@
 
 #include "TreeNode.hpp"
 
-class FlattenBinaryTreeToLinkedList {
+class FlattenBinaryTreeToLinkedList
+{
 public:
-	void flatten(TreeNode* root);
+  void flatten(TreeNode* root);
 };
 
 #endif // FLATTEN_BINARY_TREE_TO_LINKED_LIST_HPP_

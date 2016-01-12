@@ -2,14 +2,13 @@
 
 #include "WordBreak.hpp"
 
-TEST_CASE("Word Break") {
+TEST_CASE("Word Break")
+{
   WordBreak s;
-
   SECTION("Sample test") {
     unordered_set<string> dict {"leet", "code"};
     REQUIRE(s.wordBreak("leetcode", dict) == true);
   }
-
   SECTION("Prefix") {
     unordered_set<string> dict {"g", "go", "goo", "goog", "googl"};
     REQUIRE(s.wordBreak("g", dict) == true);

@@ -17,5 +17,6 @@ int HIndexII::hIndex(vector<int>& citations)
       l = m + 1;
     }
   }
+
   return h;
 }

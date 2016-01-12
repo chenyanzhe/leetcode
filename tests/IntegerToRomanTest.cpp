@@ -2,9 +2,9 @@
 
 #include "IntegerToRoman.hpp"
 
-TEST_CASE("Integer To Roman") {
+TEST_CASE("Integer To Roman")
+{
   IntegerToRoman s;
-
   SECTION("Base tests") {
     REQUIRE(s.intToRoman(1) == "I");
     REQUIRE(s.intToRoman(2) == "II");
@@ -19,13 +19,11 @@ TEST_CASE("Integer To Roman") {
     REQUIRE(s.intToRoman(2000) == "MM");
     REQUIRE(s.intToRoman(3000) == "MMM");
   }
-
   SECTION("Combination tests") {
     REQUIRE(s.intToRoman(61) == "LXI");
     REQUIRE(s.intToRoman(961) == "CMLXI");
     REQUIRE(s.intToRoman(2961) == "MMCMLXI");
   }
-
   SECTION("Zero tests") {
     REQUIRE(s.intToRoman(320) == "CCCXX");
     REQUIRE(s.intToRoman(507) == "DVII");

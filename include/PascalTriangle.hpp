@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class PascalTriangle {
+class PascalTriangle
+{
 public:
-    vector<vector<int>> generate(int numRows);
+  vector<vector<int>> generate(int numRows);
 };
 
 #endif // PASCAL_TRIANGLE_HPP_

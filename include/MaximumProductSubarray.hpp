@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class MaximumProductSubarray {
+class MaximumProductSubarray
+{
 public:
   int maxProduct(vector<int>& nums);
 };

@@ -2,9 +2,9 @@
 
 #include "RomanToInteger.hpp"
 
-TEST_CASE("Roman To Integer") {
+TEST_CASE("Roman To Integer")
+{
   RomanToInteger s;
-
   SECTION("Base tests") {
     REQUIRE(s.romanToInt("I") == 1);
     REQUIRE(s.romanToInt("II") == 2);
@@ -19,13 +19,11 @@ TEST_CASE("Roman To Integer") {
     REQUIRE(s.romanToInt("MM") == 2000);
     REQUIRE(s.romanToInt("MMM") == 3000);
   }
-
   SECTION("Combination tests") {
     REQUIRE(s.romanToInt("LXI") == 61);
     REQUIRE(s.romanToInt("CMLXI") == 961);
     REQUIRE(s.romanToInt("MMCMLXI") == 2961);
   }
-
   SECTION("Zero tests") {
     REQUIRE(s.romanToInt("CCCXX") == 320);
     REQUIRE(s.romanToInt("DVII") == 507);

@@ -6,11 +6,12 @@
 #include <vector>
 using namespace std;
 
-class BinaryTreeRightSideView {
+class BinaryTreeRightSideView
+{
 public:
-    vector<int> rightSideView(TreeNode* root);
+  vector<int> rightSideView(TreeNode* root);
 private:
-    void bfs(TreeNode* root, vector<int>& result);
+  void bfs(TreeNode* root, vector<int>& result);
 };
 
 #endif // BINARY_TREE_RIGHT_SIDE_VIEW_HPP_

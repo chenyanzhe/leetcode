@@ -5,11 +5,12 @@
 #include <vector>
 using namespace std;
 
-class LetterCombinationsOfAPhoneNumber {
+class LetterCombinationsOfAPhoneNumber
+{
 public:
   vector<string> letterCombinations(string digits);
 private:
-  static const vector<vector<char> > keyMap;
+  static const vector<vector<char>> keyMap;
 };
 
 #endif // LETTER_COMBINATIONS_OF_A_PHONE_NUMBER_HPP_

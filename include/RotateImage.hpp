@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class RotateImage {
+class RotateImage
+{
 public:
   void rotate(vector<vector<int>>& matrix);
 };

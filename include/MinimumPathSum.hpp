@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class MinimumPathSum {
+class MinimumPathSum
+{
 public:
   int minPathSum(vector<vector<int>>& grid);
 };

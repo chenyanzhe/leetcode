@@ -7,15 +7,18 @@ vector<string> BinaryTreePaths::binaryTreePaths(TreeNode* root)
   return ret;
 }
 
-void BinaryTreePaths::dfs(TreeNode* root, string path, vector<string> &ret)
+void BinaryTreePaths::dfs(TreeNode* root, string path, vector<string>& ret)
 {
-  if (root == nullptr) return;
-        
-  if (path.empty())
+  if (root == nullptr) {
+    return;
+  }
+
+  if (path.empty()) {
     path = to_string(root->val);
-  else
+  } else {
     path += "->" + to_string(root->val);
-  
+  }
+
   if (root->left || root->right) {
     dfs(root->left, path, ret);
     dfs(root->right, path, ret);

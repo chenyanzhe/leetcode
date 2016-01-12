@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class IntegerToRoman {
+class IntegerToRoman
+{
 public:
   string intToRoman(int num);
 private:

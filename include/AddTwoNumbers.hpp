@@ -3,7 +3,8 @@
 
 #include "ListNode.hpp"
 
-class AddTwoNumbers {
+class AddTwoNumbers
+{
 public:
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 };

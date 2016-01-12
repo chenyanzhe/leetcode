@@ -3,9 +3,10 @@
 
 #include "TreeNode.hpp"
 
-class InvertBinaryTree {
+class InvertBinaryTree
+{
 public:
-    TreeNode* invertTree(TreeNode* root);
+  TreeNode* invertTree(TreeNode* root);
 };
 
 #endif // INVERT_BINARY_TREE_HPP_

@@ -5,19 +5,13 @@
 #include <string>
 using namespace std;
 
-class ExpressionAddOperators {
+class ExpressionAddOperators
+{
 public:
-
-  vector<string>addOperators(string num,
-                             int    target);
+  vector<string>addOperators(string num, int target);
 
 private:
-
-  void dfs(string          num,
-           int             target,
-           string          expr,
-           long            currRes,
-           long            prevNum,
+  void dfs(string num, int target, string expr, long currRes, long prevNum,
            vector<string>& res);
 };
 

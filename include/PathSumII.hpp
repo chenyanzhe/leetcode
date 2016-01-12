@@ -6,13 +6,14 @@
 #include <vector>
 using namespace std;
 
-class PathSumII {
+class PathSumII
+{
 private:
-	vector<vector<int>> res;
+  vector<vector<int>> res;
 public:
-	vector<vector<int>> pathSum(TreeNode* root, int sum);
+  vector<vector<int>> pathSum(TreeNode* root, int sum);
 private:
-	void pathSum(TreeNode *root, vector<int> &path, int sum);
+  void pathSum(TreeNode* root, vector<int>& path, int sum);
 };
 
 #endif // PATH_SUM_II_HPP_

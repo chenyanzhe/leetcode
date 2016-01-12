@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class SearchForARange {
+class SearchForARange
+{
 public:
   vector<int> searchRange(vector<int>& nums, int target);
 private:

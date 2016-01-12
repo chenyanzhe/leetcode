@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class LargestRectangleInHistogram {
+class LargestRectangleInHistogram
+{
 public:
-	int largestRectangleArea(vector<int>& height);
+  int largestRectangleArea(vector<int>& height);
 };
 
 #endif // LARGEST_RECTANGLE_IN_HISTOGRAM_HPP_

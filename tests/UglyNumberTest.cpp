@@ -2,9 +2,9 @@
 
 #include "UglyNumber.hpp"
 
-TEST_CASE("Ugly Number") {
+TEST_CASE("Ugly Number")
+{
   UglyNumber s;
-
   SECTION("Sample test") {
     REQUIRE(s.isUgly(6));
     REQUIRE(s.isUgly(8));

@@ -7,11 +7,13 @@ string IntegerToRoman::intToRoman(int num)
 {
   string ret;
   int l = 1;
+
   while (num != 0) {
     ret = digitToRoman(num % 10, l) + ret;
     num /= 10;
     l++;
   }
+
   return ret;
 }
 
@@ -22,22 +24,33 @@ string IntegerToRoman::digitToRoman(int digit, int level)
 
   switch(level) {
   case 1:
-    base[0] = 'I'; base[1] = 'V'; base[2] = 'X';
+    base[0] = 'I';
+    base[1] = 'V';
+    base[2] = 'X';
     break;
+
   case 2:
-    base[0] = 'X'; base[1] = 'L'; base[2] = 'C';
+    base[0] = 'X';
+    base[1] = 'L';
+    base[2] = 'C';
     break;
+
   case 3:
-    base[0] = 'C'; base[1] = 'D'; base[2] = 'M';
+    base[0] = 'C';
+    base[1] = 'D';
+    base[2] = 'M';
     break;
+
   case 4:
     base[0] = 'M';
     break;
   }
 
   string ret;
-  for (auto c : encode[digit])
+
+  for (auto c : encode[digit]) {
     ret.push_back(base[c - '0']);
+  }
 
   return ret;
 }

@@ -5,7 +5,8 @@
 #include <vector>
 using namespace std;
 
-class LongestCommonPrefix {
+class LongestCommonPrefix
+{
 public:
   string longestCommonPrefix(vector<string>& strs);
 };

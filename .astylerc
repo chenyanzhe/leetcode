@@ -1,0 +1,12 @@
+--style=kr
+--indent=spaces=2
+--suffix=none
+--break-blocks
+--delete-empty-lines
+--align-pointer=type
+--align-reference=type
+--add-brackets
+--pad-oper
+--close-templates
+--max-code-length=79
+--break-after-logical

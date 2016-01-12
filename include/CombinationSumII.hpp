@@ -4,11 +4,13 @@
 #include <vector>
 using namespace std;
 
-class CombinationSumII {
+class CombinationSumII
+{
 public:
   vector<vector<int>> combinationSum2(vector<int>& candidates, int target);
 private:
-  void helper(vector<int>& candidates, int target, int level, vector<int>& local, vector<vector<int>>& global);
+  void helper(vector<int>& candidates, int target, int level, vector<int>& local,
+              vector<vector<int>>& global);
 };
 
 #endif // COMBINATION_SUM_II_HPP_

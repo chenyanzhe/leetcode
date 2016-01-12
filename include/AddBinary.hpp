@@ -4,9 +4,10 @@
 #include <string>
 using namespace std;
 
-class AddBinary {
+class AddBinary
+{
 public:
-	string addBinary(string a, string b);
+  string addBinary(string a, string b);
 };
 
 #endif // ADD_BINARY_HPP_

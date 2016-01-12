@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class LongestValidParentheses {
+class LongestValidParentheses
+{
 public:
   int longestValidParentheses(string s);
 };

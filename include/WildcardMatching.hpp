@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class WildcardMatching {
+class WildcardMatching
+{
 public:
   bool isMatch(string s, string p);
 private:

@@ -6,7 +6,8 @@
 #include <vector>
 using namespace std;
 
-class MergeKSortedLists {
+class MergeKSortedLists
+{
 public:
   ListNode* mergeKLists(vector<ListNode*>& lists);
 };

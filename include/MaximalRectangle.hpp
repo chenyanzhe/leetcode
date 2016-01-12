@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class MaximalRectangle {
+class MaximalRectangle
+{
 public:
-	int maximalRectangle(vector<vector<char>>& matrix);
+  int maximalRectangle(vector<vector<char>>& matrix);
 };
 
 #endif // MAXIMAL_RECTANGLE_HPP_

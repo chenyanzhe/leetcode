@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class ContainsDuplicateII {
+class ContainsDuplicateII
+{
 public:
-    bool containsNearbyDuplicate(vector<int>& nums, int k);
+  bool containsNearbyDuplicate(vector<int>& nums, int k);
 };
 
 #endif // CONTAINS_DUPLICATE_II_HPP_

@@ -7,12 +7,19 @@ double Powxn::myPow(double x, int n)
 
 double Powxn::helper(double x, long n)
 {
-  if (n == 0) return 1.0;
-  if (n < 0) return helper(1 / x, -n);
+  if (n == 0) {
+    return 1.0;
+  }
+
+  if (n < 0) {
+    return helper(1 / x, -n);
+  }
 
   double half = helper(x, n / 2);
-  if (n % 2 == 1)
+
+  if (n % 2 == 1) {
     return half * half * x;
-  else
+  } else {
     return half * half;
+  }
 }

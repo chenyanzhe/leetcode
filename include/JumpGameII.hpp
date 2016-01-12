@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class JumpGameII {
+class JumpGameII
+{
 public:
   int jump(vector<int>& nums);
 };

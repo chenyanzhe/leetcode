@@ -6,7 +6,8 @@
 #include <vector>
 using namespace std;
 
-class IntegerToEnglishWords {
+class IntegerToEnglishWords
+{
 public:
 
   string numberToWords(int num);

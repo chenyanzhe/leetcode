@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class DecodeWays {
+class DecodeWays
+{
 public:
   int numDecodings(string s);
 private:

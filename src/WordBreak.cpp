@@ -6,7 +6,6 @@ using namespace std;
 bool WordBreak::wordBreak(string s, unordered_set<string>& wordDict)
 {
   int sz = s.size();
-
   vector<bool> dp(sz + 1, false);
   dp[0] = true;
 

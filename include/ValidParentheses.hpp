@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class ValidParentheses {
+class ValidParentheses
+{
 public:
   bool isValid(string s);
 private:

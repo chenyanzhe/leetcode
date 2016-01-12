@@ -9,7 +9,9 @@ vector<vector<int>> Permutations::permute(vector<int>& nums)
   vector<vector<int>> ret;
   int len = nums.size();
 
-  if (len == 0) return ret;
+  if (len == 0) {
+    return ret;
+  }
 
   permute(nums, 0, len - 1, ret);
   return ret;
@@ -18,14 +20,18 @@ vector<vector<int>> Permutations::permute(vector<int>& nums)
 bool Permutations::duplicate(vector<int>& nums, int head, int tail)
 {
   while (head < tail) {
-    if (nums[head] == nums[tail])
+    if (nums[head] == nums[tail]) {
       return true;
+    }
+
     head++;
   }
+
   return false;
 }
 
-void Permutations::permute(vector<int>& nums, int head, int tail, vector<vector<int>>& ret)
+void Permutations::permute(vector<int>& nums, int head, int tail,
+                           vector<vector<int>>& ret)
 {
   if (head == tail) {
     ret.push_back(nums);

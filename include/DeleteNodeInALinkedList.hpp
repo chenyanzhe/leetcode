@@ -3,9 +3,10 @@
 
 #include "ListNode.hpp"
 
-class DeleteNodeInALinkedList {
+class DeleteNodeInALinkedList
+{
 public:
-  void deleteNode(ListNode* node);  
+  void deleteNode(ListNode* node);
 };
 
 #endif // DELETE_NODE_IN_A_LINKED_LIST_HPP_

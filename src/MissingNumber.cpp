@@ -17,5 +17,6 @@ int MissingNumber::missingNumber(vector<int>& nums)
       nums[i] = nums.size();
     }
   }
+
   return missing;
 }

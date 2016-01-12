@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class PermutationsII {
+class PermutationsII
+{
 public:
   vector<vector<int>> permuteUnique(vector<int>& nums);
 private:

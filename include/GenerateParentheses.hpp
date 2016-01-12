@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-class GenerateParentheses {
+class GenerateParentheses
+{
 public:
   vector<string> generateParenthesis(int n);
 

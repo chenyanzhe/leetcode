@@ -3,7 +3,8 @@
 
 #include "ListNode.hpp"
 
-class ReverseNodesInKGroup {
+class ReverseNodesInKGroup
+{
 public:
   ListNode* reverseKGroup(ListNode* head, int k);
 };

@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class StringToInteger {
+class StringToInteger
+{
 public:
   int myAtoi(string str);
 };

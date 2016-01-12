@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class ScrambleString {
+class ScrambleString
+{
 public:
   bool isScramble(string s1, string s2);
 };

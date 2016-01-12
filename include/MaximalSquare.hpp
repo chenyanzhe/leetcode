@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class MaximalSquare {
+class MaximalSquare
+{
 public:
   int maximalSquare(vector<vector<char>>& matrix);
 };

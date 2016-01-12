@@ -3,7 +3,8 @@
 
 #include "ListNode.hpp"
 
-class SwapNodesInPairs {
+class SwapNodesInPairs
+{
 public:
   ListNode* swapPairs(ListNode* head);
 };

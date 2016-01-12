@@ -8,10 +8,11 @@ bool ValidParentheses::isValid(string s)
   stack<char> stk;
 
   for (auto c : s) {
-    if (!stk.empty() && isPair(stk.top(), c))
+    if (!stk.empty() && isPair(stk.top(), c)) {
       stk.pop();
-    else
+    } else {
       stk.push(c);
+    }
   }
 
   return stk.empty();
@@ -19,8 +20,17 @@ bool ValidParentheses::isValid(string s)
 
 bool ValidParentheses::isPair(char a, char b)
 {
-  if (a == '(' && b == ')') return true;
-  if (a == '{' && b == '}') return true;
-  if (a == '[' && b == ']') return true;
+  if (a == '(' && b == ')') {
+    return true;
+  }
+
+  if (a == '{' && b == '}') {
+    return true;
+  }
+
+  if (a == '[' && b == ']') {
+    return true;
+  }
+
   return false;
 }

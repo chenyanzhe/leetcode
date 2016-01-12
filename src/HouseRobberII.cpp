@@ -6,12 +6,17 @@ using namespace std;
 int HouseRobberII::rob(vector<int>& nums)
 {
   int sz = nums.size();
-  if (sz == 0) return 0;
-  if (sz == 1) return nums[0];
+
+  if (sz == 0) {
+    return 0;
+  }
+
+  if (sz == 1) {
+    return nums[0];
+  }
 
   int noHead = helper(nums, 1, sz - 1);
   int noTail = helper(nums, 0, sz - 2);
-
   return max(noHead, noTail);
 }
 

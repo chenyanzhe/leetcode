@@ -2,9 +2,9 @@
 
 #include "RotateImage.hpp"
 
-TEST_CASE("Rotate Image") {
+TEST_CASE("Rotate Image")
+{
   RotateImage s;
-
   SECTION("Normal test") {
     vector<vector<int>> matrix {
       {1, 2, 3, 4},

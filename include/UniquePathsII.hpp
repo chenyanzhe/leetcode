@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class UniquePathsII {
+class UniquePathsII
+{
 public:
   int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid);
 };

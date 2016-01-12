@@ -1,7 +1,8 @@
 #ifndef FIRST_BAD_VERSION_HPP_
 #define FIRST_BAD_VERSION_HPP_
 
-class FirstBadVersion {
+class FirstBadVersion
+{
 public:
 
   typedef bool (*VersionChecker)(int);

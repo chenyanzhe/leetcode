@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class NextPermutation {
+class NextPermutation
+{
 public:
-    void nextPermutation(vector<int>& nums);
+  void nextPermutation(vector<int>& nums);
 };
 
 #endif // NEXT_PERMUTATION_HPP_

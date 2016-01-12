@@ -6,13 +6,15 @@
 #include <vector>
 using namespace std;
 
-class ConstructBinaryTreeFromPreorderAndInorderTraversal {
+class ConstructBinaryTreeFromPreorderAndInorderTraversal
+{
 private:
-	int preIndex;
+  int preIndex;
 public:
-	TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder);
+  TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder);
 private:
-	TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder, int inStart, int inEnd);
+  TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder, int inStart,
+                      int inEnd);
 };
 
 #endif // CONSTRUCT_BINARY_TREE_FROM_PREORDER_AND_INORDER_TRAVERSAL_HPP_

@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class SudokuSolver {
+class SudokuSolver
+{
 public:
   void solveSudoku(vector<vector<char>>& board);
 private:

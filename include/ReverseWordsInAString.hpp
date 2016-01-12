@@ -4,12 +4,13 @@
 #include <string>
 using namespace std;
 
-class ReverseWordsInAString {
+class ReverseWordsInAString
+{
 public:
-    void reverseWords(string &s);
+  void reverseWords(string& s);
 private:
-    void standardize(string &s);
-    void reverseString(string &s, int begin, int end);
+  void standardize(string& s);
+  void reverseString(string& s, int begin, int end);
 };
 
 #endif // REVERSE_WORDS_IN_A_STRING_HPP_

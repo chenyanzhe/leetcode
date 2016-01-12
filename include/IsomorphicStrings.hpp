@@ -4,11 +4,12 @@
 #include <string>
 using namespace std;
 
-class IsomorphicStrings {
+class IsomorphicStrings
+{
 public:
-    bool isIsomorphic(string s, string t);
+  bool isIsomorphic(string s, string t);
 private:
-    void remap(string &s);
+  void remap(string& s);
 };
 
 #endif // ISOMORPHIC_STRINGS_HPP_

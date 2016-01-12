@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class HIndex {
+class HIndex
+{
 public:
 
   int hIndex(vector<int>& citations);

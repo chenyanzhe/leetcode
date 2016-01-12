@@ -4,11 +4,12 @@
 #include <vector>
 using namespace std;
 
-class SurroundedRegions {
+class SurroundedRegions
+{
 public:
-    void solve(vector<vector<char>>& board);
+  void solve(vector<vector<char>>& board);
 private:
-    void bfs(vector<vector<char>>& board, int i, int j);
+  void bfs(vector<vector<char>>& board, int i, int j);
 };
 
 #endif // SURROUNDED_REGIONS_HPP_

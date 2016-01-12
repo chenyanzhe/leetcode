@@ -5,7 +5,6 @@ ListNode* AddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2)
   ListNode* item = nullptr;
   ListNode* l3 = nullptr;
   ListNode* tail = nullptr;
-
   ListNode* p1 = l1;
   ListNode* p2 = l2;
   int carry = 0;
@@ -14,22 +13,29 @@ ListNode* AddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2)
     int v = p1->val + p2->val + carry;
     carry = v / 10;
     item = new ListNode(v % 10);
-    if (l3 == nullptr)
+
+    if (l3 == nullptr) {
       l3 = item;
-    else
+    } else {
       tail->next = item;
+    }
+
     tail = item;
-    p1 = p1->next; p2 = p2->next;
+    p1 = p1->next;
+    p2 = p2->next;
   }
 
   while (p1 != nullptr) {
     int v = p1->val + carry;
     carry = v / 10;
     item = new ListNode(v % 10);
-    if (l3 == nullptr)
+
+    if (l3 == nullptr) {
       l3 = item;
-    else
+    } else {
       tail->next = item;
+    }
+
     tail = item;
     p1 = p1->next;
   }
@@ -38,10 +44,13 @@ ListNode* AddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2)
     int v = p2->val + carry;
     carry = v / 10;
     item = new ListNode(v % 10);
-    if (l3 == nullptr)
+
+    if (l3 == nullptr) {
       l3 = item;
-    else
+    } else {
       tail->next = item;
+    }
+
     tail = item;
     p2 = p2->next;
   }

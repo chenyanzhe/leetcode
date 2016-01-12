@@ -5,7 +5,8 @@ using namespace std;
 
 FirstBadVersion::FirstBadVersion(VersionChecker checker)
   : isBadVersion(checker)
-{}
+{
+}
 
 int FirstBadVersion::firstBadVersion(int n)
 {
@@ -13,13 +14,18 @@ int FirstBadVersion::firstBadVersion(int n)
   uint64_t r = static_cast<uint64_t>(n);
 
   while (l <= r) {
-    if (l == r) return l;
+    if (l == r) {
+      return l;
+    }
 
     uint64_t m = (l + r) / 2;
 
     if (isBadVersion(m)) {
-      if ((m == l) || !isBadVersion(m - 1)) return m;
-      else r = m - 1;
+      if ((m == l) || !isBadVersion(m - 1)) {
+        return m;
+      } else {
+        r = m - 1;
+      }
     } else {
       l = m + 1;
     }

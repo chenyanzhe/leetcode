@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class MaximumSubarray {
+class MaximumSubarray
+{
 public:
   int maxSubArray(vector<int>& nums);
 };

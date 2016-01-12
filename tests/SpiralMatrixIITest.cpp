@@ -5,9 +5,9 @@
 #include <algorithm>
 using namespace std;
 
-TEST_CASE("Spiral Matrix II") {
+TEST_CASE("Spiral Matrix II")
+{
   SpiralMatrixII s;
-
   SECTION("Sample test") {
     vector<vector<int>> expected {
       {1, 2, 3},

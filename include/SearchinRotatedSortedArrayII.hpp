@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class SearchinRotatedSortedArrayII {
+class SearchinRotatedSortedArrayII
+{
 public:
-    bool search(vector<int>& nums, int target);
+  bool search(vector<int>& nums, int target);
 };
 
 #endif // SEARCH_IN_ROTATED_SORTED_ARRAY_II_HPP_

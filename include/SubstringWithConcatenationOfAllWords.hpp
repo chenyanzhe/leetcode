@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-class SubstringWithConcatenationOfAllWords {
+class SubstringWithConcatenationOfAllWords
+{
 public:
   vector<int> findSubstring(string s, vector<string>& words);
 };

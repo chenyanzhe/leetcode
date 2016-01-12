@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class Triangle {
+class Triangle
+{
 public:
   int minimumTotal(vector<vector<int>>& triangle);
 };

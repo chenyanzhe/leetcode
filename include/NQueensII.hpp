@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class NQueensII {
+class NQueensII
+{
 public:
   int totalNQueens(int n);
 private:

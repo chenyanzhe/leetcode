@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class HouseRobber {
+class HouseRobber
+{
 public:
   int rob(vector<int>& nums);
 };

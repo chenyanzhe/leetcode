@@ -2,9 +2,9 @@
 
 #include "CountAndSay.hpp"
 
-TEST_CASE("Count and Say") {
+TEST_CASE("Count and Say")
+{
   CountAndSay s;
-
   SECTION("Sample tests") {
     REQUIRE(s.countAndSay(1) == "1");
     REQUIRE(s.countAndSay(2) == "11");

@@ -6,12 +6,14 @@
 #include <vector>
 using namespace std;
 
-class SumRootToLeafNumbers {
+class SumRootToLeafNumbers
+{
 public:
-    int sumNumbers(TreeNode* root);
+  int sumNumbers(TreeNode* root);
 private:
-    void dfs(vector<TreeNode *> &path, vector<vector<int>> &result, TreeNode *start);
-    int getNumberVal(const vector<int> &num);
+  void dfs(vector<TreeNode*>& path, vector<vector<int>>& result,
+           TreeNode* start);
+  int getNumberVal(const vector<int>& num);
 };
 
 #endif // SUM_ROOT_TO_LEAF_NUMBERS_HPP_

@@ -1,7 +1,8 @@
 #ifndef UGLY_NUMBER_HPP_
 #define UGLY_NUMBER_HPP_
 
-class UglyNumber {
+class UglyNumber
+{
 public:
 
   bool isUgly(int num);

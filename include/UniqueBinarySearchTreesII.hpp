@@ -5,7 +5,8 @@
 #include <vector>
 using namespace std;
 
-class UniqueBinarySearchTreesII {
+class UniqueBinarySearchTreesII
+{
 public:
   vector<TreeNode*> generateTrees(int n);
 private:

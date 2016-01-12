@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class SpiralMatrixII {
+class SpiralMatrixII
+{
 public:
-	vector<vector<int>> generateMatrix(int n);
+  vector<vector<int>> generateMatrix(int n);
 };
 
 #endif // SPIRAL_MATRIX_II_HPP_

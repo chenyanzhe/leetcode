@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class SearchInsertPosition {
+class SearchInsertPosition
+{
 public:
   int searchInsert(vector<int>& nums, int target);
 };

@@ -6,7 +6,9 @@ void ImplementQueueUsingStacks::push(int x)
     backup.push(primary.top());
     primary.pop();
   }
+
   primary.push(x);
+
   while (!backup.empty()) {
     primary.push(backup.top());
     backup.pop();
@@ -15,14 +17,17 @@ void ImplementQueueUsingStacks::push(int x)
 
 void ImplementQueueUsingStacks::pop(void)
 {
-  if (!primary.empty())
+  if (!primary.empty()) {
     primary.pop();
+  }
 }
 
 int ImplementQueueUsingStacks::peek(void)
 {
-  if (!primary.empty())
+  if (!primary.empty()) {
     return primary.top();
+  }
+
   return 0;
 }
 

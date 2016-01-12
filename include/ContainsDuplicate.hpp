@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class ContainsDuplicate {
+class ContainsDuplicate
+{
 public:
-    bool containsDuplicate(vector<int>& nums);
+  bool containsDuplicate(vector<int>& nums);
 };
 
 #endif // CONTAINS_DUPLICATE_HPP_

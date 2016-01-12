@@ -4,13 +4,14 @@
 #include "TreeNode.hpp"
 #include "ListNode.hpp"
 
-class ConvertSortedListToBinarySearchTree {
+class ConvertSortedListToBinarySearchTree
+{
 private:
-	ListNode *head;
+  ListNode* head;
 public:
-	TreeNode* sortedListToBST(ListNode* head);
+  TreeNode* sortedListToBST(ListNode* head);
 private:
-	TreeNode* sortedListToBST(int start, int end);
+  TreeNode* sortedListToBST(int start, int end);
 };
 
 #endif // CONVERT_SORTED_LIST_TO_BINARY_SEARCH_TREE_HPP_

@@ -1,7 +1,8 @@
 #ifndef DIVIDE_TWO_INTEGERS_HPP_
 #define DIVIDE_TWO_INTEGERS_HPP_
 
-class DivideTwoIntegers {
+class DivideTwoIntegers
+{
 public:
   int divide(int dividend, int divisor);
 };

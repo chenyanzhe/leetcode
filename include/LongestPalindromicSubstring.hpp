@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class LongestPalindromicSubstring {
+class LongestPalindromicSubstring
+{
 public:
   string longestPalindrome(string s);
 };

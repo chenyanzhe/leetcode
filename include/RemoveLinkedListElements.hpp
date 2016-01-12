@@ -3,9 +3,10 @@
 
 #include "ListNode.hpp"
 
-class RemoveLinkedListElements {
+class RemoveLinkedListElements
+{
 public:
-    ListNode* removeElements(ListNode* head, int val);
+  ListNode* removeElements(ListNode* head, int val);
 };
 
 #endif // REMOVE_LINKED_LIST_ELEMENTS_HPP_

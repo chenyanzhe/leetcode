@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-class NQueens {
+class NQueens
+{
 public:
   vector<vector<string>> solveNQueens(int n);
 private:

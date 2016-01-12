@@ -9,17 +9,19 @@ int PerfectSquares::numSquares(int n)
   queue<int>   q;
   vector<bool> visited(n + 1, false);
   int level = 0;
-
   // initialize the queue and visited vector
   int d = 1;
 
   while (d * d <= n) {
-    if (d * d == n) return level + 1;
+    if (d * d == n) {
+      return level + 1;
+    }
 
     q.push(n - d * d);
     visited[d * d] = true;
     d++;
   }
+
   level++;
 
   while (!q.empty()) {
@@ -31,15 +33,19 @@ int PerfectSquares::numSquares(int n)
       q.pop();
 
       while (d * d <= t) {
-        if (d * d == t) return level + 1;
+        if (d * d == t) {
+          return level + 1;
+        }
 
         if (!visited[n - t + d * d]) {
           q.push(t - d * d);
           visited[n - t + d * d] = true;
         }
+
         d++;
       }
     }
+
     level++;
   }
 

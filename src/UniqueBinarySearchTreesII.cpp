@@ -9,7 +9,7 @@ vector<TreeNode*> UniqueBinarySearchTreesII::generateTrees(int n)
     for (int j = 1; j <= i; j++) {
       for (auto l : dp[j - 1]) {
         for (auto r : dp[i - j]) {
-          TreeNode *root = new TreeNode(j);
+          TreeNode* root = new TreeNode(j);
           // FIXME:
           // No need to clone left subtree
           // Tradeoff for correctly freeing all the trees
@@ -30,7 +30,6 @@ TreeNode* UniqueBinarySearchTreesII::clone(TreeNode* root, int offset)
 
   if (root != nullptr) {
     nroot = new TreeNode(root->val + offset);
-
     nroot->left = clone(root->left, offset);
     nroot->right = clone(root->right, offset);
   }

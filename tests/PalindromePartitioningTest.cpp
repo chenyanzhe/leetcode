@@ -5,18 +5,19 @@
 #include <algorithm>
 using namespace std;
 
-TEST_CASE("Palindrome Partitioning") {
-    PalindromePartitioning s;
+TEST_CASE("Palindrome Partitioning")
+{
+  PalindromePartitioning s;
+  SECTION("Sample test") {
+    vector<vector<string>> expected {
+      {"aa", "b"},
+      {"a", "a", "b"}
+    };
+    vector<vector<string>> result = s.partition("aab");
+    REQUIRE(result.size() == expected.size());
 
-    SECTION("Sample test") {
-        vector<vector<string>> expected {
-            {"aa", "b"},
-            {"a", "a", "b"}
-        };
-
-        vector<vector<string>> result = s.partition("aab");
-        REQUIRE(result.size() == expected.size());
-        for (auto r : result)
-            REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
+    for (auto r : result) {
+      REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
     }
+  }
 }

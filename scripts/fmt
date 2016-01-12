@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT="$( dirname $DIR )"
+
+command -v astyle >/dev/null 2>&1 || { echo >&2 "astyle required. aborting."; exit 1; }
+
+astyle --options="$ROOT/.astylerc" --recursive "$ROOT/include/*.hpp" "$ROOT/src/*.cpp" "$ROOT/tests/*.cpp" --exclude="$ROOT/tests/catch.hpp" --ignore-exclude-errors

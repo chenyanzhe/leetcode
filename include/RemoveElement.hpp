@@ -4,9 +4,10 @@
 #include <vector>
 using namespace std;
 
-class RemoveElement {
+class RemoveElement
+{
 public:
-    int removeElement(vector<int>& nums, int val);
+  int removeElement(vector<int>& nums, int val);
 };
 
 #endif // REMOVE_ELEMENT_HPP_

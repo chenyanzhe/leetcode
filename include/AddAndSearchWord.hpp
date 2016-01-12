@@ -5,28 +5,30 @@
 #include <vector>
 using namespace std;
 
-class WordTrieNode {
+class WordTrieNode
+{
 public:
-    WordTrieNode();
-    ~WordTrieNode();
+  WordTrieNode();
+  ~WordTrieNode();
 
-    vector<WordTrieNode *> children;
-    bool isWord;
+  vector<WordTrieNode*> children;
+  bool isWord;
 };
 
-class WordDictionary {
+class WordDictionary
+{
 public:
-    WordDictionary();
-    ~WordDictionary();
+  WordDictionary();
+  ~WordDictionary();
 
-    // Adds a word into the data structure.
-    void addWord(string word);
-    bool search(string word);
+  // Adds a word into the data structure.
+  void addWord(string word);
+  bool search(string word);
 
 private:
-    WordTrieNode *root;
+  WordTrieNode* root;
 
-    bool search(WordTrieNode *root, const char *head);
+  bool search(WordTrieNode* root, const char* head);
 };
 
 #endif // ADD_AND_SEARCH_WORD_HPP_

@@ -5,16 +5,19 @@ using namespace std;
 
 int BestTimeToBuyAndSellStock::maxProfit(vector<int>& prices)
 {
-    int sz = prices.size();
-    if (sz <= 1) return 0;
+  int sz = prices.size();
 
-    int result = 0;
-    int min_price = prices[0];
+  if (sz <= 1) {
+    return 0;
+  }
 
-    for (int i = 1; i < sz; i++) {
-        result = max(result, prices[i] - min_price);
-        min_price = min(min_price, prices[i]);
-    }
+  int result = 0;
+  int min_price = prices[0];
 
-    return result;
+  for (int i = 1; i < sz; i++) {
+    result = max(result, prices[i] - min_price);
+    min_price = min(min_price, prices[i]);
+  }
+
+  return result;
 }

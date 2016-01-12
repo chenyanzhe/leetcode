@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class ContainerWithMostWater {
+class ContainerWithMostWater
+{
 public:
   int maxArea(vector<int>& height);
 };

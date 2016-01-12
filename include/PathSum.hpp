@@ -3,9 +3,10 @@
 
 #include "TreeNode.hpp"
 
-class PathSum {
+class PathSum
+{
 public:
-	bool hasPathSum(TreeNode* root, int sum);
+  bool hasPathSum(TreeNode* root, int sum);
 };
 
 #endif // PATH_SUM_HPP_

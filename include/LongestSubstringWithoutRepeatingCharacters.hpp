@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class LongestSubstringWithoutRepeatingCharacters {
+class LongestSubstringWithoutRepeatingCharacters
+{
 public:
   int lengthOfLongestSubstring(string s);
 };

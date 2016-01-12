@@ -4,11 +4,12 @@
 #include <string>
 using namespace std;
 
-class FractionToRecurringDecimal {
+class FractionToRecurringDecimal
+{
 public:
-    string fractionToDecimal(int numerator, int denominator);
+  string fractionToDecimal(int numerator, int denominator);
 private:
-    string helper(long numerator, long denominator);
+  string helper(long numerator, long denominator);
 };
 
 #endif // FRACTION_TO_RECURRING_DECIMAL_HPP_

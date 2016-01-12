@@ -5,12 +5,13 @@
 #include <vector>
 using namespace std;
 
-class PermutationSequence {
+class PermutationSequence
+{
 public:
-    string getPermutation(int n, int k);
+  string getPermutation(int n, int k);
 private:
-    string kth_permutation(string seq, int k);
-    int factorial(int n);
+  string kth_permutation(string seq, int k);
+  int factorial(int n);
 };
 
 #endif // PERMUTATION_SEQUENCE_HPP_

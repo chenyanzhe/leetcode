@@ -2,31 +2,42 @@
 
 bool PalindromeNumber::isPalindrome(int x)
 {
-  if (x < 0) return false;
+  if (x < 0) {
+    return false;
+  }
 
-  if (0 <= x && x <= 9) return true;
+  if (0 <= x && x <= 9) {
+    return true;
+  }
 
   int digits = 0;
   int _x = x;
+
   while (_x > 0) {
     digits++;
     _x /= 10;
   }
 
   for (int i = 1, j = digits; i < j; i++, j--) {
-    if (getDigit(x, i) != getDigit(x, j))
+    if (getDigit(x, i) != getDigit(x, j)) {
       return false;
+    }
   }
+
   return true;
 }
 
 int PalindromeNumber::getDigit(int x, int i)
 {
-  if (i > 10) return 0;
+  if (i > 10) {
+    return 0;
+  }
 
   int div = 1;
-  for (int j = 0; j < i - 1; j++)
+
+  for (int j = 0; j < i - 1; j++) {
     div *= 10;
+  }
 
   return x / div % 10;
 }

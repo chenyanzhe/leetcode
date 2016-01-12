@@ -3,9 +3,10 @@
 
 #include "ListNode.hpp"
 
-class RemoveDuplicatesFromSortedList {
+class RemoveDuplicatesFromSortedList
+{
 public:
-	ListNode* deleteDuplicates(ListNode* head);
+  ListNode* deleteDuplicates(ListNode* head);
 };
 
 #endif // REMOVE_DUPLICATES_FROM_SORTED_LIST_HPP_

@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class ThreeSumClosest {
+class ThreeSumClosest
+{
 public:
   int threeSumClosest(vector<int>& nums, int target);
 };

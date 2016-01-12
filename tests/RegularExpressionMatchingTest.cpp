@@ -2,9 +2,9 @@
 
 #include "RegularExpressionMatching.hpp"
 
-TEST_CASE("Regular Expression Matching") {
+TEST_CASE("Regular Expression Matching")
+{
   RegularExpressionMatching s;
-
   SECTION("Sample tests") {
     REQUIRE(s.isMatch("aa", "a") == false);
     REQUIRE(s.isMatch("aa", "aa") == true);

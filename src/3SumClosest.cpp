@@ -7,38 +7,44 @@ using namespace std;
 
 int ThreeSumClosest::threeSumClosest(vector<int>& nums, int target)
 {
-    int result = 0;
-    int min_gap = INT_MAX;
+  int result = 0;
+  int min_gap = INT_MAX;
+  auto begin = nums.begin();
+  auto end = nums.end();
+  sort(begin, end);
 
-    auto begin = nums.begin();
-    auto end = nums.end();
-
-    sort(begin, end);
-
-    for (auto i = begin; i < end - 2; i++) {
-        if (i > begin && *i == *(i - 1)) continue;
-
-        auto j = i + 1;
-        auto k = end - 1;
-
-        while (j < k) {
-            int sum = *i + *j + *k;
-            int gap = abs(sum - target);
-
-            if (gap < min_gap) {
-                min_gap = gap;
-                result = sum;
-            }
-
-            if (sum < target) {
-                j++;
-                while (*j == *(j - 1) && j < k) j++;
-            } else {
-                k--;
-                while (*k == *(k + 1) && j < k) k--;
-            }
-        }
+  for (auto i = begin; i < end - 2; i++) {
+    if (i > begin && *i == *(i - 1)) {
+      continue;
     }
 
-    return result;
+    auto j = i + 1;
+    auto k = end - 1;
+
+    while (j < k) {
+      int sum = *i + *j + *k;
+      int gap = abs(sum - target);
+
+      if (gap < min_gap) {
+        min_gap = gap;
+        result = sum;
+      }
+
+      if (sum < target) {
+        j++;
+
+        while (*j == *(j - 1) && j < k) {
+          j++;
+        }
+      } else {
+        k--;
+
+        while (*k == *(k + 1) && j < k) {
+          k--;
+        }
+      }
+    }
+  }
+
+  return result;
 }

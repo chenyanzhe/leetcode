@@ -4,11 +4,13 @@
 #include <vector>
 using namespace std;
 
-class Combinations {
+class Combinations
+{
 public:
-	vector<vector<int>> combine(int n, int k);
+  vector<vector<int>> combine(int n, int k);
 private:
-	void dfs(vector<vector<int>> &ret, vector<int> &current, int n, int k, int start);
+  void dfs(vector<vector<int>>& ret, vector<int>& current, int n, int k,
+           int start);
 };
 
 #endif // COMBINATIONS_HPP_

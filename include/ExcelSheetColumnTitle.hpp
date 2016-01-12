@@ -4,9 +4,10 @@
 #include <string>
 using namespace std;
 
-class ExcelSheetColumnTitle {
+class ExcelSheetColumnTitle
+{
 public:
-    string convertToTitle(int n);
+  string convertToTitle(int n);
 };
 
 #endif // EXCEL_SHEET_COLUMN_TITLE_HPP_

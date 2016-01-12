@@ -6,7 +6,10 @@ using namespace std;
 int MaximumProductSubarray::maxProduct(vector<int>& nums)
 {
   int sz = nums.size();
-  if (sz == 0) return 0;
+
+  if (sz == 0) {
+    return 0;
+  }
 
   int minNow, maxNow, maxGlobal;
   minNow = maxNow = maxGlobal = nums[0];
