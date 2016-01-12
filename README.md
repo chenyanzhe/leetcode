@@ -1,7 +1,9 @@
 # LeetCode
 
-Solutions to [LeetCode OJ](https://leetcode.com/problemset/algorithms/).
+## Table of Contents
 
-Managed by [CMake](http://www.cmake.org) and [Catch](http://catch-lib.net).
-
-Please feel free to let me know if you have any problem or better solutions.
+|   | # | Title | Difficulty |
+|---|---|-------|------------|
+| :white_check_mark: | 283 | [Move Zeros](https://leetcode.com/problems/move-zeroes/) | Easy |
+|   | 282 | [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/) | Hard |
+| :lock: | 281 | Zigzag Iterator | Medium |
