@@ -1,6 +1,6 @@
 #include "AddAndSearchWord.hpp"
 
-WordTrieNode::WordTrieNode() : children(vector<WordTrieNode *>(26, nullptr)),
+WordTrieNode::WordTrieNode() : children(vector<WordTrieNode * >(26, nullptr)),
   isWord(false)
 {
 }

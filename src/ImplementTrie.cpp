@@ -1,6 +1,6 @@
 #include "ImplementTrie.hpp"
 
-TrieNode::TrieNode() : children(vector<TrieNode *>(26, nullptr)),
+TrieNode::TrieNode() : children(vector<TrieNode * >(26, nullptr)),
   isWord(false)
 {
 }

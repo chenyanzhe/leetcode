@@ -7,6 +7,5 @@
 --align-reference=type
 --add-brackets
 --pad-oper
---close-templates
 --max-code-length=79
 --break-after-logical
