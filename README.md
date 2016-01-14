@@ -4,6 +4,8 @@
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 289 | [Game of Life](https://leetcode.com/problems/game-of-life/) | Medium |
+| :lock: | 288 | Unique Word Abbreviation | Easy |
 | :white_check_mark: | 287 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | Hard |
 | :lock: | 286 | Walls and Gates | Medium |
 | :lock: | 285 | Inorder Successor in BST | Medium |
