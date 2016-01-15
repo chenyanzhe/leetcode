@@ -4,6 +4,8 @@
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 292 | [Nim Game](https://leetcode.com/problems/nim-game/) | Easy |
+| :lock: | 291 | Word Pattern II | Hard |
 | :white_check_mark: | 290 | [Word Pattern](https://leetcode.com/problems/word-pattern/) | Easy |
 | :white_check_mark: | 289 | [Game of Life](https://leetcode.com/problems/game-of-life/) | Medium |
 | :lock: | 288 | Unique Word Abbreviation | Easy |
