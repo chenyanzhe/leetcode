@@ -4,6 +4,8 @@
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 297 | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Medium |
+| :lock: | 296 | Best Meeting Point | Hard |
 | :white_check_mark: | 295 | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | Hard |
 | :lock: | 294 | Flip Game II | Medium |
 | :lock: | 293 | Flip Game | Easy |
