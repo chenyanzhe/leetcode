@@ -4,6 +4,7 @@
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 301 | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) | Hard |
 | :white_check_mark: | 300 | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) | Medium |
 | :white_check_mark: | 299 | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/) | Easy |
 | :lock: | 298 | 	Binary Tree Longest Consecutive Sequence | Medium |
