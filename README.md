@@ -4,10 +4,12 @@
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 303 | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | Easy |
+| :lock: | 302 | Smallest Rectangle Enclosing Black Pixels | Hard |
 | :white_check_mark: | 301 | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) | Hard |
 | :white_check_mark: | 300 | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) | Medium |
 | :white_check_mark: | 299 | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/) | Easy |
-| :lock: | 298 | 	Binary Tree Longest Consecutive Sequence | Medium |
+| :lock: | 298 | Binary Tree Longest Consecutive Sequence | Medium |
 | :white_check_mark: | 297 | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Medium |
 | :lock: | 296 | Best Meeting Point | Hard |
 | :white_check_mark: | 295 | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | Hard |
