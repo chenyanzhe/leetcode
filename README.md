@@ -4,6 +4,7 @@
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 304 | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Medium |
 | :white_check_mark: | 303 | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | Easy |
 | :lock: | 302 | Smallest Rectangle Enclosing Black Pixels | Hard |
 | :white_check_mark: | 301 | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) | Hard |
