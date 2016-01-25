@@ -289,5 +289,5 @@
 | :white_check_mark: | 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium |
 | :white_check_mark: | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard |
 | :white_check_mark: | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium |
-| :white_check_mark: | 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium |
-| :white_check_mark: | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Medium |
+| :white_check_mark: | 2 | [Add Two Numbers](http://leetcode.chenyanzhe.com/list/add_two_numbers.html) | Medium |
+| :white_check_mark: | 1 | [Two Sum](http://leetcode.chenyanzhe.com/array/two_sum.html) | Medium |
