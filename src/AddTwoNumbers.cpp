@@ -1,64 +1,28 @@
 #include "AddTwoNumbers.hpp"
 
+#include <cstdlib>
+
 ListNode* AddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2)
 {
-  ListNode* item = nullptr;
-  ListNode* l3 = nullptr;
-  ListNode* tail = nullptr;
-  ListNode* p1 = l1;
-  ListNode* p2 = l2;
-  int carry = 0;
+  ListNode stackAnchor(0);
+  ListNode* tail = &stackAnchor;
+  div_t sum = { 0, 0 };
 
-  while (p1 != nullptr && p2 != nullptr) {
-    int v = p1->val + p2->val + carry;
-    carry = v / 10;
-    item = new ListNode(v % 10);
-
-    if (l3 == nullptr) {
-      l3 = item;
-    } else {
-      tail->next = item;
+  while (sum.quot > 0 || l1 || l2) {
+    if (l1) {
+      sum.quot += l1->val;
+      l1 = l1->next;
     }
 
-    tail = item;
-    p1 = p1->next;
-    p2 = p2->next;
-  }
-
-  while (p1 != nullptr) {
-    int v = p1->val + carry;
-    carry = v / 10;
-    item = new ListNode(v % 10);
-
-    if (l3 == nullptr) {
-      l3 = item;
-    } else {
-      tail->next = item;
+    if (l2) {
+      sum.quot += l2->val;
+      l2 = l2->next;
     }
 
-    tail = item;
-    p1 = p1->next;
+    sum = div(sum.quot, 10);
+    tail->next = new ListNode(sum.rem);
+    tail = tail->next;
   }
 
-  while (p2 != nullptr) {
-    int v = p2->val + carry;
-    carry = v / 10;
-    item = new ListNode(v % 10);
-
-    if (l3 == nullptr) {
-      l3 = item;
-    } else {
-      tail->next = item;
-    }
-
-    tail = item;
-    p2 = p2->next;
-  }
-
-  if (carry != 0) {
-    item = new ListNode(carry);
-    tail->next = item;
-  }
-
-  return l3;
+  return stackAnchor.next;
 }
