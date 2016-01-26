@@ -1,35 +1,25 @@
 #include "LongestSubstringWithoutRepeatingCharacters.hpp"
 
-#include <vector>
+#include <algorithm>
 using namespace std;
 
 int LongestSubstringWithoutRepeatingCharacters::lengthOfLongestSubstring(
   string s)
 {
-  if (s.size() == 0) {
-    return 0;
-  }
+  int map[256];
+  fill(map, map + 256, -1);
+  int ret = 0;
+  int slow = 0;
+  int fast = 0;
 
-  vector<int> charMap(256, -1);
-  int len = 1;
-  size_t h = 0;
-  charMap[s[0]] = 0;
-
-  for (size_t i = 1; i < s.size(); i++) {
-    int loc = charMap[s[i]];
-
-    if (loc == -1) {
-      len = (i - h + 1 > len ? i - h + 1 : len);
-    } else {
-      for (size_t j = h; j < loc; j++) {
-        charMap[s[j]] = -1;
-      }
-
-      h = loc + 1;
+  for (; fast < s.size(); fast++) {
+    if (map[s[fast]] >= slow) {
+      ret = max(ret, fast - slow);
+      slow = map[s[fast]] + 1;
     }
 
-    charMap[s[i]] = i;
+    map[s[fast]] = fast;
   }
 
-  return len;
+  return max(ret, fast - slow);
 }
