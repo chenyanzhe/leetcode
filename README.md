@@ -283,7 +283,7 @@
 | :white_check_mark: | 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Medium |
 | :white_check_mark: | 10 | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) | Hard |
 | :white_check_mark: | 9 | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Easy |
-| :white_check_mark: | 8 | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | Easy |
+| :white_check_mark: | 8 | [String to Integer (atoi)](http://leetcode.chenyanzhe.com/math/string-to-integer-atoi.html) | Easy |
 | :white_check_mark: | 7 | [Reverse Integer](http://leetcode.chenyanzhe.com/math/reverse-integer.html) | Easy |
 | :white_check_mark: | 6 | [ZigZag Conversion](http://leetcode.chenyanzhe.com/string/zigzag-conversion.html) | Easy |
 | :white_check_mark: | 5 | [Longest Palindromic Substring](http://leetcode.chenyanzhe.com/string/longest-palindromic-substring.html) | Medium |

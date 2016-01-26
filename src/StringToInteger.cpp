@@ -6,56 +6,34 @@ using namespace std;
 
 int StringToInteger::myAtoi(string str)
 {
-  int i = -1;
+  int sign = 1;
+  int base = 0;
+  int i = 0;
 
-  while (i + 1 < str.size() && str[i + 1] == ' ') {
+  // discard all leading whitespaces
+  while (str[i] == ' ') {
     i++;
   }
 
-  if (i + 1 == str.size()) {
-    return 0;
+  // get the sign of the number
+  if (str[i] == '+' || str[i] == '-') {
+    sign = 1 - 2 * (str[i++] == '-');
   }
 
-  if (i != -1) {
-    str = str.substr(i + 1);
+  // ignore invalid input
+  while (str[i] >= '0' && str[i] <= '9') {
+    // detect overflow or underflow
+    if (base > INT_MAX / 10 || (base == INT_MAX / 10 &&
+                                str[i] - '0' > INT_MAX % 10)) {
+      if (sign == 1) {
+        return INT_MAX;
+      } else {
+        return INT_MIN;
+      }
+    }
+
+    base = base * 10 + (str[i++] - '0');
   }
 
-  bool negative = false;
-
-  if (str[0] == '+' || str[0] == '-') {
-    negative = (str[0] == '-');
-    str = str.substr(1);
-  }
-
-  if (str.size() == 0) {
-    return 0;
-  }
-
-  int j = -1;
-
-  while (j + 1 < str.size() && isdigit(str[j + 1])) {
-    j++;
-  }
-
-  if (j == -1) {
-    return 0;
-  }
-
-  str = str.substr(0, j + 1);
-
-  if (str.size() > 10) {
-    return negative ? INT_MIN : INT_MAX;
-  }
-
-  long long int val = 0;
-
-  for (auto c : str) {
-    val = val * 10 + (c - '0');
-  }
-
-  if (negative) {
-    return -val < INT_MIN ? INT_MIN : -val;
-  } else {
-    return val > INT_MAX ? INT_MAX : val;
-  }
+  return base * sign;
 }
