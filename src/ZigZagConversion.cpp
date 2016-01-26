@@ -5,33 +5,31 @@ using namespace std;
 
 string ZigZagConversion::convert(string s, int numRows)
 {
-  if (numRows == 1) {
+  if (numRows <= 1) {
     return s;
   }
 
   vector<string> lines(numRows, "");
-  int dir = 1;
-  int l = 0;
+  int step = 1;
+  int row = 0;
 
   for (auto c : s) {
-    lines[l].push_back(c);
+    lines[row].push_back(c);
 
-    if (l == numRows - 1) {
-      dir = -1;
+    if (row == numRows - 1) {
+      step = -1;
+    } else if (row == 0) {
+      step = 1;
     }
 
-    if (l == 0) {
-      dir = 1;
-    }
-
-    l += dir;
+    row += step;
   }
 
-  string ret = "";
+  s.clear();
 
   for (auto line : lines) {
-    ret += line;
+    s += line;
   }
 
-  return ret;
+  return s;
 }
