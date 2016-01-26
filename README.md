@@ -286,7 +286,7 @@
 | :white_check_mark: | 8 | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | Easy |
 | :white_check_mark: | 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Easy |
 | :white_check_mark: | 6 | [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/) | Easy |
-| :white_check_mark: | 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium |
+| :white_check_mark: | 5 | [Longest Palindromic Substring](http://leetcode.chenyanzhe.com/string/longest-palindromic-substring.html) | Medium |
 | :white_check_mark: | 4 | [Median of Two Sorted Arrays](http://leetcode.chenyanzhe.com/array/median-of-two-sorted-arrays.html) | Hard |
 | :white_check_mark: | 3 | [Longest Substring Without Repeating Characters](http://leetcode.chenyanzhe.com/string/longest-substring-without-repeating-characters.html) | Medium |
 | :white_check_mark: | 2 | [Add Two Numbers](http://leetcode.chenyanzhe.com/list/add-two-numbers.html) | Medium |
