@@ -6,24 +6,17 @@ using namespace std;
 double MedianOfTwoSortedArrays::findMedianSortedArrays(vector<int>& A,
     vector<int>& B)
 {
-  if (A.empty() && B.empty()) {
+  int m = A.size();
+  int n = B.size();
+
+  if (m == 0 && n == 0) {
     return 0;
   }
 
-  return findMedianSortedArrays(A.data(), A.size(), B.data(), B.size());
-}
-
-double MedianOfTwoSortedArrays::findMedianSortedArrays(int A[], int m, int B[],
-    int n)
-{
-  int total = m + n;
-
-  if (total & 1) {
-    return findKth(A, m, B, n, total / 2 + 1);
-  } else {
-    return (findKth(A, m, B, n, total / 2) + findKth(A, m, B, n,
-            total / 2 + 1)) / 2;
-  }
+  int l = (m + n + 1) >> 1;
+  int r = (m + n + 2) >> 1;
+  return (findKth(A.data(), m, B.data(), n, l)
+          + findKth(A.data(), m, B.data(), n, r)) / 2.0;
 }
 
 double MedianOfTwoSortedArrays::findKth(int A[], int m, int B[], int n, int k)
@@ -41,13 +34,11 @@ double MedianOfTwoSortedArrays::findKth(int A[], int m, int B[], int n, int k)
   }
 
   int i = min(k / 2, m);
-  int j = k - i;
+  int j = min(k / 2, n);
 
   if (A[i - 1] < B[j - 1]) {
     return findKth(A + i, m - i, B, n, k - i);
-  } else if (A[i - 1] > B[j - 1]) {
-    return findKth(A, m, B + j, n - j, k - j);
   } else {
-    return A[i - 1];
+    return findKth(A, m, B + j, n - j, k - j);
   }
 }

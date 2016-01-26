@@ -9,7 +9,6 @@ class MedianOfTwoSortedArrays
 public:
   double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 private:
-  double findMedianSortedArrays(int nums1[], int sz1, int nums2[], int sz2);
   double findKth(int nums1[], int sz1,  int nums2[], int sz2, int k);
 };
 
