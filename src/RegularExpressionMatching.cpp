@@ -8,41 +8,15 @@ bool RegularExpressionMatching::isMatch(string s, string p)
     return s.empty();
   }
 
-  if (s.empty()) {
-    return p.empty() || (p.size() >= 2 && p[1] == '*' && isMatch(s, p.substr(2)));
-  }
-
-  if (p.size() == 1) {
-    return s.size() == 1 && (p[0] == '.' || p[0] == s[0]);
-  } else if (p[1] == '*') {
-    if (p[0] == '.') {
-      if (isMatch(s, p.substr(2))) {
-        return true;
-      }
-
-      for (int i = 1; i <= s.size(); i++)
-        if (isMatch(s.substr(i), p.substr(2))) {
-          return true;
-        }
-
-      return false;
-    } else {
-      if (isMatch(s, p.substr(2))) {
-        return true;
-      }
-
-      for (int i = 0; i < s.size() && s[i] == p[0]; i++)
-        if (isMatch(s.substr(i + 1), p.substr(2))) {
-          return true;
-        }
-
-      return false;
-    }
+  if (p.size() > 1 && '*' == p[1]) {
+    // x* matches empty string or at least one character: x* -> xx*
+    return isMatch(s, p.substr(2)) ||
+           !s.empty() && (s[0] == p[0] || '.' == p[0]) &&
+           isMatch(s.substr(1), p);
   } else {
-    return isMatch(s.substr(1), p.substr(1)) && (p[0] == '.' || p[0] == s[0]);
+    return !s.empty() && (s[0] == p[0] || '.' == p[0]) &&
+           isMatch(s.substr(1), p.substr(1));
   }
-
-  return false;
 }
 #endif
 
