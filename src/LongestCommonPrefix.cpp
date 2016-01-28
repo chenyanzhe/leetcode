@@ -6,21 +6,13 @@ string LongestCommonPrefix::longestCommonPrefix(vector<string>& strs)
     return "";
   }
 
-  string ret = strs[0];
-
-  for (size_t i = 1; i < strs.size(); i++) {
-    if (ret.empty()) {
-      return "";
+  for (int idx = 0; idx < strs[0].size(); ++idx) {
+    for (int i = 1; i < strs.size(); ++i) {
+      if (strs[i][idx] != strs[0][idx]) {
+        return strs[0].substr(0, idx);
+      }
     }
-
-    size_t j = 0;
-
-    while (j < ret.size() && j < strs[i].size() && ret[j] == strs[i][j]) {
-      j++;
-    }
-
-    ret = ret.substr(0, j);
   }
 
-  return ret;
+  return strs[0];
 }
