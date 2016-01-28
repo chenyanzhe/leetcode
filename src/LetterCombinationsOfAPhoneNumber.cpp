@@ -23,6 +23,10 @@ vector<string> LetterCombinationsOfAPhoneNumber::letterCombinations(
 
   vector<string> res;
 
+  if (digits.size() == 0) {
+    return res;
+  }
+
   while (!q.empty()) {
     res.push_back(q.front());
     q.pop();
