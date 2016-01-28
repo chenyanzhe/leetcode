@@ -8,8 +8,6 @@ class IntegerToRoman
 {
 public:
   string intToRoman(int num);
-private:
-  string digitToRoman(int digit, int level);
 };
 
 #endif // INTEGER_TO_ROMAN_HPP_
