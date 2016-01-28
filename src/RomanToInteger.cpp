@@ -1,56 +1,37 @@
 #include "RomanToInteger.hpp"
 
+#include <unordered_map>
+using namespace std;
+
 int RomanToInteger::romanToInt(string s)
 {
-  if (s.empty()) {
+  if (s.size() == 0) {
     return 0;
   }
 
-  int i;
+  unordered_map<char, int> mapping {
+    {'I', 1},
+    {'V', 5},
+    {'X', 10},
+    {'L', 50},
+    {'C', 100},
+    {'D', 500},
+    {'M', 1000}
+  };
+  int ret = mapping[s[s.size() - 1]];
+  int prev = ret;
 
-  switch(s[0]) {
-  case 'M':
-    i = 0;
+  for (int i = s.size() - 2; i >= 0; i--) {
+    int curr = mapping[s[i]];
 
-    while (i + 1 < s.size() && s[i + 1] == 'M') {
-      i++;
+    if (curr >= prev) {
+      ret += curr;
+    } else {
+      ret -= curr;
     }
 
-    return cheatMap[3][s.substr(0, i + 1)] + romanToInt(s.substr(i + 1));
-
-  case 'C':
-  case 'D':
-    i = 0;
-
-    while (i + 1 < s.size() &&
-           (s[i + 1] == 'C' || s[i + 1] == 'D' || s[i + 1] == 'M')) {
-      i++;
-    }
-
-    return cheatMap[2][s.substr(0, i + 1)] + romanToInt(s.substr(i + 1));
-
-  case 'X':
-  case 'L':
-    i = 0;
-
-    while (i + 1 < s.size() &&
-           (s[i + 1] == 'X' || s[i + 1] == 'L' || s[i + 1] == 'C')) {
-      i++;
-    }
-
-    return cheatMap[1][s.substr(0, i + 1)] + romanToInt(s.substr(i + 1));
-
-  case 'I':
-  case 'V':
-    i = 0;
-
-    while (i + 1 < s.size() &&
-           (s[i + 1] == 'I' || s[i + 1] == 'V' || s[i + 1] == 'X')) {
-      i++;
-    }
-
-    return cheatMap[0][s.substr(0, i + 1)] + romanToInt(s.substr(i + 1));
+    prev = curr;
   }
 
-  return 0;
+  return ret;
 }
