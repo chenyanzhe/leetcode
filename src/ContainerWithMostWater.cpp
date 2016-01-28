@@ -11,7 +11,7 @@ int ContainerWithMostWater::maxArea(vector<int>& height)
 
   int i = 0;
   int j = height.size() - 1;
-  int area = min(height[i], height[j]) * (j - i);
+  int area = 0;
 
   while (i < j) {
     area = max(area, min(height[i], height[j]) * (j - i));
