@@ -8,8 +8,6 @@ class ValidParentheses
 {
 public:
   bool isValid(string s);
-private:
-  bool isPair(char a, char b);
 };
 
 #endif // VALID_PARENTHESES_HPP_

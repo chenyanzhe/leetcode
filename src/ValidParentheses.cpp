@@ -5,32 +5,25 @@ using namespace std;
 
 bool ValidParentheses::isValid(string s)
 {
-  stack<char> stk;
+  stack<char> st;
 
   for (auto c : s) {
-    if (!stk.empty() && isPair(stk.top(), c)) {
-      stk.pop();
+    if (c == '(' || c == '{' || c == '[') {
+      st.push(c);
     } else {
-      stk.push(c);
+      if (st.empty()) {
+        return false;
+      } else if (c == ')' && st.top() != '(') {
+        return false;
+      } else if (c == '}' && st.top() != '{') {
+        return false;
+      } else if (c == ']' && st.top() != '[') {
+        return false;
+      }
+
+      st.pop();
     }
   }
 
-  return stk.empty();
-}
-
-bool ValidParentheses::isPair(char a, char b)
-{
-  if (a == '(' && b == ')') {
-    return true;
-  }
-
-  if (a == '{' && b == '}') {
-    return true;
-  }
-
-  if (a == '[' && b == ']') {
-    return true;
-  }
-
-  return false;
+  return st.empty();
 }
