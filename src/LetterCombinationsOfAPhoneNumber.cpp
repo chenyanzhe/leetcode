@@ -1,33 +1,32 @@
 #include "LetterCombinationsOfAPhoneNumber.hpp"
 
-const vector<vector<char>> LetterCombinationsOfAPhoneNumber::keyMap = {
-  {' '}, {}, {'a', 'b', 'c'}, {'d', 'e', 'f'},
-  {'g', 'h', 'i'}, {'j', 'k', 'l'}, {'m', 'n', 'o'},
-  {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'}
-};
+#include <queue>
+using namespace std;
 
 vector<string> LetterCombinationsOfAPhoneNumber::letterCombinations(
   string digits)
 {
-  vector<string> ret;
+  vector<string> mapping {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+  queue<string> q;
+  q.push("");
 
-  if (digits.size() == 0) {
-    return ret;
-  } else if (digits.size() == 1) {
-    for (auto c : keyMap[digits[0] - '0']) {
-      ret.push_back(string(1, c));
-    }
+  for (int i = 0; i < digits.size(); i++) {
+    while (q.front().size() == i) {
+      string t = q.front();
+      q.pop();
 
-    return ret;
-  } else {
-    vector<string> tails = letterCombinations(digits.substr(1));
-
-    for (auto c : keyMap[digits[0] - '0']) {
-      for (auto t : tails) {
-        ret.push_back(string(1, c) + t);
+      for (auto c : mapping[digits[i] - '0']) {
+        q.push(t + string(1, c));
       }
     }
-
-    return ret;
   }
+
+  vector<string> res;
+
+  while (!q.empty()) {
+    res.push_back(q.front());
+    q.pop();
+  }
+
+  return res;
 }

@@ -9,8 +9,6 @@ class LetterCombinationsOfAPhoneNumber
 {
 public:
   vector<string> letterCombinations(string digits);
-private:
-  static const vector<vector<char>> keyMap;
 };
 
 #endif // LETTER_COMBINATIONS_OF_A_PHONE_NUMBER_HPP_
