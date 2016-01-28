@@ -276,7 +276,7 @@
 | :white_check_mark: | 18 | [4Sum](https://leetcode.com/problems/4sum/) | Medium |
 | :white_check_mark: | 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Medium |
 | :white_check_mark: | 16 | [3Sum Closest](https://leetcode.com/problems/3sum-closest/) | Medium |
-| :white_check_mark: | 15 | [3Sum](https://leetcode.com/problems/3sum/) | Medium |
+| :white_check_mark: | 15 | [3Sum](http://leetcode.chenyanzhe.com/array/3sum.html) | Medium |
 | :white_check_mark: | 14 | [Longest Common Prefix](http://leetcode.chenyanzhe.com/string/longest-common-prefix.html) | Easy |
 | :white_check_mark: | 13 | [Roman to Integer](http://leetcode.chenyanzhe.com/math/roman-to-integer.html) | Easy |
 | :white_check_mark: | 12 | [Integer to Roman](http://leetcode.chenyanzhe.com/math/integer-to-roman.html) | Medium |
