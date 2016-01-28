@@ -273,7 +273,7 @@
 | :white_check_mark: | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Easy |
 | :white_check_mark: | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy |
 | :white_check_mark: | 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Easy |
-| :white_check_mark: | 18 | [4Sum](https://leetcode.com/problems/4sum/) | Medium |
+| :white_check_mark: | 18 | [4Sum](http://leetcode.chenyanzhe.com/array/4sum.html) | Medium |
 | :white_check_mark: | 17 | [Letter Combinations of a Phone Number](http://leetcode.chenyanzhe.com/string/letter-combinations-of-a-phone-number.html) | Medium |
 | :white_check_mark: | 16 | [3Sum Closest](http://leetcode.chenyanzhe.com/array/3sum-closest.html) | Medium |
 | :white_check_mark: | 15 | [3Sum](http://leetcode.chenyanzhe.com/array/3sum.html) | Medium |
