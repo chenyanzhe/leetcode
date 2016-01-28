@@ -6,26 +6,20 @@ ListNode* RemoveNthNodeFromEndOfList::removeNthFromEnd(ListNode* head, int n)
     return nullptr;
   }
 
-  ListNode* p = head;
-  ListNode* q = head;
+  ListNode dummyHead(0);
+  dummyHead.next = head;
+  ListNode* fast = &dummyHead;
+  ListNode* slow = &dummyHead;
 
-  for (int i = 1; i < n; i++) {
-    q = q->next;
+  while (n--) {
+    fast = fast->next;
   }
 
-  ListNode* pp = nullptr;
-
-  while (q->next != nullptr) {
-    pp = p;
-    p = p->next;
-    q = q->next;
+  while (fast->next) {
+    fast = fast->next;
+    slow = slow->next;
   }
 
-  if (pp == nullptr) {
-    head = p->next;
-  } else {
-    pp->next = p->next;
-  }
-
-  return head;
+  slow->next = slow->next->next;
+  return dummyHead.next;
 }
