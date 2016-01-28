@@ -1,47 +1,53 @@
 #include "3SumClosest.hpp"
 
 #include <algorithm>
-#include <climits>
 #include <cstdlib>
 using namespace std;
 
 int ThreeSumClosest::threeSumClosest(vector<int>& nums, int target)
 {
-  int result = 0;
-  int min_gap = INT_MAX;
-  auto begin = nums.begin();
-  auto end = nums.end();
-  sort(begin, end);
+  if (nums.size() < 3) {
+    return 0;
+  }
 
-  for (auto i = begin; i < end - 2; i++) {
-    if (i > begin && *i == *(i - 1)) {
+  sort(nums.begin(), nums.end());
+  int result = nums[0] + nums[1] + nums[2];
+  int gap = abs(nums[0] + nums[1] + nums[2] - target);
+
+  for (int i = 0; i < nums.size(); i++) {
+    if (i > 0 && nums[i] == nums[i - 1]) {
       continue;
     }
 
-    auto j = i + 1;
-    auto k = end - 1;
+    int t = target - nums[i];
+    int j = i + 1;
+    int k = nums.size() - 1;
 
     while (j < k) {
-      int sum = *i + *j + *k;
-      int gap = abs(sum - target);
+      if (nums[j] + nums[k] == t) {
+        return target;
+      } else if (nums[j] + nums[k] < t) {
+        if (gap > t - (nums[j] + nums[k])) {
+          gap = t - (nums[j] + nums[k]);
+          result = nums[i] + nums[j] + nums[k];
+        }
 
-      if (gap < min_gap) {
-        min_gap = gap;
-        result = sum;
-      }
-
-      if (sum < target) {
-        j++;
-
-        while (*j == *(j - 1) && j < k) {
+        while (j < k && nums[j] == nums[j + 1]) {
           j++;
         }
-      } else {
-        k--;
 
-        while (*k == *(k + 1) && j < k) {
+        j++;
+      } else {
+        if (gap > nums[j] + nums[k] - t) {
+          gap = nums[j] + nums[k] - t;
+          result = nums[i] + nums[j] + nums[k];
+        }
+
+        while (j < k && nums[k] == nums[k - 1]) {
           k--;
         }
+
+        k--;
       }
     }
   }
