@@ -6,45 +6,32 @@ using namespace std;
 
 ListNode* MergeKSortedLists::mergeKLists(vector<ListNode*>& lists)
 {
-  auto compareFunc = [](ListNode * a, ListNode * b) {
-    return a->val > b->val;
-  };
-  typedef priority_queue<ListNode*, vector<ListNode*>, decltype(compareFunc)>
-  ListNodeQ;
-  ListNodeQ lnq(compareFunc);
-  ListNode* head = nullptr;
-  ListNode* tail = nullptr;
-
-  for (auto l : lists)
-    if (l) {
-      lnq.push(l);
+  struct OrderByVal {
+    bool operator() (ListNode* a, ListNode* b)
+    {
+      return a->val > b->val;
     }
+  };
+  typedef priority_queue<ListNode*, vector<ListNode*>, OrderByVal> MergeQueue;
+  MergeQueue q;
+  ListNode dummy(0);
+  ListNode* tail = &dummy;
 
-  if (lnq.empty()) {
-    return head;
+  for (auto l : lists) {
+    if (l) {
+      q.push(l);
+    }
   }
 
-  head = lnq.top();
-  lnq.pop();
-  tail = head;
-
-  if (tail->next) {
-    lnq.push(tail->next);
-  }
-
-  tail->next = nullptr;
-
-  while (!lnq.empty()) {
-    tail->next = lnq.top();
-    lnq.pop();
+  while (!q.empty()) {
+    tail->next = q.top();
+    q.pop();
     tail = tail->next;
 
     if (tail->next) {
-      lnq.push(tail->next);
+      q.push(tail->next);
     }
-
-    tail->next = nullptr;
   }
 
-  return head;
+  return dummy.next;
 }
