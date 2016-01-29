@@ -265,7 +265,7 @@
 | :white_check_mark: | 29 | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/) | Medium |
 | :white_check_mark: | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr/) | Easy |
 | :white_check_mark: | 27 | [Remove Element](https://leetcode.com/problems/remove-element/) | Easy |
-| :white_check_mark: | 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy |
+| :white_check_mark: | 26 | [Remove Duplicates from Sorted Array](http://leetcode.chenyanzhe.com/array/remove-duplicates-from-sorted-array.html) | Easy |
 | :white_check_mark: | 25 | [Reverse Nodes in k-Group](http://leetcode.chenyanzhe.com/list/reverse-nodes-in-k-group.html) | Hard |
 | :white_check_mark: | 24 | [Swap Nodes in Pairs](http://leetcode.chenyanzhe.com/list/swap-nodes-in-pairs.html) | Medium |
 | :white_check_mark: | 23 | [Merge k Sorted Lists](http://leetcode.chenyanzhe.com/list/merge-k-sorted-lists.html) | Hard |
