@@ -267,7 +267,7 @@
 | :white_check_mark: | 27 | [Remove Element](https://leetcode.com/problems/remove-element/) | Easy |
 | :white_check_mark: | 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy |
 | :white_check_mark: | 25 | [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | Hard |
-| :white_check_mark: | 24 | [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | Medium |
+| :white_check_mark: | 24 | [Swap Nodes in Pairs](http://leetcode.chenyanzhe.com/list/swap-nodes-in-pairs.html) | Medium |
 | :white_check_mark: | 23 | [Merge k Sorted Lists](http://leetcode.chenyanzhe.com/list/merge-k-sorted-lists.html) | Hard |
 | :white_check_mark: | 22 | [Generate Parentheses](http://leetcode.chenyanzhe.com/string/generate-parentheses.html) | Medium |
 | :white_check_mark: | 21 | [Merge Two Sorted Lists](http://leetcode.chenyanzhe.com/list/merge-two-sorted-lists.html) | Easy |

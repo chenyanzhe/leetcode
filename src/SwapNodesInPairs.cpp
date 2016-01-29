@@ -2,27 +2,15 @@
 
 ListNode* SwapNodesInPairs::swapPairs(ListNode* head)
 {
-  if (head == nullptr || head->next == nullptr) {
-    return head;
+  ListNode dummy(0);
+  dummy.next = head;
+  
+  for (ListNode* p = &dummy; p->next && p->next->next; p = p->next->next) {
+    ListNode* t = p->next;
+    p->next = t->next;
+    t->next = p->next->next;
+    p->next->next = t;
   }
-
-  ListNode* prev = nullptr;
-  ListNode* a = head;
-  ListNode* b = head->next;
-  ListNode* next = b->next;
-  head = b;
-  b->next = a;
-  a->next = next;
-
-  while (next != nullptr && next->next != nullptr) {
-    prev = a;
-    a = next;
-    b = a->next;
-    next = b->next;
-    prev->next = b;
-    b->next = a;
-    a->next = next;
-  }
-
-  return head;
+  
+  return dummy.next;
 }
