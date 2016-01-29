@@ -2,63 +2,45 @@
 
 ListNode* ReverseNodesInKGroup::reverseKGroup(ListNode* head, int k)
 {
-  if (head == nullptr || k == 1) {
+  if (head == nullptr || head->next == nullptr || k < 2) {
     return head;
   }
 
-  ListNode* prev = nullptr;
-  ListNode* a = head;
-  ListNode* b = a;
+  ListNode dummy(0);
+  dummy.next = head;
+  ListNode* prev = &dummy;
+  ListNode* end  = head;
 
-  for (int i = 1; i < k; i++) {
-    b = b->next;
-
-    if (b == nullptr) {
-      return head;
-    }
-  }
-
-  ListNode* next = b->next;
-  head = b;
-  ListNode* p = a;
-  ListNode* q = p->next;
-
-  while (p != b) {
-    ListNode* t = q->next;
-    q->next = p;
-    p = q;
-    q = t;
-  }
-
-  a->next = next;
-
-  while (next != nullptr) {
-    prev = a;
-    a = next;
-    b = a;
-
-    for (int i = 1; i < k; i++) {
-      b = b->next;
-
-      if (b == nullptr) {
-        return head;
-      }
+  for (; end; end = prev->next) {
+    for (int i = 1; i < k && end; i++) {
+      end = end->next;
     }
 
-    next = b->next;
-    prev->next = b;
-    p = a;
-    q = p->next;
-
-    while (p != b) {
-      ListNode* t = q->next;
-      q->next = p;
-      p = q;
-      q = t;
+    if (end == nullptr) {
+      // do not have k elements
+      break;
     }
 
-    a->next = next;
+    prev = reverse(prev, prev->next, end);
   }
 
-  return head;
+  return dummy.next;
+}
+
+ListNode* ReverseNodesInKGroup::reverse(ListNode* prev, ListNode* begin,
+                                        ListNode* end)
+{
+  ListNode* end_next = end->next;
+  ListNode* p = begin;
+  ListNode* cur = p->next;
+  ListNode* next = cur->next;
+
+  for (; cur != end_next;
+       p = cur, cur = next, next = next ? next->next : nullptr) {
+    cur->next = p;
+  }
+
+  begin->next = end_next;
+  prev->next = end;
+  return begin;
 }
