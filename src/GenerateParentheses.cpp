@@ -2,49 +2,29 @@
 
 vector<string> GenerateParentheses::generateParenthesis(int n)
 {
+  vector<string> ret;
+
   if (n == 0) {
     return ret;
   }
 
-  N = n * 2;
-  field.resize(N, 0);
-  nlbs = nrbs = 0;
-  search(0);
+  helper(ret, "", n, n);
   return ret;
 }
 
-void GenerateParentheses::search(int l)
+void GenerateParentheses::helper(vector<string>& ret, string paren, int left,
+                                 int right)
 {
-  if (l == N) {
-    string ans;
-
-    for (auto f : field) {
-      ans.push_back((f == 1) ? '(' : ')');
-    }
-
-    ret.push_back(ans);
+  if (left == 0 && right == 0) {
+    ret.push_back(paren);
     return;
   }
 
-  field[l] = 1;
-  nlbs++;
-
-  if (isValidCandidate()) {
-    search(l + 1);
+  if (left > 0) {
+    helper(ret, paren + "(", left - 1, right);
   }
 
-  nlbs--;
-  field[l] = -1;
-  nrbs++;
-
-  if (isValidCandidate()) {
-    search(l + 1);
+  if (left < right) {
+    helper(ret, paren + ")", left, right - 1);
   }
-
-  nrbs--;
-}
-
-inline bool GenerateParentheses::isValidCandidate()
-{
-  return !(nlbs < nrbs || nlbs > N / 2 || nrbs > N / 2);
 }

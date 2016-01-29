@@ -11,15 +11,7 @@ public:
   vector<string> generateParenthesis(int n);
 
 private:
-  void search(int l);
-  bool isValidCandidate();
-
-private:
-  int N;
-  vector<string> ret;
-  vector<int> field;
-  int nlbs;
-  int nrbs;
+  void helper(vector<string>& ret, string paren, int left, int right);
 };
 
 #endif // GENERTATE_PARENTHESES_HPP_
