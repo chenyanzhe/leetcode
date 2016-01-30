@@ -263,7 +263,7 @@
 | :white_check_mark: | 31 | [Next Permutation](https://leetcode.com/problems/next-permutation/) | Medium |
 | :white_check_mark: | 30 | [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) | Hard |
 | :white_check_mark: | 29 | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/) | Medium |
-| :white_check_mark: | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr/) | Easy |
+| :white_check_mark: | 28 | [Implement strStr()](http://leetcode.chenyanzhe.com/string/implement-strstr.html) | Easy |
 | :white_check_mark: | 27 | [Remove Element](http://leetcode.chenyanzhe.com/array/remove-element.html) | Easy |
 | :white_check_mark: | 26 | [Remove Duplicates from Sorted Array](http://leetcode.chenyanzhe.com/array/remove-duplicates-from-sorted-array.html) | Easy |
 | :white_check_mark: | 25 | [Reverse Nodes in k-Group](http://leetcode.chenyanzhe.com/list/reverse-nodes-in-k-group.html) | Hard |
