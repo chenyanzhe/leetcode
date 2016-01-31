@@ -1,43 +1,25 @@
 #include "LongestValidParentheses.hpp"
 
 #include <stack>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
 int LongestValidParentheses::longestValidParentheses(string s)
 {
-  if (s.size() < 2) {
-    return 0;
-  }
-
-  vector<int> dp(s.size(), 0);
   int ret = 0;
+  stack<int> stk;
 
-  for (int i = 1; i < s.size(); i++) {
-    if (s[i] == '(') {
-      continue;
-    }
+  for (int i = 0; i < s.size(); i++) {
+    if (s[i] == ')' && !stk.empty() && s[stk.top()] == '(') {
+      stk.pop();
 
-    if (s[i - 1] == '(') {
-      dp[i] = 2;
-
-      if (i - 2 >= 0) {
-        dp[i] += dp[i - 2];
+      if (stk.empty()) {
+        ret = i + 1;
+      } else {
+        ret = max(ret, i - stk.top());
       }
     } else {
-      int jump = dp[i - 1];
-
-      if (i - jump - 1 >= 0 && s[i - jump - 1] == '(') {
-        dp[i] = jump + 2;
-
-        if (i - jump - 2 >= 0) {
-          dp[i] += dp[i - jump - 2];
-        }
-      }
+      stk.push(i);
     }
-
-    ret = (dp[i] > ret) ? dp[i] : ret;
   }
 
   return ret;
