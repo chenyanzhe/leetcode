@@ -7,57 +7,58 @@ vector<int> SubstringWithConcatenationOfAllWords::findSubstring(string s,
     vector<string>& words)
 {
   vector<int> ret;
-  size_t slen = s.size();
-  size_t wslen = words.size();
+  int n = s.size();
+  int cnt = words.size();
 
-  if (slen == 0 || wslen == 0) {
+  if (n <= 0 || cnt <= 0) {
     return ret;
   }
 
-  size_t wlen = words[0].size();
-  size_t sslen = wlen * wslen;
+  unordered_map<string, int> dict;
 
-  if (wlen == 0 || sslen > slen) {
-    return ret;
+  for (int i = 0; i < cnt; i++) {
+    dict[words[i]]++;
   }
 
-  unordered_map<string, int> records;
+  int wl = words[0].size();
 
-  for (auto w : words) {
-    records[w]++;
-  }
+  for (int i = 0; i < wl; i++) {
+    unordered_map<string, int> wordCount;
+    int count = 0;
+    int left = i;
 
-  for (int h = 0; h < wlen && h + sslen <= slen; h++) {
-    int lp = h;
-    int rp = h;
-    unordered_map<string, int> occurs;
+    for (int right = left; right + wl <= n; right += wl) {
+      string w = s.substr(right, wl);
 
-    while (lp + sslen <= slen) {
-      string seg = s.substr(rp, wlen);
+      if (dict.count(w)) { // valid word
+        if (wordCount[w] < dict[w]) {
+          // still have unused quorum
+          wordCount[w]++;
+          count++;
+        } else {
+          // quorum used up, moving the sliding window
+          string dw;
 
-      if (records.find(seg) == records.end()) {
-        for (; lp < rp; lp += wlen) {
-          occurs[s.substr(lp, wlen)]--;
+          while ((dw = s.substr(left, wl)) != w) {
+            wordCount[dw]--;
+            count--;
+            left += wl;
+          }
+
+          left += wl;
         }
 
-        lp = rp + wlen;
-        rp = lp;
-      } else if (occurs[seg] == records[seg]) {
-        for (; s.substr(lp, wlen) != seg; lp += wlen) {
-          occurs[s.substr(lp, wlen)]--;
+        if (count == cnt) { // find all words
+          ret.push_back(left);
+          wordCount[s.substr(left, wl)]--;
+          count--;
+          left += wl;
         }
-
-        lp += wlen;
-        rp += wlen;
       } else {
-        occurs[seg]++;
-        rp += wlen;
-
-        if (rp - lp == sslen) {
-          ret.push_back(lp);
-          occurs[s.substr(lp, wlen)]--;
-          lp += wlen;
-        }
+        // invalid word
+        wordCount.clear();
+        count = 0;
+        left = right + wl;
       }
     }
   }

@@ -261,7 +261,7 @@
 | :white_check_mark: | 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Hard |
 | :white_check_mark: | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | Hard |
 | :white_check_mark: | 31 | [Next Permutation](https://leetcode.com/problems/next-permutation/) | Medium |
-| :white_check_mark: | 30 | [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) | Hard |
+| :white_check_mark: | 30 | [Substring with Concatenation of All Words](http://leetcode.chenyanzhe.com/string/substring-with-concatenation-of-all-words.html) | Hard |
 | :white_check_mark: | 29 | [Divide Two Integers](http://leetcode.chenyanzhe.com/math/divide-two-integers.html) | Medium |
 | :white_check_mark: | 28 | [Implement strStr()](http://leetcode.chenyanzhe.com/string/implement-strstr.html) | Easy |
 | :white_check_mark: | 27 | [Remove Element](http://leetcode.chenyanzhe.com/array/remove-element.html) | Easy |
