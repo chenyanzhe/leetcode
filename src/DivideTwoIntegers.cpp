@@ -9,14 +9,14 @@ int DivideTwoIntegers::divide(int dividend, int divisor)
     return dividend;
   }
 
-  if (dividend == INT_MIN && divisor == -1) {
+  if ((dividend == INT_MIN && divisor == -1) || divisor == 0) {
     return INT_MAX;
   }
 
   int sign = (dividend > 0 ^ divisor > 0) ? -1 : 1;
   long ret = 0;
-  long end = abs((long) dividend);
-  long sor = abs((long) divisor);
+  long end = labs((long) dividend);
+  long sor = labs((long) divisor);
 
   while (end >= sor) {
     long temp = sor;
