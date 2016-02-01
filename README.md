@@ -257,7 +257,7 @@
 | :white_check_mark: | 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | Hard |
 | :white_check_mark: | 36 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Easy |
 | :white_check_mark: | 35 | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) | Medium |
-| :white_check_mark: | 34 | [Search for a Range](https://leetcode.com/problems/search-for-a-range/) | Medium |
+| :white_check_mark: | 34 | [Search for a Range](http://leetcode.chenyanzhe.com/array/search-for-a-range.html) | Medium |
 | :white_check_mark: | 33 | [Search in Rotated Sorted Array](http://leetcode.chenyanzhe.com/array/search-in-rotated-sorted-array.html) | Hard |
 | :white_check_mark: | 32 | [Longest Valid Parentheses](http://leetcode.chenyanzhe.com/string/longest-valid-parentheses.html) | Hard |
 | :white_check_mark: | 31 | [Next Permutation](http://leetcode.chenyanzhe.com/array/next-permutation.html) | Medium |
