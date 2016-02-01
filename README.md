@@ -255,7 +255,7 @@
 | :white_check_mark: | 39 | [Combination Sum](https://leetcode.com/problems/combination-sum/) | Medium |
 | :white_check_mark: | 38 | [Count and Say](https://leetcode.com/problems/count-and-say/) | Easy |
 | :white_check_mark: | 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | Hard |
-| :white_check_mark: | 36 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Easy |
+| :white_check_mark: | 36 | [Valid Sudoku](http://leetcode.chenyanzhe.com/trivial/valid-sudoku.html) | Easy |
 | :white_check_mark: | 35 | [Search Insert Position](http://leetcode.chenyanzhe.com/array/search-insert-position.html) | Medium |
 | :white_check_mark: | 34 | [Search for a Range](http://leetcode.chenyanzhe.com/array/search-for-a-range.html) | Medium |
 | :white_check_mark: | 33 | [Search in Rotated Sorted Array](http://leetcode.chenyanzhe.com/array/search-in-rotated-sorted-array.html) | Hard |

@@ -1,57 +1,21 @@
 #include "ValidSudoku.hpp"
 
-#include <cstring>
-using namespace std;
-
 bool ValidSudoku::isValidSudoku(vector<vector<char>>& board)
 {
-  bool used[9];
+  bool used1[9][9] = {false}, used2[9][9] = {false}, used3[9][9] = {false};
 
-  // check rows and columns
-  for (int i = 0; i < 9; i++) {
-    memset(used, 0, sizeof used);
+  for(int i = 0; i < board.size(); i++)
+    for(int j = 0; j < board[i].size(); j++)
+      if (board[i][j] != '.') {
+        int num = board[i][j] - '0' - 1;
+        int k = i / 3 * 3 + j / 3;
 
-    for (int j = 0; j < 9; j++) {
-      if (!check(board[i][j], used)) {
-        return false;
-      }
-    }
-
-    memset(used, 0, sizeof used);
-
-    for (int j = 0; j < 9; j++) {
-      if (!check(board[j][i], used)) {
-        return false;
-      }
-    }
-  }
-
-  // check blocks
-  for (int i = 0; i < 9; i += 3) {
-    for (int j = 0; j < 9; j += 3) {
-      memset(used, 0, sizeof used);
-
-      for (int k = i; k < i + 3; k++)
-        for (int h = j; h < j + 3; h++) {
-          if (!check(board[k][h], used)) {
-            return false;
-          }
+        if (used1[i][num] || used2[j][num] || used3[k][num]) {
+          return false;
         }
-    }
-  }
+
+        used1[i][num] = used2[j][num] = used3[k][num] = true;
+      }
 
   return true;
-}
-
-bool ValidSudoku::check(char ch, bool used[9])
-{
-  if (ch == '.') {
-    return true;
-  }
-
-  if (used[ch - '1']) {
-    return false;
-  }
-
-  return used[ch - '1'] = true;
 }
