@@ -255,39 +255,39 @@
 | :white_check_mark: | 39 | [Combination Sum](https://leetcode.com/problems/combination-sum/) | Medium |
 | :white_check_mark: | 38 | [Count and Say](https://leetcode.com/problems/count-and-say/) | Easy |
 | :white_check_mark: | 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | Hard |
-| :white_check_mark: | 36 | [Valid Sudoku](http://leetcode.chenyanzhe.com/trivial/valid-sudoku.html) | Easy |
-| :white_check_mark: | 35 | [Search Insert Position](http://leetcode.chenyanzhe.com/array/search-insert-position.html) | Medium |
-| :white_check_mark: | 34 | [Search for a Range](http://leetcode.chenyanzhe.com/array/search-for-a-range.html) | Medium |
-| :white_check_mark: | 33 | [Search in Rotated Sorted Array](http://leetcode.chenyanzhe.com/array/search-in-rotated-sorted-array.html) | Hard |
-| :white_check_mark: | 32 | [Longest Valid Parentheses](http://leetcode.chenyanzhe.com/string/longest-valid-parentheses.html) | Hard |
-| :white_check_mark: | 31 | [Next Permutation](http://leetcode.chenyanzhe.com/array/next-permutation.html) | Medium |
-| :white_check_mark: | 30 | [Substring with Concatenation of All Words](http://leetcode.chenyanzhe.com/string/substring-with-concatenation-of-all-words.html) | Hard |
-| :white_check_mark: | 29 | [Divide Two Integers](http://leetcode.chenyanzhe.com/math/divide-two-integers.html) | Medium |
-| :white_check_mark: | 28 | [Implement strStr()](http://leetcode.chenyanzhe.com/string/implement-strstr.html) | Easy |
-| :white_check_mark: | 27 | [Remove Element](http://leetcode.chenyanzhe.com/array/remove-element.html) | Easy |
-| :white_check_mark: | 26 | [Remove Duplicates from Sorted Array](http://leetcode.chenyanzhe.com/array/remove-duplicates-from-sorted-array.html) | Easy |
-| :white_check_mark: | 25 | [Reverse Nodes in k-Group](http://leetcode.chenyanzhe.com/list/reverse-nodes-in-k-group.html) | Hard |
-| :white_check_mark: | 24 | [Swap Nodes in Pairs](http://leetcode.chenyanzhe.com/list/swap-nodes-in-pairs.html) | Medium |
-| :white_check_mark: | 23 | [Merge k Sorted Lists](http://leetcode.chenyanzhe.com/list/merge-k-sorted-lists.html) | Hard |
-| :white_check_mark: | 22 | [Generate Parentheses](http://leetcode.chenyanzhe.com/string/generate-parentheses.html) | Medium |
-| :white_check_mark: | 21 | [Merge Two Sorted Lists](http://leetcode.chenyanzhe.com/list/merge-two-sorted-lists.html) | Easy |
-| :white_check_mark: | 20 | [Valid Parentheses](http://leetcode.chenyanzhe.com/string/valid-parentheses.html) | Easy |
-| :white_check_mark: | 19 | [Remove Nth Node From End of List](http://leetcode.chenyanzhe.com/list/remove-nth-node-from-end-of-list.html) | Easy |
-| :white_check_mark: | 18 | [4Sum](http://leetcode.chenyanzhe.com/array/4sum.html) | Medium |
-| :white_check_mark: | 17 | [Letter Combinations of a Phone Number](http://leetcode.chenyanzhe.com/string/letter-combinations-of-a-phone-number.html) | Medium |
-| :white_check_mark: | 16 | [3Sum Closest](http://leetcode.chenyanzhe.com/array/3sum-closest.html) | Medium |
-| :white_check_mark: | 15 | [3Sum](http://leetcode.chenyanzhe.com/array/3sum.html) | Medium |
-| :white_check_mark: | 14 | [Longest Common Prefix](http://leetcode.chenyanzhe.com/string/longest-common-prefix.html) | Easy |
-| :white_check_mark: | 13 | [Roman to Integer](http://leetcode.chenyanzhe.com/math/roman-to-integer.html) | Easy |
-| :white_check_mark: | 12 | [Integer to Roman](http://leetcode.chenyanzhe.com/math/integer-to-roman.html) | Medium |
-| :white_check_mark: | 11 | [Container With Most Water](http://leetcode.chenyanzhe.com/array/container-with-most-water.html) | Medium |
-| :white_check_mark: | 10 | [Regular Expression Matching](http://leetcode.chenyanzhe.com/string/regular-expression-matching.html) | Hard |
-| :white_check_mark: | 9 | [Palindrome Number](http://leetcode.chenyanzhe.com/math/palindrome-number.html) | Easy |
-| :white_check_mark: | 8 | [String to Integer (atoi)](http://leetcode.chenyanzhe.com/math/string-to-integer-atoi.html) | Easy |
-| :white_check_mark: | 7 | [Reverse Integer](http://leetcode.chenyanzhe.com/math/reverse-integer.html) | Easy |
-| :white_check_mark: | 6 | [ZigZag Conversion](http://leetcode.chenyanzhe.com/string/zigzag-conversion.html) | Easy |
-| :white_check_mark: | 5 | [Longest Palindromic Substring](http://leetcode.chenyanzhe.com/string/longest-palindromic-substring.html) | Medium |
-| :white_check_mark: | 4 | [Median of Two Sorted Arrays](http://leetcode.chenyanzhe.com/array/median-of-two-sorted-arrays.html) | Hard |
-| :white_check_mark: | 3 | [Longest Substring Without Repeating Characters](http://leetcode.chenyanzhe.com/string/longest-substring-without-repeating-characters.html) | Medium |
-| :white_check_mark: | 2 | [Add Two Numbers](http://leetcode.chenyanzhe.com/list/add-two-numbers.html) | Medium |
-| :white_check_mark: | 1 | [Two Sum](http://leetcode.chenyanzhe.com/array/two-sum.html) | Medium |
+| :white_check_mark: | 36 | [Valid Sudoku](http://chenyanzhe.com/leetcode/trivial/valid-sudoku.html) | Easy |
+| :white_check_mark: | 35 | [Search Insert Position](http://chenyanzhe.com/leetcode/array/search-insert-position.html) | Medium |
+| :white_check_mark: | 34 | [Search for a Range](http://chenyanzhe.com/leetcode/array/search-for-a-range.html) | Medium |
+| :white_check_mark: | 33 | [Search in Rotated Sorted Array](http://chenyanzhe.com/leetcode/array/search-in-rotated-sorted-array.html) | Hard |
+| :white_check_mark: | 32 | [Longest Valid Parentheses](http://chenyanzhe.com/leetcode/string/longest-valid-parentheses.html) | Hard |
+| :white_check_mark: | 31 | [Next Permutation](http://chenyanzhe.com/leetcode/array/next-permutation.html) | Medium |
+| :white_check_mark: | 30 | [Substring with Concatenation of All Words](http://chenyanzhe.com/leetcode/string/substring-with-concatenation-of-all-words.html) | Hard |
+| :white_check_mark: | 29 | [Divide Two Integers](http://chenyanzhe.com/leetcode/math/divide-two-integers.html) | Medium |
+| :white_check_mark: | 28 | [Implement strStr()](http://chenyanzhe.com/leetcode/string/implement-strstr.html) | Easy |
+| :white_check_mark: | 27 | [Remove Element](http://chenyanzhe.com/leetcode/array/remove-element.html) | Easy |
+| :white_check_mark: | 26 | [Remove Duplicates from Sorted Array](http://chenyanzhe.com/leetcode/array/remove-duplicates-from-sorted-array.html) | Easy |
+| :white_check_mark: | 25 | [Reverse Nodes in k-Group](http://chenyanzhe.com/leetcode/list/reverse-nodes-in-k-group.html) | Hard |
+| :white_check_mark: | 24 | [Swap Nodes in Pairs](http://chenyanzhe.com/leetcode/list/swap-nodes-in-pairs.html) | Medium |
+| :white_check_mark: | 23 | [Merge k Sorted Lists](http://chenyanzhe.com/leetcode/list/merge-k-sorted-lists.html) | Hard |
+| :white_check_mark: | 22 | [Generate Parentheses](http://chenyanzhe.com/leetcode/string/generate-parentheses.html) | Medium |
+| :white_check_mark: | 21 | [Merge Two Sorted Lists](http://chenyanzhe.com/leetcode/list/merge-two-sorted-lists.html) | Easy |
+| :white_check_mark: | 20 | [Valid Parentheses](http://chenyanzhe.com/leetcode/string/valid-parentheses.html) | Easy |
+| :white_check_mark: | 19 | [Remove Nth Node From End of List](http://chenyanzhe.com/leetcode/list/remove-nth-node-from-end-of-list.html) | Easy |
+| :white_check_mark: | 18 | [4Sum](http://chenyanzhe.com/leetcode/array/4sum.html) | Medium |
+| :white_check_mark: | 17 | [Letter Combinations of a Phone Number](http://chenyanzhe.com/leetcode/string/letter-combinations-of-a-phone-number.html) | Medium |
+| :white_check_mark: | 16 | [3Sum Closest](http://chenyanzhe.com/leetcode/array/3sum-closest.html) | Medium |
+| :white_check_mark: | 15 | [3Sum](http://chenyanzhe.com/leetcode/array/3sum.html) | Medium |
+| :white_check_mark: | 14 | [Longest Common Prefix](http://chenyanzhe.com/leetcode/string/longest-common-prefix.html) | Easy |
+| :white_check_mark: | 13 | [Roman to Integer](http://chenyanzhe.com/leetcode/math/roman-to-integer.html) | Easy |
+| :white_check_mark: | 12 | [Integer to Roman](http://chenyanzhe.com/leetcode/math/integer-to-roman.html) | Medium |
+| :white_check_mark: | 11 | [Container With Most Water](http://chenyanzhe.com/leetcode/array/container-with-most-water.html) | Medium |
+| :white_check_mark: | 10 | [Regular Expression Matching](http://chenyanzhe.com/leetcode/string/regular-expression-matching.html) | Hard |
+| :white_check_mark: | 9 | [Palindrome Number](http://chenyanzhe.com/leetcode/math/palindrome-number.html) | Easy |
+| :white_check_mark: | 8 | [String to Integer (atoi)](http://chenyanzhe.com/leetcode/math/string-to-integer-atoi.html) | Easy |
+| :white_check_mark: | 7 | [Reverse Integer](http://chenyanzhe.com/leetcode/math/reverse-integer.html) | Easy |
+| :white_check_mark: | 6 | [ZigZag Conversion](http://chenyanzhe.com/leetcode/string/zigzag-conversion.html) | Easy |
+| :white_check_mark: | 5 | [Longest Palindromic Substring](http://chenyanzhe.com/leetcode/string/longest-palindromic-substring.html) | Medium |
+| :white_check_mark: | 4 | [Median of Two Sorted Arrays](http://chenyanzhe.com/leetcode/array/median-of-two-sorted-arrays.html) | Hard |
+| :white_check_mark: | 3 | [Longest Substring Without Repeating Characters](http://chenyanzhe.com/leetcode/string/longest-substring-without-repeating-characters.html) | Medium |
+| :white_check_mark: | 2 | [Add Two Numbers](http://chenyanzhe.com/leetcode/list/add-two-numbers.html) | Medium |
+| :white_check_mark: | 1 | [Two Sum](http://chenyanzhe.com/leetcode/array/two-sum.html) | Medium |
