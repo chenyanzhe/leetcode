@@ -1,33 +1,23 @@
 #include "FirstMissingPositive.hpp"
 
-#include <algorithm>
+#include <utility>
 using namespace std;
 
 int FirstMissingPositive::firstMissingPositive(vector<int>& nums)
 {
-  for (auto n : nums) {
-    if (n <= 0 || n > nums.size()) {
-      continue;
-    }
+  int n = nums.size();
 
-    int r = nums[n - 1];
-
-    while (r != n) {
-      nums[n - 1] = n;
-
-      if (r <= 0 || r > nums.size()) {
-        break;
-      } else {
-        n = r;
-        r = nums[r - 1];
-      }
+  for (int i = 0; i < n; i++) {
+    while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
+      swap(nums[nums[i] - 1], nums[i]);
     }
   }
-
-  for (int i = 0; i < nums.size(); i++)
-    if (i + 1 != nums[i]) {
+  
+  for (int i = 0; i < n; i++) {
+    if (nums[i] != i + 1) {
       return i + 1;
     }
-
-  return nums.size() + 1;
+  }
+  
+  return n + 1;
 }

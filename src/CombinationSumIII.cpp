@@ -2,25 +2,25 @@
 
 vector<vector<int>> CombinationSumIII::combinationSum3(int k, int n)
 {
-  vector<vector<int>> result;
-  vector<int> now;
-  bt(k, n, 1, now, result);
-  return result;
+  vector<vector<int>> res;
+  vector<int> comb;
+  helper(n, res, comb, 1, k);
+  return res;
 }
 
-void CombinationSumIII::bt(int k, int n, int i, vector<int>& now,
-                           vector<vector<int>>& result)
+void CombinationSumIII::helper(int target, vector<vector<int>>& res,
+                               vector<int>& comb, int begin, int k)
 {
-  if (k == 0 && n == 0) {
-    result.push_back(now);
-  }
-
-  if (n < i || k == 0 || i > 9) {
+  if (!target && !k) {
+    res.push_back(comb);
+    return;
+  } else if (!k) {
     return;
   }
-
-  bt(k, n, i + 1, now, result);
-  now.push_back(i);
-  bt(k - 1, n - i, i + 1, now, result);
-  now.pop_back();
+  
+  for (int i = begin; i <= 9 && i <= target; i++) {
+    comb.push_back(i);
+    helper(target - i, res, comb, i + 1, k - 1);
+    comb.pop_back();
+  }
 }

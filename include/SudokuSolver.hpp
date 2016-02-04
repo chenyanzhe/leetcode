@@ -9,8 +9,8 @@ class SudokuSolver
 public:
   void solveSudoku(vector<vector<char>>& board);
 private:
-  bool solveSudoku(vector<vector<char>>& board, int m, int n);
-  bool isValid(vector<vector<char>>& board, int m, int n);
+  bool solve(vector<vector<char>>& board);
+  bool isValid(vector<vector<char>>& board, int m, int n, char d);
 };
 
 #endif // SUDOKU_SOLVER_HPP_

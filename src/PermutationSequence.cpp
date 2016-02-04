@@ -2,40 +2,29 @@
 
 string PermutationSequence::getPermutation(int n, int k)
 {
+  // prepare initial candidates: 1...n
   string s(n, '0');
 
   for (int i = 0; i < n; i++) {
     s[i] += i + 1;
   }
 
-  return kth_permutation(s, k);
-}
+  // prepare the initial factorial number: (n - 1)!
+  int base = 1;
 
-string PermutationSequence::kth_permutation(string seq, int k)
-{
-  int n = seq.size();
-  string S = seq;
+  for (int i = 1; i < n; i++) {
+    base *= i;
+  }
+
   string result;
-  int base = factorial(n - 1);
   --k;
 
   for (int i = n - 1; i > 0; k %= base, base /= i, i--) {
-    auto a = S.begin() + k / base;
-    result.push_back(*a);
-    S.erase(a);
+    auto p = s.begin() + k / base;
+    result.push_back(*p);
+    s.erase(p);
   }
 
-  result.push_back(S[0]);
+  result.push_back(s[0]);
   return result;
-}
-
-int PermutationSequence::factorial(int n)
-{
-  int ret = 1;
-
-  for (int i = 1; i <= n; i++) {
-    ret *= i;
-  }
-
-  return ret;
 }

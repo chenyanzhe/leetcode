@@ -2,21 +2,13 @@
 
 vector<int> PascalTriangleII::getRow(int rowIndex)
 {
-  vector<int> result(rowIndex + 1, 1);
+  vector<int> r(rowIndex + 1, 0);
+  r[0] = 1;
 
-  if (rowIndex <= 1) {
-    return result;
-  }
-
-  for (int j = 2; j <= rowIndex; j++) {
-    int backup = 1;
-
-    for (int i = 1; i < j; i++) {
-      int tmp = backup + result[i];
-      backup = result[i];
-      result[i] = tmp;
+  for(int i = 1; i < rowIndex + 1; i++)
+    for(int j = i; j >= 1; j--) {
+      r[j] += r[j - 1];
     }
-  }
 
-  return result;
+  return r;
 }

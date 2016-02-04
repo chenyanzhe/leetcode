@@ -9,7 +9,8 @@ class CombinationSumIII
 public:
   vector<vector<int>> combinationSum3(int k, int n);
 private:
-  void bt(int k, int n, int i, vector<int>& now, vector<vector<int>>& result);
+  void helper(int target, vector<vector<int>>& res, vector<int>& comb, int begin,
+              int k);
 };
 
 #endif // COMBINATION_SUM_III_HPP_

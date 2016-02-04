@@ -1,27 +1,5 @@
 #include "RegularExpressionMatching.hpp"
 
-#if 0
-// Recursion
-bool RegularExpressionMatching::isMatch(string s, string p)
-{
-  if (p.empty()) {
-    return s.empty();
-  }
-
-  if (p.size() > 1 && '*' == p[1]) {
-    // x* matches empty string or at least one character: x* -> xx*
-    return isMatch(s, p.substr(2)) ||
-           !s.empty() && (s[0] == p[0] || '.' == p[0]) &&
-           isMatch(s.substr(1), p);
-  } else {
-    return !s.empty() && (s[0] == p[0] || '.' == p[0]) &&
-           isMatch(s.substr(1), p.substr(1));
-  }
-}
-#endif
-
-// Dynamic Programming
-
 #include <vector>
 using namespace std;
 
@@ -55,7 +33,7 @@ bool RegularExpressionMatching::isMatch(string s, string p)
   return dp[sl][pl];
 }
 
-inline bool RegularExpressionMatching::isMatch(char _s, char _p)
+bool RegularExpressionMatching::isMatch(char _s, char _p)
 {
   return _p == '.' || _s == _p;
 }

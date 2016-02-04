@@ -9,9 +9,6 @@ class PermutationSequence
 {
 public:
   string getPermutation(int n, int k);
-private:
-  string kth_permutation(string seq, int k);
-  int factorial(int n);
 };
 
 #endif // PERMUTATION_SEQUENCE_HPP_
