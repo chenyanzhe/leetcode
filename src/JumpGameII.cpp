@@ -1,33 +1,29 @@
 #include "JumpGameII.hpp"
 
+#include <algorithm>
+using namespace std;
+
 int JumpGameII::jump(vector<int>& nums)
 {
-  int len = nums.size();
-
-  if (len <= 1) {
+  if (nums.size() == 1) {
     return 0;
   }
 
-  int nJumps = 0;
-  int cReach = 0;
-  int nReach = nums[0];
+  int next = 0;
+  int steps = 1;
+  int begin = 0;
+  int end = nums[0];
 
-  for (int i = 0; i < len; i++) {
-    if (i > cReach) {
-      if (nReach <= cReach) { // cannot reach
-        return -1;
-      }
+  while (next < nums.size() - 1) {
+    steps++;
 
-      cReach = nReach;
-      nJumps++;
+    for (int i = begin; i <= end; i++) {
+      next = max(next, i + A[i]);
     }
 
-    nReach = (i + nums[i] > nReach) ? i + nums[i] : nReach;
-
-    if (nReach >= nums.size() - 1) {
-      return nJumps + 1;
-    }
+    begin = end + 1;
+    end = next;
   }
 
-  return -1;
+  return steps;
 }
