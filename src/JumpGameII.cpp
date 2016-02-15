@@ -14,11 +14,11 @@ int JumpGameII::jump(vector<int>& nums)
   int begin = 0;
   int end = nums[0];
 
-  while (next < nums.size() - 1) {
+  while (end < nums.size() - 1) {
     steps++;
 
     for (int i = begin; i <= end; i++) {
-      next = max(next, i + A[i]);
+      next = max(next, i + nums[i]);
     }
 
     begin = end + 1;
