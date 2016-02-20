@@ -21,5 +21,6 @@ void Permutations::helper(vector<int>& nums, int begin,
   for (int i = begin; i < nums.size(); i++) {
     swap(nums[begin], nums[i]);
     helper(nums, begin + 1, result);
+    swap(nums[begin], nums[i]);
   }
 }
