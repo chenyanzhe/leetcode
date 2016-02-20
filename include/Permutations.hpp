@@ -9,8 +9,7 @@ class Permutations
 public:
   vector<vector<int>> permute(vector<int>& nums);
 private:
-  void permute(vector<int>& nums, int head, int tail, vector<vector<int>>& ret);
-  bool duplicate(vector<int>& nums, int head, int tail);
+  void helper(vector<int>& nums, int begin, vector<vector<int>>& result);
 };
 
 #endif // PERMUTATIONS_HPP_

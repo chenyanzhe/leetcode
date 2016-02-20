@@ -21,17 +21,4 @@ TEST_CASE("Permutation")
                          result[i]) == expected.end());
     }
   }
-  SECTION("Duplicate elements") {
-    vector<int> nums {1, 1, 2};
-    vector<vector<int>> expected {
-      {1, 1, 2}, {1, 2, 1}, {2, 1, 1}
-    };
-    vector<vector<int>> result = s.permute(nums);
-    REQUIRE(result.size() == 3);
-
-    for (int i = 0; i < 3; i++) {
-      REQUIRE_FALSE(find(expected.begin(), expected.end(),
-                         result[i]) == expected.end());
-    }
-  }
 }
