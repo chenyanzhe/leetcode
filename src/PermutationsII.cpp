@@ -1,43 +1,31 @@
 #include "PermutationsII.hpp"
 
+#include <algorithm>
+#include <utility>
+using namespace std;
+
 vector<vector<int>> PermutationsII::permuteUnique(vector<int>& nums)
 {
-  vector<vector<int>> ret;
-  int len = nums.size();
-
-  if (len == 0) {
-    return ret;
-  }
-
-  permute(nums, 0, len - 1, ret);
-  return ret;
+  vector<vector<int>> result;
+  sort(nums.begin(), nums.end());
+  helper(nums, 0, result);
+  return result;
 }
 
-bool PermutationsII::duplicate(vector<int>& nums, int head, int tail)
+void PermutationsII::helper(vector<int> nums, int begin,
+                            vector<vector<int>>& result)
 {
-  while (head < tail) {
-    if (nums[head] == nums[tail]) {
-      return true;
-    }
-
-    head++;
+  if (begin >= nums.size()) {
+    result.push_back(nums);
+    return;
   }
 
-  return false;
-}
-
-void PermutationsII::permute(vector<int>& nums, int head, int tail,
-                             vector<vector<int>>& ret)
-{
-  if (head == tail) {
-    ret.push_back(nums);
-  } else {
-    for (int i = head; i <= tail; i++) {
-      if (!duplicate(nums, head, i)) {
-        swap(nums[head], nums[i]);
-        permute(nums, head + 1, tail, ret);
-        swap(nums[head], nums[i]);
-      }
+  for (int i = begin; i < nums.size(); i++) {
+    if (i != begin && nums[i] == nums[begin]) {
+      continue;
     }
+
+    swap(nums[begin], nums[i]);
+    helper(nums, begin + 1, result);
   }
 }
