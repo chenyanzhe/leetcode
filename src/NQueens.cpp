@@ -1,49 +1,51 @@
 #include "NQueens.hpp"
 
-#include <cstdlib>
-using namespace std;
-
 vector<vector<string>> NQueens::solveNQueens(int n)
 {
-  this->n = n;
-  vector<int> locs(n + 1, 0);
-  vector<vector<string>> result;
-  helper(locs, 1, result);
-  return result;
+  vector<vector<string>> res;
+  vector<string> nQueens(n, string(n, '.'));
+  helper(nQueens, res, 0, n);
+  return res;
 }
 
-void NQueens::helper(vector<int>& locs, int r, vector<vector<string>>& result)
+void NQueens::helper(vector<string>& nQueens, vector<vector<string>>& res,
+                     int row, int n)
 {
-  if (r == n + 1) {
-    vector<string> sol;
-
-    for (int i = 1; i <= n; i++) {
-      string line(n, '.');
-      line[locs[i] - 1] = 'Q';
-      sol.push_back(line);
-    }
-
-    result.push_back(sol);
+  if (row == n) {
+    res.push_back(nQueens);
     return;
   }
 
-  for (int i = 1; i <= n; i++) {
-    locs[r] = i;
-
-    if (legal(locs, r)) {
-      helper(locs, r + 1, result);
-    } else {
-      locs[r] = 0;
+  for (int col = 0; col < n; col++) {
+    if (isValid(nQueens, row, col, n)) {
+      nQueens[row][col] = 'Q';
+      helper(nQueens, res, row + 1, n);
+      nQueens[row][col] = '.';
     }
   }
 }
 
-bool NQueens::legal(vector<int>& locs, int r)
+bool NQueens::isValid(vector<string>& nQueens, int row, int col, int n)
 {
-  for (int i = 1; i < r; i++)
-    if (abs(locs[i] - locs[r]) == abs(i - r) || locs[i] == locs[r]) {
+  // check if the column had a queen before.
+  for (int i = 0; i < row; i++) {
+    if (nQueens[i][col] == 'Q') {
       return false;
     }
+  }
+
+  // check if the diagonals had a queen before.
+  for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
+    if (nQueens[i][j] == 'Q') {
+      return false;
+    }
+  }
+
+  for (int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
+    if (nQueens[i][j] == 'Q') {
+      return false;
+    }
+  }
 
   return true;
 }

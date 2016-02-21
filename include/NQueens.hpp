@@ -10,9 +10,9 @@ class NQueens
 public:
   vector<vector<string>> solveNQueens(int n);
 private:
-  int n;
-  void helper(vector<int>& locs, int r, vector<vector<string>>& result);
-  bool legal(vector<int>& locs, int r);
+  void helper(vector<string>& nQueens, vector<vector<string>>& res,
+              int row, int n);
+  bool isValid(vector<string>& nQueens, int row, int col, int n);
 };
 
 #endif // NQUEENS_HPP_
