@@ -2,45 +2,60 @@
 
 ListNode* RotateList::rotateRight(ListNode* head, int k)
 {
-  int sz = nodeNums(head);
+  return rotateRight_Cycle(head, k);
+}
 
-  if (sz == 0) {
+ListNode* RotateList::rotateRight_Cycle(ListNode* head, int k)
+{
+  if (head == nullptr) {
     return head;
   }
 
-  k = k % sz;
+  int len = 1;
+  ListNode* tail = head;
 
-  if (k == 0) {
+  while (tail->next) {
+    tail = tail->next;
+    len++;
+  }
+
+  // circle the list
+  tail->next = head;
+  ListNode* newHead = head;
+  k %= len;
+
+  for (int i = 0; i < len - k % len; i++) {
+    tail = tail->next;
+  }
+
+  newHead = tail->next;
+  tail->next = nullptr;
+  return newHead;
+}
+
+ListNode* RotateList::rotateRight_TwoPointers(ListNode* head, int k)
+{
+  if (head == nullptr || head->next == nullptr) {
     return head;
   }
 
-  ListNode* oldTail = getNode(head, sz);
-  ListNode* newTail = getNode(head, sz - k);
-  ListNode* newHead = newTail->next;
-  newTail->next = nullptr;
-  oldTail->next = head;
-  head = newHead;
-  return head;
-}
+  ListNode dummy(0);
+  dummy.next = head;
+  ListNode* fast = &dummy;
+  ListNode* slow = &dummy;
+  int len = 0;
 
-int RotateList::nodeNums(ListNode* head)
-{
-  int nums = 0;
-
-  while (head != nullptr) {
-    nums++;
-    head = head->next;
+  while (fast->next) {
+    fast = fast->next;
+    len++;
   }
 
-  return nums;
-}
-
-ListNode* RotateList::getNode(ListNode* head, int i)
-{
-  while (i > 1 && head != nullptr) {
-    head = head->next;
-    i--;
+  for (int i = len - k % len; i > 0; i--) {
+    slow = slow->next;
   }
 
-  return head;
+  fast->next = dummy.next;
+  dummy.next = slow->next;
+  slow->next = nullptr;
+  return dummy.next;
 }

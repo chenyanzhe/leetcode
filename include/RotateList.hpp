@@ -8,8 +8,8 @@ class RotateList
 public:
   ListNode* rotateRight(ListNode* head, int k);
 private:
-  int nodeNums(ListNode* head);
-  ListNode* getNode(ListNode* head, int i);
+  ListNode* rotateRight_Cycle(ListNode* head, int k);
+  ListNode* rotateRight_TwoPointers(ListNode* head, int k);
 };
 
 #endif // ROTATE_LIST_HPP_
