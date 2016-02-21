@@ -2,37 +2,51 @@
 
 vector<vector<int>> SpiralMatrixII::generateMatrix(int n)
 {
-  vector<vector<int>> ret(n, vector<int>(n, 0));
-  int x = 0;
-  int y = 0;
-  int c = 1;
+  vector<vector<int>> res(n, vector<int>(n));
 
-  while (n > 0) {
-    if (n == 1) {
-      ret[x][y] = c;
-      break;
-    } else {
-      for (int i = 0; i < n - 1; i++) {
-        ret[x][y++] = c++;
-      }
+  if (n == 0) {
+    return res;
+  }
 
-      for (int i = 0; i < n - 1; i++) {
-        ret[x++][y] = c++;
-      }
+  int rowBegin = 0;
+  int rowEnd = n - 1;
+  int colBegin = 0;
+  int colEnd = n - 1;
+  int num = 1;
 
-      for (int i = 0; i < n - 1; i++) {
-        ret[x][y--] = c++;
-      }
+  while (rowBegin <= rowEnd && colBegin <= colEnd) {
+    // traverse right
+    for (int j = colBegin; j <= colEnd; j++) {
+      res[rowBegin][j] = num++;
+    }
 
-      for (int i = 0; i < n - 1; i++) {
-        ret[x--][y] = c++;
+    rowBegin++;
+
+    // traverse down
+    for (int i = rowBegin; i <= rowEnd; i++) {
+      res[i][colEnd] = num++;
+    }
+
+    colEnd--;
+
+    if (rowBegin <= rowEnd) {
+      // traverse left
+      for (int j = colEnd; j >= colBegin; j--) {
+        res[rowEnd][j] = num++;
       }
     }
 
-    x++;
-    y++;
-    n -= 2;
+    rowEnd--;
+
+    if (colBegin <= colEnd) {
+      // traverse up
+      for (int i = rowEnd; i >= rowBegin; i--) {
+        res[i][colBegin] = num++;
+      }
+    }
+
+    colBegin++;
   }
 
-  return ret;
+  return res;
 }
