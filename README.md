@@ -242,7 +242,7 @@
 | :white_check_mark: | 52 | [N-Queens II](https://leetcode.com/problems/n-queens-ii/) | Hard |
 | :white_check_mark: | 51 | [N-Queens](https://leetcode.com/problems/n-queens/) | Hard |
 | :white_check_mark: | 50 | [Pow(x, n)](https://leetcode.com/problems/powx-n/) | Medium |
-| :white_check_mark: | 49 | [Anagrams](https://leetcode.com/problems/anagrams/) | Medium |
+| :white_check_mark: | 49 | [Group Anagrams](https://leetcode.com/problems/anagrams/) | Medium |
 | :white_check_mark: | 48 | [Rotate Image](https://leetcode.com/problems/rotate-image/) | Medium |
 | :white_check_mark: | 47 | [Permutations II](https://leetcode.com/problems/permutations-ii/) | Medium |
 | :white_check_mark: | 46 | [Permutations](https://leetcode.com/problems/permutations/) | Medium |
