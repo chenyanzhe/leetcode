@@ -2,53 +2,50 @@
 
 vector<int> SpiralMatrix::spiralOrder(vector<vector<int>>& matrix)
 {
-  vector<int> ret;
-  int m = matrix.size();
+  vector<int> res;
 
-  if (m == 0) {
-    return ret;
+  if (matrix.size() == 0) {
+    return res;
   }
 
-  int n = matrix[0].size();
-  int x = 0;
-  int y = 0;
+  int rowBegin = 0;
+  int rowEnd = matrix.size() - 1;
+  int colBegin = 0;
+  int colEnd = matrix[0].size() - 1;
 
-  while (m > 0 && n > 0) {
-    if (m == 1) {
-      for (int i = 0; i < n; i++) {
-        ret.push_back(matrix[x][y++]);
-      }
+  while (rowBegin <= rowEnd && colBegin <= colEnd) {
+    // traverse right
+    for (int j = colBegin; j <= colEnd; j++) {
+      res.push_back(matrix[rowBegin][j]);
+    }
 
-      break;
-    } else if (n == 1) {
-      for (int i = 0; i < m; i++) {
-        ret.push_back(matrix[x++][y]);
-      }
+    rowBegin++;
 
-      break;
-    } else {
-      for (int i = 0; i < n - 1; i++) {
-        ret.push_back(matrix[x][y++]);
-      }
+    // traverse down
+    for (int i = rowBegin; i <= rowEnd; i++) {
+      res.push_back(matrix[i][colEnd]);
+    }
 
-      for (int i = 0; i < m - 1; i++) {
-        ret.push_back(matrix[x++][y]);
-      }
+    colEnd--;
 
-      for (int i = 0; i < n - 1; i++) {
-        ret.push_back(matrix[x][y--]);
-      }
-
-      for (int i = 0; i < m - 1; i++) {
-        ret.push_back(matrix[x--][y]);
+    if (rowBegin <= rowEnd) {
+      // traverse left
+      for (int j = colEnd; j >= colBegin; j--) {
+        res.push_back(matrix[rowEnd][j]);
       }
     }
 
-    x++;
-    y++;
-    m -= 2;
-    n -= 2;
+    rowEnd--;
+
+    if (colBegin <= colEnd) {
+      // traverse up
+      for (int i = rowEnd; i >= rowBegin; i--) {
+        res.push_back(matrix[i][colBegin]);
+      }
+    }
+
+    colBegin++;
   }
 
-  return ret;
+  return res;
 }
