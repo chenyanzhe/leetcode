@@ -2,24 +2,22 @@
 
 double Powxn::myPow(double x, int n)
 {
-  return helper(x, (long) n);
-}
-
-double Powxn::helper(double x, long n)
-{
-  if (n == 0) {
-    return 1.0;
-  }
+  double ans = 1;
 
   if (n < 0) {
-    return helper(1 / x, -n);
+    x = 1 / x;
+    n = -(n + 1); // avoid overflow
+    ans *= x;
   }
 
-  double half = helper(x, n / 2);
+  while(n > 0) {
+    if (n & 1) {
+      ans *= x;
+    }
 
-  if (n % 2 == 1) {
-    return half * half * x;
-  } else {
-    return half * half;
+    x *= x;
+    n >>= 1;
   }
+
+  return ans;
 }
