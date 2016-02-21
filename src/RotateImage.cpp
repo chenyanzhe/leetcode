@@ -1,18 +1,15 @@
 #include "RotateImage.hpp"
 
+#include <algorithm>
+using namespace std;
+
 void RotateImage::rotate(vector<vector<int>>& matrix)
 {
-  int N = matrix.size();
-  vector<vector<int>> shadow(N);
+  reverse(matrix.begin(), matrix.end());
 
-  for (int i = 0; i < N; i++) {
-    shadow[i].resize(N);
-  }
-
-  for (int i = 0; i < N; i++)
-    for (int j = 0; j < N; j++) {
-      shadow[j][N - 1 - i] = matrix[i][j];
+  for (int i = 0; i < matrix.size(); i++) {
+    for (int j = i + 1; j < matrix.size(); j++) {
+      swap(matrix[i][j], matrix[j][i]);
     }
-
-  matrix = shadow;
+  }
 }
