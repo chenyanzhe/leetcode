@@ -2,6 +2,7 @@
 #define NQUEENS_II_HPP_
 
 #include <vector>
+#include <string>
 using namespace std;
 
 class NQueensII
@@ -9,9 +10,8 @@ class NQueensII
 public:
   int totalNQueens(int n);
 private:
-  int n;
-  void helper(vector<int>& locs, int r, int& result);
-  bool valid(vector<int>& locs, int r);
+  void helper(vector<string>& nQueens, int& res, int row, int n);
+  bool isValid(vector<string>& nQueens, int row, int col, int n);
 };
 
 #endif // NQUEENS_II_HPP_
