@@ -1,32 +1,25 @@
 #include "SqrtX.hpp"
 
+#include <climits>
+using namespace std;
+
 int SqrtX::mySqrt(int x)
 {
-  if (x <= 0) {
+  if (x == 0) {
     return 0;
   }
 
-  if (x == 1) {
-    return 1;
-  }
+  int left = 1, right = INT_MAX;
 
-  return mySqrt(x, 1, x);
-}
+  while (true) {
+    int mid = left + (right - left) / 2;
 
-int SqrtX::mySqrt(int x, int l, int h)
-{
-  long m = ((long) l + (long) h) / 2;
-  double d_m = m * m;
-
-  if (d_m > x) {
-    return mySqrt(x, l, m);
-  } else {
-    double d_m_2 = (m + 1) * (m + 1);
-
-    if (d_m_2 > x) {
-      return m;
+    if (mid > x / mid) {
+      right = mid - 1;
+    } else if (mid + 1 > x / (mid + 1)) {
+      return mid;
     } else {
-      return mySqrt(x, m + 1, h);
+      left = mid + 1;
     }
   }
 }
