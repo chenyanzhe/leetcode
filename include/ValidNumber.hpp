@@ -8,9 +8,6 @@ class ValidNumber
 {
 public:
   bool isNumber(string s);
-private:
-  bool stripSpaces(string& s);
-  bool find(string s, int& d, int& e);
 };
 
 #endif // VALID_NUMBER_HPP_
