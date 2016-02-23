@@ -1,64 +1,54 @@
 #include "MinimumWindowSubstring.hpp"
 
+#include <unordered_map>
+#include <climits>
+using namespace std;
+
 string MinimumWindowSubstring::minWindow(string s, string t)
 {
-  int slen = s.size();
-  int tlen = t.size();
-  int winStart = -1;
-  int winEnd = slen;
+  unordered_map<char, int> m;
 
-  // fast path
-  if (slen == 0 || tlen == 0 || slen < tlen) {
-    return "";
+  // Statistic for count of char in t
+  for (auto c : t) {
+    m[c]++;
   }
 
-  int tCnt[256] = {0};
-  int fCnt[256] = {0};
-  int cnt = 0;
+  // counter represents the number of chars of t to be found in s.
+  size_t start = 0, end = 0, counter = t.size(), minStart = 0, minLen = INT_MAX;
+  size_t size = s.size();
 
-  for (int i = 0; i < tlen; i++) {
-    tCnt[t[i]]++;
-  }
-
-  for (int start = 0, i = 0; i < slen; i++) {
-    char ci = s[i];
-
-    if (tCnt[ci] != 0) {
-      fCnt[ci]++;
-
-      if (fCnt[ci] <= tCnt[ci]) {
-        cnt++;
-      }
+  // Move end to find a valid window.
+  while (end < size) {
+    // If char in s exists in t, decrease counter
+    if (m[s[end]] > 0) {
+      counter--;
     }
 
-    if (cnt == tlen) {
-      // find an valid window [start, i]
-      // 1. shrink it
-      while (start < i) {
-        char cs = s[start];
+    // Decrease m[s[end]]. If char does not exist in t, m[s[end]] will be negative.
+    m[s[end]]--;
+    end++;
 
-        if (tCnt[cs] == 0) {
-          start++;
-        } else if (fCnt[cs] > tCnt[cs]) {
-          start++;
-          fCnt[cs]--;
-        } else {
-          break;
-        }
+    // When we found a valid window, move start to find smaller window.
+    while (counter == 0) {
+      if (end - start < minLen) {
+        minStart = start;
+        minLen = end - start;
       }
 
-      // 2. update minimum window
-      if (winEnd - winStart > i - start) {
-        winStart = start;
-        winEnd = i;
+      m[s[start]]++;
+
+      // When char exists in t, increase counter.
+      if (m[s[start]] > 0) {
+        counter++;
       }
 
-      // 3. update start
-      fCnt[s[start]]--;
       start++;
-      cnt--;
     }
   }
 
-  return winStart == -1 ? "" : s.substr(winStart, winEnd - winStart + 1);
+  if (minLen != INT_MAX) {
+    return s.substr(minStart, minLen);
+  }
+
+  return "";
 }
