@@ -1,36 +1,16 @@
-#include "sortColors.hpp"
+#include "SortColors.hpp"
 
 void SortColors::sortColors(vector<int>& nums)
 {
-  int cZeros = 0;
-  int cOnes = 0;
-  int cTwos = 0;
+  int two = nums.size() - 1, zero = 0;
 
-  for (auto i : nums) {
-    if (i == 0) {
-      cZeros++;
+  for (int i = 0; i <= two; i++) {
+    while (nums[i] == 2 && i < two) {
+      swap(nums[i], nums[two--]);
     }
 
-    if (i == 1) {
-      cOnes++;
+    while (nums[i] == 0 && i > zero) {
+      swap(nums[i], nums[zero++]);
     }
-
-    if (i == 2) {
-      cTwos++;
-    }
-  }
-
-  int i;
-
-  for (i = 0; i < cZeros; i++) {
-    nums[i] = 0;
-  }
-
-  for (; i < cZeros + cOnes; i++) {
-    nums[i] = 1;
-  }
-
-  for (; i < cZeros + cOnes + cTwos; i++) {
-    nums[i] = 2;
   }
 }
