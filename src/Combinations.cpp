@@ -2,23 +2,23 @@
 
 vector<vector<int>> Combinations::combine(int n, int k)
 {
-  vector<vector<int>> ret;
-  vector<int> current;
-  dfs(ret, current, n, k, 1);
-  return ret;
+  vector<vector<int>> res;
+  vector<int> temp(0, k);
+  helper(res, temp, 0, n, k);
+  return res;
 }
 
-void Combinations::dfs(vector<vector<int>>& ret, vector<int>& current, int n,
-                       int k, int start)
+void Combinations::helper(vector<vector<int>>& res, vector<int>& temp,
+                          int start, int n, int k)
 {
-  if (k == 0) {
-    ret.push_back(current);
+  if (temp.size() == k) {
+    res.push_back(temp);
     return;
   }
 
-  for (int i = start; i <= n - k + 1; i++) {
-    current.push_back(i);
-    dfs(ret, current, n, k - 1, i + 1);
-    current.pop_back();
+  for(int i = start; i < n; i++) {
+    temp.push_back(i + 1);
+    helper(res, temp, i + 1, n, k);
+    temp.pop_back();
   }
 }
