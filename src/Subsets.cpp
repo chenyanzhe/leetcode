@@ -6,22 +6,15 @@ using namespace std;
 vector<vector<int>> Subsets::subsets(vector<int>& nums)
 {
   sort(nums.begin(), nums.end());
-  vector<int> node;
-  dfs(nums, 0, node);
+  int elem_num = nums.size();
+  int subset_num = 1 << elem_num;
+  vector<vector<int>> res(subset_num, vector<int>());
+
+  for (int i = 0; i < elem_num; i++)
+    for (int j = 0; j < subset_num; j++)
+      if ((j >> i) & 1) {
+        res[j].push_back(nums[i]);
+      }
+
   return res;
-}
-
-void Subsets::dfs(vector<int>& nums, int i, vector<int>& node)
-{
-  if (i == nums.size()) {
-    res.push_back(node);
-    return;
-  }
-
-  // choose nums[i]
-  node.push_back(nums[i]);
-  dfs(nums, i + 1, node);
-  // don't choose nums[i]
-  node.pop_back();
-  dfs(nums, i + 1, node);
 }
