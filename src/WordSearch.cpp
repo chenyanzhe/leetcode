@@ -2,70 +2,52 @@
 
 bool WordSearch::exist(vector<vector<char>>& board, string word)
 {
-  int nrows = board.size();
-  int ncols = board[0].size();
-  int wlen = word.size();
+  int M = board.size(), N = board[0].size();
+  int sLen = word.size();
 
-  if (nrows == 0 || ncols == 0) {
-    return false;
+  if (M && N && sLen) {
+    for (int i = 0; i < M; ++i)
+      for (int j = 0; j < N; ++j)
+        if (helper(board, i, j, word, 0, M, N, sLen)) {
+          return true;
+        }
   }
-
-  if (wlen == 0) {
-    return true;
-  }
-
-  vector<vector<bool>> visited (nrows, vector<bool>(ncols, false));
-
-  for (int i = 0; i < nrows; i++)
-    for (int j = 0; j < ncols; j++)
-      if (findWord(visited, i, j, 0, board, word)) {
-        return true;
-      }
 
   return false;
 }
 
-bool WordSearch::findWord(vector<vector<bool>>& visited, int row, int col,
-                          int index, const vector<vector<char>>& board, const string& word)
+bool WordSearch::helper(vector<vector<char>>& board, int row, int col,
+                        const string& word, int start, int M, int N, int sLen)
 {
-  int nrows = board.size();
-  int ncols = board[0].size();
-  int wlen = word.size();
+  char curC;
+  bool res = false;
 
-  if (index >= wlen) {
-    return true;
-  }
-
-  if (row < 0 || row >= nrows || col < 0 || col >= ncols) {
+  if ((curC = board[row][col]) != word[start]) {
     return false;
   }
 
-  if (visited[row][col]) {
-    return false;
-  }
-
-  if (board[row][col] != word[index]) {
-    return false;
-  }
-
-  visited[row][col] = true;
-
-  if (findWord(visited, row + 1, col, index + 1, board, word)) {
+  if (start == sLen - 1) {
     return true;
   }
 
-  if (findWord(visited, row - 1, col, index + 1, board, word)) {
-    return true;
+  board[row][col] = '*';
+
+  if (row > 0) {
+    res = helper(board, row - 1, col, word, start + 1, M, N, sLen);
   }
 
-  if (findWord(visited, row, col + 1, index + 1, board, word)) {
-    return true;
+  if (!res && row < M - 1) {
+    res = helper(board, row + 1, col, word, start + 1, M, N, sLen);
   }
 
-  if (findWord(visited, row, col - 1, index + 1, board, word)) {
-    return true;
+  if (!res && col > 0) {
+    res = helper(board, row, col - 1, word, start + 1, M, N, sLen);
   }
 
-  visited[row][col] = false;
-  return false;
+  if (!res && col < N - 1) {
+    res = helper(board,  row, col + 1, word, start + 1, M, N, sLen);
+  }
+
+  board[row][col] = curC;
+  return res;
 }
