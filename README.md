@@ -6,7 +6,7 @@
 
 * Unix-based operating system (OS X or Linux). I haven't test on Windows.
 * C++ compiler: g++ (v4.2 or more recent) or clang (v3.0 or more recent).
-* [CMake](https://cmake.org/) should be installed (v3.1.0 or more recent).
+* [CMake](https://cmake.org/) (v3.1.0 or more recent).
 
 ### Basic Installation
 
@@ -30,7 +30,7 @@ All tests passed (xxxx assertions in xxx test cases)
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
-| :white_check_mark: | 324 | [Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/ | Medium |
+| :white_check_mark: | 324 | [Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium |
 | :white_check_mark: | 304 | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Medium |
 | :white_check_mark: | 303 | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | Easy |
 | :lock: | 302 | Smallest Rectangle Enclosing Black Pixels | Hard |
