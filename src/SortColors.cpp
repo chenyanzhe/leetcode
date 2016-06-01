@@ -2,15 +2,15 @@
 
 void SortColors::sortColors(vector<int>& nums)
 {
-  int two = nums.size() - 1, zero = 0;
+  int i = 0, j = 0, k = nums.size() - 1;
 
-  for (int i = 0; i <= two; i++) {
-    while (nums[i] == 2 && i < two) {
-      swap(nums[i], nums[two--]);
-    }
-
-    while (nums[i] == 0 && i > zero) {
-      swap(nums[i], nums[zero++]);
+  while (j <= k) {
+    if (nums[j] < 1) {
+      swap(nums[i++], nums[j++]);
+    } else if (nums[j] > 1) {
+      swap(nums[j], nums[k--]);
+    } else {
+      j++;
     }
   }
 }

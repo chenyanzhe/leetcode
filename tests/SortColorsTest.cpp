@@ -11,4 +11,9 @@ TEST_CASE("Sort Colors")
     s.sortColors(nums);
     REQUIRE(nums == expected);
   }
+  SECTION("Empty input") {
+    vector<int> nums;
+    s.sortColors(nums);
+    REQUIRE(nums.empty());
+  }
 }
