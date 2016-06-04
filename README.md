@@ -31,6 +31,7 @@ All tests passed (xxxx assertions in xxx test cases)
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
 | :white_check_mark: | 324 | [Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium |
+| :white_check_mark: | 322 | [Coin Change](https://leetcode.com/problems/coin-change/) | Medium |
 | :white_check_mark: | 321 | [Create Maximum Number](https://leetcode.com/problems/create-maximum-number/) | Hard |
 | :white_check_mark: | 304 | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Medium |
 | :white_check_mark: | 303 | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | Easy |
