@@ -34,6 +34,7 @@ All tests passed (xxxx assertions in xxx test cases)
 | :white_check_mark: | 322 | [Coin Change](https://leetcode.com/problems/coin-change/) | Medium |
 | :white_check_mark: | 321 | [Create Maximum Number](https://leetcode.com/problems/create-maximum-number/) | Hard |
 | :white_check_mark: | 319 | [Bulb Switcher](https://leetcode.com/problems/bulb-switcher/) | Medium |
+| :white_check_mark: | 318 | [Maximum Product of Word Lengths](https://leetcode.com/problems/maximum-product-of-word-lengths/) | Medium |
 | :white_check_mark: | 304 | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Medium |
 | :white_check_mark: | 303 | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | Easy |
 | :lock: | 302 | Smallest Rectangle Enclosing Black Pixels | Hard |
