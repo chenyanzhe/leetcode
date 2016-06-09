@@ -2,21 +2,19 @@
 
 NumArray::NumArray(vector<int>& nums)
 {
-  int sz = nums.size();
-  sum.resize(sz);
-  int acc = 0;
+  if (nums.empty()) {
+    return;
+  }
 
-  for (int i = 0; i < sz; i++) {
-    acc += nums[i];
-    sum[i] = acc;
+  accs.resize(nums.size());
+  accs[0] = nums[0];
+
+  for (int i = 1; i < nums.size(); i++) {
+    accs[i] = accs[i - 1] + nums[i];
   }
 }
 
 int NumArray::sumRange(int i, int j)
 {
-  if (i == 0) {
-    return sum[j];
-  } else {
-    return sum[j] - sum[i - 1];
-  }
+  return i == 0 ? accs[j] : accs[j] - accs[i - 1];
 }

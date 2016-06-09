@@ -10,7 +10,7 @@ public:
   NumArray(vector<int>& nums);
   int sumRange(int i, int j);
 private:
-  vector<int> sum;
+  vector<int> accs;
 };
 
 #endif // RANGE_SUM_QUERY_IMMUTABLE_HPP_
