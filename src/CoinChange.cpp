@@ -1,31 +1,23 @@
 #include "CoinChange.hpp"
 
 #include <climits>
+#include <algorithm>
 using namespace std;
 
 int CoinChange::coinChange(vector<int>& coins, int amount)
 {
-  if (amount <= 0) {
-    return 0;
-  }
-
-  vector<int> items;
-
-  for (auto c : coins) {
-    if (c < amount) {
-      items.push_back(c);
-    } else if (c == amount) {
-      return 1;
-    }
+  if (amount < 0 || coins.empty()) {
+    return -1;
   }
 
   vector<int> dp(amount + 1, INT_MAX);
   dp[0] = 0;
 
-  for (int i = 0; i < items.size(); i++) {
-    for (int v = items[i]; v <= amount; v++) {
-      dp[v] = min(dp[v], (dp[v - items[i]] == INT_MAX) ? INT_MAX : dp[v - items[i]] +
-                  1);
+  for (auto c : coins) {
+    for (auto i = c; i <= amount; i++) {
+      if (dp[i - c] != INT_MAX) {
+        dp[i] = min(dp[i - c] + 1, dp[i]);
+      }
     }
   }
 
