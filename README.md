@@ -30,6 +30,7 @@ All tests passed (xxxx assertions in xxx test cases)
 
 |   | # | Title | Difficulty |
 |---|---|-------|------------|
+| :white_check_mark: | 357 | [Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) | Medium |
 | :white_check_mark: | 324 | [Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium |
 | :white_check_mark: | 322 | [Coin Change](https://leetcode.com/problems/coin-change/) | Medium |
 | :white_check_mark: | 321 | [Create Maximum Number](https://leetcode.com/problems/create-maximum-number/) | Hard |
