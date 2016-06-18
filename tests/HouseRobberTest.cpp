@@ -5,7 +5,7 @@
 TEST_CASE("House Robber")
 {
   HouseRobber s;
-  SECTION("Normal test") {
+  SECTION("Normal tests") {
     vector<int> nums1 {1, 2, 3, 4};
     REQUIRE(s.rob(nums1) == 6);
     vector<int> nums2 {9, 1, 9, 9, 1, 9};
