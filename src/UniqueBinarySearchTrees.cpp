@@ -5,17 +5,21 @@ using namespace std;
 
 int UniqueBinarySearchTrees::numTrees(int n)
 {
-  if (n < 0) {
-    return 0;
+  vector<vector<int>> dp(n + 2, vector<int>(n + 1, 0));
+
+  for (int i = 1; i <= n; i++) {
+    dp[i][i] = dp[i][i - 1] = dp[i + 1][i] = 1;
   }
 
-  vector<int> dp(n + 1, 0);
-  dp[0] = 1;
+  for (int l = 2; l <= n; l++) {
+    for (int i = 1; i <= n + 1 - l; i++) {
+      int j = i + l - 1;
 
-  for (int i = 1; i <= n; i++)
-    for (int r = 1; r <= i; r++) {
-      dp[i] += dp[r - 1] * dp[i - r];
+      for (int k = i; k <= j; k++) {
+        dp[i][j] += dp[i][k - 1] * dp[k + 1][j];
+      }
     }
+  }
 
-  return dp[n];
+  return dp[1][n];
 }
