@@ -2,37 +2,35 @@
 
 vector<TreeNode*> UniqueBinarySearchTreesII::generateTrees(int n)
 {
-  vector<vector<TreeNode*>> dp(n + 1);
-  dp[0].push_back(nullptr);
+  if (n == 0) {
+    return vector<TreeNode*>();
+  }
 
-  for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= i; j++) {
-      for (auto l : dp[j - 1]) {
-        for (auto r : dp[i - j]) {
-          TreeNode* root = new TreeNode(j);
-          // FIXME:
-          // No need to clone left subtree
-          // Tradeoff for correctly freeing all the trees
-          root->left = clone(l, 0);
-          root->right = clone(r, j);
-          dp[i].push_back(root);
+  vector<vector<vector<TreeNode*>>> dp(n + 2, vector<vector<TreeNode*>>(n + 2,
+                                       vector<TreeNode*>()));
+
+  for (int i = 1; i <= n + 1; i++) {
+    dp[i][i].push_back(new TreeNode(i));
+    dp[i][i - 1].push_back(NULL);
+  }
+
+  for (int l = 2; l <= n; l++) {
+    for (int i = 1; i <= n + 1 - l; i++) {
+      int j = i + l - 1;
+
+      for (int k = i; k <= j; k++) {
+        for (auto left : dp[i][k - 1]) {
+          for (auto right : dp[k + 1][j]) {
+            TreeNode* root = new TreeNode(k);
+            root->left = left;
+            root->right = right;
+            dp[i][j].push_back(root);
+          }
         }
       }
     }
   }
 
-  return dp[n];
+  return dp[1][n];
 }
 
-TreeNode* UniqueBinarySearchTreesII::clone(TreeNode* root, int offset)
-{
-  TreeNode* nroot = nullptr;
-
-  if (root != nullptr) {
-    nroot = new TreeNode(root->val + offset);
-    nroot->left = clone(root->left, offset);
-    nroot->right = clone(root->right, offset);
-  }
-
-  return nroot;
-}

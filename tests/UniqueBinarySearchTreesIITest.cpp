@@ -25,8 +25,4 @@ TEST_CASE("Unique Binary Search Trees II")
                          tree_serialize(t)) == expected.end());
     }
   }
-
-  for (auto t : result) {
-    tree_free(t);
-  }
 }
