@@ -8,8 +8,6 @@ class DecodeWays
 {
 public:
   int numDecodings(string s);
-private:
-  bool valid(string s);
 };
 
 #endif // DECODE_WAYS_HPP_

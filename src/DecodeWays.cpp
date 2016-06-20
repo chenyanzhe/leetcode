@@ -5,31 +5,26 @@ using namespace std;
 
 int DecodeWays::numDecodings(string s)
 {
-  int sz = s.size();
+  int n = s.size();
 
-  if (sz == 0) {
+  if (n == 0) {
     return 0;
   }
 
-  vector<int> dp(sz + 1, 0);
+  vector<int> dp(n + 1, 0);
   dp[0] = 1;
-  dp[1] = valid(s.substr(0, 1)) ? 1 : 0;
+  dp[1] = (s[0] == '0') ? 0 : 1;
 
-  for (int i = 2; i <= sz; i++) {
-    if (dp[i - 2] && s[i - 2] != '0' && valid(s.substr(i - 2, 2))) {
-      dp[i] += dp[i - 2];
+  for (int i = 2; i <= n; i++) {
+    if (s[i - 1] != '0') {
+      dp[i] += dp[i - 1];
     }
 
-    if (dp[i - 1] && valid(s.substr(i - 1, 1))) {
-      dp[i] += dp[i - 1];
+    if (s[i - 2] == '1' || (s[i - 2] == '2' && s[i - 1] - '0' <= 6)) {
+      dp[i] += dp[i - 2];
     }
   }
 
-  return dp[sz];
+  return dp[n];
 }
 
-bool DecodeWays::valid(string s)
-{
-  int val = stoi(s);
-  return 1 <= val && val <= 26;
-}
