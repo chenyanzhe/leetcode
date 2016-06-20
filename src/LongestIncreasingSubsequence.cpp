@@ -9,10 +9,8 @@ int LongestIncreasingSubsequence::lengthOfLIS(vector<int>& nums)
   int n = nums.size();
   set<int> s(nums.begin(), nums.end());
   vector<int> snums;
-
   snums.assign(s.begin(), s.end());
   int m = snums.size();
-
   vector<int> dp(m + 1, 0);
 
   for (int i = 1; i <= n; i++) {
