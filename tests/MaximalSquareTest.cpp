@@ -14,6 +14,12 @@ TEST_CASE("Maximal Square")
     };
     REQUIRE(s.maximalSquare(matrix) == 4);
   }
+  SECTION("Single item test") {
+    vector<vector<char>> matrix {
+      {'1'}
+    };
+    REQUIRE(s.maximalSquare(matrix) == 1);
+  }
   SECTION("All zeros test") {
     vector<vector<char>> matrix {
       {'0', '0', '0', '0', '0'},
@@ -39,5 +45,14 @@ TEST_CASE("Maximal Square")
       {'0', '1', '1', '1'}
     };
     REQUIRE(s.maximalSquare(matrix2) == 9);
+    vector<vector<char>> matrix3 {
+      {'0', '1', '1', '0', '1'},
+      {'1', '1', '0', '1', '0'},
+      {'0', '1', '1', '1', '0'},
+      {'1', '1', '1', '1', '0'},
+      {'1', '1', '1', '1', '1'},
+      {'0', '0', '0', '0', '0'}
+    };
+    REQUIRE(s.maximalSquare(matrix3) == 9);
   }
 }
