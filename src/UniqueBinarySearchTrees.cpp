@@ -5,10 +5,10 @@ using namespace std;
 
 int UniqueBinarySearchTrees::numTrees(int n)
 {
-  vector<vector<int>> dp(n + 2, vector<int>(n + 1, 0));
+  vector<vector<int>> dp(n + 2, vector<int>(n + 2, 0));
 
-  for (int i = 1; i <= n; i++) {
-    dp[i][i] = dp[i][i - 1] = dp[i + 1][i] = 1;
+  for (int i = 1; i <= n + 1; i++) {
+    dp[i][i] = dp[i][i - 1] = 1;
   }
 
   for (int l = 2; l <= n; l++) {
