@@ -5,7 +5,7 @@
 --delete-empty-lines
 --align-pointer=type
 --align-reference=type
---add-brackets
+--remove-brackets
 --pad-oper
 --max-code-length=79
 --break-after-logical
