@@ -1,8 +1,7 @@
 #include "UglyNumberII.hpp"
 
 #include <algorithm>
-#include <queue>
-#include <cstdint>
+#include <vector>
 using namespace std;
 
 int UglyNumberII::nthUglyNumber(int n)
@@ -11,37 +10,25 @@ int UglyNumberII::nthUglyNumber(int n)
     return 1;
   }
 
-  queue<uint64_t> q2;
-  queue<uint64_t> q3;
-  queue<uint64_t> q5;
-  int count = 1;
-  int next;
-  q2.push(2);
-  q3.push(3);
-  q5.push(5);
+  int i2 = 0, i3 = 0, i5 = 0;
+  vector<int> dp(n, 0);
+  dp[0] = 1;
 
-  while (count < n) {
-    next = std::min(q2.front(), min(q3.front(), q5.front()));
+  for (int i = 1; i < n; i++) {
+    dp[i] = min(dp[i2] * 2, min(dp[i3] * 3, dp[i5] * 5));
 
-    if (next == q2.front()) {
-      int val = q2.front();
-      q2.push(val * 2);
-      q3.push(val * 3);
-      q5.push(val * 5);
-      q2.pop();
-    } else if (next == q3.front()) {
-      int val = q3.front();
-      q3.push(val * 3);
-      q5.push(val * 5);
-      q3.pop();
-    } else {
-      int val = q5.front();
-      q5.push(val * 5);
-      q5.pop();
+    if (dp[i] == dp[i2] * 2) {
+      i2++;
     }
 
-    count++;
+    if (dp[i] == dp[i3] * 3) {
+      i3++;
+    }
+
+    if (dp[i] == dp[i5] * 5) {
+      i5++;
+    }
   }
 
-  return next;
+  return dp[n - 1];
 }
