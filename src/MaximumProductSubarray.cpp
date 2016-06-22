@@ -5,27 +5,29 @@ using namespace std;
 
 int MaximumProductSubarray::maxProduct(vector<int>& nums)
 {
-  int sz = nums.size();
+  int n = nums.size();
 
-  if (sz == 0) {
+  if (n == 0) {
     return 0;
   }
 
-  int minNow, maxNow, maxGlobal;
-  minNow = maxNow = maxGlobal = nums[0];
+  vector<int> a(n, 0);
+  vector<int> b(n, 0);
+  a[0] = b[0] = nums[0];
 
-  for (int i = 1; i < sz; i++) {
-    if (nums[i] >= 0) {
-      maxNow = max(maxNow * nums[i], nums[i]);
-      minNow = min(minNow * nums[i], nums[i]);
-    } else {
-      int _maxNow = maxNow;
-      maxNow = minNow * nums[i];
-      minNow = min(_maxNow * nums[i], nums[i]);
-    }
-
-    maxGlobal = max(maxGlobal, maxNow);
+  for (int i = 1; i < n; i++) {
+    int v1 = nums[i];
+    int v2 = a[i - 1] * nums[i];
+    int v3 = b[i - 1] * nums[i];
+    a[i] = max(v1, max(v2, v3));
+    b[i] = min(v1, min(v2, v3));
   }
 
-  return maxGlobal;
+  int ret = a[0];
+
+  for (int i = 1; i < n; i++) {
+    ret = max(ret, a[i]);
+  }
+
+  return ret;
 }
