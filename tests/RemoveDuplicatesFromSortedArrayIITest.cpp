@@ -12,8 +12,7 @@ TEST_CASE("Remove Duplicates from Sorted Array II")
     REQUIRE(nums.size() >= result);
     REQUIRE(expected.size() == result);
 
-    for (int i = 0; i < result; i++) {
+    for (int i = 0; i < result; i++)
       REQUIRE(expected[i] == nums[i]);
-    }
   }
 }

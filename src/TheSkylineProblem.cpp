@@ -16,15 +16,14 @@ vector<pair<int, int>> TheSkylineProblem::getSkyline(vector<vector<int>>&
   }
 
   sort(height.begin(), height.end(), [](const node & a, const node & b) {
-    if (a.x != b.x) {
+    if (a.x != b.x)
       return a.x < b.x;
-    } else if (a.type == LEFT && b.type == LEFT) {
+    else if (a.type == LEFT && b.type == LEFT)
       return a.y > b.y;
-    } else if (a.type == RIGHT && b.type == RIGHT) {
+    else if (a.type == RIGHT && b.type == RIGHT)
       return a.y < b.y;
-    } else {
+    else
       return a.type == LEFT;
-    }
   });
   priority_queue<int> heap;
   unordered_map<int, int> mp;
@@ -33,9 +32,9 @@ vector<pair<int, int>> TheSkylineProblem::getSkyline(vector<vector<int>>&
   int pre = 0, cur = 0;
 
   for (auto& h : height) {
-    if (h.type == LEFT) {
+    if (h.type == LEFT)
       heap.push(h.y);
-    } else {
+    else {
       ++mp[h.y];
 
       while (!heap.empty() && mp[heap.top()] > 0) {

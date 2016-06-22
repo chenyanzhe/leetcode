@@ -12,24 +12,21 @@ int CountPrimes::countPrimes(int n)
 
   while (base * base < n) {
     // marking
-    for (int i = base; i * base < n; i++) {
+    for (int i = base; i * base < n; i++)
       notPrime[i * base] = true;
-    }
 
     // update new base
     int i = base + 1;
 
-    while (i < n && notPrime[i]) {
+    while (i < n && notPrime[i])
       i++;
-    }
 
     base = i;
   }
 
   for (int i = 1; i < n; i++)
-    if (!notPrime[i]) {
+    if (!notPrime[i])
       result++;
-    }
 
   return result;
 }

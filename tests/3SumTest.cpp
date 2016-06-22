@@ -17,9 +17,8 @@ TEST_CASE("3Sum")
     };
     REQUIRE(result1.size() == 2);
 
-    for (auto triplet : expected1) {
+    for (auto triplet : expected1)
       REQUIRE(find(result1.begin(), result1.end(), triplet) != result1.end());
-    }
 
     vector<int> nums2 { -4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6};
     vector<vector<int>> result2 = s.threeSum(nums2);
@@ -30,9 +29,8 @@ TEST_CASE("3Sum")
     };
     REQUIRE(result2.size() == 6);
 
-    for (auto triplet : expected2) {
+    for (auto triplet : expected2)
       REQUIRE(find(result2.begin(), result2.end(), triplet) != result2.end());
-    }
   }
   SECTION("All duplicates") {
     vector<int> nums1 {0, 0, 0};

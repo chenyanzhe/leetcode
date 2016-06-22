@@ -17,18 +17,16 @@ void ImplementStackUsingQueues::push(int x)
 
 void ImplementStackUsingQueues::pop()
 {
-  if (!empty()) {
+  if (!empty())
     primary.pop();
-  }
 }
 
 int ImplementStackUsingQueues::top()
 {
-  if (!empty()) {
+  if (!empty())
     return primary.front();
-  } else {
+  else
     return 0;
-  }
 }
 
 bool ImplementStackUsingQueues::empty()

@@ -11,7 +11,6 @@ void MoveZeroes::moveZeroes(vector<int>& nums)
     }
   }
 
-  for (; tail < nums.size(); tail++) {
+  for (; tail < nums.size(); tail++)
     nums[tail] = 0;
-  }
 }

@@ -20,9 +20,8 @@ void SubsetsII::dfs(vector<int>& nums, int i, vector<int>& node)
 
   int j = i - 1;
 
-  while (j >= 0 && nums[j] == nums[i]) {
+  while (j >= 0 && nums[j] == nums[i])
     j--;
-  }
 
   int d = i - (j + 1);
 

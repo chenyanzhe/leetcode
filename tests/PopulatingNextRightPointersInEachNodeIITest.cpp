@@ -52,9 +52,8 @@ TEST_CASE("Populating Next Right Pointers in Each Node II")
   // free tree
   TreeLinkNode* p = root;
 
-  if (p == nullptr) {
+  if (p == nullptr)
     return;
-  }
 
   queue<TreeLinkNode*>* q = new queue<TreeLinkNode*>();
   q->push(p);
@@ -63,13 +62,11 @@ TEST_CASE("Populating Next Right Pointers in Each Node II")
     p = q->front();
     q->pop();
 
-    if (p->left != nullptr) {
+    if (p->left != nullptr)
       q->push(p->left);
-    }
 
-    if (p->right != nullptr) {
+    if (p->right != nullptr)
       q->push(p->right);
-    }
 
     delete p;
   }

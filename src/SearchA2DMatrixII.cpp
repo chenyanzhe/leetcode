@@ -10,13 +10,12 @@ bool SearchA2DMatrixII::searchMatrix(vector<vector<int>>& matrix, int target)
   while (i < r && j >= 0) {
     int p = matrix[i][j];
 
-    if (p == target) {
+    if (p == target)
       return true;
-    } else if (p < target) {
+    else if (p < target)
       i++;
-    } else {
+    else
       j--;
-    }
   }
 
   return false;

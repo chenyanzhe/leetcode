@@ -16,8 +16,7 @@ TEST_CASE("4Sum")
     vector<vector<int>> results = s.fourSum(nums, target);
     REQUIRE(results.size() == 3);
 
-    for (auto quadruplet : expected) {
+    for (auto quadruplet : expected)
       REQUIRE(find(results.begin(), results.end(), quadruplet) != results.end());
-    }
   }
 }

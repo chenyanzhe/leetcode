@@ -7,9 +7,8 @@ int BestTimeToBuyAndSellStockIII::maxProfit(vector<int>& prices)
 {
   int n = prices.size();
 
-  if (n <= 1) {
+  if (n <= 1)
     return 0;
-  }
 
   int k = 2;
   vector<vector<int>> dp(k + 1, vector<int>(n, 0));

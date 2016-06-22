@@ -5,9 +5,8 @@ using namespace std;
 
 int MaximumDepthOfBinaryTree::maxDepth(TreeNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return 0;
-  }
 
   int ldepth = maxDepth(root->left);
   int rdepth = maxDepth(root->right);

@@ -2,9 +2,8 @@
 
 ListNode* ReverseNodesInKGroup::reverseKGroup(ListNode* head, int k)
 {
-  if (head == nullptr || head->next == nullptr || k < 2) {
+  if (head == nullptr || head->next == nullptr || k < 2)
     return head;
-  }
 
   ListNode dummy(0);
   dummy.next = head;
@@ -12,9 +11,8 @@ ListNode* ReverseNodesInKGroup::reverseKGroup(ListNode* head, int k)
   ListNode* end  = head;
 
   for (; end; end = prev->next) {
-    for (int i = 1; i < k && end; i++) {
+    for (int i = 1; i < k && end; i++)
       end = end->next;
-    }
 
     if (end == nullptr) {
       // do not have k elements
@@ -36,9 +34,8 @@ ListNode* ReverseNodesInKGroup::reverse(ListNode* prev, ListNode* begin,
   ListNode* next = cur->next;
 
   for (; cur != end_next;
-       p = cur, cur = next, next = next ? next->next : nullptr) {
+       p = cur, cur = next, next = next ? next->next : nullptr)
     cur->next = p;
-  }
 
   begin->next = end_next;
   prev->next = end;

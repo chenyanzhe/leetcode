@@ -5,9 +5,8 @@ using namespace std;
 
 void PopulatingNextRightPointersInEachNodeII::connect(TreeLinkNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return;
-  }
 
   queue<TreeLinkNode*> q;
   q.push(root);
@@ -19,17 +18,14 @@ void PopulatingNextRightPointersInEachNodeII::connect(TreeLinkNode* root)
       TreeLinkNode* front = q.front();
       q.pop();
 
-      if (i + 1 < k) {
+      if (i + 1 < k)
         front->next = q.front();
-      }
 
-      if (front->left != nullptr) {
+      if (front->left != nullptr)
         q.push(front->left);
-      }
 
-      if (front->right != nullptr) {
+      if (front->right != nullptr)
         q.push(front->right);
-      }
     }
   }
 }

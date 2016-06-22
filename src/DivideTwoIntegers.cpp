@@ -5,13 +5,11 @@
 
 int DivideTwoIntegers::divide(int dividend, int divisor)
 {
-  if (divisor == 1) {
+  if (divisor == 1)
     return dividend;
-  }
 
-  if ((dividend == INT_MIN && divisor == -1) || divisor == 0) {
+  if ((dividend == INT_MIN && divisor == -1) || divisor == 0)
     return INT_MAX;
-  }
 
   int sign = (dividend > 0 ^ divisor > 0) ? -1 : 1;
   long ret = 0;

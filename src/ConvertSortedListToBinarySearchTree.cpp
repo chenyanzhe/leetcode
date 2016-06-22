@@ -10,9 +10,8 @@ TreeNode* ConvertSortedListToBinarySearchTree::sortedListToBST(ListNode* head)
 TreeNode* ConvertSortedListToBinarySearchTree::sortedListToBST(int start,
     int end)
 {
-  if (start > end) {
+  if (start > end)
     return nullptr;
-  }
 
   int mid = (start + end) / 2;
   TreeNode* left = sortedListToBST(start, mid - 1);

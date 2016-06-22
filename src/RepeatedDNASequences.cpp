@@ -16,9 +16,8 @@ vector<string> RepeatedDNASequences::findRepeatedDnaSequences(string s)
     if (records.count(substr) && deduplicates.count(substr) == 0) {
       result.push_back(substr);
       deduplicates.insert(substr);
-    } else {
+    } else
       records.insert(substr);
-    }
   }
 
   return result;

@@ -16,9 +16,8 @@ TEST_CASE("Word Ladder II")
     vector<vector<string>> result = s.findLadders(beginWord, endWord, wordList);
     REQUIRE(result.size() == expected.size());
 
-    for (auto r : result) {
+    for (auto r : result)
       REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
-    }
   }
   SECTION("Duplicates test") {
     string beginWord = "red";
@@ -32,8 +31,7 @@ TEST_CASE("Word Ladder II")
     vector<vector<string>> result = s.findLadders(beginWord, endWord, wordList);
     REQUIRE(result.size() == expected.size());
 
-    for (auto r : result) {
+    for (auto r : result)
       REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
-    }
   }
 }

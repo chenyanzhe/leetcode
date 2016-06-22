@@ -15,17 +15,15 @@ vector<string> LetterCombinationsOfAPhoneNumber::letterCombinations(
       string t = q.front();
       q.pop();
 
-      for (auto c : mapping[digits[i] - '0']) {
+      for (auto c : mapping[digits[i] - '0'])
         q.push(t + string(1, c));
-      }
     }
   }
 
   vector<string> res;
 
-  if (digits.size() == 0) {
+  if (digits.size() == 0)
     return res;
-  }
 
   while (!q.empty()) {
     res.push_back(q.front());

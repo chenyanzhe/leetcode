@@ -5,9 +5,8 @@ using namespace std;
 
 string ZigZagConversion::convert(string s, int numRows)
 {
-  if (numRows <= 1) {
+  if (numRows <= 1)
     return s;
-  }
 
   vector<string> lines(numRows, "");
   int step = 1;
@@ -16,20 +15,18 @@ string ZigZagConversion::convert(string s, int numRows)
   for (auto c : s) {
     lines[row].push_back(c);
 
-    if (row == numRows - 1) {
+    if (row == numRows - 1)
       step = -1;
-    } else if (row == 0) {
+    else if (row == 0)
       step = 1;
-    }
 
     row += step;
   }
 
   s.clear();
 
-  for (auto line : lines) {
+  for (auto line : lines)
     s += line;
-  }
 
   return s;
 }

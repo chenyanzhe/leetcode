@@ -13,9 +13,8 @@ int HIndexII::hIndex(vector<int>& citations)
     if (citations[m] >= n - m) {
       r = m - 1;
       h = n - m;
-    } else {
+    } else
       l = m + 1;
-    }
   }
 
   return h;

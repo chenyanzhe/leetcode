@@ -17,16 +17,14 @@ void ImplementQueueUsingStacks::push(int x)
 
 void ImplementQueueUsingStacks::pop(void)
 {
-  if (!primary.empty()) {
+  if (!primary.empty())
     primary.pop();
-  }
 }
 
 int ImplementQueueUsingStacks::peek(void)
 {
-  if (!primary.empty()) {
+  if (!primary.empty())
     return primary.top();
-  }
 
   return 0;
 }

@@ -11,9 +11,9 @@ int LargestRectangleInHistogram::largestRectangleArea(vector<int>& height)
   int ret = 0;
 
   for (int i = 0; i < height.size();) {
-    if (ops.empty() || height[ops.top()] <= height[i]) {
+    if (ops.empty() || height[ops.top()] <= height[i])
       ops.push(i++);
-    } else {
+    else {
       int t = ops.top();
       ops.pop();
       ret = max(ret, (ops.empty() ? i : i - ops.top() - 1) * height[t]);

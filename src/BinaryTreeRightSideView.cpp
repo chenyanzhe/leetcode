@@ -12,9 +12,8 @@ vector<int> BinaryTreeRightSideView::rightSideView(TreeNode* root)
 
 void BinaryTreeRightSideView::bfs(TreeNode* root, vector<int>& result)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return;
-  }
 
   queue<TreeNode*> q;
   q.push(root);
@@ -26,17 +25,14 @@ void BinaryTreeRightSideView::bfs(TreeNode* root, vector<int>& result)
       TreeNode* n = q.front();
       q.pop();
 
-      if (n->left != nullptr) {
+      if (n->left != nullptr)
         q.push(n->left);
-      }
 
-      if (n->right != nullptr) {
+      if (n->right != nullptr)
         q.push(n->right);
-      }
 
-      if (i == num - 1) {
+      if (i == num - 1)
         result.push_back(n->val);
-      }
     }
   }
 }

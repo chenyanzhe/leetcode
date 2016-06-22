@@ -31,18 +31,16 @@ ListNode* PartitionList::partition(ListNode* head, int x)
   }
 
   // fix tail
-  if (lp != nullptr) {
+  if (lp != nullptr)
     lp->next = nullptr;
-  }
 
-  if (rp != nullptr) {
+  if (rp != nullptr)
     rp->next = nullptr;
-  }
 
   // merge l and r
-  if (lp == nullptr) {
+  if (lp == nullptr)
     return r;
-  } else {
+  else {
     lp->next = r;
     return l;
   }

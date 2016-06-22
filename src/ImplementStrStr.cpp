@@ -10,14 +10,12 @@ int ImplementStrStr::strStr(string haystack, string needle)
     int k;
 
     for (j = i, k = 0; k < nlen; j++, k++) {
-      if (haystack[j] != needle[k]) {
+      if (haystack[j] != needle[k])
         break;
-      }
     }
 
-    if (k == nlen) {
+    if (k == nlen)
       return i;
-    }
   }
 
   return -1;

@@ -10,9 +10,8 @@ bool ValidSudoku::isValidSudoku(vector<vector<char>>& board)
         int num = board[i][j] - '0' - 1;
         int k = i / 3 * 3 + j / 3;
 
-        if (used1[i][num] || used2[j][num] || used3[k][num]) {
+        if (used1[i][num] || used2[j][num] || used3[k][num])
           return false;
-        }
 
         used1[i][num] = used2[j][num] = used3[k][num] = true;
       }

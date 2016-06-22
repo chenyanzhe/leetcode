@@ -7,9 +7,8 @@ using namespace std;
 
 int SuperUglyNumber::nthSuperUglyNumber(int n, vector<int>& primes)
 {
-  if (n == 1) {
+  if (n == 1)
     return 1;
-  }
 
   int k = primes.size();
   typedef pair<int, int> prime_t; // prime val with its source
@@ -33,9 +32,8 @@ int SuperUglyNumber::nthSuperUglyNumber(int n, vector<int>& primes)
     val = q.top().first;
     src = q.top().second;
 
-    for (int i = src; i < k; i++) {
+    for (int i = src; i < k; i++)
       candidates[i].push(val * primes[i]);
-    }
 
     candidates[src].pop();
     q.pop();

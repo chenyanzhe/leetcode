@@ -26,8 +26,7 @@ void WiggleSortII::wiggleSort(vector<int>& nums)
     } else if (nums[m(j, n)] < mid) {
       swap(nums[m(j, n)], nums[m(k, n)]);
       k--;
-    } else {
+    } else
       j++;
-    }
   }
 }

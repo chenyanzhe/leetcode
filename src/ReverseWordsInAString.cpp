@@ -12,18 +12,16 @@ void ReverseWordsInAString::reverseWords(string& s)
   int j = 0;
 
   for (; j < s.size(); j++) {
-    if (!isspace(s[j])) {
+    if (!isspace(s[j]))
       continue;
-    }
 
     reverseString(s, i, j - 1);
     i = j + 1;
   }
 
   // reverse the last word
-  if (j - 1 > i) {
+  if (j - 1 > i)
     reverseString(s, i, j - 1);
-  }
 }
 
 void ReverseWordsInAString::standardize(string& s)
@@ -46,9 +44,8 @@ void ReverseWordsInAString::standardize(string& s)
     }
   }
 
-  if (j > 0 && isspace(s[j - 1])) {
+  if (j > 0 && isspace(s[j - 1]))
     j--;
-  }
 
   s = s.substr(0, j);
 }

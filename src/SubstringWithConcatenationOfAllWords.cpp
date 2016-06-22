@@ -10,15 +10,13 @@ vector<int> SubstringWithConcatenationOfAllWords::findSubstring(string s,
   int n = s.size();
   int cnt = words.size();
 
-  if (n <= 0 || cnt <= 0) {
+  if (n <= 0 || cnt <= 0)
     return ret;
-  }
 
   unordered_map<string, int> dict;
 
-  for (int i = 0; i < cnt; i++) {
+  for (int i = 0; i < cnt; i++)
     dict[words[i]]++;
-  }
 
   int wl = words[0].size();
 

@@ -13,8 +13,7 @@ TEST_CASE("Remove Invalid Parentheses")
     vector<string> result = s.removeInvalidParentheses("()())()");
     REQUIRE(expected.size() == result.size());
 
-    for (auto r : result) {
+    for (auto r : result)
       REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
-    }
   }
 }

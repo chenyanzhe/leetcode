@@ -6,9 +6,8 @@ int BitwiseANDOfNumbersRange::rangeBitwiseAnd(int m, int n)
   int base = 1;
 
   while (m != 0) {
-    if (m == n && m % 2) {
+    if (m == n && m % 2)
       result += base;
-    }
 
     m /= 2;
     n /= 2;

@@ -6,9 +6,8 @@ using namespace std;
 
 int tree_height(TreeNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return 0;
-  }
 
   int left_height = tree_height(root->left);
   int right_height = tree_height(root->right);
@@ -17,9 +16,9 @@ int tree_height(TreeNode* root)
 
 static void tree_serialize_helper(TreeNode* p, string& ans)
 {
-  if (p == nullptr) {
+  if (p == nullptr)
     ans += "# ";
-  } else {
+  else {
     ans += to_string(p->val) + " ";
     tree_serialize_helper(p->left, ans);
     tree_serialize_helper(p->right, ans);
@@ -37,9 +36,8 @@ void tree_free(TreeNode* root)
 {
   TreeNode* p = root;
 
-  if (p == nullptr) {
+  if (p == nullptr)
     return;
-  }
 
   queue<TreeNode*>* q = new queue<TreeNode*>();
   q->push(p);
@@ -48,13 +46,11 @@ void tree_free(TreeNode* root)
     p = q->front();
     q->pop();
 
-    if (p->left != nullptr) {
+    if (p->left != nullptr)
       q->push(p->left);
-    }
 
-    if (p->right != nullptr) {
+    if (p->right != nullptr)
       q->push(p->right);
-    }
 
     delete p;
   }

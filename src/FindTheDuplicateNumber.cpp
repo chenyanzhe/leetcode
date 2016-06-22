@@ -2,9 +2,8 @@
 
 int FindTheDuplicateNumber::findDuplicate(vector<int> nums)
 {
-  if (nums.size() == 0) {
+  if (nums.size() == 0)
     return 0;
-  }
 
   int l = 1;
   int r = nums.size();
@@ -14,9 +13,8 @@ int FindTheDuplicateNumber::findDuplicate(vector<int> nums)
     int count = 0;
 
     for (auto n : nums) {
-      if (n <= m) {
+      if (n <= m)
         count++;
-      }
     }
 
     if (count > m) {

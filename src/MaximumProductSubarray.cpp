@@ -7,9 +7,8 @@ int MaximumProductSubarray::maxProduct(vector<int>& nums)
 {
   int n = nums.size();
 
-  if (n == 0) {
+  if (n == 0)
     return 0;
-  }
 
   vector<int> a(n, 0);
   vector<int> b(n, 0);
@@ -25,9 +24,8 @@ int MaximumProductSubarray::maxProduct(vector<int>& nums)
 
   int ret = a[0];
 
-  for (int i = 1; i < n; i++) {
+  for (int i = 1; i < n; i++)
     ret = max(ret, a[i]);
-  }
 
   return ret;
 }

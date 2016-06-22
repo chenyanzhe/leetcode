@@ -2,9 +2,8 @@
 
 vector<TreeNode*> UniqueBinarySearchTreesII::generateTrees(int n)
 {
-  if (n == 0) {
+  if (n == 0)
     return vector<TreeNode*>();
-  }
 
   vector<vector<vector<TreeNode*>>> dp(n + 2, vector<vector<TreeNode*>>(n + 2,
                                        vector<TreeNode*>()));

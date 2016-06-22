@@ -15,8 +15,7 @@ TEST_CASE("Subsets")
     vector<vector<int>> results = s.subsets(nums);
     REQUIRE(results.size() == expected.size());
 
-    for (auto sub : expected) {
+    for (auto sub : expected)
       REQUIRE_FALSE(find(results.begin(), results.end(), sub) == results.end());
-    }
   }
 }

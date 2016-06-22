@@ -18,9 +18,8 @@ string MultiplyStrings::multiply(string num1, string num2)
 
   size_t startpos = sum.find_first_not_of("0");
 
-  if (startpos != string::npos) {
+  if (startpos != string::npos)
     return sum.substr(startpos);
-  }
 
   return "0";
 }

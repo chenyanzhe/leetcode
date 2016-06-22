@@ -8,9 +8,8 @@ WordTrieNode::WordTrieNode() : children(vector<WordTrieNode * >(26, nullptr)),
 WordTrieNode::~WordTrieNode()
 {
   for (auto child : children)
-    if (child != nullptr) {
+    if (child != nullptr)
       delete child;
-    }
 }
 
 WordDictionary::WordDictionary()
@@ -30,9 +29,8 @@ void WordDictionary::addWord(string word)
   for (int i = 0; i < word.size(); i++) {
     int idx = word[i] - 'a';
 
-    if (now->children[idx] == nullptr) {
+    if (now->children[idx] == nullptr)
       now->children[idx] = new WordTrieNode();
-    }
 
     now = now->children[idx];
   }
@@ -47,22 +45,19 @@ bool WordDictionary::search(string word)
 
 bool WordDictionary::search(WordTrieNode* root, const char* head)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return false;
-  }
 
-  if (*head == '\0') {
+  if (*head == '\0')
     return root->isWord;
-  }
 
   if (*head != '.') {
     int idx = *head - 'a';
     return search(root->children[idx], head + 1);
   } else {
     for (int i = 0; i < 26; i++)
-      if (search(root->children[i], head + 1)) {
+      if (search(root->children[i], head + 1))
         return true;
-      }
 
     return false;
   }

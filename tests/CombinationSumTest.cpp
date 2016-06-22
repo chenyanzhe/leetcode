@@ -14,9 +14,8 @@ TEST_CASE("Combination Sum")
     vector<vector<int>> result = s.combinationSum(candidates, target);
     REQUIRE(result.size() == 2);
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++)
       REQUIRE_FALSE(find(result.begin(), result.end(), expected[i]) == result.end());
-    }
   }
   SECTION("Normal test") {
     vector<int> candidates {8, 7, 4, 3};
@@ -25,8 +24,7 @@ TEST_CASE("Combination Sum")
     vector<vector<int>> result = s.combinationSum(candidates, target);
     REQUIRE(result.size() == 3);
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++)
       REQUIRE_FALSE(find(result.begin(), result.end(), expected[i]) == result.end());
-    }
   }
 }

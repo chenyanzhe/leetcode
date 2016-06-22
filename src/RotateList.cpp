@@ -7,9 +7,8 @@ ListNode* RotateList::rotateRight(ListNode* head, int k)
 
 ListNode* RotateList::rotateRight_Cycle(ListNode* head, int k)
 {
-  if (head == nullptr) {
+  if (head == nullptr)
     return head;
-  }
 
   int len = 1;
   ListNode* tail = head;
@@ -24,9 +23,8 @@ ListNode* RotateList::rotateRight_Cycle(ListNode* head, int k)
   ListNode* newHead = head;
   k %= len;
 
-  for (int i = 0; i < len - k % len; i++) {
+  for (int i = 0; i < len - k % len; i++)
     tail = tail->next;
-  }
 
   newHead = tail->next;
   tail->next = nullptr;
@@ -35,9 +33,8 @@ ListNode* RotateList::rotateRight_Cycle(ListNode* head, int k)
 
 ListNode* RotateList::rotateRight_TwoPointers(ListNode* head, int k)
 {
-  if (head == nullptr || head->next == nullptr) {
+  if (head == nullptr || head->next == nullptr)
     return head;
-  }
 
   ListNode dummy(0);
   dummy.next = head;
@@ -50,9 +47,8 @@ ListNode* RotateList::rotateRight_TwoPointers(ListNode* head, int k)
     len++;
   }
 
-  for (int i = len - k % len; i > 0; i--) {
+  for (int i = len - k % len; i > 0; i--)
     slow = slow->next;
-  }
 
   fast->next = dummy.next;
   dummy.next = slow->next;

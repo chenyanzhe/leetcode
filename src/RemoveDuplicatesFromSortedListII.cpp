@@ -14,13 +14,12 @@ ListNode* RemoveDuplicatesFromSortedListII::deleteDuplicates(ListNode* head)
       second = second->next;
     }
 
-    if (second == nullptr) {
+    if (second == nullptr)
       head = nullptr;
-    } else if (head != first) {
+    else if (head != first)
       head = second;
-    } else {
+    else
       break;
-    }
   }
 
   ListNode* prevItem = head;
@@ -37,13 +36,12 @@ ListNode* RemoveDuplicatesFromSortedListII::deleteDuplicates(ListNode* head)
         second = second->next;
       }
 
-      if (second == nullptr) {
+      if (second == nullptr)
         nextItem = nullptr;
-      } else if (nextItem != first) {
+      else if (nextItem != first)
         nextItem = second;
-      } else {
+      else
         break;
-      }
     }
 
     prevItem->next = nextItem;

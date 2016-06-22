@@ -6,16 +6,14 @@ vector<string> RemoveInvalidParentheses::removeInvalidParentheses(string s)
   int rmR = 0;
 
   for (auto c : s) {
-    if(c == '(') {
+    if(c == '(')
       rmL++;
-    }
 
     if(c == ')') {
-      if(rmL != 0) {
+      if(rmL != 0)
         rmL--;
-      } else {
+      else
         rmR++;
-      }
     }
   }
 
@@ -24,9 +22,8 @@ vector<string> RemoveInvalidParentheses::removeInvalidParentheses(string s)
   dfs(result, 0, s, rmL, rmR, 0, current);
   vector<string> ret;
 
-  for (auto r : result) {
+  for (auto r : result)
     ret.push_back(r);
-  }
 
   return ret;
 }
@@ -39,9 +36,8 @@ void RemoveInvalidParentheses::dfs(set<string>& result, int i, const string& s,
     return;
   }
 
-  if (i == s.size() || rmL < 0 || rmR < 0 || open < 0) {
+  if (i == s.size() || rmL < 0 || rmR < 0 || open < 0)
     return;
-  }
 
   char c = s[i];
 
@@ -51,7 +47,6 @@ void RemoveInvalidParentheses::dfs(set<string>& result, int i, const string& s,
   } else if (c == ')') {
     dfs(result, i + 1, s, rmL, rmR - 1, open, current);
     dfs(result, i + 1, s, rmL, rmR, open - 1, current + ")");
-  } else {
+  } else
     dfs(result, i + 1, s, rmL, rmR, open, current + string(1, c));
-  }
 }

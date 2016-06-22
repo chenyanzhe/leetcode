@@ -10,9 +10,8 @@ TEST_CASE("Remove Duplicates From Sorted Array")
     vector<int> expected {1, 2};
     REQUIRE(s.removeDuplicates(nums) == 2);
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++)
       REQUIRE(nums[i] == expected[i]);
-    }
   }
   SECTION("All duplicate elements") {
     vector<int> nums {1, 1, 1};
@@ -31,8 +30,7 @@ TEST_CASE("Remove Duplicates From Sorted Array")
     vector<int> expected {1, 2, 3, 4, 5, 6, 9};
     REQUIRE(s.removeDuplicates(nums) == 7);
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 7; i++)
       REQUIRE(nums[i] == expected[i]);
-    }
   }
 }

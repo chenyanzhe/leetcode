@@ -7,18 +7,16 @@ vector<int> CountOfSmallerNumbersAfterSelf::countSmaller(vector<int>& nums)
 {
   vector<int> ret;
 
-  if (nums.empty()) {
+  if (nums.empty())
     return ret;
-  }
 
   int min_val = *min_element(nums.begin(), nums.end());
   int max_val = *max_element(nums.begin(), nums.end());
   // shift nums, making it starting from 1
   vector<long> lnums(nums.size(), 0);
 
-  for (int i = 0; i < nums.size(); i++) {
+  for (int i = 0; i < nums.size(); i++)
     lnums[i] = nums[i] - min_val + 1;
-  }
 
   bit.resize(max_val - min_val + 2, 0);
   ret.resize(nums.size(), 0);

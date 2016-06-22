@@ -17,9 +17,8 @@ PeekingIterator::PeekingIterator(const vector<int>& nums) : Iterator(nums)
 {
   p_hasnext = Iterator::hasNext();
 
-  if (p_hasnext) {
+  if (p_hasnext)
     p_next = Iterator::next();
-  }
 }
 
 int PeekingIterator::peek()
@@ -32,9 +31,8 @@ int PeekingIterator::next()
   int t = p_next;
   p_hasnext = Iterator::hasNext();
 
-  if (p_hasnext) {
+  if (p_hasnext)
     p_next = Iterator::next();
-  }
 
   return t;
 }

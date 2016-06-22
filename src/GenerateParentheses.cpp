@@ -4,9 +4,8 @@ vector<string> GenerateParentheses::generateParenthesis(int n)
 {
   vector<string> ret;
 
-  if (n == 0) {
+  if (n == 0)
     return ret;
-  }
 
   helper(ret, "", n, n);
   return ret;
@@ -20,11 +19,9 @@ void GenerateParentheses::helper(vector<string>& ret, string paren, int left,
     return;
   }
 
-  if (left > 0) {
+  if (left > 0)
     helper(ret, paren + "(", left - 1, right);
-  }
 
-  if (left < right) {
+  if (left < right)
     helper(ret, paren + ")", left, right - 1);
-  }
 }

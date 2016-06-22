@@ -8,9 +8,8 @@ int SearchInRotatedSortedArray::search(vector<int>& nums, int target)
   while (l <= h) {
     int m = (l + h) / 2;
 
-    if (nums[m] == target) {
+    if (nums[m] == target)
       return m;
-    }
 
     if (nums[l] <= nums[m]) {
       // first half is sorted
@@ -22,11 +21,10 @@ int SearchInRotatedSortedArray::search(vector<int>& nums, int target)
         l = m + 1;
       }
     } else {
-      if (nums[m] < target && target <= nums[h]) {
+      if (nums[m] < target && target <= nums[h])
         l = m + 1;
-      } else {
+      else
         h = m - 1;
-      }
     }
   }
 

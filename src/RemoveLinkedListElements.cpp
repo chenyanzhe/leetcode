@@ -2,13 +2,11 @@
 
 ListNode* RemoveLinkedListElements::removeElements(ListNode* head, int val)
 {
-  while (head != nullptr && head->val == val) {
+  while (head != nullptr && head->val == val)
     head = head->next;
-  }
 
-  if (head == nullptr) {
+  if (head == nullptr)
     return nullptr;
-  }
 
   ListNode* p = head;
   ListNode* q = head->next;

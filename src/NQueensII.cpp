@@ -28,22 +28,19 @@ bool NQueensII::isValid(vector<string>& nQueens, int row, int col, int n)
 {
   // check if the column had a queen before.
   for (int i = 0; i < row; i++) {
-    if (nQueens[i][col] == 'Q') {
+    if (nQueens[i][col] == 'Q')
       return false;
-    }
   }
 
   // check if the diagonals had a queen before.
   for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
-    if (nQueens[i][j] == 'Q') {
+    if (nQueens[i][j] == 'Q')
       return false;
-    }
   }
 
   for (int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
-    if (nQueens[i][j] == 'Q') {
+    if (nQueens[i][j] == 'Q')
       return false;
-    }
   }
 
   return true;

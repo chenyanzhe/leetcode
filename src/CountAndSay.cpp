@@ -2,9 +2,8 @@
 
 string CountAndSay::countAndSay(int n)
 {
-  if (n == 0) {
+  if (n == 0)
     return "";
-  }
 
   string res = "1";
 

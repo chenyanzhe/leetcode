@@ -12,9 +12,8 @@ vector<vector<int>> Subsets::subsets(vector<int>& nums)
 
   for (int i = 0; i < elem_num; i++)
     for (int j = 0; j < subset_num; j++)
-      if ((j >> i) & 1) {
+      if ((j >> i) & 1)
         res[j].push_back(nums[i]);
-      }
 
   return res;
 }

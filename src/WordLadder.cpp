@@ -20,9 +20,8 @@ int WordLadder::ladderLength(string beginWord, string endWord,
       string new_word(word);
 
       for (char c = 'a'; c <= 'z'; c++) {
-        if (c == new_word[i]) {
+        if (c == new_word[i])
           continue;
-        }
 
         swap(c, new_word[i]);
 
@@ -51,9 +50,8 @@ int WordLadder::ladderLength(string beginWord, string endWord,
       const auto& newStates = extendStates(front);
 
       for (const auto& state : newStates) {
-        if (isTarget(state)) {
+        if (isTarget(state))
           return depth + 1;
-        }
 
         q.push(state);
       }

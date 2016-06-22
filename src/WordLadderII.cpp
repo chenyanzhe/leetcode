@@ -22,16 +22,14 @@ vector<vector<string>> WordLadderII::findLadders(string beginWord,
       string new_word(word);
 
       for (char c = 'a'; c <= 'z'; c++) {
-        if (c == new_word[i]) {
+        if (c == new_word[i])
           continue;
-        }
 
         swap(c, new_word[i]);
 
         if ((new_word == endWord || wordList.count(new_word) > 0)
-            && !visited.count(new_word)) {
+            && !visited.count(new_word))
           result.push_back(new_word);
-        }
 
         swap(new_word[i], c);
       }
@@ -47,17 +45,15 @@ vector<vector<string>> WordLadderII::findLadders(string beginWord,
     depth++;
 
     // mark `depth` nodes as visited
-    for (const auto& word : current) {
+    for (const auto& word : current)
       visited.insert(word);
-    }
 
     for (const auto& word : current) {
       const auto& newStates = extendStates(word);
 
       for (const auto& state : newStates) {
-        if (isTarget(state)) {
+        if (isTarget(state))
           found = true;
-        }
 
         next.insert(state);
         father[state].push_back(word);
@@ -86,9 +82,8 @@ void WordLadderII::backtrace(unordered_map<string, vector<string>>& father,
     result.push_back(path);
     reverse(result.back().begin(), result.back().end());
   } else {
-    for (const auto& p : father[endWord]) {
+    for (const auto& p : father[endWord])
       backtrace(father, path, beginWord, p, result);
-    }
   }
 
   path.pop_back();

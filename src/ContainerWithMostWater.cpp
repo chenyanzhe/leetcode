@@ -5,9 +5,8 @@ using namespace std;
 
 int ContainerWithMostWater::maxArea(vector<int>& height)
 {
-  if (height.size() < 2) {
+  if (height.size() < 2)
     return 0;
-  }
 
   int i = 0;
   int j = height.size() - 1;
@@ -16,11 +15,10 @@ int ContainerWithMostWater::maxArea(vector<int>& height)
   while (i < j) {
     area = max(area, min(height[i], height[j]) * (j - i));
 
-    if (height[i] < height[j]) {
+    if (height[i] < height[j])
       i++;
-    } else {
+    else
       j--;
-    }
   }
 
   return area;

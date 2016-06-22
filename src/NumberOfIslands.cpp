@@ -6,16 +6,14 @@ using namespace std;
 
 int NumberOfIslands::numIslands(vector<vector<char>>& grid)
 {
-  if (grid.empty()) {
+  if (grid.empty())
     return 0;
-  }
 
   const int m = grid.size();
   const int n = grid[0].size();
 
-  if (n == 0) {
+  if (n == 0)
     return 0;
-  }
 
   int result = 0;
 
@@ -40,9 +38,8 @@ void NumberOfIslands::bfs(vector<vector<char>>& grid, int i, int j)
     const int x = s.first;
     const int y = s.second;
 
-    if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1') {
+    if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1')
       return false;
-    }
 
     return true;
   };
@@ -53,9 +50,8 @@ void NumberOfIslands::bfs(vector<vector<char>>& grid, int i, int j)
     vector<state_t> candidates {{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}};
 
     for (auto c : candidates) {
-      if (isValid(c)) {
+      if (isValid(c))
         result.push_back(c);
-      }
     }
 
     return result;

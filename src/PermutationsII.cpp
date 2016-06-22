@@ -21,9 +21,8 @@ void PermutationsII::helper(vector<int> nums, int begin,
   }
 
   for (int i = begin; i < nums.size(); i++) {
-    if (i != begin && nums[i] == nums[begin]) {
+    if (i != begin && nums[i] == nums[begin])
       continue;
-    }
 
     swap(nums[begin], nums[i]);
     helper(nums, begin + 1, result);

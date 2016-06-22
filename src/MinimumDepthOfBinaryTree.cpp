@@ -5,9 +5,8 @@ using namespace std;
 
 int MinimumDepthOfBinaryTree::minDepth(TreeNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return 0;
-  }
 
   queue<TreeNode*> q;
   q.push(root);
@@ -26,13 +25,11 @@ int MinimumDepthOfBinaryTree::minDepth(TreeNode* root)
         return depth;
       }
 
-      if (front->left != nullptr) {
+      if (front->left != nullptr)
         q.push(front->left);
-      }
 
-      if (front->right != nullptr) {
+      if (front->right != nullptr)
         q.push(front->right);
-      }
     }
   }
 

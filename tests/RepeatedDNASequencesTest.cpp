@@ -14,8 +14,7 @@ TEST_CASE("Repeated DNA Sequences")
       s.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT");
     REQUIRE(expected.size() == result.size());
 
-    for (auto r : result) {
+    for (auto r : result)
       REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
-    }
   }
 }

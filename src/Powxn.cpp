@@ -11,9 +11,8 @@ double Powxn::myPow(double x, int n)
   }
 
   while(n > 0) {
-    if (n & 1) {
+    if (n & 1)
       ans *= x;
-    }
 
     x *= x;
     n >>= 1;

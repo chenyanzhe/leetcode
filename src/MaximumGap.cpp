@@ -8,9 +8,8 @@ int MaximumGap::maximumGap(vector<int>& nums)
   // at most ten iterations since 2^32 has 10 digits
   for (int i = 1; i <= 10; i++) {
     // populate buckets
-    for (auto n : nums) {
+    for (auto n : nums)
       buckets[getNthDigit(n, i)].push_back(n);
-    }
 
     // merge buckets
     nums.clear();

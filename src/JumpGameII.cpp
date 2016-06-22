@@ -5,9 +5,8 @@ using namespace std;
 
 int JumpGameII::jump(vector<int>& nums)
 {
-  if (nums.size() == 1) {
+  if (nums.size() == 1)
     return 0;
-  }
 
   int next = 0;
   int steps = 1;
@@ -17,9 +16,8 @@ int JumpGameII::jump(vector<int>& nums)
   while (end < nums.size() - 1) {
     steps++;
 
-    for (int i = begin; i <= end; i++) {
+    for (int i = begin; i <= end; i++)
       next = max(next, i + nums[i]);
-    }
 
     begin = end + 1;
     end = next;

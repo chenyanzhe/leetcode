@@ -8,9 +8,8 @@ TrieNode::TrieNode() : children(vector<TrieNode * >(26, nullptr)),
 TrieNode::~TrieNode()
 {
   for (auto child : children)
-    if (child != nullptr) {
+    if (child != nullptr)
       delete child;
-    }
 }
 
 Trie::Trie()
@@ -30,9 +29,8 @@ void Trie::insert(string word)
   for (int i = 0; i < word.size(); i++) {
     int idx = word[i] - 'a';
 
-    if (now->children[idx] == nullptr) {
+    if (now->children[idx] == nullptr)
       now->children[idx] = new TrieNode();
-    }
 
     now = now->children[idx];
   }
@@ -52,13 +50,11 @@ bool Trie::startsWith(string prefix)
 
 bool Trie::search(TrieNode* root, const char* head)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return false;
-  }
 
-  if (*head == '\0') {
+  if (*head == '\0')
     return root->isWord;
-  }
 
   int idx = *head - 'a';
   return search(root->children[idx], head + 1);
@@ -66,13 +62,11 @@ bool Trie::search(TrieNode* root, const char* head)
 
 bool Trie::startsWith(TrieNode* root, const char* head)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return false;
-  }
 
-  if (*head == '\0') {
+  if (*head == '\0')
     return true;
-  }
 
   int idx = *head - 'a';
   return startsWith(root->children[idx], head + 1);

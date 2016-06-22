@@ -12,21 +12,18 @@ int BinaryTreeMaximumPathSum::maxPathSum(TreeNode* root)
 
 int BinaryTreeMaximumPathSum::dfs(const TreeNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return 0;
-  }
 
   int l = dfs(root->left);
   int r = dfs(root->right);
   int sum = root->val;
 
-  if (l > 0) {
+  if (l > 0)
     sum += l;
-  }
 
-  if (r > 0) {
+  if (r > 0)
     sum += r;
-  }
 
   max_sum = max(max_sum, sum);
   return max(r, l) > 0 ? max(r, l) + root->val : root->val;

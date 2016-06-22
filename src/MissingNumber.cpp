@@ -8,9 +8,8 @@ int MissingNumber::missingNumber(vector<int>& nums)
     int target = nums[i];
 
     // place target to the right place
-    while (target != i && target != nums.size()) {
+    while (target != i && target != nums.size())
       swap(nums[target], target);
-    }
 
     if (target == nums.size()) {
       missing = i;

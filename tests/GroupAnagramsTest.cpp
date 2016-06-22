@@ -18,8 +18,7 @@ TEST_CASE("Group Anagrams")
     vector<vector<string>> results = s.groupAnagrams(nums);
     REQUIRE(results.size() == expected.size());
 
-    for (auto e : expected) {
+    for (auto e : expected)
       REQUIRE_FALSE(find(results.begin(), results.end(), e) == results.end());
-    }
   }
 }

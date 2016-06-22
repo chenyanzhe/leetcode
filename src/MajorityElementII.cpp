@@ -21,22 +21,19 @@ vector<int> MajorityElementII::majorityElement(vector<int>& nums)
   cnt1 = cnt2 = 0;
 
   for (auto n : nums) {
-    if (n == num1) {
+    if (n == num1)
       cnt1++;
-    } else if (n == num2) {
+    else if (n == num2)
       cnt2++;
-    }
   }
 
   vector<int> result;
 
-  if (cnt1 > nums.size() / 3) {
+  if (cnt1 > nums.size() / 3)
     result.push_back(num1);
-  }
 
-  if (cnt2 > nums.size() / 3) {
+  if (cnt2 > nums.size() / 3)
     result.push_back(num2);
-  }
 
   return result;
 }

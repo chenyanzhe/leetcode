@@ -8,19 +8,17 @@ int KthLargestElementInAnArray::findKthLargest(vector<int>& nums, int k)
 int KthLargestElementInAnArray::findKthLargest(vector<int>& nums, int i, int j,
     int k)
 {
-  if (i == j) {
+  if (i == j)
     return nums[i];
-  }
 
   int p = partition(nums, i, j);
 
-  if (p - i == k - 1) {
+  if (p - i == k - 1)
     return nums[p];
-  } else if (p - i < k - 1) {
+  else if (p - i < k - 1)
     return findKthLargest(nums, p + 1, j, k - (p - i + 1));
-  } else {
+  else
     return findKthLargest(nums, i, p - 1, k);
-  }
 }
 
 int KthLargestElementInAnArray::partition(vector<int>& nums, int begin,
@@ -29,9 +27,9 @@ int KthLargestElementInAnArray::partition(vector<int>& nums, int begin,
   int i = begin;
 
   for (int j = begin + 1; j <= end; j++) {
-    if (nums[j] <= nums[i]) {
+    if (nums[j] <= nums[i])
       continue;
-    } else {
+    else {
       int temp = nums[j];
       nums[j] = nums[i + 1];
       nums[i + 1] = nums[i];

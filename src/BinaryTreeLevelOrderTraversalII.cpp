@@ -18,9 +18,8 @@ vector<vector<int>> BinaryTreeLevelOrderTraversalII::levelOrderBottom(
   // push 3 (level 1), pop 3 push 9 push 20 (level 2), pop 9, pop 20 push 15 push 7(level 3), pop 15, pop 7
   vector<vector<int>> ret;
 
-  if (root == nullptr) {
+  if (root == nullptr)
     return ret;
-  }
 
   queue<TreeNode*> nodes;
   nodes.push(root);

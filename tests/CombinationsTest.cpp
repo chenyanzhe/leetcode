@@ -13,12 +13,10 @@ TEST_CASE("Combinations")
     vector<vector<int>> results = s.combine(4, 2);
     REQUIRE(results.size() == expected.size());
 
-    for (auto& r : results) {
+    for (auto& r : results)
       sort(r.begin(), r.end());
-    }
 
-    for (auto comb : expected) {
+    for (auto comb : expected)
       REQUIRE_FALSE(find(results.begin(), results.end(), comb) == results.end());
-    }
   }
 }

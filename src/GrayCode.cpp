@@ -4,11 +4,10 @@ vector<int> GrayCode::grayCode(int n)
 {
   vector<int> ret;
 
-  if (n > 0) {
+  if (n > 0)
     helper(n, ret);
-  } else {
+  else
     ret.push_back(0);
-  }
 
   return ret;
 }

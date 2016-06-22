@@ -14,10 +14,9 @@ void CombinationSumIII::helper(int target, vector<vector<int>>& res,
   if (!target && !k) {
     res.push_back(comb);
     return;
-  } else if (!k) {
+  } else if (!k)
     return;
-  }
-  
+
   for (int i = begin; i <= 9 && i <= target; i++) {
     comb.push_back(i);
     helper(target - i, res, comb, i + 1, k - 1);

@@ -5,13 +5,11 @@ using namespace std;
 
 int CountNumbersWithUniqueDigits::countNumbersWithUniqueDigits(int n)
 {
-  if (n == 0) {
+  if (n == 0)
     return 1;
-  }
 
-  if (n == 1) {
+  if (n == 1)
     return 10;
-  }
 
   int ret = 10;
   int acc = 9;

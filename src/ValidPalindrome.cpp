@@ -9,9 +9,8 @@ bool ValidPalindrome::isPalindrome(string s)
     string result;
 
     for (auto c : s)
-      if (isalnum(c)) {
+      if (isalnum(c))
         result += tolower(c);
-      }
 
     return result;
   };

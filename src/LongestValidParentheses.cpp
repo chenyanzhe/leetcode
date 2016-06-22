@@ -12,14 +12,12 @@ int LongestValidParentheses::longestValidParentheses(string s)
     if (s[i] == ')' && !stk.empty() && s[stk.top()] == '(') {
       stk.pop();
 
-      if (stk.empty()) {
+      if (stk.empty())
         ret = i + 1;
-      } else {
+      else
         ret = max(ret, i - stk.top());
-      }
-    } else {
+    } else
       stk.push(i);
-    }
   }
 
   return ret;

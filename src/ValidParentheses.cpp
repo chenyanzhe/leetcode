@@ -8,18 +8,17 @@ bool ValidParentheses::isValid(string s)
   stack<char> st;
 
   for (auto c : s) {
-    if (c == '(' || c == '{' || c == '[') {
+    if (c == '(' || c == '{' || c == '[')
       st.push(c);
-    } else {
-      if (st.empty()) {
+    else {
+      if (st.empty())
         return false;
-      } else if (c == ')' && st.top() != '(') {
+      else if (c == ')' && st.top() != '(')
         return false;
-      } else if (c == '}' && st.top() != '{') {
+      else if (c == '}' && st.top() != '{')
         return false;
-      } else if (c == ']' && st.top() != '[') {
+      else if (c == ']' && st.top() != '[')
         return false;
-      }
 
       st.pop();
     }

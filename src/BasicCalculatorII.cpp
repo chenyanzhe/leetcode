@@ -11,12 +11,12 @@ int BasicCalculatorII::calculate(string s)
   vector<BasicCalculatorII::Token> postOrder;
 
   for (auto& t : tks) {
-    if (t.type == BasicCalculatorII::Token::OPERAND) {
+    if (t.type == BasicCalculatorII::Token::OPERAND)
       postOrder.push_back(t);
-    } else if (t.tk.op == '*' || t.tk.op == '/') {
-      if (ops.empty() || ops.top().tk.op == '+' || ops.top().tk.op == '-') {
+    else if (t.tk.op == '*' || t.tk.op == '/') {
+      if (ops.empty() || ops.top().tk.op == '+' || ops.top().tk.op == '-')
         ops.push(t);
-      } else {
+      else {
         while (!ops.empty() && (ops.top().tk.op == '*' || ops.top().tk.op == '/')) {
           postOrder.push_back(ops.top());
           ops.pop();
@@ -40,9 +40,9 @@ int BasicCalculatorII::calculate(string s)
   }
 
   for (auto& t : postOrder) {
-    if (t.type == BasicCalculatorII::Token::OPERAND) {
+    if (t.type == BasicCalculatorII::Token::OPERAND)
       vals.push(t.tk.val);
-    } else {
+    else {
       int second = vals.top();
       vals.pop();
       int first = vals.top();
@@ -89,9 +89,9 @@ vector<BasicCalculatorII::Token> BasicCalculatorII::parse(string s)
       t.tk.op = s[j];
       res.push_back(t);
       i++;
-    } else if (s[j] == ' ') {
+    } else if (s[j] == ' ')
       i++;
-    } else {
+    else {
       do {
         j++;
       } while (j < s.size() && isdigit(s[j]));

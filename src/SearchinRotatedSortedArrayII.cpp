@@ -8,9 +8,8 @@ bool SearchinRotatedSortedArrayII::search(vector<int>& nums, int target)
   while (l <= h) {
     int m = (l + h) / 2;
 
-    if (nums[m] == target) {
+    if (nums[m] == target)
       return true;
-    }
 
     if (nums[l] < nums[m]) {
       // first half is sorted
@@ -23,14 +22,12 @@ bool SearchinRotatedSortedArrayII::search(vector<int>& nums, int target)
       }
     } else if (nums[l] > nums[m]) {
       // second half is sorted
-      if (nums[m] < target && target <= nums[h]) {
+      if (nums[m] < target && target <= nums[h])
         l = m + 1;
-      } else {
+      else
         h = m - 1;
-      }
-    } else { // can not decide
+    } else   // can not decide
       l++;
-    }
   }
 
   // target not found

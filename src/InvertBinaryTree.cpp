@@ -2,9 +2,8 @@
 
 TreeNode* InvertBinaryTree::invertTree(TreeNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return root;
-  }
 
   TreeNode* tmp = root->left;
   root->left = root->right;

@@ -14,8 +14,7 @@ TEST_CASE("Combination Sum II")
     vector<vector<int>> result = s.combinationSum2(candidates, target);
     REQUIRE(result.size() == 4);
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++)
       REQUIRE_FALSE(find(result.begin(), result.end(), expected[i]) == result.end());
-    }
   }
 }

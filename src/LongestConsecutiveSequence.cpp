@@ -9,14 +9,12 @@ int LongestConsecutiveSequence::longestConsecutive(vector<int>& nums)
   unordered_map<int, bool> records;
   int result = 1;
 
-  for (auto n : nums) {
+  for (auto n : nums)
     records[n] = false;
-  }
 
   for (auto n : nums) {
-    if (records[n]) {
+    if (records[n])
       continue;
-    }
 
     int length = 1;
 

@@ -8,13 +8,11 @@ using namespace std;
 string FractionToRecurringDecimal::fractionToDecimal(int numerator,
     int denominator)
 {
-  if (numerator == 0) {
+  if (numerator == 0)
     return "0";
-  }
 
-  if (denominator == 0) {
+  if (denominator == 0)
     return "";
-  }
 
   bool isNegative = (numerator < 0 && denominator > 0) || (numerator > 0 &&
                     denominator < 0);
@@ -29,9 +27,8 @@ string FractionToRecurringDecimal::helper(long numerator, long denominator)
   long integral = numerator / denominator;
   numerator = numerator % denominator;
 
-  if (numerator == 0) {
+  if (numerator == 0)
     return to_string(integral);
-  }
 
   string result = to_string(integral) + ".";
   // INVARIANT: `numerator` is less than `denominator`
@@ -62,24 +59,21 @@ string FractionToRecurringDecimal::helper(long numerator, long denominator)
 
     if (remain == 0) {
       // case 0: the fractional part is NOT repeating
-      for (auto d : chains) {
+      for (auto d : chains)
         result += records[d];
-      }
 
       return result;
     } else if (records.count(remain)) {
       // case 1: `remain` is exactly in `chains`
       int i = 0;
 
-      for (; chains[i] != remain; i++) {
+      for (; chains[i] != remain; i++)
         result += records[chains[i]];
-      }
 
       result += "(";
 
-      for (; i < chains.size(); i++) {
+      for (; i < chains.size(); i++)
         result += records[chains[i]];
-      }
 
       result += ")";
       return result;
@@ -95,22 +89,19 @@ string FractionToRecurringDecimal::helper(long numerator, long denominator)
 
       int i = 0;
 
-      for (; chains[i] != base; i++) {
+      for (; chains[i] != base; i++)
         result += records[chains[i]];
-      }
 
       result += records[base].substr(0, borrow);
       result += "(";
       result += records[base].substr(borrow);
 
-      for (i = i + 1; i < chains.size(); i++) {
+      for (i = i + 1; i < chains.size(); i++)
         result += records[chains[i]];
-      }
 
       result += ")";
       return result;
-    } else {
+    } else
       target = remain;
-    }
   }
 }

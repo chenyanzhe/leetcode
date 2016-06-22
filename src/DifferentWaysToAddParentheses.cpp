@@ -13,25 +13,21 @@ vector<int> DifferentWaysToAddParentheses::diffWaysToCompute(string input)
 
       for (auto _a : a) {
         for (auto _b : b) {
-          if (c == '+') {
+          if (c == '+')
             res.push_back(_a + _b);
-          }
 
-          if (c == '-') {
+          if (c == '-')
             res.push_back(_a - _b);
-          }
 
-          if (c == '*') {
+          if (c == '*')
             res.push_back(_a * _b);
-          }
         }
       }
     }
   }
 
-  if (res.empty() && input.size()) {
+  if (res.empty() && input.size())
     res.push_back(stoi(input));
-  }
 
   return res;
 }

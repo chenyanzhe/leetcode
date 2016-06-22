@@ -10,13 +10,11 @@ bool PalindromeLinkedList::isPalindrome(ListNode* head)
     p = p->next;
   }
 
-  if (len == 0 || len == 1) {
+  if (len == 0 || len == 1)
     return true;
-  }
 
-  if (len == 2) {
+  if (len == 2)
     return head->val == head->next->val;
-  }
 
   ListNode* prev = nullptr, *l, *r;
 
@@ -34,9 +32,8 @@ bool PalindromeLinkedList::isPalindrome(ListNode* head)
     r = p;
 
     while (l != nullptr) {
-      if (l->val != r->val) {
+      if (l->val != r->val)
         return false;
-      }
 
       l = l->next;
       r = r->next;
@@ -57,9 +54,8 @@ bool PalindromeLinkedList::isPalindrome(ListNode* head)
     ListNode* r = p;
 
     while (l != nullptr) {
-      if (l->val != r->val) {
+      if (l->val != r->val)
         return false;
-      }
 
       l = l->next;
       r = r->next;

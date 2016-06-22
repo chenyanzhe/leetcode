@@ -15,21 +15,18 @@ bool WildcardMatching::isMatch_DynamicProgramming(string s, string p)
   vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
   dp[0][0] = true;
 
-  for (int i = 1; i <= m; i++) {
+  for (int i = 1; i <= m; i++)
     dp[i][0] = false;
-  }
 
-  for (int j = 1; j <= n; j++) {
+  for (int j = 1; j <= n; j++)
     dp[0][j] = dp[0][j - 1] && p[j - 1] == '*';
-  }
 
   for (int i = 1; i <= m; i++) {
     for (int j = 1; j <= n; j++) {
-      if (p[j - 1] != '*') {
+      if (p[j - 1] != '*')
         dp[i][j] = dp[i - 1][j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '?');
-      } else {
+      else
         dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
-      }
     }
   }
 
@@ -51,14 +48,12 @@ bool WildcardMatching::isMatch_Greedy(string s, string p)
     } else if (asterisk >= 0) {
       i = ++match;
       j = asterisk + 1;
-    } else {
+    } else
       return false;
-    }
   }
 
-  while (j < n && p[j] == '*') {
+  while (j < n && p[j] == '*')
     j++;
-  }
 
   return j == n;
 }

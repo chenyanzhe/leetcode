@@ -2,9 +2,8 @@
 
 ListNode* ReverseLinkedList::reverseList(ListNode* head)
 {
-  if (head == nullptr) {
+  if (head == nullptr)
     return head;
-  }
 
   ListNode* prev = nullptr;
   ListNode* now = head;

@@ -16,8 +16,7 @@ TEST_CASE("Palindrome Partitioning")
     vector<vector<string>> result = s.partition("aab");
     REQUIRE(result.size() == expected.size());
 
-    for (auto r : result) {
+    for (auto r : result)
       REQUIRE_FALSE(find(expected.begin(), expected.end(), r) == expected.end());
-    }
   }
 }

@@ -10,16 +10,14 @@ int KthSmallestElementInABST::kthSmallest(TreeNode* root, int k)
 
 void KthSmallestElementInABST::inOrderSearch(TreeNode* root, int k)
 {
-  if (root == NULL) {
+  if (root == NULL)
     return;
-  }
 
   inOrderSearch(root->left, k);
   cnt++;
 
-  if (cnt == k) {
+  if (cnt == k)
     result = root->val;
-  }
 
   inOrderSearch(root->right, k);
 }

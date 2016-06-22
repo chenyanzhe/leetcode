@@ -10,11 +10,10 @@ string BullsAndCows::getHint(string secret, string guess)
   unordered_map<char, int> m;
 
   for (int i = 0; i < secret.size(); i++) {
-    if (secret[i] == guess[i]) {
+    if (secret[i] == guess[i])
       bulls++;
-    } else {
+    else
       m[secret[i]]++;
-    }
   }
 
   for (int i = 0; i < guess.size(); i++) {

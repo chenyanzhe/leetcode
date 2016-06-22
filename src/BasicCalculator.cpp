@@ -11,9 +11,9 @@ int BasicCalculator::calculate(string s)
   stack<int> vals;
 
   for (auto& t : tks) {
-    if (t.type == BasicCalculator::Token::OPERAND) {
+    if (t.type == BasicCalculator::Token::OPERAND)
       vals.push(t.tk.val);
-    } else if (t.tk.op == ')') {
+    else if (t.tk.op == ')') {
       if (ops.top() != '(') {
         int second = vals.top();
         vals.pop();
@@ -24,9 +24,9 @@ int BasicCalculator::calculate(string s)
       }
 
       ops.pop();
-    } else if (t.tk.op == '(') {
+    } else if (t.tk.op == '(')
       ops.push(t.tk.op);
-    } else {
+    else {
       if (!ops.empty() && (ops.top() == '+' || ops.top() == '-')) {
         int second = vals.top();
         vals.pop();
@@ -67,9 +67,9 @@ vector<BasicCalculator::Token> BasicCalculator::parse(string s)
       t.tk.op = s[j];
       res.push_back(t);
       i++;
-    } else if (s[j] == ' ') {
+    } else if (s[j] == ' ')
       i++;
-    } else {
+    else {
       do {
         j++;
       } while (j < s.size() && isdigit(s[j]));
@@ -86,9 +86,8 @@ vector<BasicCalculator::Token> BasicCalculator::parse(string s)
 
 int BasicCalculator::calc(int first, int second, char op)
 {
-  if (op == '+') {
+  if (op == '+')
     return first + second;
-  } else {
+  else
     return first - second;
-  }
 }

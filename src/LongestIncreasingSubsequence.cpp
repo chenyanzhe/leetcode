@@ -19,11 +19,10 @@ int LongestIncreasingSubsequence::lengthOfLIS(vector<int>& nums)
     for (int j = 1; j <= m; j++) {
       int oldv = dp[j];
 
-      if (nums[i - 1] == snums[j - 1]) {
+      if (nums[i - 1] == snums[j - 1])
         dp[j] = newv + 1;
-      } else {
+      else
         dp[j] = max(dp[j], dp[j - 1]);
-      }
 
       newv = oldv;
     }

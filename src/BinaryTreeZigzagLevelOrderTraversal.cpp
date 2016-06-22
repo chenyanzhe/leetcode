@@ -10,9 +10,8 @@ vector<vector<int>> BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(
   queue<TreeNode*> q;
   vector<vector<int>> ret;
 
-  if (root == nullptr) {
+  if (root == nullptr)
     return ret;
-  }
 
   q.push(root);
   ret.push_back({});
@@ -47,9 +46,8 @@ vector<vector<int>> BinaryTreeZigzagLevelOrderTraversal::zigzagLevelOrder(
   bool r = false;
 
   for (int i = 0; i < ret.size(); i++, r = !r)
-    if (r) {
+    if (r)
       reverse(ret[i].begin(), ret[i].end());
-    }
 
   return ret;
 }

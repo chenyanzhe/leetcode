@@ -12,9 +12,8 @@ TEST_CASE("Largest Rectangle in Histogram")
   SECTION("Efficiency test") {
     vector<int> height;
 
-    for (int i = 0; i < 20000; i++) {
+    for (int i = 0; i < 20000; i++)
       height.push_back(i);
-    }
 
     REQUIRE(s.largestRectangleArea(height) == 10000 * 10000);
   }

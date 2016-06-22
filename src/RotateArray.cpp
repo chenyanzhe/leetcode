@@ -8,9 +8,8 @@ void RotateArray::rotate(vector<int>& nums, int k)
   int m = nums.size() - k;
   int n = k;
 
-  if (k == 0) {
+  if (k == 0)
     return;
-  }
 
   int i, j;
   // reverse nums[0:m-1]

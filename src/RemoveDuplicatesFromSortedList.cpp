@@ -4,15 +4,13 @@ ListNode* RemoveDuplicatesFromSortedList::deleteDuplicates(ListNode* head)
 {
   ListNode* a = head;
 
-  if (a == nullptr) {
+  if (a == nullptr)
     return head;
-  }
 
   ListNode* b = head->next;
 
-  if (b == nullptr) {
+  if (b == nullptr)
     return head;
-  }
 
   while (b != nullptr) {
     if (a->val == b->val) {

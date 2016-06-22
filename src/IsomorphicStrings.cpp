@@ -5,9 +5,8 @@ using namespace std;
 
 bool IsomorphicStrings::isIsomorphic(string s, string t)
 {
-  if (s.size() != t.size()) {
+  if (s.size() != t.size())
     return false;
-  }
 
   remap(s);
   remap(t);
@@ -24,8 +23,7 @@ void IsomorphicStrings::remap(string& s)
       mappings[s[i]] = c;
       s[i] = c;
       c++;
-    } else {
+    } else
       s[i] = mappings[s[i]];
-    }
   }
 }

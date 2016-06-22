@@ -21,11 +21,10 @@ ListNode* ReverseLinkedListII::reverseBetween(ListNode* head, int m, int n)
 
   rhead->next = p2;
 
-  if (rprev != nullptr) {
+  if (rprev != nullptr)
     rprev->next = p1;
-  } else {
+  else
     head = p1;
-  }
 
   return head;
 }

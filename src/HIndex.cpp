@@ -9,11 +9,10 @@ int HIndex::hIndex(vector<int>& citations)
   vector<int> count(n + 1, 0);
 
   for (auto cite : citations) {
-    if (cite <= n) {
+    if (cite <= n)
       count[cite]++;
-    } else {
+    else
       count[n]++;
-    }
   }
 
   int h   = n;

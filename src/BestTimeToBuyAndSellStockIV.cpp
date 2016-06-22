@@ -7,9 +7,8 @@ int BestTimeToBuyAndSellStockIV::maxProfit(int k, vector<int>& prices)
 {
   int n = prices.size();
 
-  if (n <= 1) {
+  if (n <= 1)
     return 0;
-  }
 
   if (k >= n / 2) {
     // quick solve path
@@ -17,9 +16,8 @@ int BestTimeToBuyAndSellStockIV::maxProfit(int k, vector<int>& prices)
 
     for (int i = 1; i < n; i++) {
       // as long as there is a price gap, we gain a profit
-      if (prices[i] > prices[i - 1]) {
+      if (prices[i] > prices[i - 1])
         ret += prices[i] - prices[i - 1];
-      }
     }
 
     return ret;

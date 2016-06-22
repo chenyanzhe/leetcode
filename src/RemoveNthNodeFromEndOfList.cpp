@@ -2,18 +2,16 @@
 
 ListNode* RemoveNthNodeFromEndOfList::removeNthFromEnd(ListNode* head, int n)
 {
-  if (head == nullptr) {
+  if (head == nullptr)
     return nullptr;
-  }
 
   ListNode dummyHead(0);
   dummyHead.next = head;
   ListNode* fast = &dummyHead;
   ListNode* slow = &dummyHead;
 
-  while (n--) {
+  while (n--)
     fast = fast->next;
-  }
 
   while (fast->next) {
     fast = fast->next;

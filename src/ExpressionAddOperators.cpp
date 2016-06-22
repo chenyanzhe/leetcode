@@ -34,8 +34,7 @@ void ExpressionAddOperators::dfs(string num, int target, string expr,
       dfs(next, target, expr + "+" + currStr, currRes + currNum, currNum, res);
       // -
       dfs(next, target, expr + "-" + currStr, currRes - currNum, -currNum, res);
-    } else {
+    } else
       dfs(next, target, currStr, currNum, currNum, res);
-    }
   }
 }

@@ -10,22 +10,19 @@ buildTree(vector<int>& preorder, vector<int>& inorder)
 TreeNode* ConstructBinaryTreeFromPreorderAndInorderTraversal::
 buildTree(vector<int>& preorder, vector<int>& inorder, int inStart, int inEnd)
 {
-  if (inStart > inEnd) {
+  if (inStart > inEnd)
     return nullptr;
-  }
 
   TreeNode* root = new TreeNode(preorder[preIndex++]);
 
-  if (inStart == inEnd) {
+  if (inStart == inEnd)
     return root;
-  }
 
   // find root in inorder
   int mid = inStart;
 
-  while (mid <= inEnd && inorder[mid] != root->val) {
+  while (mid <= inEnd && inorder[mid] != root->val)
     mid++;
-  }
 
   root->left = buildTree(preorder, inorder, inStart, mid - 1);
   root->right = buildTree(preorder, inorder, mid + 1, inEnd);

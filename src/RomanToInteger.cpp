@@ -5,9 +5,8 @@ using namespace std;
 
 int RomanToInteger::romanToInt(string s)
 {
-  if (s.size() == 0) {
+  if (s.size() == 0)
     return 0;
-  }
 
   unordered_map<char, int> mapping {
     {'I', 1},
@@ -24,11 +23,10 @@ int RomanToInteger::romanToInt(string s)
   for (int i = s.size() - 2; i >= 0; i--) {
     int curr = mapping[s[i]];
 
-    if (curr >= prev) {
+    if (curr >= prev)
       ret += curr;
-    } else {
+    else
       ret -= curr;
-    }
 
     prev = curr;
   }

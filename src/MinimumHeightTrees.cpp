@@ -20,9 +20,8 @@ vector<int> MinimumHeightTrees::findMinHeightTrees(int n,
   vector<int> leaves;
 
   for (auto e : adj)
-    if (e.second.size() == 1) {
+    if (e.second.size() == 1)
       leaves.push_back(e.first);
-    }
 
   while (n > 2) {
     n -= leaves.size(); // eat up all the leaves
@@ -33,9 +32,8 @@ vector<int> MinimumHeightTrees::findMinHeightTrees(int n,
       // erase leaf node from neighbor
       adj[neighbor].erase(leaf);
 
-      if (adj[neighbor].size() == 1) {
+      if (adj[neighbor].size() == 1)
         new_leaves.push_back(neighbor);
-      }
     }
 
     leaves = new_leaves;

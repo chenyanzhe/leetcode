@@ -9,20 +9,17 @@ vector<string> BinaryTreePaths::binaryTreePaths(TreeNode* root)
 
 void BinaryTreePaths::dfs(TreeNode* root, string path, vector<string>& ret)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return;
-  }
 
-  if (path.empty()) {
+  if (path.empty())
     path = to_string(root->val);
-  } else {
+  else
     path += "->" + to_string(root->val);
-  }
 
   if (root->left || root->right) {
     dfs(root->left, path, ret);
     dfs(root->right, path, ret);
-  } else {
+  } else
     ret.push_back(path);
-  }
 }

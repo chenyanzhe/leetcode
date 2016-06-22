@@ -3,9 +3,8 @@
 vector<string> RestoreIPAddresses::restoreIpAddresses(string s)
 {
   // fast path
-  if (s.size() < 4 || s.size() > 12) {
+  if (s.size() < 4 || s.size() > 12)
     return res;
-  }
 
   bt(s, 0, 1, "");
   return res;
@@ -13,9 +12,8 @@ vector<string> RestoreIPAddresses::restoreIpAddresses(string s)
 
 void RestoreIPAddresses::bt(string s, int i, int segment, string addr)
 {
-  if (i == s.size()) {
+  if (i == s.size())
     return;
-  }
 
   if (segment == 4) {
     string seg = s.substr(i);
@@ -30,21 +28,18 @@ void RestoreIPAddresses::bt(string s, int i, int segment, string addr)
   for (int l = 1; l <= 3 && i + l < s.size(); l++) {
     string seg = s.substr(i, l);
 
-    if (valid(seg)) {
+    if (valid(seg))
       bt(s, i + l, segment + 1, (segment == 1) ? seg : addr + "." + seg);
-    }
   }
 }
 
 bool RestoreIPAddresses::valid(string segment)
 {
-  if (segment.size() == 0 || segment.size() > 3) {
+  if (segment.size() == 0 || segment.size() > 3)
     return false;
-  }
 
-  if (segment[0] == '0' && segment.size() > 1) {
+  if (segment[0] == '0' && segment.size() > 1)
     return false;
-  }
 
   return stoi(segment) <= 255;
 }

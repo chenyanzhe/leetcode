@@ -9,9 +9,8 @@ int IntegerBreak::integerBreak(int n)
   dp[1] = 1;
 
   for (int i = 2; i <= n; i++) {
-    for (int k = 1; k <= i - 1; k++) {
+    for (int k = 1; k <= i - 1; k++)
       dp[i] = max(dp[i], k * max(i - k, dp[i - k]));
-    }
   }
 
   return dp[n];

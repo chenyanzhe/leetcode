@@ -10,8 +10,7 @@ TEST_CASE("Segment Tree Minimum Range Query")
     vector<int> expected {0, 1, 2, 2, 2, 2, 6};
     s.createSegmentTree(input);
 
-    for (int i = 0; i < input.size(); i++) {
+    for (int i = 0; i < input.size(); i++)
       REQUIRE(s.rangeMinimumQuery(input, 0, i) == expected[i]);
-    }
   }
 }

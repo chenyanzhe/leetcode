@@ -18,9 +18,8 @@ ListNode* MergeKSortedLists::mergeKLists(vector<ListNode*>& lists)
   ListNode* tail = &dummy;
 
   for (auto l : lists) {
-    if (l) {
+    if (l)
       q.push(l);
-    }
   }
 
   while (!q.empty()) {
@@ -28,9 +27,8 @@ ListNode* MergeKSortedLists::mergeKLists(vector<ListNode*>& lists)
     q.pop();
     tail = tail->next;
 
-    if (tail->next) {
+    if (tail->next)
       q.push(tail->next);
-    }
   }
 
   return dummy.next;

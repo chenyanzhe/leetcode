@@ -13,9 +13,9 @@ string Codec::serialize(TreeNode* root)
   while (!q.empty()) {
     TreeNode* node = q.front();
 
-    if (node == nullptr) {
+    if (node == nullptr)
       vec.push_back("null");
-    } else {
+    else {
       vec.push_back(to_string(node->val));
       q.push(node->left);
       q.push(node->right);
@@ -26,12 +26,11 @@ string Codec::serialize(TreeNode* root)
 
   string ret = vec[0];
 
-  if (vec.size() == 1) {
+  if (vec.size() == 1)
     return ret;
-  } else {
-    for (int i = 1; i < vec.size(); i++) {
+  else {
+    for (int i = 1; i < vec.size(); i++)
       ret += "," + vec[i];
-    }
   }
 
   return ret;
@@ -65,9 +64,8 @@ TreeNode* Codec::fetch(istringstream& ss)
 {
   string token;
 
-  if (getline(ss, token, ',') && token != "null") {
+  if (getline(ss, token, ',') && token != "null")
     return new TreeNode(stoi(token));
-  } else {
+  else
     return nullptr;
-  }
 }

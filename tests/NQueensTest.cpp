@@ -25,8 +25,7 @@ TEST_CASE("N Queens")
     vector<vector<string>> result = s.solveNQueens(4);
     REQUIRE(result.size() == 2);
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++)
       REQUIRE_FALSE(find(result.begin(), result.end(), expected[i]) == result.end());
-    }
   }
 }

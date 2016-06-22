@@ -2,9 +2,8 @@
 
 int BurstBalloons::maxCoins(vector<int>& nums)
 {
-  if (nums.empty()) {
+  if (nums.empty())
     return 0;
-  }
 
   int sz = nums.size();
   vector<vector<int>> dp(sz, vector<int>(sz, 0));
@@ -26,19 +25,17 @@ int BurstBalloons::maxCoins(vector<int>& nums)
 
 int BurstBalloons::getCoins(vector<vector<int>>& dp, int i, int j)
 {
-  if (i > j || i < 0 || i >= dp.size() || j < 0 || j >= dp.size()) {
+  if (i > j || i < 0 || i >= dp.size() || j < 0 || j >= dp.size())
     return 0;
-  } else {
+  else
     return dp[i][j];
-  }
 }
 
 int BurstBalloons::getCoins(vector<int>& nums, int index)
 {
-  if (index == -1 || index == nums.size()) {
+  if (index == -1 || index == nums.size())
     return 1;
-  } else {
+  else
     return nums[index];
-  }
 }
 

@@ -23,9 +23,8 @@ TEST_CASE("Binary Search Tree Iterator")
     BSTIterator i = BSTIterator(root);
     int expected = 1;
 
-    while (i.hasNext()) {
+    while (i.hasNext())
       REQUIRE(i.next() == expected++);
-    }
   }
   tree_free(root);
 }

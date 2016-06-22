@@ -2,17 +2,14 @@
 
 int CountCompleteTreeNodes::countNodes(TreeNode* root)
 {
-  if (root == nullptr) {
+  if (root == nullptr)
     return 0;
-  }
 
-  if (root->left == nullptr) {
+  if (root->left == nullptr)
     return 1;
-  }
 
-  if (root->right == nullptr) {
+  if (root->right == nullptr)
     return 2;
-  }
 
   TreeNode* ln = root;
   int ld = 0;
@@ -30,9 +27,8 @@ int CountCompleteTreeNodes::countNodes(TreeNode* root)
     rn = rn->right;
   }
 
-  if (ld == rd) {
+  if (ld == rd)
     return (1 << ld) - 1;
-  } else {
+  else
     return 1 + countNodes(root->left) + countNodes(root->right);
-  }
 }

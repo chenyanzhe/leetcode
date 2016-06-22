@@ -12,16 +12,14 @@ string RemoveDuplicateLetters::removeDuplicateLetters(string s)
   stack<char> rec;
   string ret;
 
-  for (auto c : s) {
+  for (auto c : s)
     freqs[c]++;
-  }
 
   for (auto c : s) {
     freqs[c]--;
 
-    if (visited[c]) {
+    if (visited[c])
       continue;
-    }
 
     while (!rec.empty() && rec.top() > c && freqs[rec.top()]) {
       visited[rec.top()] = false;

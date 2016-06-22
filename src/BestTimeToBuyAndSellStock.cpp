@@ -7,9 +7,8 @@ int BestTimeToBuyAndSellStock::maxProfit(vector<int>& prices)
 {
   int sz = prices.size();
 
-  if (sz <= 1) {
+  if (sz <= 1)
     return 0;
-  }
 
   int result = 0;
   int min_price = prices[0];
