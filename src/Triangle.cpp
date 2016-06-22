@@ -2,30 +2,32 @@
 
 int Triangle::minimumTotal(vector<vector<int>>& triangle)
 {
-  int m = triangle.size();
+  int n = triangle.size();
 
-  if (m == 0) {
+  if (n == 0) {
     return 0;
   }
 
-  vector<vector<int>> dp(m, vector<int>(m, 0));
-  dp[0][0] = triangle[0][0];
+  vector<int> dp(n, 0);
+  dp[0] = triangle[0][0];
 
-  for (int i = 1; i < m; i++) {
-    dp[i][0] = dp[i - 1][0] + triangle[i][0];
+  for (int i = 1; i < n; i++) {
+    int oldv = dp[0];
+    dp[0] = triangle[i][0] + dp[0];
 
-    for (int j = 1; j < i; j++)
-      dp[i][j] = ((dp[i - 1][j] < dp[i - 1][j - 1]) ? dp[i - 1][j] : dp[i - 1][j -
-                  1])
-                 + triangle[i][j];
+    for (int j = 1; j < i; j++) {
+      int newv = dp[j];
+      dp[j] = triangle[i][j] + min(dp[j], oldv);
+      oldv = newv;
+    }
 
-    dp[i][i] = dp[i - 1][i - 1] + triangle[i][i];
+    dp[i] = triangle[i][i] + oldv;
   }
 
-  int ret = dp[m - 1][0];
+  int ret = dp[0];
 
-  for (int j = 1; j < m; j++) {
-    ret = (ret > dp[m - 1][j]) ? dp[m - 1][j] : ret;
+  for (int j = 1; j < n; j++) {
+    ret = min(ret, dp[j]);
   }
 
   return ret;
