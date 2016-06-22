@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include <utility>
+#include <algorithm>
 using namespace std;
 
 vector<vector<string>> WordLadderII::findLadders(string beginWord,
