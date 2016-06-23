@@ -3,44 +3,39 @@
 vector<string> WordBreakII::wordBreak(string s,
                                       unordered_set<string>& wordDict)
 {
-  if (s.size() == 0)
-    return vector<string>();
+  int n = s.size();
 
-  unordered_map<string, vector<string>> map;
-  return dfs(s, wordDict, map);
+  if (n == 0) return vector<string>();
+
+  unordered_map<string, vector<string>> cache;
+  return wordBreak_helper(s, wordDict, cache);
 }
 
-vector<string> WordBreakII::dfs(string s, unordered_set<string>& dict,
-                                unordered_map<string, vector<string>>& map)
+vector<string> WordBreakII::wordBreak_helper(string s,
+    unordered_set<string>& wordDict, unordered_map<string, vector<string>>& cache)
 {
-  if (map.find(s) != map.end())
-    return map[s];
+  if (cache.count(s))
+    return cache[s];
 
-  vector<string> ans;
+  vector<string> ret;
 
-  if (s.size() == 0)
-    ans.push_back("");
-  else {
-    for (int i = 1; i <= s.size(); i++) {
-      string l = s.substr(0, i);
+  if (wordDict.count(s))
+    ret.push_back(s);
 
-      if (dict.find(l) == dict.end())
-        continue;
+  int n = s.size();
 
-      vector<string> rans = dfs(s.substr(i), dict, map);
+  for (int i = 1; i <= n - 1; i++) {
+    string prefix = s.substr(0, i);
+    string postfix = s.substr(i, n - i);
 
-      for (auto r : rans) {
-        string lr = l;
+    if (wordDict.count(prefix)) {
+      vector<string> posts = wordBreak_helper(postfix, wordDict, cache);
 
-        if (i != s.size())
-          lr += " ";
-
-        lr += r;
-        ans.push_back(lr);
-      }
+      for (auto p : posts)
+        ret.push_back(prefix + " " + p);
     }
   }
 
-  map[s] = ans;
-  return ans;
+  cache[s] = ret;
+  return ret;
 }

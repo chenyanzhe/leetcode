@@ -12,8 +12,8 @@ class WordBreakII
 public:
   vector<string> wordBreak(string s, unordered_set<string>& wordDict);
 private:
-  vector<string> dfs(string s, unordered_set<string>& dict,
-                     unordered_map<string, vector<string>>& map);
+  vector<string> wordBreak_helper(string s, unordered_set<string>& wordDict,
+                                  unordered_map<string, vector<string>>& cache);
 };
 
 #endif // WORD_BREAK_II_HPP_

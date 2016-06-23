@@ -19,4 +19,12 @@ TEST_CASE("Word Break II")
                          result[i]) == expected.end());
     }
   }
+  SECTION("Large input test") {
+    string input =
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    unordered_set<string> dict  {"a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"};
+    vector<string> expected {};
+    vector<string> result = s.wordBreak(input, dict);
+    REQUIRE(result == expected);
+  }
 }
