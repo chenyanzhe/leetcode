@@ -1,26 +1,27 @@
 #include "PalindromePartitioningII.hpp"
 
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 int PalindromePartitioningII::minCut(string s)
 {
   int n = s.size();
-  int f[n + 1];
-  bool p[n][n];
-  fill_n(&p[0][0], n * n, false);
+  vector<int> minCuts(n + 1, 0);
+  vector<vector<bool>> isPalin(n, vector<bool>(n, false));
 
   for (int i = 0; i <= n; i++)
-    f[i] = n - 1 - i;
+    minCuts[i] = i - 1;
 
-  for (int i = n - 1; i >= 0; i--) {
-    for (int j = i; j < n; j++) {
-      if (s[i] == s[j] && (j - i < 2 || p[i + 1][j - 1])) {
-        p[i][j] = true;
-        f[i] = min(f[i], f[j + 1] + 1);
+  for (int j = 1; j < n; j++) {
+    for (int i = j; i >= 0; i--) {
+      if (s[i] == s[j] && (i + 1 == j || i == j || isPalin[i + 1][j - 1])) {
+        isPalin[i][j] = true;
+        minCuts[j + 1] = min(minCuts[j + 1], minCuts[i] + 1);
       }
     }
   }
 
-  return f[0];
+  return minCuts[n];
 }
+
