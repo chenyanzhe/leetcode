@@ -8,9 +8,6 @@ class EditDistance
 {
 public:
   int minDistance(string word1, string word2);
-private:
-  int minDistance_Raw(string word1, string word2);
-  int minDistance_Optimized(string word1, string word2);
 };
 
 #endif // EDIT_DISTANCE_HPP_
