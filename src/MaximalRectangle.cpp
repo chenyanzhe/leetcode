@@ -1,39 +1,61 @@
 #include "MaximalRectangle.hpp"
 
-#include "LargestRectangleInHistogram.hpp"
+#include <algorithm>
+#include <iostream>
+using namespace std;
 
 int MaximalRectangle::maximalRectangle(vector<vector<char>>& matrix)
 {
-  int height = matrix.size();
+  int m = matrix.size();
 
-  if (height == 0)
-    return 0;
+  if (m == 0) return 0;
 
-  int width = matrix[0].size();
+  int n = matrix[0].size();
 
-  if (width == 0)
-    return 0;
+  if (n == 0) return 0;
 
-  vector<int> cols(width, 0);
-  LargestRectangleInHistogram helper;
-  int res = 0;
+  int ret = 0;
+  vector<int> height(n, 0);
+  vector<int> left(n, 0);
+  vector<int> right(n, n);
 
-  for (int i = 0; i < height; i++) {
-    // prepare cols
-    for (int j = 0; j < width; j++) {
-      if (matrix[i][j] == '0')
-        cols[j] = 0;
+  for (int i = 0; i < m; i++) {
+    // height[j] is the continuous 1's height above matrix[i][j]
+    for (int j = 0; j < n; j++) {
+      if (matrix[i][j] == '1')
+        height[j]++;
       else
-        cols[j]++;
+        height[j] = 0;
     }
 
-    // calculate maximal rectangle at this level
-    int area = helper.largestRectangleArea(cols);
+    // left[j] is the leftest position where continuous 1 (with height[j]) begins until matrix[i][j]
+    int curLeft = 0;
 
-    // update global value
-    if (area > res)
-      res = area;
+    for (int j = 0; j < n; j++) {
+      if (matrix[i][j] == '1')
+        left[j] = max(curLeft, left[j]);
+      else {
+        left[j] = 0;
+        curLeft = j + 1;
+      }
+    }
+
+    // right[j] is the rightest position where continuous 1 (with height[j]) ends from matrix[i][j]
+    int curRight = n;
+
+    for (int j = n - 1; j >= 0; j--) {
+      if (matrix[i][j] == '1')
+        right[j] = min(curRight, right[j]);
+      else {
+        right[j] = n;
+        curRight = j;
+      }
+    }
+
+    // comput area for every matrix[i][j], height is height[j], width is right[j] - left[j]
+    for (int j = 0; j < n; j++)
+      ret = max(ret, (right[j] - left[j]) * height[j]);
   }
 
-  return res;
+  return ret;
 }
