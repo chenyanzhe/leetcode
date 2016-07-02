@@ -6,7 +6,7 @@
 
 * Unix-based operating system (OS X or Linux).
 * C++ compiler: g++ (v4.2 or more recent) or clang (v3.0 or more recent).
-* [CMake](https://cmake.org/) (v3.1.0 or more recent).
+* [CMake](https://cmake.org/) (v3.0.2 or more recent).
 * Optional: [AStyle](http://astyle.sourceforge.net/) (v2.05.1 or more recent).
 
 ### Basic Installation
