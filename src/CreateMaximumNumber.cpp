@@ -1,25 +1,28 @@
 #include "CreateMaximumNumber.hpp"
 
+#include <algorithm>
+using namespace std;
+
 vector<int> CreateMaximumNumber::maxNumber(vector<int>& nums1,
     vector<int>& nums2, int k)
 {
-  int sz1 = nums1.size();
-  int sz2 = nums2.size();
+  int n1 = nums1.size();
+  int n2 = nums2.size();
+  int m1 = min(k, n1);
+  int m2 = min(k, n2);
 
-  if (sz1 + sz2 == k)
+  if (n1 + n2 == k)
     return mergeNums(nums1, nums2);
 
+  vector<vector<int>> dp1(m1 + 1);
+  vector<vector<int>> dp2(m2 + 1);
+  helper(nums1, dp1, n1, m1);
+  helper(nums2, dp2, n2, m2);
   vector<int> ret;
 
-  for (int a = 0; a <= k; a++) {
+  for (int a = k - m2; a <= m1; a++) {
     int b = k - a;
-
-    if (a > sz1 || b > sz2)
-      continue;
-
-    vector<int> va = maxNumber(nums1, a);
-    vector<int> vb = maxNumber(nums2, b);
-    vector<int> t = mergeNums(va, vb);
+    vector<int> t = mergeNums(dp1[a], dp2[b]);
 
     if (greaterThan(t, 0, ret, 0))
       ret = t;
@@ -28,52 +31,37 @@ vector<int> CreateMaximumNumber::maxNumber(vector<int>& nums1,
   return ret;
 }
 
-vector<int> CreateMaximumNumber::maxNumber(vector<int>& nums, int k)
+void CreateMaximumNumber::helper(vector<int>& nums, vector<vector<int>>& dp,
+                                 int n, int m)
 {
-  int sz = nums.size();
+  for (int i = 1; i <= n; i++) {
+    vector<int> pre = dp[0];
 
-  if (sz == 0 || sz <= k)
-    return nums;
+    for (int j = 1; j <= m; j++) {
+      vector<int> backup = dp[j];
+      pre.push_back(nums[i - 1]);
 
-  vector<int> ret;
-  int i = 0;
+      if (greaterThan(pre, 0, dp[j], 0))
+        dp[j] = pre;
 
-  while (k > 0) {
-    int j = sz - k;
-    int idx = maxNumIdx(nums, i, j);
-    ret.push_back(nums[idx]);
-    i = idx + 1;
-    k--;
+      pre = backup;
+    }
   }
+}
+
+vector<int> CreateMaximumNumber::mergeNums(vector<int>& a, vector<int>& b)
+{
+  int n1 = a.size();
+  int n2 = b.size();
+  int n  = n1 + n2;
+  vector<int> ret(n, 0);
+
+  for (int i = 0, j = 0, r = 0; r < n; r++)
+    ret[r] = greaterThan(a, i, b, j) ? a[i++] : b[j++];
 
   return ret;
 }
 
-int CreateMaximumNumber::maxNumIdx(vector<int>& nums, int i, int j)
-{
-  int ret = i;
-
-  for (int k = i + 1; k <= j; k++) {
-    if (nums[k] > nums[ret])
-      ret = k;
-  }
-
-  return ret;
-}
-
-vector<int> CreateMaximumNumber::mergeNums(vector<int>& nums1,
-    vector<int>& nums2)
-{
-  int sz1 = nums1.size();
-  int sz2 = nums2.size();
-  int sz  = sz1 + sz2;
-  vector<int> nums(sz, 0);
-
-  for (int i = 0, j = 0, r = 0; r < sz; r++)
-    nums[r] = greaterThan(nums1, i, nums2, j) ? nums1[i++] : nums2[j++];
-
-  return nums;
-}
 
 bool CreateMaximumNumber::greaterThan(vector<int>& nums1, int i,
                                       vector<int>& nums2, int j)
