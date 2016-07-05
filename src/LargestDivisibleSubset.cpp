@@ -6,37 +6,34 @@ using namespace std;
 vector<int> LargestDivisibleSubset::largestDivisibleSubset(vector<int>& nums)
 {
   vector<int> ret;
+
+  if (nums.empty()) return ret;
+
   sort(nums.begin(), nums.end());
-  vector<vector<int>> cache(nums.size());
+  int n = nums.size();
+  vector<int> dp(n, 1), pre(n, -1);
+  int max_idx = 0, max_val = 1;
 
-  for (int i = 0; i < nums.size(); i++) {
-    vector<int> tmp = helper(nums, i, cache);
+  for (int i = 0; i < n; i++) {
+    for (int j = i - 1; j >= 0; j--) {
+      if (nums[i] % nums[j] == 0 && dp[i] < dp[j] + 1) {
+        dp[i] = dp[j] + 1;
+        pre[i] = j;
+      }
+    }
 
-    if (tmp.size() > ret.size())
-      ret = tmp;
-  }
-
-  return ret;
-}
-
-vector<int> LargestDivisibleSubset::helper(vector<int>& nums, int i,
-    vector<vector<int>>& cache)
-{
-  if (!cache[i].empty())
-    return cache[i];
-
-  vector<int> ret;
-
-  for (int j = i + 1; j < nums.size(); j++) {
-    if (nums[j] % nums[i] == 0) {
-      vector<int> tmp = helper(nums, j, cache);
-
-      if (tmp.size() > ret.size())
-        ret = tmp;
+    if (dp[i] > max_val) {
+      max_val = dp[i];
+      max_idx = i;
     }
   }
 
-  ret.push_back(nums[i]);
-  cache[i] = ret;
+  int k = max_idx;
+
+  while (k != -1) {
+    ret.push_back(nums[k]);
+    k = pre[k];
+  }
+
   return ret;
 }
