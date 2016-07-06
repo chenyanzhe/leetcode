@@ -10,11 +10,11 @@ int LongestValidParentheses::longestValidParentheses(string s)
 
   for (int i = 2; i <= n; i++) {
     if (s[i - 2] == '(' && s[i - 1] == ')')
-      dp[i] = max(dp[i], dp[i - 2] + 2);
+      dp[i] = dp[i - 2] + 2;
 
     if (s[i - 1] == ')' && i - dp[i - 1] - 2 >= 0
         && s[i - dp[i - 1] - 2] == '(')
-      dp[i] = max(dp[i], dp[i - 1] + dp[i - dp[i - 1] - 2] + 2);
+      dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2;
   }
 
   int ret = 0;
