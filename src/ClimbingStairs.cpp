@@ -1,8 +1,5 @@
 #include "ClimbingStairs.hpp"
 
-#include <vector>
-using namespace std;
-
 int ClimbingStairs::climbStairs(int n)
 {
   if (n == 0 || n == 1 || n == 2)
