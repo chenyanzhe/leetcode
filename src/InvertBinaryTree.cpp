@@ -6,7 +6,7 @@ using namespace std;
 
 TreeNode* InvertBinaryTree::invertTree(TreeNode* root)
 {
-  return invertTreeStack(root);
+  return invertTreeIterative(root);
 }
 
 TreeNode* InvertBinaryTree::invertTreeRecursive(TreeNode* root)
@@ -15,12 +15,12 @@ TreeNode* InvertBinaryTree::invertTreeRecursive(TreeNode* root)
     return nullptr;
 
   swap(root->left, root->right);
-  invertTree(root->left);
-  invertTree(root->right);
+  invertTreeRecursive(root->left);
+  invertTreeRecursive(root->right);
   return root;
 }
 
-TreeNode* InvertBinaryTree::invertTreeStack(TreeNode* root)
+TreeNode* InvertBinaryTree::invertTreeIterative(TreeNode* root)
 {
   stack<TreeNode*> s;
 
