@@ -1,0 +1,18 @@
+#ifndef BINARY_TREE_POSTORDER_TRAVERSAL_HPP_
+#define BINARY_TREE_POSTORDER_TRAVERSAL_HPP_
+
+#include "TreeNode.hpp"
+
+#include <vector>
+using namespace std;
+
+class BinaryTreePostorderTraversal
+{
+public:
+  vector<int> postorderTraversal(TreeNode* root);
+private:
+  vector<int> postorderTraversal_Stack(TreeNode* root);
+};
+
+#endif // BINARY_TREE_POSTORDER_TRAVERSAL_HPP_
+
