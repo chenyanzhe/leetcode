@@ -7,6 +7,9 @@ class InvertBinaryTree
 {
 public:
   TreeNode* invertTree(TreeNode* root);
+private:
+  TreeNode* invertTreeRecursive(TreeNode* root);
+  TreeNode* invertTreeIterative(TreeNode* root);
 };
 
 #endif // INVERT_BINARY_TREE_HPP_
