@@ -10,7 +10,7 @@ class BinaryTreePreorderTraversal
 {
 public:
   vector<int> preorderTraversal(TreeNode* root);
-public:
+private:
   vector<int> preorderTraversal_Stack(TreeNode* root);
   vector<int> preorderTraversal_Morris(TreeNode* root);
 };
