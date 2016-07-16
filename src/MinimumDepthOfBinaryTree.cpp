@@ -5,31 +5,27 @@ using namespace std;
 
 int MinimumDepthOfBinaryTree::minDepth(TreeNode* root)
 {
-  if (root == nullptr)
-    return 0;
-
   queue<TreeNode*> q;
-  q.push(root);
   int depth = 0;
 
-  while (!q.empty()) {
-    depth++;		  // scanning level `depth` now
-    int k = q.size(); // number of nodes in level `depth`
+  if (root != nullptr) q.push(root);
 
-    for (int i = 0; i < k; i++) {
-      TreeNode* front = q.front();
+  while (!q.empty()) {
+    depth++;
+    int n = q.size();
+
+    for (int i = 0; i < n; i++) {
+      TreeNode* node = q.front();
       q.pop();
 
-      if (front->left == nullptr && front->right == nullptr) {
-        // we have reach the leaf node
+      if (node->left == nullptr && node->right == nullptr)
         return depth;
-      }
 
-      if (front->left != nullptr)
-        q.push(front->left);
+      if (node->left != nullptr)
+        q.push(node->left);
 
-      if (front->right != nullptr)
-        q.push(front->right);
+      if (node->right != nullptr)
+        q.push(node->right);
     }
   }
 
