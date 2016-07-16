@@ -8,7 +8,8 @@ class SymmetricTree
 public:
   bool isSymmetric(TreeNode* root);
 private:
-  bool isSymmetric(TreeNode* l, TreeNode* r);
+  bool isSymmetricHelper(TreeNode* l, TreeNode* r);
+  bool isSymmetricIter(TreeNode* root);
 };
 
 #endif // SYMMETRIC_TREE_HPP_
