@@ -1,23 +1,53 @@
 #include "KthSmallestElementInABST.hpp"
 
+#include <stack>
+using namespace std;
+
 int KthSmallestElementInABST::kthSmallest(TreeNode* root, int k)
 {
-  cnt = 0;
-  result = 0;
-  inOrderSearch(root, k);
-  return result;
+  int n = countNodes(root->left);
+
+  if (k <= n)
+    return kthSmallest(root->left, k);
+  else if (k > n + 1)
+    return kthSmallest(root->right, k - n - 1);
+
+  return root->val;
 }
 
-void KthSmallestElementInABST::inOrderSearch(TreeNode* root, int k)
+int KthSmallestElementInABST::countNodes(TreeNode* root)
 {
-  if (root == NULL)
-    return;
+  if (root == nullptr)
+    return 0;
 
-  inOrderSearch(root->left, k);
-  cnt++;
+  return 1 + countNodes(root->left) + countNodes(root->right);
+}
 
-  if (cnt == k)
-    result = root->val;
+int KthSmallestElementInABST::kthSmallestIterative(TreeNode* root, int k)
+{
+  stack<TreeNode*> S;
+  TreeNode* current = root;
 
-  inOrderSearch(root->right, k);
+  while (current != nullptr) {
+    S.push(current);
+    current = current->left;
+  }
+
+  while (k != 0) {
+    TreeNode* current = S.top();
+    S.pop();
+    k--;
+
+    if (k == 0)
+      return current->val;
+
+    current = current->right;
+
+    while (current != nullptr) {
+      S.push(current);
+      current = current->left;
+    }
+  }
+
+  return -1;
 }
