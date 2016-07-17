@@ -5,10 +5,42 @@ using namespace std;
 
 vector<int> BinaryTreePostorderTraversal::postorderTraversal(TreeNode* root)
 {
-  return postorderTraversal_Stack(root);
+  return postorderTraversal_OneStack(root);
 }
 
-vector<int> BinaryTreePostorderTraversal::postorderTraversal_Stack(
+vector<int> BinaryTreePostorderTraversal::postorderTraversal_OneStack(
+  TreeNode* root)
+{
+  vector<int> ret;
+  stack<TreeNode*> s;
+  TreeNode* current = root;
+
+  while (current != nullptr || !s.empty()) {
+    if (current != nullptr) {
+      s.push(current);
+      current = current->left;
+    } else {
+      TreeNode* temp = s.top()->right;
+
+      if (temp == nullptr) {
+        temp = s.top();
+        s.pop();
+        ret.push_back(temp->val);
+
+        while (!s.empty() && temp == s.top()->right) {
+          temp = s.top();
+          s.pop();
+          ret.push_back(temp->val);
+        }
+      } else
+        current = temp;
+    }
+  }
+
+  return ret;
+}
+
+vector<int> BinaryTreePostorderTraversal::postorderTraversal_TwoStack(
   TreeNode* root)
 {
   vector<int> ret;
