@@ -2,8 +2,6 @@
 
 BSTIterator::BSTIterator(TreeNode* root)
 {
-  this->root = root;
-
   while (root != nullptr) {
     s.push(root);
     root = root->left;
@@ -17,14 +15,14 @@ bool BSTIterator::hasNext()
 
 int BSTIterator::next()
 {
-  TreeNode* n = s.top();
+  TreeNode* node = s.top();
   s.pop();
-  int ret = n->val;
-  n = n->right;
+  int ret = node->val;
+  node = node->right;
 
-  while (n != nullptr) {
-    s.push(n);
-    n = n->left;
+  while (node != nullptr) {
+    s.push(node);
+    node = node->left;
   }
 
   return ret;

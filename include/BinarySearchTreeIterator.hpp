@@ -17,7 +17,6 @@ public:
   int next();
 
 private:
-  TreeNode* root;
   stack<TreeNode*> s;
 };
 
