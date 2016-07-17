@@ -5,34 +5,50 @@ using namespace std;
 
 vector<int> BinaryTreeRightSideView::rightSideView(TreeNode* root)
 {
-  vector<int> result;
-  bfs(root, result);
-  return result;
+  vector<int> ret;
+  rightSideViewPreOrderTraversal(root, 1, ret);
+  return ret;
 }
 
-void BinaryTreeRightSideView::bfs(TreeNode* root, vector<int>& result)
+vector<int> BinaryTreeRightSideView::rightSideViewLevelOrderTraversal(
+  TreeNode* root)
+{
+  vector<int> ret;
+  queue<TreeNode*> q;
+
+  if (root != nullptr)
+    q.push(root);
+
+  while (!q.empty()) {
+    int n = q.size();
+
+    for (int i = 0; i < n; i++) {
+      TreeNode* node = q.front();
+      q.pop();
+
+      if (node->left != nullptr)
+        q.push(node->left);
+
+      if (node->right != nullptr)
+        q.push(node->right);
+
+      if (i == n - 1)
+        ret.push_back(node->val);
+    }
+  }
+
+  return ret;
+}
+
+void BinaryTreeRightSideView::rightSideViewPreOrderTraversal(TreeNode* root,
+    int level, vector<int>& res)
 {
   if (root == nullptr)
     return;
 
-  queue<TreeNode*> q;
-  q.push(root);
+  if (res.size() < level)
+    res.push_back(root->val);
 
-  while (!q.empty()) {
-    int num = q.size(); // number of nodes at this level
-
-    for (int i = 0; i < num; i++) {
-      TreeNode* n = q.front();
-      q.pop();
-
-      if (n->left != nullptr)
-        q.push(n->left);
-
-      if (n->right != nullptr)
-        q.push(n->right);
-
-      if (i == num - 1)
-        result.push_back(n->val);
-    }
-  }
+  rightSideViewPreOrderTraversal(root->right, level + 1, res);
+  rightSideViewPreOrderTraversal(root->left, level + 1, res);
 }

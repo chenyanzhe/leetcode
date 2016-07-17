@@ -11,7 +11,9 @@ class BinaryTreeRightSideView
 public:
   vector<int> rightSideView(TreeNode* root);
 private:
-  void bfs(TreeNode* root, vector<int>& result);
+  vector<int> rightSideViewLevelOrderTraversal(TreeNode* root);
+  void rightSideViewPreOrderTraversal(TreeNode* root, int level,
+                                      vector<int>& res);
 };
 
 #endif // BINARY_TREE_RIGHT_SIDE_VIEW_HPP_
