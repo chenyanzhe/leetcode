@@ -1,31 +1,68 @@
 #include "FlattenBinaryTreeToLinkedList.hpp"
 
+#include <stack>
+using namespace std;
+
 void FlattenBinaryTreeToLinkedList::flatten(TreeNode* root)
+{
+  TreeNode* tail = nullptr;
+  flattenRec2(root, tail);
+}
+
+void FlattenBinaryTreeToLinkedList::flattenRec1(TreeNode* root)
 {
   if (root == nullptr)
     return;
 
-  // flatten left subtree
-  if (root->left != nullptr)
-    flatten(root->left);
+  flattenRec1(root->left);
+  flattenRec1(root->right);
 
-  // flatten right subtree
-  if (root->right != nullptr)
-    flatten(root->right);
+  if (root->left == nullptr)
+    return;
 
-  if (root->left != nullptr) {
-    // make left subtree as the right node of root
-    // and empty root's left node
-    TreeNode* rt = root->right;
-    root->right = root->left;
-    root->left = nullptr;
-    // 1. find the tail node of the first list (head at root)
-    TreeNode* tail = root->right;
+  // find the tail of left subtree
+  TreeNode* tail = root->left;
 
-    while (tail->right != nullptr)
-      tail = tail->right;
+  while (tail->right)
+    tail = tail->right;
 
-    // 2. link two lists (head at root and rt) together
-    tail->right = rt;
+  // insert left subtree between root and right subtree
+  tail->right = root->right;
+  root->right = root->left;
+  root->left = nullptr;
+}
+
+void FlattenBinaryTreeToLinkedList::flattenRec2(TreeNode* root,
+    TreeNode*& tail)
+{
+  if (root == nullptr)
+    return;
+
+  flattenRec2(root->right, tail);
+  flattenRec2(root->left, tail);
+  root->right = tail;
+  root->left = nullptr;
+  tail = root;
+}
+
+void FlattenBinaryTreeToLinkedList::flattenStack(TreeNode* root)
+{
+  stack<TreeNode*> s;
+
+  if (root != nullptr)
+    s.push(root);
+
+  while (!s.empty()) {
+    TreeNode* node = s.top();
+    s.pop();
+
+    if (node->right != nullptr)
+      s.push(node->right);
+
+    if (node->left != nullptr)
+      s.push(node->left);
+
+    node->left = nullptr;
+    node->right = s.empty() ? nullptr : s.top();
   }
 }

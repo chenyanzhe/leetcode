@@ -7,6 +7,10 @@ class FlattenBinaryTreeToLinkedList
 {
 public:
   void flatten(TreeNode* root);
+private:
+  void flattenRec1(TreeNode* root);
+  void flattenRec2(TreeNode* root, TreeNode*& tail);
+  void flattenStack(TreeNode* root);
 };
 
 #endif // FLATTEN_BINARY_TREE_TO_LINKED_LIST_HPP_
