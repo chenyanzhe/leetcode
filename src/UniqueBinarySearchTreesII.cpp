@@ -2,6 +2,42 @@
 
 vector<TreeNode*> UniqueBinarySearchTreesII::generateTrees(int n)
 {
+  if (n <= 0) return vector<TreeNode*>();
+
+  return generateTreesRec(1, n);
+}
+
+vector<TreeNode*> UniqueBinarySearchTreesII::generateTreesRec(int begin,
+    int end)
+{
+  vector<TreeNode*> ret;
+
+  if (begin > end) {
+    ret.push_back(nullptr);
+    return ret;
+  }
+
+  vector<TreeNode*> left;
+  vector<TreeNode*> right;
+
+  for (int i = begin; i <= end; i++) {
+    left = generateTreesRec(begin, i - 1);
+    right = generateTreesRec(i + 1, end);
+
+    for (auto l : left)
+      for (auto r : right) {
+        TreeNode* root = new TreeNode(i);
+        root->left = l;
+        root->right = r;
+        ret.push_back(root);
+      }
+  }
+
+  return ret;
+}
+
+vector<TreeNode*> UniqueBinarySearchTreesII::generateTreesDP(int n)
+{
   if (n == 0)
     return vector<TreeNode*>();
 
@@ -10,7 +46,7 @@ vector<TreeNode*> UniqueBinarySearchTreesII::generateTrees(int n)
 
   for (int i = 1; i <= n + 1; i++) {
     dp[i][i].push_back(new TreeNode(i));
-    dp[i][i - 1].push_back(NULL);
+    dp[i][i - 1].push_back(nullptr);
   }
 
   for (int l = 2; l <= n; l++) {
