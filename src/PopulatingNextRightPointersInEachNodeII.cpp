@@ -1,31 +1,40 @@
 #include "PopulatingNextRightPointersInEachNodeII.hpp"
 
-#include <queue>
-using namespace std;
-
 void PopulatingNextRightPointersInEachNodeII::connect(TreeLinkNode* root)
 {
-  if (root == nullptr)
-    return;
+  TreeLinkNode* leftMost = root;
 
-  queue<TreeLinkNode*> q;
-  q.push(root);
+  while (leftMost) {
+    root = leftMost;
 
-  while (!q.empty()) {
-    int k = q.size(); // number of nodes in this level
+    // root points to the left most node which has child node
+    while (root && !root->left && !root->right)
+      root = root->next;
 
-    for (int i = 0; i < k; i++) {
-      TreeLinkNode* front = q.front();
-      q.pop();
+    if (!root) return;
 
-      if (i + 1 < k)
-        front->next = q.front();
+    leftMost = root->left ? root->left : root->right;
+    TreeLinkNode* cur = leftMost;
 
-      if (front->left != nullptr)
-        q.push(front->left);
+    while (root) {
+      if (cur == root->left) {
+        if (root->right) {
+          cur->next = root->right;
+          cur = cur->next;
+        }
 
-      if (front->right != nullptr)
-        q.push(front->right);
+        root = root->next;
+      } else if (cur == root->right)
+        root = root->next;
+      else { // cur is the child of the previous node of root
+        if (!root->left && !root->right) {
+          root = root->next;
+          continue;
+        }
+
+        cur->next = root->left ? root->left : root->right;
+        cur = cur->next;
+      }
     }
   }
 }
