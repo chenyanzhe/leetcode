@@ -19,4 +19,5 @@ TEST_CASE("Lowest Common Ancestor of a Binary Tree")
     root = _3;
     REQUIRE(s.lowestCommonAncestor(root, _5, _1) == _3);
   }
+  tree_free(root);
 }
