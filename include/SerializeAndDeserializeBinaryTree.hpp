@@ -1,9 +1,10 @@
 #ifndef SERIALIZE_AND_DESERIALIZE_BINARY_TREE_HPP_
 #define SERIALIZE_AND_DESERIALIZE_BINARY_TREE_HPP_
 
+#include "TreeNode.hpp"
+
 #include <string>
 #include <sstream>
-#include "TreeNode.hpp"
 using namespace std;
 
 class Codec
@@ -16,7 +17,8 @@ public:
   TreeNode* deserialize(string data);
 
 private:
-  TreeNode* fetch(istringstream& ss);
+  void serializeHelper(TreeNode* root, ostringstream& out);
+  TreeNode* deserialzeHelper(istringstream& in);
 };
 
 #endif // SERIALIZE_AND_DESERIALIZE_BINARY_TREE_HPP_
