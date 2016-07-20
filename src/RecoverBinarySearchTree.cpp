@@ -5,20 +5,26 @@ using namespace std;
 
 void RecoverBinarySearchTree::recoverTree(TreeNode* root)
 {
-  inOrderTraversal(root);
-  sort(nodeVals.begin(), nodeVals.end());
-
-  for (int i = 0; i < nodePtrs.size(); i++)
-    nodePtrs[i]->val = nodeVals[i];
+  TreeNode* prev = nullptr, *first = nullptr, *second = nullptr;
+  findSegments(root, prev, first, second);
+  swap(first->val, second->val);
 }
 
-void RecoverBinarySearchTree::inOrderTraversal(TreeNode* root)
+void RecoverBinarySearchTree::findSegments(TreeNode* root, TreeNode*& prev,
+    TreeNode*& first, TreeNode*& second)
 {
   if (root == nullptr)
     return;
 
-  inOrderTraversal(root->left);
-  nodePtrs.push_back(root);
-  nodeVals.push_back(root->val);
-  inOrderTraversal(root->right);
+  findSegments(root->left, prev, first, second);
+
+  if (prev != nullptr && prev->val > root->val) {
+    if (first == nullptr)
+      first = prev;
+
+    second = root;
+  }
+
+  prev = root;
+  findSegments(root->right, prev, first, second);
 }

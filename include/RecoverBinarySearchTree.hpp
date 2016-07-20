@@ -3,19 +3,13 @@
 
 #include "TreeNode.hpp"
 
-#include <vector>
-using namespace std;
-
 class RecoverBinarySearchTree
 {
-private:
-  vector<TreeNode*> nodePtrs;
-  vector<int> nodeVals;
-
 public:
   void recoverTree(TreeNode* root);
 private:
-  void inOrderTraversal(TreeNode* root);
+  void findSegments(TreeNode* root, TreeNode*& prev, TreeNode*& first,
+                    TreeNode*& second);
 };
 
 #endif // RECOVER_BINARY_SEARCH_TREE_HPP_

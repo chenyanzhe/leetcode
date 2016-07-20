@@ -19,8 +19,8 @@ TEST_CASE("Recover Binary Search Tree")
     TreeNode* _4 = new TreeNode(4);
     TreeNode* _6 = new TreeNode(6);
     TreeNode* _9 = new TreeNode(9);
-    TreeNode* _3 = new TreeNode(3, _1, _4);
-    TreeNode* _8 = new TreeNode(8, _6, _9);
+    TreeNode* _3 = new TreeNode(3, _1, _6);
+    TreeNode* _8 = new TreeNode(8, _4, _9);
     TreeNode* _5 = new TreeNode(5, _3, _8);
     root = _5;
     s.recoverTree(root);
