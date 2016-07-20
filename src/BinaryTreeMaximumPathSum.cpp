@@ -1,30 +1,24 @@
 #include "BinaryTreeMaximumPathSum.hpp"
 
 #include <climits>
+#include <algorithm>
 using namespace std;
 
 int BinaryTreeMaximumPathSum::maxPathSum(TreeNode* root)
 {
-  max_sum = INT_MIN;
-  dfs(root);
-  return max_sum;
+  int maxValue = INT_MIN;
+  maxPathDown(root, maxValue);
+  return maxValue;
 }
 
-int BinaryTreeMaximumPathSum::dfs(const TreeNode* root)
+int BinaryTreeMaximumPathSum::maxPathDown(TreeNode* root, int& maxValue)
 {
   if (root == nullptr)
     return 0;
 
-  int l = dfs(root->left);
-  int r = dfs(root->right);
-  int sum = root->val;
-
-  if (l > 0)
-    sum += l;
-
-  if (r > 0)
-    sum += r;
-
-  max_sum = max(max_sum, sum);
-  return max(r, l) > 0 ? max(r, l) + root->val : root->val;
+  int left = max(0, maxPathDown(root->left, maxValue));
+  int right = max(0, maxPathDown(root->right, maxValue));
+  maxValue = max(maxValue, left + right + root->val);
+  return max(left, right) + root->val;
 }
+
