@@ -8,8 +8,6 @@ class IsomorphicStrings
 {
 public:
   bool isIsomorphic(string s, string t);
-private:
-  void remap(string& s);
 };
 
 #endif // ISOMORPHIC_STRINGS_HPP_
