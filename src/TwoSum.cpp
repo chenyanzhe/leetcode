@@ -12,8 +12,8 @@ vector<int> TwoSum::twoSum(vector<int>& nums, int target)
     int gap = target - nums[i];
 
     if (mapping.find(gap) != mapping.end()) {
-      result.push_back(mapping[gap] + 1);
-      result.push_back(i + 1);
+      result.push_back(mapping[gap]);
+      result.push_back(i);
       break;
     } else
       mapping[nums[i]] = i;
