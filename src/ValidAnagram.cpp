@@ -1,24 +1,21 @@
 #include "ValidAnagram.hpp"
 
+#include <vector>
+using namespace std;
+
 bool ValidAnagram::isAnagram(string s, string t)
 {
-  if (s.size() != t.size())
-    return false;
+  if (s.size() != t.size()) return false;
 
-  int cnts[256];
+  vector<int> cnt(26, 0);
 
-  for (int i = 0; i < 256; i++)
-    cnts[i] = 0;
-
-  for (int i = 0; i < s.size(); i++)
-    cnts[s[i]]++;
-
-  for (int i = 0; i < t.size(); i++) {
-    if (cnts[t[i]] == 0)
-      return false;
-
-    cnts[t[i]]--;
+  for (int i = 0; i < s.size(); i++) {
+    cnt[s[i] - 'a']++;
+    cnt[t[i] - 'a']--;
   }
+
+  for (int i = 0; i < 26; i++)
+    if (cnt[i] != 0) return false;
 
   return true;
 }
