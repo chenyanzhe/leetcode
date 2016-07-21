@@ -1,38 +1,29 @@
 #include "WordPattern.hpp"
 
-#include <vector>
 #include <unordered_map>
+#include <sstream>
 using namespace std;
 
 bool WordPattern::wordPattern(string pattern, string str)
 {
-  vector<string> ptable(256, "");
-  unordered_map<string, char> wtable;
-  int i = 0;
-  int j = 0;
+  unordered_map<char, string> p2w;
+  unordered_map<string, char> w2p;
+  stringstream in(str);
+  string w;
 
-  for (auto c : pattern) {
-    if (j >= str.size())
+  for (auto p : pattern) {
+    if (!(in >> w))
       return false;
 
-    while (j < str.size() && str[j] != ' ')
-      j++;
-
-    string w = str.substr(i, j - i);
-
-    if (ptable[c] == "")
-      ptable[c] = w;
-    else if (ptable[c] != w)
+    if (p2w.count(p) && p2w[p] != w)
       return false;
 
-    if (wtable.find(w) == wtable.end())
-      wtable[w] = c;
-    else if (wtable[w] != c)
+    if (w2p.count(w) && w2p[w] != p)
       return false;
 
-    i = j + 1;
-    j = i;
+    p2w[p] = w;
+    w2p[w] = p;
   }
 
-  return j >= str.size();
+  return !(in >> w);
 }
