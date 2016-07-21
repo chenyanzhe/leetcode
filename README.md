@@ -39,6 +39,7 @@ scripts/fmt
 |---|---|-------|------------|
 | :white_check_mark: | 368 | [Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/) | Medium |
 | :white_check_mark: | 357 | [Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) | Medium |
+| :white_check_mark: | 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | Easy |
 | :white_check_mark: | 349 | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) | Easy |
 | :white_check_mark: | 343 | [Integer Break](https://leetcode.com/problems/integer-break/) | Medium |
 | :white_check_mark: | 338 | [Counting Bits](https://leetcode.com/problems/counting-bits/) | Medium |
