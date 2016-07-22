@@ -3,12 +3,12 @@
 
 #include "TreeNode.hpp"
 
-class BalancedBinaryTree
-{
+class BalancedBinaryTree {
 public:
-  bool isBalanced(TreeNode* root);
+    bool isBalanced(TreeNode *root);
+
 private:
-  int maxDepth(TreeNode* root);
+    int maxDepth(TreeNode *root);
 };
 
 #endif // BALANCED_BINARY_TREE_HPP_

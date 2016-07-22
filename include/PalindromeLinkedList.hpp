@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class PalindromeLinkedList
-{
+class PalindromeLinkedList {
 public:
-  bool isPalindrome(ListNode* head);
+    bool isPalindrome(ListNode *head);
 };
 
 #endif // PALINDROME_LINKED_LIST_HPP_

@@ -1,21 +1,20 @@
 #include "PerfectSquares.hpp"
 
 #include <vector>
-#include <queue>
+
 using namespace std;
 
-int PerfectSquares::numSquares(int n)
-{
-  vector<int> dp(n + 1, 0);
+int PerfectSquares::numSquares(int n) {
+    vector<int> dp(n + 1, 0);
 
-  for (int i = 1; i <= n; i++) {
-    dp[i] = dp[i - 1];
+    for (int i = 1; i <= n; i++) {
+        dp[i] = dp[i - 1];
 
-    for (int j = 2; j * j <= i; j++)
-      dp[i] = min(dp[i], dp[i - j * j]);
+        for (int j = 2; j * j <= i; j++)
+            dp[i] = min(dp[i], dp[i - j * j]);
 
-    dp[i] += 1;
-  }
+        dp[i] += 1;
+    }
 
-  return dp[n];
+    return dp[n];
 }

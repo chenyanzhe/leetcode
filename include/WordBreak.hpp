@@ -3,12 +3,12 @@
 
 #include <string>
 #include <unordered_set>
+
 using namespace std;
 
-class WordBreak
-{
+class WordBreak {
 public:
-  bool wordBreak(string s, unordered_set<string>& wordDict);
+    bool wordBreak(string s, unordered_set<string> &wordDict);
 };
 
 #endif // WORD_BREAK_HPP_

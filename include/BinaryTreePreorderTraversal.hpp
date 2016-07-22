@@ -4,15 +4,17 @@
 #include "TreeNode.hpp"
 
 #include <vector>
+
 using namespace std;
 
-class BinaryTreePreorderTraversal
-{
+class BinaryTreePreorderTraversal {
 public:
-  vector<int> preorderTraversal(TreeNode* root);
+    vector<int> preorderTraversal(TreeNode *root);
+
 private:
-  vector<int> preorderTraversal_Stack(TreeNode* root);
-  vector<int> preorderTraversal_Morris(TreeNode* root);
+    vector<int> preorderTraversal_Stack(TreeNode *root);
+
+    vector<int> preorderTraversal_Morris(TreeNode *root);
 };
 
 #endif // BINARY_TREE_PREORDER_TRAVERSAL_HPP_

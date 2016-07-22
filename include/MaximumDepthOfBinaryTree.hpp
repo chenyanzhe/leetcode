@@ -3,13 +3,14 @@
 
 #include "TreeNode.hpp"
 
-class MaximumDepthOfBinaryTree
-{
+class MaximumDepthOfBinaryTree {
 public:
-  int maxDepth(TreeNode* root);
+    int maxDepth(TreeNode *root);
+
 private:
-  int maxDepthRecursive(TreeNode* root);
-  int maxDepthIterative(TreeNode* root);
+    int maxDepthRecursive(TreeNode *root);
+
+    int maxDepthIterative(TreeNode *root);
 };
 
 #endif // MAXIMUM_DEPTH_OF_BINARY_TREE_HPP_

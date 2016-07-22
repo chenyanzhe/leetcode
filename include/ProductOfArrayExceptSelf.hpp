@@ -2,12 +2,12 @@
 #define PRODUCT_OF_ARRAY_EXCEPT_SELF_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class ProductOfArrayExceptSelf
-{
+class ProductOfArrayExceptSelf {
 public:
-  vector<int> productExceptSelf(vector<int>& nums);
+    vector<int> productExceptSelf(vector<int> &nums);
 };
 
 #endif // PRODUCT_OF_ARRAY_EXCEPT_SELF_HPP_

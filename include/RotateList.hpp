@@ -3,13 +3,14 @@
 
 #include "ListNode.hpp"
 
-class RotateList
-{
+class RotateList {
 public:
-  ListNode* rotateRight(ListNode* head, int k);
+    ListNode *rotateRight(ListNode *head, int k);
+
 private:
-  ListNode* rotateRight_Cycle(ListNode* head, int k);
-  ListNode* rotateRight_TwoPointers(ListNode* head, int k);
+    ListNode *rotateRight_Cycle(ListNode *head, int k);
+
+    ListNode *rotateRight_TwoPointers(ListNode *head, int k);
 };
 
 #endif // ROTATE_LIST_HPP_

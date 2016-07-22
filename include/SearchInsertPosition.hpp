@@ -2,12 +2,12 @@
 #define SEARCH_INSERT_POSITION_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class SearchInsertPosition
-{
+class SearchInsertPosition {
 public:
-  int searchInsert(vector<int>& nums, int target);
+    int searchInsert(vector<int> &nums, int target);
 };
 
 #endif // SEARCH_INSERT_POSITION_HPP_

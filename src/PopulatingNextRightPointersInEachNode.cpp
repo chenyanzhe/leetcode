@@ -1,21 +1,20 @@
 #include "PopulatingNextRightPointersInEachNode.hpp"
 
-void PopulatingNextRightPointersInEachNode::connect(TreeLinkNode* root)
-{
-  if (root == nullptr)
-    return;
+void PopulatingNextRightPointersInEachNode::connect(TreeLinkNode *root) {
+    if (root == nullptr)
+        return;
 
-  TreeLinkNode* leftMost = root;
+    TreeLinkNode *leftMost = root;
 
-  while (leftMost != nullptr && leftMost->left != nullptr) {
-    TreeLinkNode* current = leftMost;
+    while (leftMost != nullptr && leftMost->left != nullptr) {
+        TreeLinkNode *current = leftMost;
 
-    while (current != nullptr) {
-      current->left->next = current->right;
-      current->right->next = current->next ? current->next->left : nullptr;
-      current = current->next;
+        while (current != nullptr) {
+            current->left->next = current->right;
+            current->right->next = current->next ? current->next->left : nullptr;
+            current = current->next;
+        }
+
+        leftMost = leftMost->left;
     }
-
-    leftMost = leftMost->left;
-  }
 }

@@ -2,12 +2,12 @@
 #define WILDCARD_MATCHING_HPP_
 
 #include <string>
+
 using namespace std;
 
-class WildcardMatching
-{
+class WildcardMatching {
 public:
-  bool isMatch(string s, string p);
+    bool isMatch(string s, string p);
 };
 
 #endif // WILDCARD_MATCHING_HPP_

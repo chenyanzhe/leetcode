@@ -2,12 +2,12 @@
 #define MINIMUM_PATH_SUM_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class MinimumPathSum
-{
+class MinimumPathSum {
 public:
-  int minPathSum(vector<vector<int>>& grid);
+    int minPathSum(vector<vector<int>> &grid);
 };
 
 #endif // MINIMUM_PATH_SUM_HPP_

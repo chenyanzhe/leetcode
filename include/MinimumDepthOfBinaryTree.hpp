@@ -3,10 +3,9 @@
 
 #include "TreeNode.hpp"
 
-class MinimumDepthOfBinaryTree
-{
+class MinimumDepthOfBinaryTree {
 public:
-  int minDepth(TreeNode* root);
+    int minDepth(TreeNode *root);
 };
 
 #endif // MINIMUM_DEPTH_OF_BINARY_TREE_HPP_

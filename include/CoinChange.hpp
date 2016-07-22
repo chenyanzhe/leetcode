@@ -2,12 +2,12 @@
 #define COIN_CHANGE_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class CoinChange
-{
+class CoinChange {
 public:
-  int coinChange(vector<int>& coins, int amount);
+    int coinChange(vector<int> &coins, int amount);
 };
 
 #endif // COIN_CHANGE_HPP_

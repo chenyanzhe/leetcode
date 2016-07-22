@@ -2,12 +2,12 @@
 #define ISOMORPHIC_STRINGS_HPP_
 
 #include <string>
+
 using namespace std;
 
-class IsomorphicStrings
-{
+class IsomorphicStrings {
 public:
-  bool isIsomorphic(string s, string t);
+    bool isIsomorphic(string s, string t);
 };
 
 #endif // ISOMORPHIC_STRINGS_HPP_

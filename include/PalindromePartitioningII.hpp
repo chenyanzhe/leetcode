@@ -2,12 +2,12 @@
 #define PALINDROME_PARTITIONING_II_HPP_
 
 #include <string>
+
 using namespace std;
 
-class PalindromePartitioningII
-{
+class PalindromePartitioningII {
 public:
-  int minCut(string s);
+    int minCut(string s);
 };
 
 #endif // PALINDROME_PARTITIONING_II_HPP_

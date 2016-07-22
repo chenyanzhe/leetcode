@@ -3,12 +3,12 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
-class LongestCommonPrefix
-{
+class LongestCommonPrefix {
 public:
-  string longestCommonPrefix(vector<string>& strs);
+    string longestCommonPrefix(vector<string> &strs);
 };
 
 #endif // LONGEST_COMMON_PREFIX_HPP_

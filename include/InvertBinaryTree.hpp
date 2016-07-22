@@ -3,13 +3,14 @@
 
 #include "TreeNode.hpp"
 
-class InvertBinaryTree
-{
+class InvertBinaryTree {
 public:
-  TreeNode* invertTree(TreeNode* root);
+    TreeNode *invertTree(TreeNode *root);
+
 private:
-  TreeNode* invertTreeRecursive(TreeNode* root);
-  TreeNode* invertTreeIterative(TreeNode* root);
+    TreeNode *invertTreeRecursive(TreeNode *root);
+
+    TreeNode *invertTreeIterative(TreeNode *root);
 };
 
 #endif // INVERT_BINARY_TREE_HPP_

@@ -3,16 +3,18 @@
 
 #include <vector>
 #include <string>
+
 using namespace std;
 
-class NQueens
-{
+class NQueens {
 public:
-  vector<vector<string>> solveNQueens(int n);
+    vector<vector<string>> solveNQueens(int n);
+
 private:
-  void helper(vector<string>& nQueens, vector<vector<string>>& res,
-              int row, int n);
-  bool isValid(vector<string>& nQueens, int row, int col, int n);
+    void helper(vector<string> &nQueens, vector<vector<string>> &res,
+                int row, int n);
+
+    bool isValid(vector<string> &nQueens, int row, int col, int n);
 };
 
 #endif // NQUEENS_HPP_

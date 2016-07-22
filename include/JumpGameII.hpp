@@ -2,12 +2,12 @@
 #define JUMP_GAME_II_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class JumpGameII
-{
+class JumpGameII {
 public:
-  int jump(vector<int>& nums);
+    int jump(vector<int> &nums);
 };
 
 #endif // JUMP_GAME_II_HPP_

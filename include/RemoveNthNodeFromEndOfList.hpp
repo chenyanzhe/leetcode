@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class RemoveNthNodeFromEndOfList
-{
+class RemoveNthNodeFromEndOfList {
 public:
-  ListNode* removeNthFromEnd(ListNode* head, int n);
+    ListNode *removeNthFromEnd(ListNode *head, int n);
 };
 
 #endif // REMOVE_NTH_NODE_FROM_END_OF_LIST_HPP_

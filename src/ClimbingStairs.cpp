@@ -1,18 +1,17 @@
 #include "ClimbingStairs.hpp"
 
-int ClimbingStairs::climbStairs(int n)
-{
-  if (n == 0 || n == 1 || n == 2)
-    return n;
+int ClimbingStairs::climbStairs(int n) {
+    if (n == 0 || n == 1 || n == 2)
+        return n;
 
-  int a = 1;
-  int b = 2;
+    int a = 1;
+    int b = 2;
 
-  for (int i = 2; i < n; i++) {
-    int c = a + b;
-    a = b;
-    b = c;
-  }
+    for (int i = 2; i < n; i++) {
+        int c = a + b;
+        a = b;
+        b = c;
+    }
 
-  return b;
+    return b;
 }

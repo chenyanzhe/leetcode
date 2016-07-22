@@ -2,14 +2,15 @@
 #define MAXIMUM_GAP_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class MaximumGap
-{
+class MaximumGap {
 public:
-  int maximumGap(vector<int>& nums);
+    int maximumGap(vector<int> &nums);
+
 private:
-  int getNthDigit(int num, int n);
+    int getNthDigit(int num, int n);
 };
 
 #endif // MAXIMUM_GAP_HPP_

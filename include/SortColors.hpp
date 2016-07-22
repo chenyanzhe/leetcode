@@ -2,12 +2,12 @@
 #define SORT_COLORS_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class SortColors
-{
+class SortColors {
 public:
-  void sortColors(vector<int>& nums);
+    void sortColors(vector<int> &nums);
 };
 
 #endif // SORT_COLORS_HPP_

@@ -3,12 +3,12 @@
 
 #include "TreeNode.hpp"
 
-class SumRootToLeafNumbers
-{
+class SumRootToLeafNumbers {
 public:
-  int sumNumbers(TreeNode* root);
+    int sumNumbers(TreeNode *root);
+
 private:
-  int sumNumbersRec(TreeNode* root, int n);
+    int sumNumbersRec(TreeNode *root, int n);
 };
 
 #endif // SUM_ROOT_TO_LEAF_NUMBERS_HPP_

@@ -2,12 +2,12 @@
 #define SHORTEST_PALINDROME_HPP_
 
 #include <string>
+
 using namespace std;
 
-class ShortestPalindrome
-{
+class ShortestPalindrome {
 public:
-  string shortestPalindrome(string s);
+    string shortestPalindrome(string s);
 };
 
 #endif // SHORTEST_PALINDROME_HPP_

@@ -2,12 +2,12 @@
 #define INTERLEAVING_STRING_HPP_
 
 #include <string>
+
 using namespace std;
 
-class InterleavingString
-{
+class InterleavingString {
 public:
-  bool isInterleave(string s1, string s2, string s3);
+    bool isInterleave(string s1, string s2, string s3);
 };
 
 #endif // INTERLEAVING_STRING_HPP_

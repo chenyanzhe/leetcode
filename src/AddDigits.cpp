@@ -1,17 +1,16 @@
 #include "AddDigits.hpp"
 
-int AddDigits::addDigits(int num)
-{
-  while (num >= 10) {
-    int acc = 0;
+int AddDigits::addDigits(int num) {
+    while (num >= 10) {
+        int acc = 0;
 
-    while (num > 0) {
-      acc += num % 10;
-      num /= 10;
+        while (num > 0) {
+            acc += num % 10;
+            num /= 10;
+        }
+
+        num = acc;
     }
 
-    num = acc;
-  }
-
-  return num;
+    return num;
 }

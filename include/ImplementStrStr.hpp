@@ -2,12 +2,12 @@
 #define IMPLEMENT_STRSTR_HPP_
 
 #include <string>
+
 using namespace std;
 
-class ImplementStrStr
-{
+class ImplementStrStr {
 public:
-  int strStr(string haystack, string needle);
+    int strStr(string haystack, string needle);
 };
 
 #endif // IMPLEMENT_STRSTR_HPP_

@@ -1,28 +1,27 @@
 #include "CountAndSay.hpp"
 
-string CountAndSay::countAndSay(int n)
-{
-  if (n == 0)
-    return "";
+string CountAndSay::countAndSay(int n) {
+    if (n == 0)
+        return "";
 
-  string res = "1";
+    string res = "1";
 
-  while (--n) {
-    string cur = "";
+    while (--n) {
+        string cur = "";
 
-    for (int i = 0; i < res.size(); i++) {
-      int count = 1;
+        for (int i = 0; i < res.size(); i++) {
+            int count = 1;
 
-      while ((i + 1 < res.size()) && (res[i] == res[i + 1])) {
-        count++;
-        i++;
-      }
+            while ((i + 1 < res.size()) && (res[i] == res[i + 1])) {
+                count++;
+                i++;
+            }
 
-      cur += to_string(count) + res[i];
+            cur += to_string(count) + res[i];
+        }
+
+        res = cur;
     }
 
-    res = cur;
-  }
-
-  return res;
+    return res;
 }

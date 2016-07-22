@@ -3,15 +3,17 @@
 
 #include <vector>
 #include <string>
+
 using namespace std;
 
-class NQueensII
-{
+class NQueensII {
 public:
-  int totalNQueens(int n);
+    int totalNQueens(int n);
+
 private:
-  void helper(vector<string>& nQueens, int& res, int row, int n);
-  bool isValid(vector<string>& nQueens, int row, int col, int n);
+    void helper(vector<string> &nQueens, int &res, int row, int n);
+
+    bool isValid(vector<string> &nQueens, int row, int col, int n);
 };
 
 #endif // NQUEENS_II_HPP_

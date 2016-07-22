@@ -1,15 +1,14 @@
 #include "JumpGame.hpp"
 
-bool JumpGame::canJump(vector<int>& nums)
-{
-  int right = 0;
+bool JumpGame::canJump(vector<int> &nums) {
+    int right = 0;
 
-  for (int i = 0; i < nums.size(); i++) {
-    if (i > right)
-      return false;
+    for (int i = 0; i < nums.size(); i++) {
+        if (i > right)
+            return false;
 
-    right = max(i + nums[i], right);
-  }
+        right = max(i + nums[i], right);
+    }
 
-  return true;
+    return true;
 }

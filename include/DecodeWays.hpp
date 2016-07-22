@@ -2,12 +2,12 @@
 #define DECODE_WAYS_HPP_
 
 #include <string>
+
 using namespace std;
 
-class DecodeWays
-{
+class DecodeWays {
 public:
-  int numDecodings(string s);
+    int numDecodings(string s);
 };
 
 #endif // DECODE_WAYS_HPP_

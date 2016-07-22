@@ -2,12 +2,12 @@
 #define SET_MATRIX_ZEROES_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class SetMatrixZeroes
-{
+class SetMatrixZeroes {
 public:
-  void setZeroes(vector<vector<int>>& matrix);
+    void setZeroes(vector<vector<int>> &matrix);
 };
 
 #endif // SET_MATRIX_ZEROES_HPP_

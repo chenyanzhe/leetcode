@@ -2,18 +2,22 @@
 #define MIN_STACK_HPP_
 
 #include <stack>
+
 using namespace std;
 
-class MinStack
-{
+class MinStack {
 public:
-  void push(int x);
-  void pop();
-  int top();
-  int getMin();
+    void push(int x);
+
+    void pop();
+
+    int top();
+
+    int getMin();
+
 private:
-  stack<int> wholeStack;
-  stack<int> minStack;
+    stack<int> wholeStack;
+    stack<int> minStack;
 };
 
 #endif // MIN_STACK_HPP_

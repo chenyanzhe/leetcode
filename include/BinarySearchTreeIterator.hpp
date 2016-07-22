@@ -3,21 +3,21 @@
 
 #include "TreeNode.hpp"
 #include <stack>
+
 using namespace std;
 
-class BSTIterator
-{
+class BSTIterator {
 public:
-  BSTIterator(TreeNode* root);
+    BSTIterator(TreeNode *root);
 
-  /** @return whether we have a next smallest number */
-  bool hasNext();
+    /** @return whether we have a next smallest number */
+    bool hasNext();
 
-  /** @return the next smallest number */
-  int next();
+    /** @return the next smallest number */
+    int next();
 
 private:
-  stack<TreeNode*> s;
+    stack<TreeNode *> s;
 };
 
 #endif // BINARY_SEARCH_TREE_ITERATOR_HPP_

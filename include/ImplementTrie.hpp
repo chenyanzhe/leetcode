@@ -3,40 +3,42 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
-class TrieNode
-{
+class TrieNode {
 public:
-  // Initialize your data structure here.
-  TrieNode();
-  ~TrieNode();
-  vector<TrieNode*> children;
-  bool isWord;
+    // Initialize your data structure here.
+    TrieNode();
+
+    ~TrieNode();
+
+    vector<TrieNode *> children;
+    bool isWord;
 };
 
-class Trie
-{
+class Trie {
 public:
-  Trie();
-  ~Trie();
+    Trie();
 
-  // Inserts a word into the trie.
-  void insert(string word);
+    ~Trie();
 
-  // Returns if the word is in the trie.
-  bool search(string word);
+    // Inserts a word into the trie.
+    void insert(string word);
 
-  // Returns if there is any word in the trie
-  // that starts with the given prefix.
-  bool startsWith(string prefix);
+    // Returns if the word is in the trie.
+    bool search(string word);
+
+    // Returns if there is any word in the trie
+    // that starts with the given prefix.
+    bool startsWith(string prefix);
 
 private:
-  TrieNode* root;
+    TrieNode *root;
 
-  bool search(TrieNode* root, const char* head);
+    bool search(TrieNode *root, const char *head);
 
-  bool startsWith(TrieNode* root, const char* head);
+    bool startsWith(TrieNode *root, const char *head);
 };
 
 #endif // IMPLEMENT_TRIE_HPP_

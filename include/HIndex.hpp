@@ -2,13 +2,13 @@
 #define H_INDEX_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class HIndex
-{
+class HIndex {
 public:
 
-  int hIndex(vector<int>& citations);
+    int hIndex(vector<int> &citations);
 };
 
 #endif // H_INDEX_HPP_

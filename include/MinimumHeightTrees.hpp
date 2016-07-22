@@ -3,12 +3,12 @@
 
 #include <vector>
 #include <utility>
+
 using namespace std;
 
-class MinimumHeightTrees
-{
+class MinimumHeightTrees {
 public:
-  vector<int> findMinHeightTrees(int n, vector<pair<int, int>>& edges);
+    vector<int> findMinHeightTrees(int n, vector<pair<int, int>> &edges);
 };
 
 #endif // MINIMUM_HEIGHT_TREES_HPP_

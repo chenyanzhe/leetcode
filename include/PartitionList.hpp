@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class PartitionList
-{
+class PartitionList {
 public:
-  ListNode* partition(ListNode* head, int x);
+    ListNode *partition(ListNode *head, int x);
 };
 
 #endif // PARTITION_LIST_HPP_

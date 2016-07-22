@@ -2,12 +2,12 @@
 #define VALID_SUDOKU_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class ValidSudoku
-{
+class ValidSudoku {
 public:
-  bool isValidSudoku(vector<vector<char>>& board);
+    bool isValidSudoku(vector<vector<char>> &board);
 };
 
 #endif // VALID_SUDOKU_HPP_

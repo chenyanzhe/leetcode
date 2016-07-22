@@ -3,12 +3,12 @@
 
 #include <vector>
 #include <string>
+
 using namespace std;
 
-class GroupAnagrams
-{
+class GroupAnagrams {
 public:
-  vector<vector<string>> groupAnagrams(vector<string>& strs);
+    vector<vector<string>> groupAnagrams(vector<string> &strs);
 };
 
 #endif // GROUP_ANAGRAMS_HPP_

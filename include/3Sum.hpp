@@ -2,12 +2,12 @@
 #define THREE_SUM_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class ThreeSum
-{
+class ThreeSum {
 public:
-  vector<vector<int>> threeSum(vector<int>& nums);
+    vector<vector<int>> threeSum(vector<int> &nums);
 };
 
 #endif // THREE_SUM_HPP_

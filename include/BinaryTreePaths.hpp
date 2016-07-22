@@ -8,12 +8,12 @@
 
 using namespace std;
 
-class BinaryTreePaths
-{
+class BinaryTreePaths {
 public:
-  vector<string> binaryTreePaths(TreeNode* root);
+    vector<string> binaryTreePaths(TreeNode *root);
+
 private:
-  void dfs(TreeNode* root, string path, vector<string>& ret);
+    void dfs(TreeNode *root, string path, vector<string> &ret);
 };
 
 #endif // BINARY_TREE_PATHS_HPP_

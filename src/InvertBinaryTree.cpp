@@ -1,43 +1,40 @@
 #include "InvertBinaryTree.hpp"
 
 #include <stack>
-#include <utility>
+
 using namespace std;
 
-TreeNode* InvertBinaryTree::invertTree(TreeNode* root)
-{
-  return invertTreeIterative(root);
+TreeNode *InvertBinaryTree::invertTree(TreeNode *root) {
+    return invertTreeIterative(root);
 }
 
-TreeNode* InvertBinaryTree::invertTreeRecursive(TreeNode* root)
-{
-  if (root == nullptr)
-    return nullptr;
+TreeNode *InvertBinaryTree::invertTreeRecursive(TreeNode *root) {
+    if (root == nullptr)
+        return nullptr;
 
-  swap(root->left, root->right);
-  invertTreeRecursive(root->left);
-  invertTreeRecursive(root->right);
-  return root;
+    swap(root->left, root->right);
+    invertTreeRecursive(root->left);
+    invertTreeRecursive(root->right);
+    return root;
 }
 
-TreeNode* InvertBinaryTree::invertTreeIterative(TreeNode* root)
-{
-  stack<TreeNode*> s;
+TreeNode *InvertBinaryTree::invertTreeIterative(TreeNode *root) {
+    stack<TreeNode *> s;
 
-  if (root != nullptr)
-    s.push(root);
+    if (root != nullptr)
+        s.push(root);
 
-  while (!s.empty()) {
-    TreeNode* node = s.top();
-    s.pop();
-    swap(node->left, node->right);
+    while (!s.empty()) {
+        TreeNode *node = s.top();
+        s.pop();
+        swap(node->left, node->right);
 
-    if (node->left != nullptr)
-      s.push(node->left);
+        if (node->left != nullptr)
+            s.push(node->left);
 
-    if (node->right != nullptr)
-      s.push(node->right);
-  }
+        if (node->right != nullptr)
+            s.push(node->right);
+    }
 
-  return root;
+    return root;
 }

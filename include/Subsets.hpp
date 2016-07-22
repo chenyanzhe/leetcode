@@ -2,12 +2,12 @@
 #define SUBSETS_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class Subsets
-{
+class Subsets {
 public:
-  vector<vector<int>> subsets(vector<int>& nums);
+    vector<vector<int>> subsets(vector<int> &nums);
 };
 
 #endif // SUBSETS_HPP_

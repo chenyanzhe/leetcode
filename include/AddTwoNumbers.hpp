@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class AddTwoNumbers
-{
+class AddTwoNumbers {
 public:
-  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
 };
 
 #endif // ADD_TWO_NUMBERS_HPP_

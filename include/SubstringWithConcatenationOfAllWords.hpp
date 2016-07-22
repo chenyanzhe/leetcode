@@ -3,12 +3,12 @@
 
 #include <vector>
 #include <string>
+
 using namespace std;
 
-class SubstringWithConcatenationOfAllWords
-{
+class SubstringWithConcatenationOfAllWords {
 public:
-  vector<int> findSubstring(string s, vector<string>& words);
+    vector<int> findSubstring(string s, vector<string> &words);
 };
 
 #endif // SUBSTRING_WITH_CONCATENATION_OF_ALL_WORDS_HPP_

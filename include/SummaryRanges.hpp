@@ -3,12 +3,12 @@
 
 #include <vector>
 #include <string>
+
 using namespace std;
 
-class SummaryRanges
-{
+class SummaryRanges {
 public:
-  vector<string> summaryRanges(vector<int>& nums);
+    vector<string> summaryRanges(vector<int> &nums);
 };
 
 #endif // SUMMARY_RANGES_HPP_

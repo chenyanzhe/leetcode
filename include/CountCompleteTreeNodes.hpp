@@ -3,10 +3,9 @@
 
 #include "TreeNode.hpp"
 
-class CountCompleteTreeNodes
-{
+class CountCompleteTreeNodes {
 public:
-  int countNodes(TreeNode* root);
+    int countNodes(TreeNode *root);
 };
 
 #endif // COUNT_COMPLETE_TREE_NODES_HPP_

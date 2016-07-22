@@ -2,12 +2,12 @@
 #define TRIANGLE_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class Triangle
-{
+class Triangle {
 public:
-  int minimumTotal(vector<vector<int>>& triangle);
+    int minimumTotal(vector<vector<int>> &triangle);
 };
 
 #endif // TRIANGLE_HPP_

@@ -2,12 +2,12 @@
 #define BULLS_AND_COWS_HPP_
 
 #include <string>
+
 using namespace std;
 
-class BullsAndCows
-{
+class BullsAndCows {
 public:
-  string getHint(string secret, string guess);
+    string getHint(string secret, string guess);
 };
 
 #endif // BULLS_AND_COWS_HPP_

@@ -2,14 +2,15 @@
 #define REGULAR_EXPRESSION_MATCHING_HPP_
 
 #include <string>
+
 using namespace std;
 
-class RegularExpressionMatching
-{
+class RegularExpressionMatching {
 public:
-  bool isMatch(string s, string p);
+    bool isMatch(string s, string p);
+
 private:
-  bool isMatch(char _s, char _p);
+    bool isMatch(char _s, char _p);
 };
 
 #endif // REGULAR_EXPRESSION_MATCHING_HPP_

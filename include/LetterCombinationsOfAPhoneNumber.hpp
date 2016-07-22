@@ -3,12 +3,12 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
-class LetterCombinationsOfAPhoneNumber
-{
+class LetterCombinationsOfAPhoneNumber {
 public:
-  vector<string> letterCombinations(string digits);
+    vector<string> letterCombinations(string digits);
 };
 
 #endif // LETTER_COMBINATIONS_OF_A_PHONE_NUMBER_HPP_

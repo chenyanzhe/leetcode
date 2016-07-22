@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class SwapNodesInPairs
-{
+class SwapNodesInPairs {
 public:
-  ListNode* swapPairs(ListNode* head);
+    ListNode *swapPairs(ListNode *head);
 };
 
 #endif // SWAP_NODES_IN_PAIRS_HPP_

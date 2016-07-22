@@ -3,12 +3,12 @@
 
 #include "ListNode.hpp"
 
-class ReverseNodesInKGroup
-{
+class ReverseNodesInKGroup {
 public:
-  ListNode* reverseKGroup(ListNode* head, int k);
+    ListNode *reverseKGroup(ListNode *head, int k);
+
 private:
-  ListNode* reverse(ListNode* prev, ListNode* begin, ListNode* end);
+    ListNode *reverse(ListNode *prev, ListNode *begin, ListNode *end);
 };
 
 #endif // REVERSE_NODES_IN_K_GROUP_HPP_

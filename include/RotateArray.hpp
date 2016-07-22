@@ -2,12 +2,12 @@
 #define ROTATE_ARRAY_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class RotateArray
-{
+class RotateArray {
 public:
-  void rotate(vector<int>& nums, int k);
+    void rotate(vector<int> &nums, int k);
 };
 
 #endif // ROTATE_ARRAY_HPP_

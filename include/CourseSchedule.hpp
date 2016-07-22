@@ -3,15 +3,16 @@
 
 #include <vector>
 #include <utility>
+
 using namespace std;
 
-class CourseSchedule
-{
+class CourseSchedule {
 public:
-  bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites);
+    bool canFinish(int numCourses, vector<pair<int, int>> &prerequisites);
+
 private:
-  bool dfs(vector<vector<int>>& graph, vector<bool>& marked,
-           vector<bool>& onStack, int v);
+    bool dfs(vector<vector<int>> &graph, vector<bool> &marked,
+             vector<bool> &onStack, int v);
 };
 
 #endif // COURSE_SCHEDULE_HPP_

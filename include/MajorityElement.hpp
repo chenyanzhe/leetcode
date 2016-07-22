@@ -2,12 +2,12 @@
 #define MAJORITY_ELEMENT_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class MajorityElement
-{
+class MajorityElement {
 public:
-  int majorityElement(vector<int>& nums);
+    int majorityElement(vector<int> &nums);
 };
 
 #endif // MAJORITY_ELEMENT_HPP_

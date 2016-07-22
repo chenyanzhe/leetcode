@@ -5,15 +5,17 @@
 
 #include <vector>
 #include <unordered_map>
+
 using namespace std;
 
-class HouseRobberIII
-{
+class HouseRobberIII {
 public:
-  int rob(TreeNode* root);
+    int rob(TreeNode *root);
+
 private:
-  int robMem(TreeNode* root, unordered_map<TreeNode*, int>& mem);
-  vector<int> robGreedy(TreeNode* root);
+    int robMem(TreeNode *root, unordered_map<TreeNode *, int> &mem);
+
+    vector<int> robGreedy(TreeNode *root);
 };
 
 #endif // HOUSE_ROBBER_III_HPP_

@@ -3,12 +3,12 @@
 
 #include "ListNode.hpp"
 
-class RemoveDuplicatesFromSortedListII
-{
+class RemoveDuplicatesFromSortedListII {
 public:
-  ListNode* deleteDuplicates(ListNode* head);
+    ListNode *deleteDuplicates(ListNode *head);
+
 private:
-  ListNode* findDuplicates(ListNode* head);
+    ListNode *findDuplicates(ListNode *head);
 };
 
 #endif // REMOVE_DUPLICATES_FROM_SORTED_LIST_II_HPP_

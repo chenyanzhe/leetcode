@@ -2,14 +2,15 @@
 #define WIGGLE_SORT_II_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class WiggleSortII
-{
+class WiggleSortII {
 public:
-  void wiggleSort(vector<int>& nums);
+    void wiggleSort(vector<int> &nums);
+
 private:
-  int m(int idx, int n);
+    int m(int idx, int n);
 };
 
 #endif // WIGGLE_SORT_II_HPP_

@@ -3,15 +3,16 @@
 
 #include <vector>
 #include <string>
+
 using namespace std;
 
-class PalindromePartitioning
-{
+class PalindromePartitioning {
 public:
-  vector<vector<string>> partition(string s);
+    vector<vector<string>> partition(string s);
+
 private:
-  void dfs(const string& s, vector<string>& path, vector<vector<string>>& result,
-           int start);
+    void dfs(const string &s, vector<string> &path, vector<vector<string>> &result,
+             int start);
 };
 
 #endif // PALINDROME_PARTITIONING_HPP_

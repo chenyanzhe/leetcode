@@ -2,12 +2,12 @@
 #define DUNGEON_GAME_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class DungeonGame
-{
+class DungeonGame {
 public:
-  int calculateMinimumHP(vector<vector<int>>& dungeon);
+    int calculateMinimumHP(vector<vector<int>> &dungeon);
 };
 
 #endif // DUNGEON_GAME_HPP_

@@ -2,12 +2,12 @@
 #define EDIT_DISTANCE_HPP_
 
 #include <string>
+
 using namespace std;
 
-class EditDistance
-{
+class EditDistance {
 public:
-  int minDistance(string word1, string word2);
+    int minDistance(string word1, string word2);
 };
 
 #endif // EDIT_DISTANCE_HPP_

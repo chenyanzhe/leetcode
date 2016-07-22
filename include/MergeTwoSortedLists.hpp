@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class MergeTwoSortedLists
-{
+class MergeTwoSortedLists {
 public:
-  ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+    ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
 };
 
 #endif // MERGE_TWO_SORTED_LISTS_HPP_

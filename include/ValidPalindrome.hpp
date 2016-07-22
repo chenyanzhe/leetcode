@@ -2,12 +2,12 @@
 #define VALID_PALINDROME_HPP_
 
 #include <string>
+
 using namespace std;
 
-class ValidPalindrome
-{
+class ValidPalindrome {
 public:
-  bool isPalindrome(string s);
+    bool isPalindrome(string s);
 };
 
 #endif // VALID_PALINDROME_HPP_

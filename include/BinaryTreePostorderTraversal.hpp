@@ -4,15 +4,17 @@
 #include "TreeNode.hpp"
 
 #include <vector>
+
 using namespace std;
 
-class BinaryTreePostorderTraversal
-{
+class BinaryTreePostorderTraversal {
 public:
-  vector<int> postorderTraversal(TreeNode* root);
+    vector<int> postorderTraversal(TreeNode *root);
+
 private:
-  vector<int> postorderTraversal_TwoStack(TreeNode* root);
-  vector<int> postorderTraversal_OneStack(TreeNode* root);
+    vector<int> postorderTraversal_TwoStack(TreeNode *root);
+
+    vector<int> postorderTraversal_OneStack(TreeNode *root);
 };
 
 #endif // BINARY_TREE_POSTORDER_TRAVERSAL_HPP_

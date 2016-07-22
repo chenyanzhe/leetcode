@@ -3,14 +3,15 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
-class LargestNumber
-{
+class LargestNumber {
 public:
-  string largestNumber(vector<int>& nums);
+    string largestNumber(vector<int> &nums);
+
 private:
-  string largestNumber(vector<string>& nums);
+    string largestNumber(vector<string> &nums);
 };
 
 #endif // LARGEST_NUMBER_HPP_

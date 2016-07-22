@@ -3,12 +3,12 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
-class PermutationSequence
-{
+class PermutationSequence {
 public:
-  string getPermutation(int n, int k);
+    string getPermutation(int n, int k);
 };
 
 #endif // PERMUTATION_SEQUENCE_HPP_

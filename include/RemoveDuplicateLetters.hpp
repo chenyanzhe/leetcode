@@ -2,12 +2,12 @@
 #define REMOVE_DUPLICATE_LETTERS_HPP_
 
 #include <string>
+
 using namespace std;
 
-class RemoveDuplicateLetters
-{
+class RemoveDuplicateLetters {
 public:
-  string removeDuplicateLetters(string s);
+    string removeDuplicateLetters(string s);
 };
 
 #endif // REMOVE_DUPLICATE_LETTERS_HPP_

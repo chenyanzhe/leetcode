@@ -2,12 +2,12 @@
 #define DISTINCT_SUBSEQUENCES_HPP_
 
 #include <string>
+
 using namespace std;
 
-class DistinctSubsequences
-{
+class DistinctSubsequences {
 public:
-  int numDistinct(string s, string t);
+    int numDistinct(string s, string t);
 };
 
 #endif // DISTINCT_SUBSEQUENCES_HPP_

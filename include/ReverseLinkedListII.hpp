@@ -3,10 +3,9 @@
 
 #include "ListNode.hpp"
 
-class ReverseLinkedListII
-{
+class ReverseLinkedListII {
 public:
-  ListNode* reverseBetween(ListNode* head, int m, int n);
+    ListNode *reverseBetween(ListNode *head, int m, int n);
 };
 
 #endif // REVERSE_LINKED_LIST_II_HPP_

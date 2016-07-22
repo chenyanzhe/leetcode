@@ -2,14 +2,15 @@
 #define GRAY_CODE_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class GrayCode
-{
+class GrayCode {
 public:
-  vector<int> grayCode(int n);
+    vector<int> grayCode(int n);
+
 private:
-  void helper(int n, vector<int>& res);
+    void helper(int n, vector<int> &res);
 };
 
 #endif // GRAY_CODE_HPP_

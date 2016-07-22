@@ -2,12 +2,12 @@
 #define VALID_PARENTHESES_HPP_
 
 #include <string>
+
 using namespace std;
 
-class ValidParentheses
-{
+class ValidParentheses {
 public:
-  bool isValid(string s);
+    bool isValid(string s);
 };
 
 #endif // VALID_PARENTHESES_HPP_

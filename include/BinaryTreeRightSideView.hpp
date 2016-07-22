@@ -4,16 +4,18 @@
 #include "TreeNode.hpp"
 
 #include <vector>
+
 using namespace std;
 
-class BinaryTreeRightSideView
-{
+class BinaryTreeRightSideView {
 public:
-  vector<int> rightSideView(TreeNode* root);
+    vector<int> rightSideView(TreeNode *root);
+
 private:
-  vector<int> rightSideViewLevelOrderTraversal(TreeNode* root);
-  void rightSideViewPreOrderTraversal(TreeNode* root, int level,
-                                      vector<int>& res);
+    vector<int> rightSideViewLevelOrderTraversal(TreeNode *root);
+
+    void rightSideViewPreOrderTraversal(TreeNode *root, int level,
+                                        vector<int> &res);
 };
 
 #endif // BINARY_TREE_RIGHT_SIDE_VIEW_HPP_

@@ -2,12 +2,12 @@
 #define LONGEST_INCREASING_SUBSEQUENCE_HPP_
 
 #include <vector>
+
 using namespace std;
 
-class LongestIncreasingSubsequence
-{
+class LongestIncreasingSubsequence {
 public:
-  int lengthOfLIS(vector<int>& nums);
+    int lengthOfLIS(vector<int> &nums);
 };
 
 #endif // LONGEST_INCREASING_SUBSEQUENCE_HPP_
