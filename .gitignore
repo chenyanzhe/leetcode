@@ -1,5 +1,2 @@
 build/
-*~
-*.swp
-*.swo
-.vscode/
+.idea/
