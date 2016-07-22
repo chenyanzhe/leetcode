@@ -1,32 +1,23 @@
 #include "CountPrimes.hpp"
 
+#include <cmath>
 #include <vector>
 
 using namespace std;
 
 int CountPrimes::countPrimes(int n) {
-    int result = 0;
-    vector<bool> notPrime(n, false);
-    notPrime[1] = true;
-    int base = 2;
-
-    while (base * base < n) {
-        // marking
-        for (int i = base; i * base < n; i++)
-            notPrime[i * base] = true;
-
-        // update new base
-        int i = base + 1;
-
-        while (i < n && notPrime[i])
-            i++;
-
-        base = i;
+    vector<bool> prime(n, true);
+    prime[0] = false, prime[1] = false;
+    for (int i = 0; i < sqrt(n); i++) {
+        if (prime[i]) {
+            for (int j = i * i; j < n; j += i) {
+                prime[j] = false;
+            }
+        }
     }
 
-    for (int i = 1; i < n; i++)
-        if (!notPrime[i])
-            result++;
-
-    return result;
+    int ret = 0;
+    for (int i = 0; i < prime.size(); i++)
+        if (prime[i]) ret++;
+    return ret;
 }
