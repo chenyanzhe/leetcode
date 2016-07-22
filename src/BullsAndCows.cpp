@@ -1,25 +1,27 @@
 #include "BullsAndCows.hpp"
 
-#include <unordered_map>
+#include <vector>
 using namespace std;
 
 string BullsAndCows::getHint(string secret, string guess)
 {
   int bulls = 0;
   int cows = 0;
-  unordered_map<char, int> m;
+  vector<int> cnts(10, 0);
 
   for (int i = 0; i < secret.size(); i++) {
     if (secret[i] == guess[i])
       bulls++;
-    else
-      m[secret[i]]++;
-  }
+    else {
+      int s = secret[i] - '0';
+      int g = guess[i] - '0';
 
-  for (int i = 0; i < guess.size(); i++) {
-    if (secret[i] != guess[i] && m[guess[i]] > 0) {
-      cows++;
-      m[guess[i]]--;
+      if (cnts[s] < 0) cows++;
+
+      if (cnts[g] > 0) cows++;
+
+      cnts[s]++;
+      cnts[g]--;
     }
   }
 
