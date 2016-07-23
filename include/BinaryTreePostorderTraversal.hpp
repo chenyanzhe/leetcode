@@ -15,6 +15,8 @@ private:
     vector<int> postorderTraversal_TwoStack(TreeNode *root);
 
     vector<int> postorderTraversal_OneStack(TreeNode *root);
+
+    vector<int> postorderTraversal_HashTable(TreeNode *root);
 };
 
 #endif // BINARY_TREE_POSTORDER_TRAVERSAL_HPP_

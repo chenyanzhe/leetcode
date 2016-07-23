@@ -1,6 +1,7 @@
 #include "BinaryTreePostorderTraversal.hpp"
 
 #include <stack>
+#include <unordered_map>
 
 using namespace std;
 
@@ -63,6 +64,48 @@ vector<int> BinaryTreePostorderTraversal::postorderTraversal_TwoStack(
         TreeNode *current = s2.top();
         s2.pop();
         ret.push_back(current->val);
+    }
+
+    return ret;
+}
+
+vector<int> BinaryTreePostorderTraversal::postorderTraversal_HashTable(TreeNode *root) {
+    vector<int> ret;
+    unordered_map<TreeNode *, int> action;
+    stack<TreeNode *> s;
+
+    if (root == nullptr)
+        return ret;
+
+    s.push(root);
+    action[root] = 1;
+    if (root->right) {
+        s.push(root->right);
+        action[root->right] = 0;
+    }
+    if (root->left) {
+        s.push(root->left);
+        action[root->left] = 0;
+    }
+
+    while (!s.empty()) {
+        TreeNode *node = s.top();
+        s.pop();
+        if (action[node] == 1) {
+            ret.push_back(node->val);
+            action.erase(node);
+        } else {
+            s.push(node);
+            action[node] = 1;
+            if (node->right) {
+                s.push(node->right);
+                action[node->right] = 0;
+            }
+            if (node->left) {
+                s.push(node->left);
+                action[node->left] = 0;
+            }
+        }
     }
 
     return ret;
