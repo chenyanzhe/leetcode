@@ -1,6 +1,6 @@
 # LeetCode
 
-|docs|
+[![docs](https://readthedocs.org/projects/leetcode-book/badge/)](http://leetcode-book.readthedocs.org/)
 
 ## Getting Started
 
