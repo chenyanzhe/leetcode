@@ -1,9 +1,9 @@
 # LeetCode
 
-![Language](https://img.shields.io/badge/language-C++-orange.svg)
+![Language](https://img.shields.io/badge/language-C++-f34b7d.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 [![Docs](https://readthedocs.org/projects/leetcode-book/badge/)](http://leetcode-book.readthedocs.org/)
-![Progress](https://img.shields.io/badge/progress-247%20%2F%20289-ff69b4.svg)
+![Progress](https://img.shields.io/badge/progress-247%20%2F%20289-orange.svg)
 
 ## Getting Started
 
