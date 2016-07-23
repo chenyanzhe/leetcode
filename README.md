@@ -35,6 +35,7 @@ All tests passed (xxxx assertions in xxx test cases)
 | :white_check_mark: | 357 | [Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) | Medium |
 | :white_check_mark: | 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | Easy |
 | :white_check_mark: | 349 | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) | Easy |
+| :white_check_mark: | 347 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | Medium |
 | :white_check_mark: | 343 | [Integer Break](https://leetcode.com/problems/integer-break/) | Medium |
 | :white_check_mark: | 338 | [Counting Bits](https://leetcode.com/problems/counting-bits/) | Medium |
 | :white_check_mark: | 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii/) | Medium |
