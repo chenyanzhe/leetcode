@@ -1,15 +1,15 @@
 #include "BinaryTreePreorderTraversal.hpp"
 
 #include <stack>
+#include <unordered_map>
 
 using namespace std;
 
 vector<int> BinaryTreePreorderTraversal::preorderTraversal(TreeNode *root) {
-    return preorderTraversal_Morris(root);
+    return preorderTraversal_HashTable(root);
 }
 
-vector<int> BinaryTreePreorderTraversal::preorderTraversal_Stack(
-        TreeNode *root) {
+vector<int> BinaryTreePreorderTraversal::preorderTraversal_Stack(TreeNode *root) {
     vector<int> ret;
     stack<TreeNode *> s;
 
@@ -30,8 +30,7 @@ vector<int> BinaryTreePreorderTraversal::preorderTraversal_Stack(
     return ret;
 }
 
-vector<int> BinaryTreePreorderTraversal::preorderTraversal_Morris(
-        TreeNode *root) {
+vector<int> BinaryTreePreorderTraversal::preorderTraversal_Morris(TreeNode *root) {
     vector<int> ret;
     TreeNode *current = root;
 
@@ -53,6 +52,48 @@ vector<int> BinaryTreePreorderTraversal::preorderTraversal_Morris(
                 pred->right = nullptr;
                 current = current->right;
             }
+        }
+    }
+
+    return ret;
+}
+
+vector<int> BinaryTreePreorderTraversal::preorderTraversal_HashTable(TreeNode *root) {
+    vector<int> ret;
+    unordered_map<TreeNode *, int> action;
+    stack<TreeNode *> s;
+
+    if (root == nullptr)
+        return ret;
+
+    if (root->right) {
+        s.push(root->right);
+        action[root->right] = 0;
+    }
+    if (root->left) {
+        s.push(root->left);
+        action[root->left] = 0;
+    }
+    s.push(root);
+    action[root] = 1;
+
+    while (!s.empty()) {
+        TreeNode *node = s.top();
+        s.pop();
+        if (action[node] == 1) {
+            ret.push_back(node->val);
+            action.erase(node);
+        } else {
+            if (node->right) {
+                s.push(node->right);
+                action[node->right] = 0;
+            }
+            if (node->left) {
+                s.push(node->left);
+                action[node->left] = 0;
+            }
+            s.push(node);
+            action[node] = 1;
         }
     }
 
