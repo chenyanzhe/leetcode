@@ -15,6 +15,8 @@ private:
     vector<int> inorderTraversal_Stack(TreeNode *root);
 
     vector<int> inorderTraversal_Morris(TreeNode *root);
+
+    vector<int> inorderTraversal_HashTable(TreeNode *root);
 };
 
 #endif // BINARY_TREE_INORDER_TRAVERSAL_HPP_
