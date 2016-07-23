@@ -2,6 +2,7 @@
 
 #include "GroupAnagrams.hpp"
 
+#include <algorithm>
 using namespace std;
 
 TEST_CASE("Group Anagrams") {
@@ -16,7 +17,9 @@ TEST_CASE("Group Anagrams") {
         vector<vector<string>> results = s.groupAnagrams(nums);
         REQUIRE(results.size() == expected.size());
 
-        for (auto e : expected)
-            REQUIRE_FALSE(find(results.begin(), results.end(), e) == results.end());
+        for (auto e : results) {
+            sort(e.begin(), e.end());
+            REQUIRE_FALSE(find(expected.begin(), expected.end(), e) == expected.end());
+        }
     }
 }
