@@ -1,5 +1,7 @@
 # LeetCode
 
+|docs|
+
 ## Getting Started
 
 ### Prerequisites
