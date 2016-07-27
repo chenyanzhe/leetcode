@@ -138,7 +138,43 @@ After we have done, pop all the elements in the stack II, the order is exactly t
 2) Using One Stack
 ******************
 
-To be continued.
+Iteration can also be implemented in one stack. The key point is that by comparing the node pointers, we can tell
+whether the **visited** node is the **left** child of the node on the **top** of the stack or the **right** child.
+
+The overall process looks like this:
+
+1. Push the root element into the stack
+2. Keep pushing left child into the stack (if any)
+3. Get the top element from the stack (marked as **E**)
+4. If **E** has the right child, push it into the stack, go to step 2; Otherwise pop and visit **E**
+5. If **E** is the left child of the top element from the stack and the top element has right child, push the right
+   child into the stack
+6. Go to step 2
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    stack<TreeNode*> s;
+    TreeNode* node = root;
+
+    while (node || !s.empty()) {
+        if (node) {
+            s.push(node);
+            node = node->left;
+        } else {
+            if (s.top()->right) {
+                node = s.top()->right;
+            } else {
+                TreeNode* tmp;
+                do {
+                    tmp = s.top();
+                    s.pop();
+                    visit(tmp);
+                } while (!s.empty() && s.top()->right == tmp);
+            }
+        }
+    }
 
 Morris Traversal
 ~~~~~~~~~~~~~~~~
