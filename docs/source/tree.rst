@@ -4,35 +4,143 @@ Tree
 94. Binary Tree Inorder Traversal
 ---------------------------------
 
-Given a binary tree, return the inorder traversal of its nodes' values.
+Given a binary tree, return the *inorder* traversal of its nodes' values.
 
-We have following four strategies to solve this problem:
+We have the following three strategies to solve this problem:
 
 Recursion
 ~~~~~~~~~
 
-Recursion is easiest, both for understanding and implementation.
+Recursion is the easiest.
 
 .. code-block:: none
 
-   InorderTraversal(root)
-      InorderTraversal(root->left)
-      visit(root)
-      InorderTraversal(root->right)
+    InorderTraversal(root)
+        InorderTraversal(root->left)
+        visit(root)
+        InorderTraversal(root->right)
 
 Iteration
 ~~~~~~~~~
 
-Iterative way is often asked during interview. It's done with the help of **Stack**.
+Iteration can be implemented using **stack**. The stack stores the nodes that are **traversed** but not yet **visited**.
+When we go to some node, it is said **traversed**. However, we can not **visit** it right now until its left subtree
+is visited. In that case, we push it into the stack for future reference.
+
+The overall process looks like this:
+
+1. Keep pushing left child into the stack (if any)
+2. Pop the top element (marked as **E**) from the stack, visit **E**
+3. If **E** has right child, push it into the stack, go back to step 1
+
+The figure below provides an overview of the traversal. Every node is mark with two **timestamps**:
+the first one marks the time it is pushed into the stack, the second one marks the time it is visited.
+
+.. image:: images/1469348911.jpg
+   :scale: 20
+
+Morris Traversal
+~~~~~~~~~~~~~~~~
+
+Morris traversal is also iterative. The difference is that it uses :math:`O(1)` space.
+
+To be continued.
+
+144. Binary Tree Preorder Traversal
+-----------------------------------
+
+Given a binary tree, return the *preorder* traversal of its nodes' values.
+
+We have the following three strategies to solve this problem:
+
+Recursion
+~~~~~~~~~
+
+Recursion is the easiest.
 
 .. code-block:: none
 
-   1. Keep pushing left child into the stack (if any)
-   2. Visit the top element
-   3. Push right child into the stack (if any), go back to step 1
+    PreorderTraversal(root)
+        visit(root)
+        PreorderTraversal(root->left)
+        PreorderTraversal(root->right)
 
-The following figure shows an example of how this works. Every node is mark with two *timestamps*,
-the first one is the time it is pushed into the stack, the second one is the time it is visited.
+Iteration
+~~~~~~~~~
 
-.. image:: images/1469348911.jpg
-   :width: 200pt
+Iteration can be implemented using **stack**. The stack stores the nodes that need to been **visited** later.
+When we go to some node, we first **visit** it, then we need to store its left and right child for future references.
+The order we store the children matters. Since stack is a **LIFO** data structure, we should first push the right child
+then the left child.
+
+The overall process looks like this:
+
+1. Push the root element into the stack
+2. If the stack is not empty, pop the top element (marked as **E**), visit **E**. Otherwise, we are done
+3. If **E** has right child, push it into the stack
+4. If **E** has left child, push it into the stack, go to step 2
+
+.. note::
+
+    We can **NOT** use **queue** here. At first glance, we might think **queue** should be fine if we take care of
+    the order: since queue is a **FIFO** data structure, we choose to first push the left child then the right child.
+    Unfortunately, this doesn't work. The reason is that preorder traversal contains some kind of recursion in its
+    definition: visit the node, visit the left subtree, visit the right subtree. That means all nodes in the
+    left subtree should be visited **before** all nodes in the right subtree. In this case, only **stack** can
+    preserve this kind of property.
+
+Morris Traversal
+~~~~~~~~~~~~~~~~
+
+Morris traversal is also iterative. The difference is that it uses :math:`O(1)` space.
+
+To be continued.
+
+145. Binary Tree Postorder Traversal
+------------------------------------
+
+Given a binary tree, return the *postorder* traversal of its nodes' values.
+
+We have the following three strategies to solve this problem:
+
+Recursion
+~~~~~~~~~
+
+Recursion is the easiest.
+
+.. code-block:: none
+
+    PostorderTraversal(root)
+        PostorderTraversal(root->left)
+        PostorderTraversal(root->right)
+        visit(root)
+
+Iteration
+~~~~~~~~~
+
+1) Using Two Stacks
+*******************
+
+When we go to some node, we should first visit its left and right subtrees. This can be interpreted as **traversing**
+the node **twice** before actually **visiting** it. We can use two stacks to store the two traversals separately.
+The order we store the children matters. Since the sequence get reversed when all nodes go from one stack to the other,
+we choose to push the left child before the right child in the first stack.
+
+The overall process looks like this:
+
+1. Push the root element into the stack I
+2. If the stack I is not empty, pop the top element (marked as **E**), push it into stack II. Otherwise, we are done
+3. If **E** has left child, push it into the stack I
+4. If **E** has right child, push it into the stack I, go to step 2
+
+After we have done, pop all the elements in the stack II, the order is exactly the postorder.
+
+2) Using One Stack
+******************
+
+To be continued.
+
+Morris Traversal
+~~~~~~~~~~~~~~~~
+
+To be continued.
