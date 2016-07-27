@@ -1,12 +1,13 @@
 #include "BinaryTreePreorderTraversal.hpp"
 
 #include <stack>
+#include <queue>
 #include <unordered_map>
 
 using namespace std;
 
 vector<int> BinaryTreePreorderTraversal::preorderTraversal(TreeNode *root) {
-    return preorderTraversal_HashTable(root);
+    return preorderTraversal_Queue(root);
 }
 
 vector<int> BinaryTreePreorderTraversal::preorderTraversal_Stack(TreeNode *root) {
@@ -25,6 +26,27 @@ vector<int> BinaryTreePreorderTraversal::preorderTraversal_Stack(TreeNode *root)
 
         if (current->left != nullptr)
             s.push(current->left);
+    }
+
+    return ret;
+}
+
+vector<int> BinaryTreePreorderTraversal::preorderTraversal_Queue(TreeNode *root) {
+    vector<int> ret;
+    queue<TreeNode *> q;
+
+    if (root != nullptr) q.push(root);
+
+    while (!q.empty()) {
+        TreeNode *current = q.front();
+        q.pop();
+        ret.push_back(current->val);
+
+        if (current->left != nullptr)
+            q.push(current->left);
+
+        if (current->right != nullptr)
+            q.push(current->right);
     }
 
     return ret;

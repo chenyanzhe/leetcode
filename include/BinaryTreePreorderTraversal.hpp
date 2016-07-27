@@ -14,6 +14,8 @@ public:
 private:
     vector<int> preorderTraversal_Stack(TreeNode *root);
 
+    vector<int> preorderTraversal_Queue(TreeNode *root);
+
     vector<int> preorderTraversal_Morris(TreeNode *root);
 
     vector<int> preorderTraversal_HashTable(TreeNode *root);
