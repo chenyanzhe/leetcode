@@ -13,27 +13,23 @@ vector<int> BinaryTreePostorderTraversal::postorderTraversal_OneStack(
         TreeNode *root) {
     vector<int> ret;
     stack<TreeNode *> s;
-    TreeNode *current = root;
+    TreeNode *node = root;
 
-    while (current != nullptr || !s.empty()) {
-        if (current != nullptr) {
-            s.push(current);
-            current = current->left;
+    while (node || !s.empty()) {
+        if (node) {
+            s.push(node);
+            node = node->left;
         } else {
-            TreeNode *temp = s.top()->right;
-
-            if (temp == nullptr) {
-                temp = s.top();
-                s.pop();
-                ret.push_back(temp->val);
-
-                while (!s.empty() && temp == s.top()->right) {
-                    temp = s.top();
+            if (s.top()->right) {
+                node = s.top()->right;
+            } else {
+                TreeNode *tmp;
+                do {
+                    tmp = s.top();
                     s.pop();
-                    ret.push_back(temp->val);
-                }
-            } else
-                current = temp;
+                    ret.push_back(tmp->val);
+                } while (!s.empty() && s.top()->right == tmp);
+            }
         }
     }
 
