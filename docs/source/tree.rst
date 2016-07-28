@@ -42,9 +42,51 @@ the first one marks the time it is pushed into the stack, the second one marks t
 Morris Traversal
 ~~~~~~~~~~~~~~~~
 
-Morris traversal is also iterative. The difference is that it uses :math:`O(1)` space.
+Morris traversal is also iterative. The difference is that it uses :math:`O(1)` space. Morris traversal doesn't save
+unvisited nodes into stack, it borrows ideas from **threaded binary tree**: use **null** child pointer to save its
+successor.
 
-To be continued.
+The figure below shows each iteration step for the given tree in Morris traversal (left to right, up to down). **cur**
+represents the current node, and all visited nodes are marked as blue.
+
+.. image:: images/1469707384.jpg
+
+The overall process looks like this:
+
+1. Set cur to root
+2. If cur is null, we are done
+3. If cur does not have left child, visit it, set cur to its right child, go to step 2
+4. Find the predecessor of cur, mark it as prev
+5. If prev does not have right child (it hasn't been threaded), point prev's right child to cur (thread it),
+   set cur to its left child, go to step 2
+6. Set prev's right child to null (clean the thread), visit cur, set cur to its right child, go to step 2
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    TreeNode *current = root;
+
+    while (!current) {
+        if (!current->left) {
+            visit(current)
+            current = current->right;
+        } else {
+            TreeNode *pred = current->left;
+
+            while (pred->right != nullptr && pred->right != current)
+                pred = pred->right;
+
+            if (!pred->right) { // not been threaded yet
+                pred->right = current;
+                current = current->left;
+            } else { // clean the thread
+                visit(current);
+                pred->right = nullptr;
+                current = current->right;
+            }
+        }
+    }
 
 144. Binary Tree Preorder Traversal
 -----------------------------------
@@ -92,9 +134,36 @@ The overall process looks like this:
 Morris Traversal
 ~~~~~~~~~~~~~~~~
 
-Morris traversal is also iterative. The difference is that it uses :math:`O(1)` space.
+Morris traversal for preorder is much similar to inorder. The only difference is that it visits **current** node when
+its predecessor hasn't been threaded.
 
-To be continued.
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    TreeNode *current = root;
+
+    while (!current) {
+        if (!current->left) {
+            visit(current)
+            current = current->right;
+        } else {
+            TreeNode *pred = current->left;
+
+            while (pred->right != nullptr && pred->right != current)
+                pred = pred->right;
+
+            if (!pred->right) { // not been threaded yet
+                visit(current); // the only difference with inorder traversal
+                pred->right = current;
+                current = current->left;
+            } else { // clean the thread
+                visit(current);
+                pred->right = nullptr;
+                current = current->right;
+            }
+        }
+    }
 
 145. Binary Tree Postorder Traversal
 ------------------------------------
@@ -179,4 +248,70 @@ The pseudo-code is shown below:
 Morris Traversal
 ~~~~~~~~~~~~~~~~
 
-To be continued.
+Morris traversal for postorder is much more complicated. It first needs a **dump** node, then needs a subroutine to visit
+the path between given two nodes reversely.
+
+The figure below shows each iteration step in detail:
+
+.. image:: images/1469712583.jpg
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    // reverse the tree nodes 'from' -> 'to'
+    void reverse(TreeNode *from, TreeNode *to) {
+        if (from == to) return;
+
+        TreeNode *x = from, *y = from->right, *z;
+
+        while (true) {
+            z = y->right;
+            y->right = x;
+            x = y;
+            y = z;
+            if (x == to)
+                break;
+        }
+    }
+
+    // visit the tree nodes 'from' -> 'to' reversely
+    void visitReverse(TreeNode *from, TreeNode *to) {
+        reverse(from, to);
+
+        TreeNode *p = to;
+        while (true) {
+            visit(p->val);
+            if (p == from)
+                break;
+            p = p->right;
+        }
+
+        reverse(to, from);
+    }
+
+    void postorderTraversal_Morris(TreeNode *root) {
+        TreeNode dump(0);
+        dump.left = root;
+        TreeNode *cur = &dump, *prev = nullptr;
+
+        while (cur) {
+            if (!cur->left) {
+                cur = cur->right;
+            } else {
+                prev = cur->left;
+
+                while (prev->right && prev->right != cur)
+                    prev = prev->right;
+
+                if (!prev->right) {
+                    prev->right = cur;
+                    cur = cur->left;
+                } else {
+                    visitReverse(cur->left, prev);
+                    prev->right = nullptr;
+                    cur = cur->right;
+                }
+            }
+        }
+    }
