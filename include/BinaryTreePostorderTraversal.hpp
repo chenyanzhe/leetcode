@@ -16,6 +16,12 @@ private:
 
     vector<int> postorderTraversal_OneStack(TreeNode *root);
 
+    vector<int> postorderTraversal_Morris(TreeNode *root);
+
+    void reverse(TreeNode *from, TreeNode *to);
+
+    void visitReverse(TreeNode *from, TreeNode *to, vector<int> &ret);
+
     vector<int> postorderTraversal_HashTable(TreeNode *root);
 };
 

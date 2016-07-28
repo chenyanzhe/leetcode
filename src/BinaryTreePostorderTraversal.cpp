@@ -6,7 +6,7 @@
 using namespace std;
 
 vector<int> BinaryTreePostorderTraversal::postorderTraversal(TreeNode *root) {
-    return postorderTraversal_OneStack(root);
+    return postorderTraversal_Morris(root);
 }
 
 vector<int> BinaryTreePostorderTraversal::postorderTraversal_OneStack(
@@ -60,6 +60,66 @@ vector<int> BinaryTreePostorderTraversal::postorderTraversal_TwoStack(
         TreeNode *current = s2.top();
         s2.pop();
         ret.push_back(current->val);
+    }
+
+    return ret;
+}
+
+// reverse the tree nodes 'from' -> 'to'
+void BinaryTreePostorderTraversal::reverse(TreeNode *from, TreeNode *to) {
+    if (from == to) return;
+
+    TreeNode *x = from, *y = from->right, *z;
+
+    while (true) {
+        z = y->right;
+        y->right = x;
+        x = y;
+        y = z;
+        if (x == to)
+            break;
+    }
+}
+
+// visit the tree nodes 'from' -> 'to' reversely
+void BinaryTreePostorderTraversal::visitReverse(TreeNode *from, TreeNode *to, vector<int> &ret) {
+    reverse(from, to);
+
+    TreeNode *p = to;
+    while (true) {
+        ret.push_back(p->val);
+        if (p == from)
+            break;
+        p = p->right;
+    }
+
+    reverse(to, from);
+}
+
+vector<int> BinaryTreePostorderTraversal::postorderTraversal_Morris(TreeNode *root) {
+    TreeNode dump(0);
+    dump.left = root;
+    TreeNode *cur = &dump, *prev = nullptr;
+    vector<int> ret;
+
+    while (cur) {
+        if (!cur->left) {
+            cur = cur->right;
+        } else {
+            prev = cur->left;
+
+            while (prev->right && prev->right != cur)
+                prev = prev->right;
+
+            if (!prev->right) {
+                prev->right = cur;
+                cur = cur->left;
+            } else {
+                visitReverse(cur->left, prev, ret);
+                prev->right = nullptr;
+                cur = cur->right;
+            }
+        }
     }
 
     return ret;
