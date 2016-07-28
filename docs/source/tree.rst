@@ -382,4 +382,55 @@ There is a programming trick to handle these two cases **consistently**:
 
 What if we can only use :math:`O(1)` space?
 
-To be continued.
+Recall that morris traversal can accomplish the inorder traversal in `O(1)` space! The only extra thing we need to handle
+is that we update the previous node whenever visiting the current one.
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    // this routine helps detect the inversion and record the broken nodes
+    void detect(pair<TreeNode *, TreeNode *> &broken, TreeNode *prev, TreeNode *current)
+    {
+        if (prev && prev->val > current->val) {
+            if (!broken.first)
+                broken.first = prev;
+            broken.second = current;
+        }
+    }
+
+    void recoverTree_Morris(TreeNode *root) {
+        pair<TreeNode *, TreeNode *> broken;
+        TreeNode *current = root;
+        TreeNode *prev = nullptr;
+
+        while (current != nullptr) {
+            if (current->left == nullptr) {
+                // in morris inorder traversal, visit happens here
+                // replace visit with detecting inversion and updating prev
+                detect(broken, prev, current);
+                prev = current;
+                current = current->right;
+            } else {
+                TreeNode *pred = current->left;
+
+                while (pred->right != nullptr && pred->right != current)
+                    pred = pred->right;
+
+                if (pred->right == nullptr) {
+                    pred->right = current;
+                    current = current->left;
+                } else {
+                    // in morris inorder traversal, visit happens here
+                    // replace visit with detecting inversion and updating prev
+                    detect(broken, prev, current);
+                    prev = current;
+                    pred->right = nullptr;
+                    current = current->right;
+                }
+            }
+        }
+
+        // finally fix the broken BST
+        swap(broken.first->val, broken.second->val);
+    }
