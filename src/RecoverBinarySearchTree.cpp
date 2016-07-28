@@ -1,7 +1,5 @@
 #include "RecoverBinarySearchTree.hpp"
 
-using namespace std;
-
 void RecoverBinarySearchTree::recoverTree(TreeNode *root) {
     TreeNode *prev = nullptr, *first = nullptr, *second = nullptr;
     findSegments(root, prev, first, second);
@@ -24,4 +22,43 @@ void RecoverBinarySearchTree::findSegments(TreeNode *root, TreeNode *&prev,
 
     prev = root;
     findSegments(root->right, prev, first, second);
+}
+
+void RecoverBinarySearchTree::detect(pair<TreeNode *, TreeNode *> &broken, TreeNode *prev, TreeNode *current) {
+    if (prev && prev->val > current->val) {
+        if (!broken.first)
+            broken.first = prev;
+        broken.second = current;
+    }
+}
+
+void RecoverBinarySearchTree::recoverTree_Morris(TreeNode *root) {
+    pair<TreeNode *, TreeNode *> broken;
+    TreeNode *current = root;
+    TreeNode *prev = nullptr;
+
+    while (current != nullptr) {
+        if (current->left == nullptr) {
+            detect(broken, prev, current);
+            prev = current;
+            current = current->right;
+        } else {
+            TreeNode *pred = current->left;
+
+            while (pred->right != nullptr && pred->right != current)
+                pred = pred->right;
+
+            if (pred->right == nullptr) {
+                pred->right = current;
+                current = current->left;
+            } else {
+                detect(broken, prev, current);
+                prev = current;
+                pred->right = nullptr;
+                current = current->right;
+            }
+        }
+    }
+
+    swap(broken.first->val, broken.second->val);
 }
