@@ -127,12 +127,17 @@ The overall process looks like this:
 
 .. note::
 
-    We can **NOT** use **queue** here. At first glance, we might think **queue** should be fine if we take care of
-    the order: since queue is a **FIFO** data structure, we choose to first push the left child then the right child.
-    Unfortunately, this doesn't work. The reason is that preorder traversal contains some kind of recursion in its
-    definition: visit the node, visit the left subtree, visit the right subtree. That means all nodes in the
-    left subtree should be visited **before** all nodes in the right subtree. In this case, only **stack** can
-    preserve this kind of property.
+    We can **NOT** use **queue** here.
+
+    At first glance, we might think **queue** should be fine if we take care of the order:
+    since queue is a **FIFO** data structure, we choose to first push the left child then the right child.
+    Unfortunately, this doesn't work.
+
+    The reason is that preorder traversal contains some kind of recursion in its definition:
+    visit the node, visit the left subtree, visit the right subtree. That means all nodes in the
+    left subtree should be visited **before** all nodes in the right subtree.
+
+    In this case, only **stack** can preserve this kind of property.
 
 Morris Traversal
 ~~~~~~~~~~~~~~~~
@@ -343,3 +348,38 @@ Given a binary tree, return the *zigzag* level order traversal of its nodes' val
 This is a customized form of traversal, which is actually an extension from `102. Binary Tree Level Order Traversal`_.
 
 Follow the *zigzag* rule and reverse the direction when reaching to the next level.
+
+----
+
+The following problems are not asking for traversal directly, but can be solved by traversal in the end.
+
+99. Recover Binary Search Tree
+------------------------------
+
+Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure.
+
+If we are allowed to use :math:`O(n)` space, it is relatively easy to solve.
+
+The key insight here is that inorder traversal on a binary search tree actually visits all the elements increasingly.
+Based on this fact, there are two cases we need to consider:
+
+1) The swapped nodes are adjacent
+
+   The output sequence of the inorder traversal should have **one** inversion, e.g. the sequence pattern might look like
+   ``1 3 2 4 5 6 7``, and the inversion is ``3 2``. We need to swap ``3`` and ``2``.
+
+2) The swapped nodes are not adjacent
+
+   The output sequence of the inorder traversal should have **two** inversions, e.g. the sequence pattern might look like
+   ``1 7 3 4 5 6 2``, and the inversions are ``7 3`` and ``6 2``. We need to swap the **first** element from the **first**
+   inversion with the **second** element from the **second** inversion, that is, swap ``7`` and ``2``.
+
+There is a programming trick to handle these two cases **consistently**:
+
+* Find the first element that is larger than its successor starting from the beginning.
+* Find the first element taat is smaller than its predecessor starting from the end.
+* Swap these two elements.
+
+What if we can only use :math:`O(1)` space?
+
+To be continued.
