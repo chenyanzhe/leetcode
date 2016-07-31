@@ -1,39 +1,42 @@
 #include "PopulatingNextRightPointersInEachNodeII.hpp"
 
 void PopulatingNextRightPointersInEachNodeII::connect(TreeLinkNode *root) {
-    TreeLinkNode *leftMost = root;
+    connect_Recursive(root);
+}
 
-    while (leftMost) {
-        root = leftMost;
+void PopulatingNextRightPointersInEachNodeII::connect_Recursive(TreeLinkNode *root) {
+    if (root == nullptr) return;
 
-        // root points to the left most node which has child node
-        while (root && !root->left && !root->right)
-            root = root->next;
+    TreeLinkNode dummy(0);
+    for (TreeLinkNode *curr = root, *prev = &dummy; curr; curr = curr->next) {
+        if (curr->left) {
+            prev->next = curr->left;
+            prev = curr->left;
+        }
+        if (curr->right) {
+            prev->next = curr->right;
+            prev = curr->right;
+        }
+    }
+    connect_Recursive(dummy.next);
+}
 
-        if (!root) return;
+void PopulatingNextRightPointersInEachNodeII::connect_Iterative(TreeLinkNode *root) {
+    while (root) {
+        TreeLinkNode *next = nullptr; // the first node of the next level
+        TreeLinkNode *prev = nullptr; // previous node on the same level
+        for (; root; root = root->next) {
+            if (!next) next = root->left ? root->left : root->right;
 
-        leftMost = root->left ? root->left : root->right;
-        TreeLinkNode *cur = leftMost;
-
-        while (root) {
-            if (cur == root->left) {
-                if (root->right) {
-                    cur->next = root->right;
-                    cur = cur->next;
-                }
-
-                root = root->next;
-            } else if (cur == root->right)
-                root = root->next;
-            else { // cur is the child of the previous node of root
-                if (!root->left && !root->right) {
-                    root = root->next;
-                    continue;
-                }
-
-                cur->next = root->left ? root->left : root->right;
-                cur = cur->next;
+            if (root->left) {
+                if (prev) prev->next = root->left;
+                prev = root->left;
+            }
+            if (root->right) {
+                if (prev) prev->next = root->right;
+                prev = root->right;
             }
         }
+        root = next;
     }
 }

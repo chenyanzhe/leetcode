@@ -17,6 +17,11 @@ struct TreeLinkNode {
 class PopulatingNextRightPointersInEachNodeII {
 public:
     void connect(TreeLinkNode *root);
+
+private:
+    void connect_Iterative(TreeLinkNode *root);
+
+    void connect_Recursive(TreeLinkNode *root);
 };
 
 #endif // POPULATING_NEXT_RIGHT_POINTERS_IN_EACH_NODE_II_HPP_
