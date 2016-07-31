@@ -434,3 +434,90 @@ The pseudo-code is shown below:
         // finally fix the broken BST
         swap(broken.first->val, broken.second->val);
     }
+
+----
+
+The following problems are asked for checking certain property of the given tree(s). They are often checked by traversing
+the whole tree(s).
+
+100. Same Tree
+--------------
+
+Given two binary trees, write a function to check if they are equal or not.
+
+To check if two given trees are equal or not, all we need to do is to traverse two trees simultaneously and compare each
+node visited synchronously. Since tree traversal has two types of strategies: iteration and recursion. This problem can
+be solved in both ways.
+
+101. Symmetric Tree
+-------------------
+
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+The problem can be solved in two strategies similar to `100. Same Tree`_.
+
+Recursion
+~~~~~~~~~
+
+Recursion is defined in the following steps:
+
+1. If root is null, return true; otherwise
+2. If root doesn't have children (either left child or right child), return true; otherwise
+3. If root's left child value and right child value are not equal, return false; otherwise
+4. Return true if root->left's left subtree is symmetric to root->right's right substree and root->left's right substree
+   is symmetric to root->right's left substree; otherwise return false
+
+Iteration
+~~~~~~~~~
+
+Check the symmetric feature level by level:
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    bool isSymmetric(TreeNode *root) {
+        queue<TreeNode *> q;
+        q.push(root);
+        q.push(root);
+
+        while (!q.empty()) {
+            TreeNode *l = q.front();
+            q.pop();
+            TreeNode *r = q.front();
+            q.pop();
+
+            if (l == nullptr && r == nullptr)
+                continue;
+
+            if (l == nullptr || r == nullptr)
+                return false;
+
+            if (l->val != r->val)
+                return false;
+
+            q.push(l->left);
+            q.push(r->right);
+            q.push(l->right);
+            q.push(r->left);
+        }
+
+        return true;
+    }
+
+110. Balanced Binary Tree
+-------------------------
+
+Given a binary tree, determine if it is height-balanced.
+
+The problem can be deduced to calculating the height of a binary tree. To speed up the validation, we choose to report
+the inbalance immediately.
+
+----
+
+The following problems are about transforming the tree data structure to another form.
+
+114. Flatten Binary Tree to Linked List
+---------------------------------------
+
+To be continued.
