@@ -10,7 +10,7 @@ public:
 private:
     void flattenRec1(TreeNode *root);
 
-    void flattenRec2(TreeNode *root, TreeNode *&tail);
+    TreeNode *flattenRec2(TreeNode *root, TreeNode *tail);
 
     void flattenStack(TreeNode *root);
 };

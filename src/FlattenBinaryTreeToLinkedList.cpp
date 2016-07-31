@@ -5,8 +5,7 @@
 using namespace std;
 
 void FlattenBinaryTreeToLinkedList::flatten(TreeNode *root) {
-    TreeNode *tail = nullptr;
-    flattenRec2(root, tail);
+    flattenRec2(root, nullptr);
 }
 
 void FlattenBinaryTreeToLinkedList::flattenRec1(TreeNode *root) {
@@ -31,16 +30,12 @@ void FlattenBinaryTreeToLinkedList::flattenRec1(TreeNode *root) {
     root->left = nullptr;
 }
 
-void FlattenBinaryTreeToLinkedList::flattenRec2(TreeNode *root,
-                                                TreeNode *&tail) {
-    if (root == nullptr)
-        return;
+TreeNode *FlattenBinaryTreeToLinkedList::flattenRec2(TreeNode *root, TreeNode *tail) {
+    if (root == nullptr) return tail;
 
-    flattenRec2(root->right, tail);
-    flattenRec2(root->left, tail);
-    root->right = tail;
+    root->right = flattenRec2(root->left, flattenRec2(root->right, tail));
     root->left = nullptr;
-    tail = root;
+    return root;
 }
 
 void FlattenBinaryTreeToLinkedList::flattenStack(TreeNode *root) {
