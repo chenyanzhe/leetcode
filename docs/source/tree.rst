@@ -520,4 +520,108 @@ The following problems are about transforming the tree data structure to another
 114. Flatten Binary Tree to Linked List
 ---------------------------------------
 
-To be continued.
+Given a binary tree, flatten it to a linked list in-place.
+
+Recursion
+~~~~~~~~~
+
+Recursion is defined in the following steps:
+
+1. If root's left child is null, we are done
+2. Flatten root's left subtree, flatten root's right subtree
+3. Find the tail of flattened left subtree, link the three parts together
+
+Recursion without finding the tail
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Actually we do not need to find the tail every time we link the lists. The key observation is that the root's right
+child is the tail of flattened root's left subtree; the root's left child is the tail of flattened root tree. If we pass
+this information across an extra argument, we can avoid finding it every time.
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    void FlattenBinaryTreeToLinkedList::flatten(TreeNode *root) {
+        flattenRec(root, nullptr);
+    }
+
+    TreeNode *flattenRec(TreeNode *root, TreeNode *tail) {
+        if (root == nullptr) return tail;
+
+        root->right = flattenRec(root->left, flattenRec(root->right, tail));
+        root->left = nullptr;
+        return root;
+    }
+
+Iteration
+~~~~~~~~~
+
+The idea behind the iteration is that flattened linked list actually shows the preorder sequence. So we can almost
+replay the iterative version of preorder traversal. Every time we visit a new node, the next node should be on the top
+of the stack.
+
+The pseudo-code is shown below:
+
+.. code-block:: none
+
+    void flattenStack(TreeNode *root) {
+        stack<TreeNode *> s;
+
+        if (root != nullptr)
+            s.push(root);
+
+        while (!s.empty()) {
+            TreeNode *node = s.top();
+            s.pop();
+
+            if (node->right != nullptr)
+                s.push(node->right);
+
+            if (node->left != nullptr)
+                s.push(node->left);
+
+            node->left = nullptr;
+            node->right = s.empty() ? nullptr : s.top();
+        }
+    }
+
+117. Populating Next Right Pointers in Each Node II
+---------------------------------------------------
+
+Given any binary tree, populate each next pointer to point to its next right node.
+
+If there is no space limitation, we can solve the problem by using level traversal.
+
+What if we need to solve it in constant space?
+
+We follow the same idea, populating the next right pointers level by level.
+
+When populating one level, we can leverage the fact that previous level has been already populated. In that case, we can
+use the next pointer to iterative all the nodes in the previous level, link all its left and right children together.
+
+Tree Recursion
+##############
+
+116. Populating Next Right Pointers in Each Node
+------------------------------------------------
+
+Given a perfect binary tree, populate each next pointer to point to its next right node.
+
+Use one more argument named sibling:
+
+.. code-block:: none
+
+    void connect_Recursive(TreeLinkNode *root, TreeLinkNode *sibling) {
+        if (root == nullptr) return;
+
+        root->next = sibling;
+
+        connect_Recursive(root->left, root->right);
+
+        if (sibling) {
+            connect_Recursive(root->right, sibling->left);
+        } else {
+            connect_Recursive(root->right, nullptr);
+        }
+    }
