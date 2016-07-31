@@ -600,6 +600,26 @@ We follow the same idea, populating the next right pointers level by level.
 When populating one level, we can leverage the fact that previous level has been already populated. In that case, we can
 use the next pointer to iterative all the nodes in the previous level, link all its left and right children together.
 
+Tree Construction
+#################
+
+105. Construct Binary Tree from Preorder and Inorder Traversal
+--------------------------------------------------------------
+
+Given preorder and inorder traversal of a tree, construct the binary tree.
+
+From the preorder trasversal, we can know the root node, which is the first item of the tree. From the inorder traversal,
+we can know which region is left subtree and which region is right subtree, which is separated by the root node found
+before. This process can repeat recursively.
+
+106. Construct Binary Tree from Inorder and Postorder Traversal
+---------------------------------------------------------------
+
+Given inorder and postorder traversal of a tree, construct the binary tree.
+
+Much similar to `105. Construct Binary Tree from Preorder and Inorder Traversal`_, for postorder, we just start from the
+end of the array and scanning reversely. Also, we need to first construct the right subtree, then the left subtree.
+
 Tree Recursion
 ##############
 
