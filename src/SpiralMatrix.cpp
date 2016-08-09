@@ -24,19 +24,18 @@ vector<int> SpiralMatrix::spiralOrder(vector<vector<int>> &matrix) {
 
         colEnd--;
 
-        if (rowBegin <= rowEnd) {
-            // traverse left
-            for (int j = colEnd; j >= colBegin; j--)
-                res.push_back(matrix[rowEnd][j]);
-        }
+        if (rowBegin > rowEnd || colBegin > colEnd)
+            break;
+
+        // traverse left
+        for (int j = colEnd; j >= colBegin; j--)
+            res.push_back(matrix[rowEnd][j]);
 
         rowEnd--;
 
-        if (colBegin <= colEnd) {
-            // traverse up
-            for (int i = rowEnd; i >= rowBegin; i--)
-                res.push_back(matrix[i][colBegin]);
-        }
+        // traverse up
+        for (int i = rowEnd; i >= rowBegin; i--)
+            res.push_back(matrix[i][colBegin]);
 
         colBegin++;
     }
