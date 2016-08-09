@@ -6,7 +6,7 @@ using namespace std;
 
 ListNode *MergeKSortedLists::mergeKLists(vector<ListNode *> &lists) {
     struct OrderByVal {
-        bool operator()(ListNode *a, ListNode *b) {
+        bool operator()(const ListNode *a, const ListNode *b) {
             return a->val > b->val;
         }
     };

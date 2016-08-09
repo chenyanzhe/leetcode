@@ -8,10 +8,14 @@ vector<Interval> MergeIntervals::merge(vector<Interval> &intervals) {
     if (intervals.empty())
         return res;
 
-    sort(intervals.begin(), intervals.end(),
-         [](const Interval &a, const Interval &b) -> bool {
-             return a.start < b.start;
-         });
+    struct OrderByStartInterval {
+        bool operator()(const Interval &a, const Interval &b) {
+            return a.start < b.start;
+        }
+    };
+
+    sort(intervals.begin(), intervals.end(), OrderByStartInterval());
+
     int curstart = intervals[0].start;
     int curend = intervals[0].end;
 
