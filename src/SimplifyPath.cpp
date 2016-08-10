@@ -1,26 +1,40 @@
 #include "SimplifyPath.hpp"
 
-#include <sstream>
-#include <vector>
+#include <stack>
 
 using namespace std;
 
 string SimplifyPath::simplifyPath(string path) {
-    string res, t;
-    vector<string> stk;
-    stringstream ss(path);
+    string ret;
+    vector<string> dirs;
+    stack<string> ops;
 
-    while (getline(ss, t, '/')) {
-        if (t == "" || t == ".")
-            continue;
-        else if (t == ".." && !stk.empty())
-            stk.pop_back();
-        else if (t != "..")
-            stk.push_back(t);
+    splitPath(path, dirs);
+
+    for (auto d : dirs) {
+        if (d == ".") continue;
+        if (d == "..") {
+            if (!ops.empty()) ops.pop();
+        } else ops.push(d);
     }
 
-    for (auto t : stk)
-        res += "/" + t;
+    if (ops.empty()) return "/";
 
-    return res.empty() ? "/" : res;
+    while (!ops.empty()) {
+        ret = "/" + ops.top() + ret;
+        ops.pop();
+    }
+    return ret;
+}
+
+void SimplifyPath::splitPath(string &path, vector<string> &dirs) {
+    int a = 0, b = 0, n = path.size();
+    while (a < n) {
+        while (a < n && path[a] == '/') a++;
+        if (a == n) break;
+        b = a + 1;
+        while (b < n && path[b] != '/') b++;
+        dirs.push_back(path.substr(a, b - a));
+        a = b;
+    }
 }
