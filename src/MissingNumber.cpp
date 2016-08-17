@@ -1,20 +1,20 @@
 #include "MissingNumber.hpp"
 
 int MissingNumber::missingNumber(vector<int> &nums) {
-    int missing = nums.size();
+    int n = nums.size();
 
-    for (int i = 0; i < nums.size(); i++) {
-        int target = nums[i];
-
-        // place target to the right place
-        while (target != i && target != nums.size())
-            swap(nums[target], target);
-
-        if (target == nums.size()) {
-            missing = i;
-            nums[i] = nums.size();
+    for (int i = 0; i < n; i++) {
+        int t = nums[i];
+        while (t < n && nums[t] != t) {
+            int nt = nums[t];
+            nums[t] = t;
+            t = nt;
         }
     }
 
-    return missing;
+    for (int i = 0; i < n; i++)
+        if (nums[i] != i)
+            return i;
+
+    return n;
 }
