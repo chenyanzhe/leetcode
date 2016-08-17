@@ -1,9 +1,6 @@
 #include "FindTheDuplicateNumber.hpp"
 
 int FindTheDuplicateNumber::findDuplicate(vector<int> nums) {
-    if (nums.size() == 0)
-        return 0;
-
     int l = 1;
     int r = nums.size();
 
