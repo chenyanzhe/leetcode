@@ -10,5 +10,6 @@ TEST_CASE("Valid Number") {
         REQUIRE_FALSE(s.isNumber("abc"));
         REQUIRE_FALSE(s.isNumber("1 a"));
         REQUIRE(s.isNumber("2e10"));
+        REQUIRE_FALSE(s.isNumber(" "));
     }
 }
