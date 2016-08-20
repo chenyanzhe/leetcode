@@ -1,22 +1,28 @@
 #include "SummaryRanges.hpp"
 
 vector<string> SummaryRanges::summaryRanges(vector<int> &nums) {
-    vector<string> result;
-    int i = 0;
+    vector<string> ret;
+    if (nums.empty()) return ret;
 
-    while (i < nums.size()) {
-        int j = i + 1;
-
-        while (j < nums.size() && nums[j] == nums[j - 1] + 1)
-            j++;
-
-        if (j == i + 1)
-            result.push_back(to_string(nums[i]));
-        else
-            result.push_back(to_string(nums[i]) + "->" + to_string(nums[j - 1]));
-
-        i = j;
+    int start = nums[0];
+    int end = nums[0];
+    for (int i = 1; i < nums.size(); i++) {
+        if (nums[i] - 1 == end) {
+            end = nums[i];
+        } else {
+            addRange(start, end, ret);
+            start = nums[i];
+            end = nums[i];
+        }
     }
+    addRange(start, end, ret);
 
-    return result;
+    return ret;
+}
+
+void SummaryRanges::addRange(int start, int end, vector<string> &res) {
+    if (start == end)
+        res.push_back(to_string(start));
+    else
+        res.push_back(to_string(start) + "->" + to_string(end));
 }
