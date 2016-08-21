@@ -8,17 +8,17 @@ void SurroundedRegions::solve(vector<vector<char>> &board) {
     if (board.empty())
         return;
 
-    const int m = board.size();
-    const int n = board[0].size();
+    int m = board.size();
+    int n = board[0].size();
 
     for (int j = 0; j < n; j++) {
-        bfs(board, 0, j);
-        bfs(board, m - 1, j);
+        bfs(board, 0, j, m, n);
+        bfs(board, m - 1, j, m, n);
     }
 
     for (int i = 0; i < m; i++) {
-        bfs(board, i, 0);
-        bfs(board, i, n - 1);
+        bfs(board, i, 0, m, n);
+        bfs(board, i, n - 1, m, n);
     }
 
     for (int i = 0; i < m; i++) {
@@ -31,18 +31,13 @@ void SurroundedRegions::solve(vector<vector<char>> &board) {
     }
 }
 
-void SurroundedRegions::bfs(vector<vector<char>> &board, int i, int j) {
+void SurroundedRegions::bfs(vector<vector<char>> &board, int i, int j, int m, int n) {
     typedef pair<int, int> state_t;
-    const int m = board.size();
-    const int n = board[0].size();
     auto isValid = [&](const state_t &s) {
         const int x = s.first;
         const int y = s.second;
 
-        if (x < 0 || x >= m || y < 0 || y >= n || board[x][y] != 'O')
-            return false;
-
-        return true;
+        return !(x < 0 || x >= m || y < 0 || y >= n || board[x][y] != 'O');
     };
     auto findNeighbors = [&](const state_t &s) {
         vector<state_t> result;
@@ -78,9 +73,9 @@ void SurroundedRegions::bfs(vector<vector<char>> &board, int i, int j) {
         q.pop();
         auto neighbors = findNeighbors(s);
 
-        for (auto n : neighbors) {
-            markState(n);
-            q.push(n);
+        for (auto nb : neighbors) {
+            markState(nb);
+            q.push(nb);
         }
     }
 }
