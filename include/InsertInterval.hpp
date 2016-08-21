@@ -21,6 +21,9 @@ struct Interval {
 class InsertInterval {
 public:
     vector<Interval> insert(vector<Interval> &intervals, Interval newInterval);
+
+private:
+    bool disjoint(const Interval &a, const Interval &b);
 };
 
 #endif // INSERT_INTERVAL_HPP_

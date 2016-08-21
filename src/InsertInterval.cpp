@@ -2,22 +2,26 @@
 
 vector<Interval> InsertInterval::insert(vector<Interval> &intervals,
                                         Interval newInterval) {
-    vector<Interval> res;
-    int index = 0;
+    auto cmp = [](const Interval &a, const Interval &b) { return a.start < b.start; };
+    sort(intervals.begin(), intervals.end(), cmp);
 
-    while (index < intervals.size() && intervals[index].end < newInterval.start)
-        res.push_back(intervals[index++]);
+    auto it = lower_bound(intervals.begin(), intervals.end(), newInterval, cmp);
 
-    while (index < intervals.size() && intervals[index].start <= newInterval.end) {
-        newInterval.start = min(newInterval.start, intervals[index].start);
-        newInterval.end = max(newInterval.end, intervals[index].end);
-        index++;
+    if (it != intervals.begin() && newInterval.start <= (it - 1)->end)
+        it--;
+
+    int start = newInterval.start, end = newInterval.end;
+    while (it != intervals.end() && !disjoint(*it, newInterval)) {
+        start = min(start, it->start);
+        end = max(end, it->end);
+        it = intervals.erase(it);
     }
+    intervals.insert(it, Interval(start, end));
 
-    res.push_back(newInterval);
+    return intervals;
+}
 
-    while (index < intervals.size())
-        res.push_back(intervals[index++]);
-
-    return res;
+bool InsertInterval::disjoint(const Interval &a, const Interval &b)
+{
+    return (a.end < b.start) || (b.end < a.start);
 }
