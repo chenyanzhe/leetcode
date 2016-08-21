@@ -8,8 +8,10 @@ using namespace std;
 
 class WordLadder {
 public:
-    int ladderLength(string beginWord, string endWord,
-                     unordered_set<string> &wordList);
+    int ladderLength(string beginWord, string endWord, unordered_set<string> &wordList);
+
+private:
+    void bfs(unordered_set<string> &wordList, string beginWord, string endWord, int &dist);
 };
 
 #endif // WORD_LADDER_HPP_
