@@ -8,8 +8,8 @@ int NumberOfIslands::numIslands(vector<vector<char>> &grid) {
     if (grid.empty())
         return 0;
 
-    const int m = grid.size();
-    const int n = grid[0].size();
+    int m = grid.size();
+    int n = grid[0].size();
 
     if (n == 0)
         return 0;
@@ -20,7 +20,7 @@ int NumberOfIslands::numIslands(vector<vector<char>> &grid) {
         for (int j = 0; j < n; j++) {
             if (grid[i][j] == '1') {
                 result++;
-                bfs(grid, i, j);
+                bfs(grid, i, j, m, n);
             }
         }
     }
@@ -28,18 +28,13 @@ int NumberOfIslands::numIslands(vector<vector<char>> &grid) {
     return result;
 }
 
-void NumberOfIslands::bfs(vector<vector<char>> &grid, int i, int j) {
+void NumberOfIslands::bfs(vector<vector<char>> &grid, int i, int j, int m, int n) {
     typedef pair<int, int> state_t;
-    const int m = grid.size();
-    const int n = grid[0].size();
     auto isValid = [&](const state_t &s) {
         const int x = s.first;
         const int y = s.second;
 
-        if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1')
-            return false;
-
-        return true;
+        return !(x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1');
     };
     auto findNeighbors = [&](const state_t &s) {
         vector<state_t> result;
@@ -72,9 +67,9 @@ void NumberOfIslands::bfs(vector<vector<char>> &grid, int i, int j) {
         q.pop();
         auto neighbors = findNeighbors(s);
 
-        for (auto n : neighbors) {
-            markState(n);
-            q.push(n);
+        for (auto nb : neighbors) {
+            markState(nb);
+            q.push(nb);
         }
     }
 }
