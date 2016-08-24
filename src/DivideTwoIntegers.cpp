@@ -1,32 +1,24 @@
 #include "DivideTwoIntegers.hpp"
 
 #include <climits>
-#include <cstdlib>
+#include <cstdint>
+
+using namespace std;
 
 int DivideTwoIntegers::divide(int dividend, int divisor) {
-    if (divisor == 1)
-        return dividend;
+    int64_t a = (dividend >= 0) ? dividend : -(int64_t) dividend;
+    int64_t b = (divisor >= 0) ? divisor : -(int64_t) divisor;
 
-    if ((dividend == INT_MIN && divisor == -1) || divisor == 0)
-        return INT_MAX;
-
-    int sign = (dividend > 0 ^ divisor > 0) ? -1 : 1;
-    long ret = 0;
-    long end = labs((long) dividend);
-    long sor = labs((long) divisor);
-
-    while (end >= sor) {
-        long temp = sor;
-        long power = 1;
-
-        while ((temp << 1) < end) {
-            power <<= 1;
-            temp <<= 1;
+    int64_t ret = 0, shift = 31;
+    while (shift >= 0) {
+        if (a >= (b << shift)) {
+            a -= (b << shift);
+            ret += (1L << shift);
         }
-
-        ret += power;
-        end -= temp;
+        shift--;
     }
 
-    return sign * ret;
+    ret = ((dividend ^ divisor) >> 31) ? -ret : ret;
+
+    return ret > INT_MAX ? INT_MAX : ret;
 }
