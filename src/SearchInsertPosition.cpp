@@ -1,24 +1,20 @@
 #include "SearchInsertPosition.hpp"
 
 int SearchInsertPosition::searchInsert(vector<int> &nums, int target) {
-    int sz = nums.size();
+    if (nums.empty()) return 0;
 
-    if (sz == 0)
-        return 0;
+    int l = 0, r = nums.size() - 1;
 
-    int i = 0;
-    int j = sz - 1;
+    while (l <= r) {
+        int m = l + (r - l) / 2;
 
-    while (i <= j) {
-        int mid = (i + j) / 2;
-
-        if (nums[mid] == target)
-            return mid;
-        else if (nums[mid] < target)
-            i = mid + 1;
+        if (nums[m] == target)
+            return m;
+        else if (nums[m] < target)
+            l = m + 1;
         else
-            j = mid - 1;
+            r = m - 1;
     }
 
-    return i;
+    return l;
 }
