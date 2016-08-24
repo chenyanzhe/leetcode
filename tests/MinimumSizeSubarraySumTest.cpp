@@ -9,4 +9,14 @@ TEST_CASE("Minimum Size Subarray Sum") {
         int target = 7;
         REQUIRE(s.minSubArrayLen(target, nums) == 2);
     }
+    SECTION("All sum up") {
+        vector<int> nums{1, 2, 3, 4, 5};
+        int target = 15;
+        REQUIRE(s.minSubArrayLen(target, nums) == 5);
+    }
+    SECTION("Non-exist") {
+        vector<int> nums{1, 1};
+        int target = 3;
+        REQUIRE(s.minSubArrayLen(target, nums) == 0);
+    }
 }
