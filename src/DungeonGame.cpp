@@ -1,17 +1,15 @@
 #include "DungeonGame.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 int DungeonGame::calculateMinimumHP(vector<vector<int>> &dungeon) {
     int m = dungeon.size();
-
-    if (m == 0)
-        return 0;
+    if (m == 0) return 0;
 
     int n = dungeon[0].size();
-
-    if (n == 0)
-        return 0;
+    if (n == 0) return 0;
 
     vector<vector<int>> dp(m, vector<int>(n, 0));
     dp[m - 1][n - 1] = max(1, 1 - dungeon[m - 1][n - 1]);
