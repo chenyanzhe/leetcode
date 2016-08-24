@@ -19,4 +19,7 @@ TEST_CASE("Pow(x, n)") {
     SECTION("Overflow handling") {
         REQUIRE(s.myPow(1.00000, INT_MIN) == 1.0);
     }
+    SECTION("Underflow handling") {
+        REQUIRE(s.myPow(2.0, INT_MIN) == Approx(0.0));
+    }
 }
