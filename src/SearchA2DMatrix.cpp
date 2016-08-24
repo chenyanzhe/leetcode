@@ -2,17 +2,22 @@
 
 bool SearchA2DMatrix::searchMatrix(vector<vector<int>> &matrix, int target) {
     int m = matrix.size();
+    if (m == 0) return false;
+
     int n = matrix[0].size();
+    if (n == 0) return false;
+
     int l = 0, r = m * n - 1;
+    while (l + 1 < r) {
+        int mid = l + (r - l) / 2;
+        int row = mid / n;
+        int col = mid % n;
 
-    while (l != r) {
-        int mid = (l + r - 1) >> 1;
-
-        if (matrix[mid / n][mid % n] < target)
-            l = mid + 1;
+        if (matrix[row][col] < target)
+            l = mid;
         else
             r = mid;
     }
 
-    return matrix[r / n][r % n] == target;
+    return matrix[l / n][l % n] == target || matrix[r / n][r % n] == target;
 }
