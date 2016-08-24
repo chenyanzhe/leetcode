@@ -1,5 +1,7 @@
 #include "NextPermutation.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 void NextPermutation::nextPermutation(vector<int> &nums) {

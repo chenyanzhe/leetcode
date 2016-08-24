@@ -1,5 +1,7 @@
 #include "IntersectionOfTwoArraysII.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<int> IntersectionOfTwoArraysII::intersection(vector<int> &nums1,

@@ -1,5 +1,7 @@
 #include "SegmentTreeMinimumRangeQuery.hpp"
 
+#include <climits>
+
 using namespace std;
 
 void SegmentTreeMinimumRangeQuery::createSegmentTree(const vector<int> &input) {

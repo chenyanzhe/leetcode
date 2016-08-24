@@ -2,6 +2,10 @@
 
 #include "Powxn.hpp"
 
+#include <climits>
+
+using namespace std;
+
 TEST_CASE("Pow(x, n)") {
     Powxn s;
     SECTION("Normal tests") {

@@ -1,5 +1,7 @@
 #include "MergeIntervals.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<Interval> MergeIntervals::merge(vector<Interval> &intervals) {

@@ -2,6 +2,8 @@
 
 #include "MultiplyStrings.hpp"
 
+#include <climits>
+
 using namespace std;
 
 TEST_CASE("Multiply Strings") {

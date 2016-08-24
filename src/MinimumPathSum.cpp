@@ -1,5 +1,7 @@
 #include "MinimumPathSum.hpp"
 
+#include <climits>
+
 using namespace std;
 
 int MinimumPathSum::minPathSum(vector<vector<int>> &grid) {

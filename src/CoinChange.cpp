@@ -1,5 +1,7 @@
 #include "CoinChange.hpp"
 
+#include <climits>
+
 using namespace std;
 
 int CoinChange::coinChange(vector<int> &coins, int amount) {

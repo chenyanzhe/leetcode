@@ -1,5 +1,7 @@
 #include "3Sum.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<vector<int>> ThreeSum::threeSum(vector<int> &nums) {

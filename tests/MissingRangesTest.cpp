@@ -2,6 +2,10 @@
 
 #include "MissingRanges.hpp"
 
+#include <climits>
+
+using namespace std;
+
 TEST_CASE("Missing Ranges") {
     MissingRanges s;
     SECTION("Sample tests") {

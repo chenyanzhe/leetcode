@@ -1,5 +1,7 @@
 #include "PermutationsII.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<vector<int>> PermutationsII::permuteUnique(vector<int> &nums) {

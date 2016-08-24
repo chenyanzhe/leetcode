@@ -1,6 +1,7 @@
 #include "LargestNumber.hpp"
 
 #include <functional>
+#include <algorithm>
 
 using namespace std;
 

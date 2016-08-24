@@ -2,6 +2,10 @@
 
 #include "DivideTwoIntegers.hpp"
 
+#include <climits>
+
+using namespace std;
+
 TEST_CASE("Divide Two Integers") {
     DivideTwoIntegers s;
     SECTION("Normal tests") {

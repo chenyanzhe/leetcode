@@ -1,6 +1,7 @@
 #include "ShortestDistanceFromAllBuildings.hpp"
 
 #include <queue>
+#include <climits>
 
 using namespace std;
 
