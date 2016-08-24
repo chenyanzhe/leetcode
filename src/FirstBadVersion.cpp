@@ -9,23 +9,18 @@ FirstBadVersion::FirstBadVersion(VersionChecker checker)
 }
 
 int FirstBadVersion::firstBadVersion(int n) {
-    uint64_t l = static_cast<uint64_t>(1);
-    uint64_t r = static_cast<uint64_t>(n);
-
-    while (l <= r) {
-        if (l == r)
-            return l;
-
-        uint64_t m = (l + r) / 2;
-
-        if (isBadVersion(m)) {
-            if ((m == l) || !isBadVersion(m - 1))
-                return m;
-            else
-                r = m - 1;
-        } else
-            l = m + 1;
+    int l = 1, r = n;
+    while (l + 1 < r) {
+        int m = l + (r - l) / 2;
+        if (isBadVersion(m))
+            r = m;
+        else
+            l = m;
     }
 
-    return 0;
+    if (isBadVersion(l))
+        return l;
+    if (isBadVersion(r))
+        return r;
+    return -1;
 }

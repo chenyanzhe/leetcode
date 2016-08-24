@@ -3,17 +3,14 @@
 
 class FirstBadVersion {
 public:
-
     typedef bool (*VersionChecker)(int);
 
 public:
-
     FirstBadVersion(VersionChecker checker);
 
     int firstBadVersion(int n);
 
 private:
-
     VersionChecker isBadVersion;
 };
 
