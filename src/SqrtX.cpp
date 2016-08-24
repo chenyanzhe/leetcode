@@ -1,23 +1,19 @@
 #include "SqrtX.hpp"
 
-#include <climits>
+#include <cstdint>
 
 using namespace std;
 
 int SqrtX::mySqrt(int x) {
-    if (x == 0)
-        return 0;
+    int64_t l = 1, r = x;
 
-    int left = 1, right = INT_MAX;
-
-    while (true) {
-        int mid = left + (right - left) / 2;
-
-        if (mid > x / mid)
-            right = mid - 1;
-        else if (mid + 1 > x / (mid + 1))
-            return mid;
+    while (l + 1 < r) {
+        int64_t m = l + (r - l) / 2;
+        if (m * m < x)
+            l = m;
         else
-            left = mid + 1;
+            r = m;
     }
+
+    return r * r <= x ? r : l;
 }
