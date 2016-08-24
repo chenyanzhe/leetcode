@@ -1,5 +1,7 @@
 #include "SubsetsII.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<vector<int>> SubsetsII::subsetsWithDup(vector<int> &nums) {

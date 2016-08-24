@@ -1,6 +1,7 @@
 #include "BinaryTreeLevelOrderTraversalII.hpp"
 
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 

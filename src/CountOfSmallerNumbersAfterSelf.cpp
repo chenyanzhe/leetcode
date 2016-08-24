@@ -1,5 +1,7 @@
 #include "CountOfSmallerNumbersAfterSelf.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<int> CountOfSmallerNumbersAfterSelf::countSmaller(vector<int> &nums) {

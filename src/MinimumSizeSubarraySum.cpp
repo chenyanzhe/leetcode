@@ -1,5 +1,7 @@
 #include "MinimumSizeSubarraySum.hpp"
 
+#include <climits>
+
 using namespace std;
 
 int MinimumSizeSubarraySum::minSubArrayLen(int s, vector<int> &nums) {

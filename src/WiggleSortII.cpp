@@ -1,5 +1,7 @@
 #include "WiggleSortII.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 int WiggleSortII::m(int idx, int n) {

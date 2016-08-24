@@ -1,5 +1,9 @@
 #include "MissingRanges.hpp"
 
+#include <climits>
+
+using namespace std;
+
 vector<string> MissingRanges::findMissingRanges(vector<int> &nums, int lower, int upper) {
     vector<string> ret;
     if (lower > upper) return ret;

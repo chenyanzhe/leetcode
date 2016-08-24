@@ -1,5 +1,9 @@
 #include "InsertInterval.hpp"
 
+#include <algorithm>
+
+using namespace std;
+
 vector<Interval> InsertInterval::insert(vector<Interval> &intervals,
                                         Interval newInterval) {
     auto cmp = [](const Interval &a, const Interval &b) { return a.start < b.start; };

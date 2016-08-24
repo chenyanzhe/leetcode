@@ -1,5 +1,7 @@
 #include "Subsets.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<vector<int>> Subsets::subsets(vector<int> &nums) {

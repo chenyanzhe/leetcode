@@ -1,5 +1,7 @@
 #include "BestTimeToBuyAndSellStockWithCooldown.hpp"
 
+#include <climits>
+
 using namespace std;
 
 int BestTimeToBuyAndSellStockWithCooldown::maxProfit(vector<int> &prices) {

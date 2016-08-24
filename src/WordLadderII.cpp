@@ -1,6 +1,7 @@
 #include "WordLadderII.hpp"
 
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 

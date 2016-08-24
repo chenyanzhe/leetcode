@@ -1,5 +1,7 @@
 #include "CourseScheduleII.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<int> CourseScheduleII::findOrder(int numCourses,

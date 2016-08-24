@@ -1,5 +1,9 @@
 #include "DataStreamAsDisjointIntervals.hpp"
 
+#include <algorithm>
+
+using namespace std;
+
 void DataStreamAsDisjointIntervals::addNum(int val) {
     // addNum_Array(val);
     addNum_BinaryTree(val);

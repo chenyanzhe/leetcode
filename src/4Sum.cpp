@@ -1,5 +1,9 @@
 #include "4Sum.hpp"
 
+#include <algorithm>
+
+using namespace std;
+
 vector<vector<int>> FourSum::fourSum(vector<int> &nums, int target) {
     vector<vector<int>> result;
 

@@ -1,5 +1,7 @@
 #include "CombinationSumII.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 vector<vector<int>> CombinationSumII::combinationSum2(vector<int> &candidates,

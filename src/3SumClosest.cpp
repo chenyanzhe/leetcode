@@ -1,6 +1,7 @@
 #include "3SumClosest.hpp"
 
 #include <cstdlib>
+#include <algorithm>
 
 using namespace std;
 

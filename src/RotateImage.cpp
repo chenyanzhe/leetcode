@@ -1,5 +1,7 @@
 #include "RotateImage.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 void RotateImage::rotate(vector<vector<int>> &matrix) {

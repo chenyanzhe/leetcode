@@ -1,5 +1,9 @@
 #include "HIndex.hpp"
 
+#include <algorithm>
+
+using namespace std;
+
 int HIndex::hIndex(vector<int> &citations) {
     return hIndexHashTable(citations);
 }

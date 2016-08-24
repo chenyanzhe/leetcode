@@ -2,6 +2,10 @@
 
 #include "SqrtX.hpp"
 
+#include <climits>
+
+using namespace std;
+
 TEST_CASE("Sqrt X") {
     SqrtX s;
     SECTION("Sample tests") {
