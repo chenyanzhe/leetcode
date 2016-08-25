@@ -5,12 +5,16 @@
 using namespace std;
 
 int KthSmallestElementInABST::kthSmallest(TreeNode *root, int k) {
+    return kthSmallestRecursive(root, k);
+}
+
+int KthSmallestElementInABST::kthSmallestBinarySearch(TreeNode *root, int k) {
     int n = countNodes(root->left);
 
     if (k <= n)
-        return kthSmallest(root->left, k);
+        return kthSmallestBinarySearch(root->left, k);
     else if (k > n + 1)
-        return kthSmallest(root->right, k - n - 1);
+        return kthSmallestBinarySearch(root->right, k - n - 1);
 
     return root->val;
 }
@@ -48,4 +52,20 @@ int KthSmallestElementInABST::kthSmallestIterative(TreeNode *root, int k) {
     }
 
     return -1;
+}
+
+int KthSmallestElementInABST::kthSmallestRecursive(TreeNode *root, int k) {
+    int ret = 0;
+    kthSmallestRecursive_helper(root, k, ret);
+    return ret;
+}
+
+void KthSmallestElementInABST::kthSmallestRecursive_helper(TreeNode *root, int &k, int &ret) {
+    if (root->left) kthSmallestRecursive_helper(root->left, k, ret);
+    k--;
+    if (k == 0) {
+        ret = root->val;
+        return;
+    }
+    if (root->right) kthSmallestRecursive_helper(root->right, k, ret);
 }
