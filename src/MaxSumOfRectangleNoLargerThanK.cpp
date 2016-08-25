@@ -1,16 +1,17 @@
 #include "MaxSumOfRectangleNoLargerThanK.hpp"
 
 #include <set>
+#include <climits>
 
 using namespace std;
 
 int MaxSumOfRectangleNoLargerThanK::maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
-    if (matrix.empty()) return 0;
-    if (matrix[0].empty()) return 0;
+    if (matrix.empty()) return INT_MIN;
+    if (matrix[0].empty()) return INT_MIN;
 
     int m = matrix.size();
     int n = matrix[0].size();
-    int best = 0;
+    int best = INT_MIN;
 
     for (int i = 0; i < n; i++) {
         vector<int> cols(m, 0);
