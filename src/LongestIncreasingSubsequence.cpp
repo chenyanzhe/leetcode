@@ -1,31 +1,63 @@
 #include "LongestIncreasingSubsequence.hpp"
 
-#include <set>
+#include <climits>
 
 using namespace std;
 
 int LongestIncreasingSubsequence::lengthOfLIS(vector<int> &nums) {
+    return lengthOfLIS_BinarySearch(nums);
+}
+
+int LongestIncreasingSubsequence::lengthOfLIS_DynamicProgramming(vector<int> &nums) {
+    if (nums.empty()) return 0;
+
     int n = nums.size();
-    set<int> s(nums.begin(), nums.end());
-    vector<int> snums;
-    snums.assign(s.begin(), s.end());
-    int m = snums.size();
-    vector<int> dp(m + 1, 0);
-
-    for (int i = 1; i <= n; i++) {
-        int newv = dp[0];
-
-        for (int j = 1; j <= m; j++) {
-            int oldv = dp[j];
-
-            if (nums[i - 1] == snums[j - 1])
-                dp[j] = newv + 1;
-            else
-                dp[j] = max(dp[j], dp[j - 1]);
-
-            newv = oldv;
+    vector<int> dp(n, 1);
+    int ret = 1;
+    for (int i = 1; i < n; i++) {
+        for (int j = 0; j < i; j++) {
+            if (nums[j] < nums[i])
+                dp[i] = max(dp[i], dp[j] + 1);
         }
+        ret = max(ret, dp[i]);
     }
 
-    return dp[m];
+    return ret;
+}
+
+int LongestIncreasingSubsequence::lengthOfLIS_BinarySearch(vector<int> &nums) {
+    if (nums.empty()) return 0;
+
+    int n = nums.size();
+    int end = 0;
+    vector<int> tails(n, 0);
+
+    for (int i = 0; i < n; i++) {
+        int idx = binarySearch(tails, end, nums[i]);
+        tails[idx] = nums[i];
+        if (idx == end) end++;
+    }
+
+    return end;
+}
+
+int LongestIncreasingSubsequence::binarySearch(vector<int> &tails, int end, int target) {
+    if (end == 0) return end;
+
+    int l = 0, r = end - 1;
+    while (l + 1 < r) {
+        int m = l + (r - l) / 2;
+        if (tails[m] < target)
+            l = m;
+        else
+            r = m;
+    }
+
+    if (tails[l] >= target)
+        return l;
+
+    if (tails[r] >= target)
+        return r;
+    else
+        return r + 1;
 }
