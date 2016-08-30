@@ -6,23 +6,32 @@ using namespace std;
 
 vector<vector<int>> PermutationsII::permuteUnique(vector<int> &nums) {
     vector<vector<int>> result;
+    vector<int> cur;
+    vector<bool> used(nums.size(), false);
+
     sort(nums.begin(), nums.end());
-    helper(nums, 0, result);
+    backtrack(nums, 0, used, cur, result);
+
     return result;
 }
 
-void PermutationsII::helper(vector<int> nums, int begin,
-                            vector<vector<int>> &result) {
-    if (begin >= nums.size()) {
-        result.push_back(nums);
+void PermutationsII::backtrack(vector<int> &nums, int depth, vector<bool> &used, vector<int> &cur,
+                               vector<vector<int>> &result) {
+    if (depth >= nums.size()) {
+        result.push_back(cur);
         return;
     }
 
-    for (int i = begin; i < nums.size(); i++) {
-        if (i != begin && nums[i] == nums[begin])
+    for (int i = 0; i < nums.size(); i++) {
+        if (used[i] || (i > 0 && nums[i - 1] == nums[i] && !used[i - 1]))
             continue;
 
-        swap(nums[begin], nums[i]);
-        helper(nums, begin + 1, result);
+        used[i] = true;
+        cur.push_back(nums[i]);
+
+        backtrack(nums, depth + 1, used, cur, result);
+
+        used[i] = false;
+        cur.pop_back();
     }
 }
