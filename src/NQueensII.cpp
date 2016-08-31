@@ -1,44 +1,45 @@
 #include "NQueensII.hpp"
 
+#include <cstdlib>
+
+using namespace std;
+
 int NQueensII::totalNQueens(int n) {
-    int res = 0;
-    vector<string> nQueens(n, string(n, '.'));
-    helper(nQueens, res, 0, n);
-    return res;
+    int result = 0;
+    if (n <= 0) return result;
+
+    vector<bool> used(n, false);
+    vector<int> cur(n, 0);
+
+    backtrack(n, 0, used, cur, result);
+
+    return result;
 }
 
-void NQueensII::helper(vector<string> &nQueens, int &res, int row, int n) {
-    if (row == n) {
-        res++;
+void NQueensII::backtrack(int n, int depth, vector<bool> &used, vector<int> &cur, int &result) {
+    if (depth == n) {
+        result++;
         return;
     }
 
-    for (int col = 0; col < n; col++) {
-        if (isValid(nQueens, row, col, n)) {
-            nQueens[row][col] = 'Q';
-            helper(nQueens, res, row + 1, n);
-            nQueens[row][col] = '.';
+    for (int i = 0; i < n; i++) {
+        if (used[i]) continue;
+
+        bool conflict = false;
+        for (int j = 0; j < depth; j++) {
+            if (depth - j == abs(cur[j] - i)) {
+                conflict = true;
+                break;
+            }
         }
-    }
-}
+        if (conflict) continue;
 
-bool NQueensII::isValid(vector<string> &nQueens, int row, int col, int n) {
-    // check if the column had a queen before.
-    for (int i = 0; i < row; i++) {
-        if (nQueens[i][col] == 'Q')
-            return false;
-    }
+        used[i] = true;
+        cur[depth] = i;
 
-    // check if the diagonals had a queen before.
-    for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
-        if (nQueens[i][j] == 'Q')
-            return false;
-    }
+        backtrack(n, depth + 1, used, cur, result);
 
-    for (int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
-        if (nQueens[i][j] == 'Q')
-            return false;
+        used[i] = false;
+        cur[depth] = 0;
     }
-
-    return true;
 }
