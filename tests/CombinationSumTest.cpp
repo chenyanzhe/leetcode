@@ -26,6 +26,8 @@ TEST_CASE("Combination Sum") {
         vector<vector<int>> result = s.combinationSum(candidates, target);
         REQUIRE(result.size() == 3);
 
+        for (int i = 0; i < result.size(); i++)
+            sort(result[i].begin(), result[i].end());
         for (int i = 0; i < 3; i++)
             REQUIRE_FALSE(find(result.begin(), result.end(), expected[i]) == result.end());
     }
