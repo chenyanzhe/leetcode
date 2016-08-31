@@ -2,7 +2,6 @@
 #define IMPLEMENT_TRIE_HPP_
 
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -13,7 +12,8 @@ public:
 
     ~TrieNode();
 
-    vector<TrieNode *> children;
+    TrieNode *children[26];
+
     bool isWord;
 };
 

@@ -1,13 +1,15 @@
 #include "ImplementTrie.hpp"
 
-TrieNode::TrieNode() : children(vector<TrieNode *>(26, nullptr)),
-                       isWord(false) {
+TrieNode::TrieNode() {
+    for (int i = 0; i < 26; i++)
+        children[i] = nullptr;
+    isWord = false;
 }
 
 TrieNode::~TrieNode() {
-    for (auto child : children)
-        if (child != nullptr)
-            delete child;
+    for (int i = 0; i < 26; i++)
+        if (children[i])
+            delete children[i];
 }
 
 Trie::Trie() {
@@ -21,13 +23,10 @@ Trie::~Trie() {
 void Trie::insert(string word) {
     TrieNode *now = root;
 
-    for (int i = 0; i < word.size(); i++) {
-        int idx = word[i] - 'a';
-
-        if (now->children[idx] == nullptr)
-            now->children[idx] = new TrieNode();
-
-        now = now->children[idx];
+    for (auto c : word) {
+        if (now->children[c - 'a'] == nullptr)
+            now->children[c - 'a'] = new TrieNode();
+        now = now->children[c - 'a'];
     }
 
     now->isWord = true;
