@@ -11,8 +11,7 @@ public:
     bool exist(vector<vector<char>> &board, string word);
 
 private:
-    bool helper(vector<vector<char>> &board, int row, int col,
-                const string &word, int start, int M, int N, int sLen);
+    bool backtrack(vector<vector<char>> &board, string &word, int depth, int i, int j, vector<vector<bool>> &used);
 };
 
 #endif // WORD_SEARCH_HPP_

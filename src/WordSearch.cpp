@@ -1,44 +1,40 @@
 #include "WordSearch.hpp"
 
 bool WordSearch::exist(vector<vector<char>> &board, string word) {
-    int M = board.size(), N = board[0].size();
-    int sLen = word.size();
+    if (board.empty() || board[0].empty())
+        return false;
 
-    if (M && N && sLen) {
-        for (int i = 0; i < M; ++i)
-            for (int j = 0; j < N; ++j)
-                if (helper(board, i, j, word, 0, M, N, sLen))
-                    return true;
-    }
+    int m = board.size(), n = board[0].size();
+    vector<vector<bool>> used(m, vector<bool>(n, false));
+
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            if (backtrack(board, word, 0, i, j, used))
+                return true;
 
     return false;
 }
 
-bool WordSearch::helper(vector<vector<char>> &board, int row, int col,
-                        const string &word, int start, int M, int N, int sLen) {
-    char curC;
-    bool res = false;
-
-    if ((curC = board[row][col]) != word[start])
-        return false;
-
-    if (start == sLen - 1)
+bool
+WordSearch::backtrack(vector<vector<char>> &board, string &word, int depth, int i, int j, vector<vector<bool>> &used) {
+    if (depth == word.size())
         return true;
 
-    board[row][col] = '*';
+    if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size())
+        return false;
 
-    if (row > 0)
-        res = helper(board, row - 1, col, word, start + 1, M, N, sLen);
+    if (used[i][j] || board[i][j] != word[depth])
+        return false;
 
-    if (!res && row < M - 1)
-        res = helper(board, row + 1, col, word, start + 1, M, N, sLen);
+    used[i][j] = true;
 
-    if (!res && col > 0)
-        res = helper(board, row, col - 1, word, start + 1, M, N, sLen);
+    if (backtrack(board, word, depth + 1, i - 1, j, used) ||
+        backtrack(board, word, depth + 1, i + 1, j, used) ||
+        backtrack(board, word, depth + 1, i, j - 1, used) ||
+        backtrack(board, word, depth + 1, i, j + 1, used))
+        return true;
 
-    if (!res && col < N - 1)
-        res = helper(board, row, col + 1, word, start + 1, M, N, sLen);
+    used[i][j] = false;
 
-    board[row][col] = curC;
-    return res;
+    return false;
 }
