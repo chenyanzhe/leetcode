@@ -5,7 +5,7 @@
 
 #include <vector>
 #include <string>
-#include <set>
+#include <unordered_set>
 
 using namespace std;
 
@@ -16,10 +16,8 @@ public:
 private:
     Trie trie;
 
-    void findWords(const vector<vector<char>> &board,
-                   vector<vector<bool>> &visited,
-                   int row, int col, string word,
-                   set<string> &result);
+    void backtrack(vector<vector<char>> &board, int i, int j, string &cur, vector<vector<bool>> &used,
+                   unordered_set <string> &result);
 };
 
 #endif // WORD_SEARCH_II_HPP_

@@ -1,62 +1,47 @@
 #include "WordSearchII.hpp"
 
-vector<string> WordSearchII::findWords(vector<vector<char>> &board,
-                                       vector<string> &words) {
-    set<string> result;
-    vector<string> ret;
-    int nrows = board.size();
+vector<string> WordSearchII::findWords(vector<vector<char>> &board, vector<string> &words) {
+    vector<string> result;
+    string cur;
 
-    if (nrows == 0)
-        return ret;
+    if (board.empty() || board[0].empty()) return result;
+    int m = board.size(), n = board[0].size();
 
-    int ncols = board[0].size();
+    vector<vector<bool>> used(m, vector<bool>(n, false));
 
-    if (ncols == 0)
-        return ret;
-
-    if (words.size() == 0)
-        return ret;
-
-    for (auto &w : words)
+    for (auto w : words)
         trie.insert(w);
 
-    vector<vector<bool>> visited(nrows, vector<bool>(ncols, false));
+    unordered_set<string> res;
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            backtrack(board, i, j, cur, used, res);
 
-    for (int i = 0; i < nrows; i++)
-        for (int j = 0; j < ncols; j++)
-            findWords(board, visited, i, j, "", result);
+    for (auto s : res)
+        result.push_back(s);
 
-    for (auto &w : result)
-        ret.push_back(w);
-
-    return ret;
+    return result;
 }
 
-void WordSearchII::findWords(const vector<vector<char>> &board,
-                             vector<vector<bool>> &visited,
-                             int row, int col, string word,
-                             set<string> &result) {
-    int nrows = board.size();
-    int ncols = board[0].size();
-
-    if (row < 0 || row >= nrows || col < 0 || col >= ncols)
+void WordSearchII::backtrack(vector<vector<char>> &board, int i, int j, string &cur, vector<vector<bool>> &used,
+                             unordered_set<string> &result) {
+    if (!trie.startsWith(cur))
         return;
 
-    if (visited[row][col])
+    if (trie.search(cur))
+        result.insert(cur);
+
+    if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size() || used[i][j])
         return;
 
-    word.push_back(board[row][col]);
+    used[i][j] = true;
+    cur.push_back(board[i][j]);
 
-    if (!trie.startsWith(word))
-        return;
+    backtrack(board, i + 1, j, cur, used, result);
+    backtrack(board, i - 1, j, cur, used, result);
+    backtrack(board, i, j + 1, cur, used, result);
+    backtrack(board, i, j - 1, cur, used, result);
 
-    if (trie.search(word))
-        result.insert(word);
-
-    visited[row][col] = true;
-    findWords(board, visited, row + 1, col, word, result);
-    findWords(board, visited, row - 1, col, word, result);
-    findWords(board, visited, row, col + 1, word, result);
-    findWords(board, visited, row, col - 1, word, result);
-    visited[row][col] = false;
+    used[i][j] = false;
+    cur.pop_back();
 }
