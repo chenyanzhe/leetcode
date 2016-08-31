@@ -11,10 +11,7 @@ public:
     vector<vector<string>> solveNQueens(int n);
 
 private:
-    void helper(vector<string> &nQueens, vector<vector<string>> &res,
-                int row, int n);
-
-    bool isValid(vector<string> &nQueens, int row, int col, int n);
+    void backtrack(int n, int depth, vector<bool> &used, vector<int> &cur, vector<vector<string>> &result);
 };
 
 #endif // NQUEENS_HPP_
