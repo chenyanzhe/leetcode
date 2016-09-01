@@ -10,8 +10,8 @@ public:
     vector<vector<int>> combinationSum2(vector<int> &candidates, int target);
 
 private:
-    void helper(vector<int> &candidates, int target, vector<vector<int>> &res,
-                vector<int> &comb, int begin);
+    void
+    backtrack(vector<int> &candidates, int target, int depth, int sum, vector<int> &cur, vector<vector<int>> &result);
 };
 
 #endif // COMBINATION_SUM_II_HPP_

@@ -4,28 +4,34 @@
 
 using namespace std;
 
-vector<vector<int>> CombinationSumII::combinationSum2(vector<int> &candidates,
-                                                      int target) {
-    vector<vector<int>> res;
-    vector<int> comb;
+vector<vector<int>> CombinationSumII::combinationSum2(vector<int> &candidates, int target) {
+    vector<vector<int>> result;
+    vector<int> cur;
+
     sort(candidates.begin(), candidates.end());
-    helper(candidates, target, res, comb, 0);
-    return res;
+    backtrack(candidates, target, 0, 0, cur, result);
+
+    return result;
 }
 
-void CombinationSumII::helper(vector<int> &candidates, int target,
-                              vector<vector<int>> &res,
-                              vector<int> &comb, int begin) {
-    if (!target) {
-        res.push_back(comb);
+void CombinationSumII::backtrack(vector<int> &candidates, int target, int depth, int sum, vector<int> &cur,
+                                 vector<vector<int>> &result) {
+    if (sum == target) {
+        result.push_back(cur);
         return;
     }
 
-    for (int i = begin; i != candidates.size() && candidates[i] <= target; i++) {
-        if (i == begin || candidates[i] != candidates[i - 1]) {
-            comb.push_back(candidates[i]);
-            helper(candidates, target - candidates[i], res, comb, i + 1);
-            comb.pop_back();
-        }
+    if (sum > target)
+        return;
+
+    for (int i = depth; i < candidates.size(); i++) {
+        if (i > depth && candidates[i - 1] == candidates[i])
+            continue;
+
+        cur.push_back(candidates[i]);
+
+        backtrack(candidates, target, i + 1, sum + candidates[i], cur, result);
+
+        cur.pop_back();
     }
 }
