@@ -1,23 +1,26 @@
 #include "CombinationSumIII.hpp"
 
 vector<vector<int>> CombinationSumIII::combinationSum3(int k, int n) {
-    vector<vector<int>> res;
-    vector<int> comb;
-    helper(n, res, comb, 1, k);
-    return res;
+    vector<vector<int>> result;
+    vector<int> cur;
+    backtrack(k, n, 1, 0, cur, result);
+    return result;
 }
 
-void CombinationSumIII::helper(int target, vector<vector<int>> &res,
-                               vector<int> &comb, int begin, int k) {
-    if (!target && !k) {
-        res.push_back(comb);
+void
+CombinationSumIII::backtrack(int k, int target, int depth, int sum, vector<int> &cur, vector<vector<int>> &result) {
+    if (k == 0 && sum == target) {
+        result.push_back(cur);
         return;
-    } else if (!k)
-        return;
+    }
 
-    for (int i = begin; i <= 9 && i <= target; i++) {
-        comb.push_back(i);
-        helper(target - i, res, comb, i + 1, k - 1);
-        comb.pop_back();
+    if (k == 0 || sum > target) return;
+
+    for (int i = depth; i <= 9; i++) {
+        cur.push_back(i);
+
+        backtrack(k - 1, target, i + 1, sum + i, cur, result);
+
+        cur.pop_back();
     }
 }

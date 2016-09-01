@@ -10,8 +10,7 @@ public:
     vector<vector<int>> combinationSum3(int k, int n);
 
 private:
-    void helper(int target, vector<vector<int>> &res, vector<int> &comb, int begin,
-                int k);
+    void backtrack(int k, int target, int depth, int sum, vector<int> &cur, vector<vector<int>> &result);
 };
 
 #endif // COMBINATION_SUM_III_HPP_
