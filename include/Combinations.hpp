@@ -10,8 +10,7 @@ public:
     vector<vector<int>> combine(int n, int k);
 
 private:
-    void helper(vector<vector<int>> &res, vector<int> &temp, int start,
-                int n, int k);
+    void backtrack(int n, int k, int depth, vector<int> &cur, vector<vector<int>> &result);
 };
 
 #endif // COMBINATIONS_HPP_
