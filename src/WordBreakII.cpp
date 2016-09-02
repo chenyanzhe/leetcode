@@ -1,40 +1,41 @@
 #include "WordBreakII.hpp"
 
-vector<string> WordBreakII::wordBreak(string s,
-                                      unordered_set<string> &wordDict) {
-    int n = s.size();
+vector<string> WordBreakII::wordBreak(string s, unordered_set<string> &wordDict) {
+    vector<string> result;
+    vector<string> cur;
+    vector<bool> canBreak(s.size() + 1, true);
 
-    if (n == 0) return vector<string>();
+    backtrack(s, wordDict, 0, cur, canBreak, result);
 
-    unordered_map<string, vector<string>> cache;
-    return wordBreak_helper(s, wordDict, cache);
+    return result;
 }
 
-vector<string> WordBreakII::wordBreak_helper(string s,
-                                             unordered_set<string> &wordDict,
-                                             unordered_map<string, vector<string>> &cache) {
-    if (cache.count(s))
-        return cache[s];
-
-    vector<string> ret;
-
-    if (wordDict.count(s))
-        ret.push_back(s);
-
-    int n = s.size();
-
-    for (int i = 1; i <= n - 1; i++) {
-        string prefix = s.substr(0, i);
-        string postfix = s.substr(i, n - i);
-
-        if (wordDict.count(prefix)) {
-            vector<string> posts = wordBreak_helper(postfix, wordDict, cache);
-
-            for (auto p : posts)
-                ret.push_back(prefix + " " + p);
-        }
+void WordBreakII::backtrack(string &s, unordered_set<string> &wordDict, int depth, vector<string> &cur,
+                            vector<bool> &canBreak, vector<string> &result) {
+    if (depth == s.size()) {
+        string ans = "";
+        for (auto &c : cur)
+            ans += c + " ";
+        ans = ans.substr(0, ans.size() - 1);
+        result.push_back(ans);
+        return;
     }
 
-    cache[s] = ret;
-    return ret;
+    if (!canBreak[depth])
+        return;
+
+    for (int i = depth; i < s.size(); i++) {
+        string word = s.substr(depth, i - depth + 1);
+        if (wordDict.find(word) == wordDict.end() || !canBreak[i + 1])
+            continue;
+
+        cur.push_back(word);
+
+        int before = result.size();
+        backtrack(s, wordDict, i + 1, cur, canBreak, result);
+        if (result.size() == before)
+            canBreak[i + 1] = false;
+
+        cur.pop_back();
+    }
 }
