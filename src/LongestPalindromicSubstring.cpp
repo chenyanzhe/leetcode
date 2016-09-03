@@ -1,7 +1,11 @@
 #include "LongestPalindromicSubstring.hpp"
 
-string LongestPalindromicSubstring::expandAroundCenter(string s, int c1,
-                                                       int c2) {
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+string LongestPalindromicSubstring::expandAroundCenter(string s, int c1, int c2) {
     int l = c1;
     int r = c2;
     int n = s.size();
@@ -14,7 +18,7 @@ string LongestPalindromicSubstring::expandAroundCenter(string s, int c1,
     return s.substr(l + 1, r - l - 1);
 }
 
-string LongestPalindromicSubstring::longestPalindrome(string s) {
+string LongestPalindromicSubstring::longestPalindrome_BruteForce(string s) {
     int n = s.size();
 
     if (n == 0)
@@ -35,4 +39,40 @@ string LongestPalindromicSubstring::longestPalindrome(string s) {
     }
 
     return result;
+}
+
+string LongestPalindromicSubstring::longestPalindrome_Manacher(string str) {
+    if (str.empty()) return str;
+
+    string s = "$";
+    for (auto c : str) {
+        s.append(1, '#');
+        s.append(1, c);
+    }
+    s.append(1, '#');
+
+    vector<int> p(s.size(), 0);
+    int mx = 0, id = 0;
+
+    for (int i = 1; i < s.size(); i++) {
+        p[i] = mx > i ? min(p[2 * id - i], mx - i) : 1;
+        while (s[i + p[i]] == s[i - p[i]]) p[i]++;
+        if (i + p[i] > mx) {
+            mx = i + p[i];
+            id = i;
+        }
+    }
+
+    int maxp = 0;
+    for (int i = 1; i < p.size(); i++) {
+        if (p[i] > p[maxp])
+            maxp = i;
+    }
+    int len = p[maxp] - 1;
+    int cen = maxp / 2 - 1;
+    return str.substr(cen - (len - 1) / 2, len);
+}
+
+string LongestPalindromicSubstring::longestPalindrome(string s) {
+    return longestPalindrome_Manacher(s);
 }

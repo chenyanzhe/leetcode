@@ -10,7 +10,9 @@ public:
     string longestPalindrome(string s);
 
 private:
+    string longestPalindrome_BruteForce(string s);
     string expandAroundCenter(string s, int c1, int c2);
+    string longestPalindrome_Manacher(string s);
 };
 
 #endif // LONGEST_PALINDROMIC_SUBSTRING_HPP_
