@@ -12,6 +12,8 @@ private:
 
     TreeNode *flattenRec2(TreeNode *root, TreeNode *tail);
 
+    void flattenRec3(TreeNode *root, TreeNode *&prev);
+
     void flattenStack(TreeNode *root);
 };
 
