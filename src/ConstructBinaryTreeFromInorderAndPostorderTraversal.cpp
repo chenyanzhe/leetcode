@@ -2,12 +2,12 @@
 
 TreeNode *ConstructBinaryTreeFromInorderAndPostorderTraversal::
 buildTree(vector<int> &inorder, vector<int> &postorder) {
-    postIndex = postorder.size() - 1;
-    return buildTree(inorder, postorder, 0, inorder.size() - 1);
+    int postIndex = postorder.size() - 1;
+    return buildTree(inorder, postorder, 0, inorder.size() - 1, postIndex);
 }
 
 TreeNode *ConstructBinaryTreeFromInorderAndPostorderTraversal::
-buildTree(vector<int> &inorder, vector<int> &postorder, int inStart, int inEnd) {
+buildTree(vector<int> &inorder, vector<int> &postorder, int inStart, int inEnd, int &postIndex) {
     if (inStart > inEnd)
         return nullptr;
 
@@ -22,7 +22,7 @@ buildTree(vector<int> &inorder, vector<int> &postorder, int inStart, int inEnd) 
     while (mid <= inEnd && inorder[mid] != root->val)
         mid++;
 
-    root->right = buildTree(inorder, postorder, mid + 1, inEnd);
-    root->left = buildTree(inorder, postorder, inStart, mid - 1);
+    root->right = buildTree(inorder, postorder, mid + 1, inEnd, postIndex);
+    root->left = buildTree(inorder, postorder, inStart, mid - 1, postIndex);
     return root;
 }
