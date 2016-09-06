@@ -1,55 +1,44 @@
 #include "ReverseWordsInAString.hpp"
 
+#include <utility>
+
 using namespace std;
 
 void ReverseWordsInAString::reverseWords(string &s) {
-    standardize(s);
-    reverseString(s, 0, s.size() - 1);
-    int i = 0;
-    int j = 0;
-
-    for (; j < s.size(); j++) {
-        if (!isspace(s[j]))
-            continue;
-
-        reverseString(s, i, j - 1);
-        i = j + 1;
-    }
-
-    // reverse the last word
-    if (j - 1 > i)
-        reverseString(s, i, j - 1);
-}
-
-void ReverseWordsInAString::standardize(string &s) {
-    // 1. remove leading and trailing spaces
-    // 2. reduce to single space between words
-    int i = 0;
-    int j = 0;
+    // pre-processing
     bool inWord = false;
-
+    int end = 0;
+    int i = 0, j = 0;
+    while (s[i] == ' ')
+        i++;
+    inWord = true;
     for (; i < s.size(); i++) {
-        if (!isspace(s[i])) {
-            inWord = true;
-            s[j++] = s[i];
+        if (s[i] == ' ') {
+            if (inWord) s[end++] = ' ';
+            inWord = false;
         } else {
-            if (inWord) {
-                s[j++] = ' ';
-                inWord = false;
-            }
+            s[end++] = s[i];
+            inWord = true;
         }
     }
+    if (end && s[end - 1] == ' ') end--;
+    s.resize(end);
 
-    if (j > 0 && isspace(s[j - 1]))
-        j--;
+    // reverse the whole string
+    i = 0;
+    j = end - 1;
+    while (i < j)
+        swap(s[i++], s[j--]);
 
-    s = s.substr(0, j);
-}
-
-void ReverseWordsInAString::reverseString(string &s, int begin, int end) {
-    while (begin < end) {
-        swap(s[begin], s[end]);
-        begin++;
-        end--;
+    // reverse every word
+    i = 0;
+    while (i < end) {
+        j = i + 1;
+        while (j < end && s[j] != ' ')
+            j++;
+        int a = i, b = j - 1;
+        while (a < b)
+            swap(s[a++], s[b--]);
+        i = j + 1;
     }
 }
