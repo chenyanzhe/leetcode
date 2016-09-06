@@ -1,20 +1,18 @@
 #include "BestTimeToBuyAndSellStock.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 int BestTimeToBuyAndSellStock::maxProfit(vector<int> &prices) {
-    int sz = prices.size();
+    if (prices.size() <= 1) return 0;
 
-    if (sz <= 1)
-        return 0;
-
-    int result = 0;
-    int min_price = prices[0];
-
-    for (int i = 1; i < sz; i++) {
-        result = max(result, prices[i] - min_price);
-        min_price = min(min_price, prices[i]);
+    int profit = 0;
+    int minPrice = prices[0];
+    for (int i = 1; i < prices.size(); i++) {
+        profit = max(profit, prices[i] - minPrice);
+        minPrice = min(minPrice, prices[i]);
     }
 
-    return result;
+    return profit;
 }
