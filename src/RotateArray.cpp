@@ -5,37 +5,20 @@ void RotateArray::rotate(vector<int> &nums, int k) {
     int m = nums.size() - k;
     int n = k;
 
-    if (k == 0)
-        return;
+    if (k == 0) return;
 
-    int i, j;
-    // reverse nums[0:m-1]
-    i = 0;
-    j = m - 1;
+    int i = 0, j = m - 1;
 
-    while (i < j) {
-        swap(nums[i], nums[j]);
-        i++;
-        j--;
-    }
+    while (i < j)
+        swap(nums[i++], nums[j--]);
 
-    // reverse nums[m:m+n-1]
-    i = m;
-    j = m + n - 1;
+    i = m, j = m + n - 1;
 
-    while (i < j) {
-        swap(nums[i], nums[j]);
-        i++;
-        j--;
-    }
+    while (i < j)
+        swap(nums[i++], nums[j--]);
 
-    // reverse nums[0:m+n-1]
-    i = 0;
-    j = m + n - 1;
+    i = 0, j = m + n - 1;
 
-    while (i < j) {
-        swap(nums[i], nums[j]);
-        i++;
-        j--;
-    }
+    while (i < j)
+        swap(nums[i++], nums[j--]);
 }
