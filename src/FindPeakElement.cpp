@@ -7,10 +7,8 @@ int FindPeakElement::findPeakElement(vector<int> &nums) {
         int m = l + (r - l) / 2;
         if (nums[m - 1] > nums[m])
             r = m;
-        else if (nums[m] < nums[m + 1])
-            l = m;
         else
-            r = m;
+            l = m;
     }
 
     return nums[l] < nums[r] ? r : l;
