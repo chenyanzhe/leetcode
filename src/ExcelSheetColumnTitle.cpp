@@ -1,13 +1,13 @@
 #include "ExcelSheetColumnTitle.hpp"
 
 string ExcelSheetColumnTitle::convertToTitle(int n) {
-    string result;
+    string ret;
 
-    while (n > 0) {
-        char bit = 'A' + (n - 1) % 26;
-        result = string(1, bit) + result;
+    while (n) {
+        char c = 'A' + (n - 1) % 26;
+        ret = string(1, c) + ret;
         n = (n - 1) / 26;
     }
 
-    return result;
+    return ret;
 }
