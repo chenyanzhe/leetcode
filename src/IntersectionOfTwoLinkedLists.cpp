@@ -1,36 +1,36 @@
 #include "IntersectionOfTwoLinkedLists.hpp"
 
-ListNode *IntersectionOfTwoLinkedLists::getIntersectionNode(ListNode *headA,
-                                                            ListNode *headB) {
-    int lengthA = getListLength(headA);
-    int lengthB = getListLength(headB);
+ListNode *IntersectionOfTwoLinkedLists::getIntersectionNode(ListNode *headA, ListNode *headB) {
+    int lenA = 0, lenB = 0;
+    ListNode *head;
 
-    if (lengthA == 0 || lengthB == 0)
+    head = headA;
+    while (head) {
+        lenA++;
+        head = head->next;
+    }
+
+    head = headB;
+    while (head) {
+        lenB++;
+        head = head->next;
+    }
+
+    if (lenA == 0 || lenB == 0)
         return nullptr;
 
-    if (lengthA < lengthB) {
-        for (int i = 0; i < lengthB - lengthA; i++)
+    if (lenA < lenB) {
+        for (int i = 0; i < lenB - lenA; i++)
             headB = headB->next;
-    } else if (lengthA > lengthB) {
-        for (int i = 0; i < lengthA - lengthB; i++)
+    } else {
+        for (int i = 0; i < lenA - lenB; i++)
             headA = headA->next;
     }
 
-    while (headA != nullptr && headA != headB) {
+    while (headA && headA != headB) {
         headA = headA->next;
         headB = headB->next;
     }
 
     return headA;
-}
-
-int IntersectionOfTwoLinkedLists::getListLength(ListNode *head) {
-    int length = 0;
-
-    while (head != nullptr) {
-        head = head->next;
-        length++;
-    }
-
-    return length;
 }

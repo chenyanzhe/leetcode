@@ -6,9 +6,6 @@
 class IntersectionOfTwoLinkedLists {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
-
-private:
-    int getListLength(ListNode *head);
 };
 
 #endif // INTERSECTION_OF_TWO_LINKED_LISTS_HPP_
