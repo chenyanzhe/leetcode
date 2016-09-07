@@ -1,7 +1,6 @@
 #include "LowestCommonAncestorOfABinarySearchTree.hpp"
 
-TreeNode *LowestCommonAncestorOfABinarySearchTree::lowestCommonAncestor(
-        TreeNode *root, TreeNode *p, TreeNode *q) {
+TreeNode *LowestCommonAncestorOfABinarySearchTree::lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
     if (root == nullptr || p == nullptr || q == nullptr)
         return nullptr;
 
