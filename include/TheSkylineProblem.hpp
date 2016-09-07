@@ -11,15 +11,21 @@ public:
     vector<pair<int, int>> getSkyline(vector<vector<int>> &buildings);
 
 private:
-    enum NODE_TYPE {
-        LEFT, RIGHT
+    struct Point {
+        int x;
+        int height;
+        bool start;
+
+        Point(int x, int h, bool s) : x(x), height(h), start(s) {}
     };
 
-    struct node {
-        int x, y;
-        NODE_TYPE type;
-
-        node(int _x, int _y, NODE_TYPE _type) : x(_x), y(_y), type(_type) {}
+    struct PointOrder {
+        bool operator()(const Point &a, const Point &b) {
+            if (a.x != b.x) return a.x < b.x;
+            if (a.start && b.start) return a.height > b.height;
+            if (!a.start && !b.start) return a.height < b.height;
+            return a.start;
+        }
     };
 };
 

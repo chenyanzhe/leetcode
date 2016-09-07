@@ -29,4 +29,21 @@ TEST_CASE("The Skyline Problem") {
             REQUIRE(result[i].second == expected[i].second);
         }
     }
+    SECTION("Equal height buildings") {
+        vector<vector<int>> buildings{
+                {0, 2, 3},
+                {2, 5, 3}
+        };
+        vector<pair<int, int>> expected{
+                {0, 3},
+                {5, 0}
+        };
+        vector<pair<int, int>> result = s.getSkyline(buildings);
+        REQUIRE(expected.size() == result.size());
+
+        for (int i = 0; i < result.size(); i++) {
+            REQUIRE(result[i].first == expected[i].first);
+            REQUIRE(result[i].second == expected[i].second);
+        }
+    }
 }

@@ -1,55 +1,38 @@
 #include "TheSkylineProblem.hpp"
 
-#include <queue>
+#include <set>
 #include <algorithm>
-#include <unordered_map>
 
 using namespace std;
 
-vector<pair<int, int>> TheSkylineProblem::getSkyline(vector<vector<int>> &
-buildings) {
-    vector<node> height;
-
+vector<pair<int, int>> TheSkylineProblem::getSkyline(vector<vector<int>> &buildings) {
+    vector<Point> cps;
     for (auto &b : buildings) {
-        height.push_back(node(b[0], b[2], LEFT));
-        height.push_back(node(b[1], b[2], RIGHT));
+        cps.emplace_back(b[0], b[2], true);
+        cps.emplace_back(b[1], b[2], false);
     }
+    sort(cps.begin(), cps.end(), PointOrder());
 
-    sort(height.begin(), height.end(), [](const node &a, const node &b) {
-        if (a.x != b.x)
-            return a.x < b.x;
-        else if (a.type == LEFT && b.type == LEFT)
-            return a.y > b.y;
-        else if (a.type == RIGHT && b.type == RIGHT)
-            return a.y < b.y;
-        else
-            return a.type == LEFT;
-    });
-    priority_queue<int> heap;
-    unordered_map<int, int> mp;
-    heap.push(0);
-    vector<pair<int, int>> res;
-    int pre = 0, cur = 0;
+    vector<pair<int, int>> ret;
+    int curMax = 0;
+    multiset<int> q;
+    q.insert(0);
 
-    for (auto &h : height) {
-        if (h.type == LEFT)
-            heap.push(h.y);
-        else {
-            ++mp[h.y];
-
-            while (!heap.empty() && mp[heap.top()] > 0) {
-                --mp[heap.top()];
-                heap.pop();
+    for (auto &p : cps) {
+        if (p.start) {
+            q.insert(p.height);
+            if (p.height > curMax) {
+                curMax = p.height;
+                ret.emplace_back(p.x, p.height);
+            }
+        } else {
+            q.erase(q.find(p.height));
+            if (p.height == curMax && *q.rbegin() != curMax) {
+                curMax = *q.rbegin();
+                ret.emplace_back(p.x, curMax);
             }
         }
-
-        cur = heap.top();
-
-        if (cur != pre) {
-            res.push_back({h.x, cur});
-            pre = cur;
-        }
     }
 
-    return res;
+    return ret;
 }
