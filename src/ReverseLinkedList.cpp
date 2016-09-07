@@ -1,20 +1,21 @@
 #include "ReverseLinkedList.hpp"
 
 ListNode *ReverseLinkedList::reverseList(ListNode *head) {
-    if (head == nullptr)
-        return head;
+    ListNode *tail = head;
+    while (tail && tail->next)
+        tail = tail->next;
 
-    ListNode *prev = nullptr;
-    ListNode *now = head;
-    ListNode *next = now->next;
+    if (head == tail) return head;
 
-    while (next != nullptr) {
-        now->next = prev;
-        prev = now;
-        now = next;
-        next = now->next;
+    ListNode *a = head;
+    ListNode *b = a->next;
+    while (a != tail) {
+        ListNode *t = b->next;
+        b->next = a;
+        a = b;
+        b = t;
     }
+    head->next = nullptr;
 
-    now->next = prev;
-    return now;
+    return tail;
 }
