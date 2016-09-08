@@ -5,9 +5,11 @@
 using namespace std;
 
 int ClosestBinarySearchTreeValue::closestValue(TreeNode *root, double target) {
-    int a = root->val;
-    auto kid = target < a ? root->left : root->right;
-    if (!kid) return a;
-    int b = closestValue(kid, target);
-    return abs(a - target) < abs(b - target) ? a : b;
+    int closest = root->val;
+    while (root) {
+        if (abs(root->val - target) < abs(closest - target))
+            closest = root->val;
+        root = root->val < target ? root->right : root->left;
+    }
+    return closest;
 }
