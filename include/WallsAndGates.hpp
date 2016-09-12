@@ -10,7 +10,7 @@ public:
     void wallsAndGates(vector<vector<int>> &rooms);
 
 private:
-    void bfs(vector<vector<int>> &rooms, int i, int j, int m, int n, int &depth);
+    void bfs(vector<vector<int>> &rooms, int i, int j, int m, int n);
 
     const int INF = 2147483647;
 };

@@ -42,4 +42,23 @@ TEST_CASE("Walls and Gates") {
         s.wallsAndGates(rooms);
         REQUIRE(rooms == expected);
     }
+
+    SECTION("Large dataset") {
+        vector<vector<int>> rooms{
+                {0,   INF, INF, 0,   -1,  -1,  0,  0,   0,   -1,  -1,  0,   INF, INF},
+                {INF, -1,  INF, -1,  INF, 0,   -1, INF, -1,  INF, INF, -1,  -1,  INF},
+                {0,   0,   -1,  INF, -1,  INF, -1, -1,  INF, 0,   0,   INF, 0,   INF},
+                {-1,  0,   INF, -1,  0,   0,   -1, INF, 0,   INF, 0,   -1,  0,   -1}
+        };
+
+        vector<vector<int>> expected{
+                {0,  1,  1,  0,   -1, -1, 0,  0,  0,  -1, -1, 0,  1,  2},
+                {1,  -1, 2,  -1,  1,  0,  -1, 1,  -1, 1,  1,  -1, -1, 2},
+                {0,  0,  -1, INF, -1, 1,  -1, -1, 1,  0,  0,  1,  0,  1},
+                {-1, 0,  1,  -1,  0,  0,  -1, 1,  0,  1,  0,  -1, 0,  -1}
+        };
+
+        s.wallsAndGates(rooms);
+        REQUIRE(rooms == expected);
+    }
 }

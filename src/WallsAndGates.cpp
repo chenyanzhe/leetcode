@@ -14,19 +14,15 @@ void WallsAndGates::wallsAndGates(vector<vector<int>> &rooms) {
 
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (rooms[i][j] == INF) {
-                int depth = INF;
-                bfs(rooms, i, j, m, n, depth);
-                rooms[i][j] = depth;
+            if (rooms[i][j] == 0) {
+                bfs(rooms, i, j, m, n);
             }
         }
     }
 }
 
-void WallsAndGates::bfs(vector<vector<int>> &rooms, int i, int j, int m, int n, int &depth) {
+void WallsAndGates::bfs(vector<vector<int>> &rooms, int i, int j, int m, int n) {
     typedef pair<int, int> state_t;
-
-    vector<vector<bool>> visited(m, vector<bool>(n, false));
 
     auto valid = [&](const state_t &s) {
         const int x = s.first;
@@ -34,21 +30,7 @@ void WallsAndGates::bfs(vector<vector<int>> &rooms, int i, int j, int m, int n, 
 
         if (x < 0 || x >= m || y < 0 || y >= n)
             return false;
-        return rooms[x][y] != -1 && !visited[x][y];
-    };
-
-    auto gate = [&](const state_t &s) {
-        const int x = s.first;
-        const int y = s.second;
-
-        return rooms[x][y] == 0;
-    };
-
-
-    auto mark = [&](const state_t &s) {
-        const int x = s.first;
-        const int y = s.second;
-        visited[x][y] = true;
+        return rooms[x][y] > 0;
     };
 
     auto neighbors = [&](const state_t &s) {
@@ -74,7 +56,6 @@ void WallsAndGates::bfs(vector<vector<int>> &rooms, int i, int j, int m, int n, 
 
     queue<state_t> q;
     state_t init{i, j};
-    mark(init);
     q.push(init);
     int level = 0;
 
@@ -84,17 +65,11 @@ void WallsAndGates::bfs(vector<vector<int>> &rooms, int i, int j, int m, int n, 
             state_t t = q.front();
             q.pop();
             for (auto nb : neighbors(t)) {
-                mark(nb);
-
                 const int x = nb.first;
                 const int y = nb.second;
-                if (rooms[x][y] == INF) {
+                if (rooms[x][y] == INF || rooms[x][y] > level + 1) {
+                    rooms[x][y] = level + 1;
                     q.push(nb);
-                } else if (rooms[x][y] == 0) {
-                    depth = level + 1;
-                    return;
-                } else {
-                    depth = min(depth, rooms[x][y] + level + 1);
                 }
             }
         }
