@@ -2,7 +2,7 @@
 
 #include "PermutationSequence.hpp"
 
-TEST_CASE("Permutation Sequence") {Permutation Sequence
+TEST_CASE("Permutation Sequence") {
     PermutationSequence s;
     SECTION("Sample tests") {
         vector<string> expected{"123", "132", "213", "231", "312", "321"};
