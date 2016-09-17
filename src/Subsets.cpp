@@ -1,19 +1,20 @@
 #include "Subsets.hpp"
 
-#include <algorithm>
-
-using namespace std;
-
 vector<vector<int>> Subsets::subsets(vector<int> &nums) {
-    sort(nums.begin(), nums.end());
-    int elem_num = nums.size();
-    int subset_num = 1 << elem_num;
-    vector<vector<int>> res(subset_num, vector<int>());
+    vector<vector<int>> global;
+    vector<int> local;
+    backtrack(nums, 0, local, global);
+    return global;
+}
 
-    for (int i = 0; i < elem_num; i++)
-        for (int j = 0; j < subset_num; j++)
-            if ((j >> i) & 1)
-                res[j].push_back(nums[i]);
+void Subsets::backtrack(vector<int> &nums, int begin, vector<int> &local, vector<vector<int>> &global) {
+    if (begin == nums.size()) {
+        global.push_back(local);
+        return;
+    }
 
-    return res;
+    local.push_back(nums[begin]);
+    backtrack(nums, begin + 1, local, global);
+    local.pop_back();
+    backtrack(nums, begin + 1, local, global);
 }
