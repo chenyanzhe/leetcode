@@ -6,13 +6,12 @@
 using namespace std;
 
 class SubsetsII {
-private:
-    vector<vector<int>> res;
 public:
     vector<vector<int>> subsetsWithDup(vector<int> &nums);
 
 private:
-    void dfs(vector<int> &nums, int i, vector<int> &node);
+    void
+    backtrack(vector<int> &nums, int begin, vector<bool> &visited, vector<int> &local, vector<vector<int>> &global);
 };
 
 #endif // SUBSETS_II_HPP_

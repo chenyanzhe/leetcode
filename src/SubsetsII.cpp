@@ -6,32 +6,26 @@ using namespace std;
 
 vector<vector<int>> SubsetsII::subsetsWithDup(vector<int> &nums) {
     sort(nums.begin(), nums.end());
-    vector<int> node;
-    dfs(nums, 0, node);
-    return res;
+    vector<vector<int>> global;
+    vector<int> local;
+    vector<bool> visited(nums.size(), false);
+    backtrack(nums, 0, visited, local, global);
+    return global;
 }
 
-void SubsetsII::dfs(vector<int> &nums, int i, vector<int> &node) {
-    if (i == nums.size()) {
-        res.push_back(node);
+void SubsetsII::backtrack(vector<int> &nums, int begin, vector<bool> &visited, vector<int> &local,
+                          vector<vector<int>> &global) {
+    if (begin == nums.size()) {
+        global.push_back(local);
         return;
     }
 
-    int j = i - 1;
-
-    while (j >= 0 && nums[j] == nums[i])
-        j--;
-
-    int d = i - (j + 1);
-
-    if (d == 0 ||
-        (node.size() >= d && node[node.size() - d] == nums[i])) {
-        // choose nums[i]
-        node.push_back(nums[i]);
-        dfs(nums, i + 1, node);
-        node.pop_back();
+    if (begin == 0 || nums[begin - 1] != nums[begin] || visited[begin - 1]) {
+        visited[begin] = true;
+        local.push_back(nums[begin]);
+        backtrack(nums, begin + 1, visited, local, global);
+        local.pop_back();
+        visited[begin] = false;
     }
-
-    // don't choose nums[i]
-    dfs(nums, i + 1, node);
+    backtrack(nums, begin + 1, visited, local, global);
 }
