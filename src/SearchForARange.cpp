@@ -5,50 +5,36 @@ vector<int> SearchForARange::searchRange(vector<int> &nums, int target) {
 
     if (nums.empty()) return ret;
 
-    int len = nums.size();
-    int i = 0;
-    int j = len - 1;
-
-    while (i < j - 1) {
-        int m = i + (j - i) / 2;
-        if (target == nums[m]) {
-            j = m;
-        } else if (target > nums[m]) {
-            i = m;
+    int l = 0;
+    int r = nums.size() - 1;
+    while (l < r) {
+        int m = l + (r - l) / 2;
+        if (nums[m] == target) {
+            r = m;
+        } else if (nums[m] < target) {
+            l = m + 1;
         } else {
-            j = m;
+            r = m - 1;
         }
     }
-
-    if (nums[i] == target) {
-        ret[0] = i;
-    } else if (nums[j] == target) {
-        ret[0] = j;
-    } else {
+    if (nums[r] == target)
+        ret[0] = r;
+    else
         return ret;
-    }
 
-    i = 0;
-    j = len - 1;
-
-    while (i < j - 1) {
-        int m = i + (j - i) / 2;
-        if (target == nums[m]) {
-            i = m;
-        } else if (target > nums[m]) {
-            i = m;
+    l = r, r = nums.size() - 1;
+    while (l < r) {
+        int m = l + (r - l + 1) / 2;
+        if (nums[m] == target) {
+            l = m;
+        } else if (nums[m] < target) {
+            l = m + 1;
         } else {
-            j = m;
+            r = m - 1;
         }
     }
-
-    if (nums[j] == target) {
-        ret[1] = j;
-    } else if (nums[i] == target) {
-        ret[1] = i;
-    } else {
-        return ret;
-    }
+    if (nums[l] == target)
+        ret[1] = l;
 
     return ret;
 }
