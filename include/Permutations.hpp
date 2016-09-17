@@ -10,7 +10,8 @@ public:
     vector<vector<int>> permute(vector<int> &nums);
 
 private:
-    void backtrack(vector<int> &nums, int depth, vector<bool> &used, vector<int> &cur, vector<vector<int>> &result);
+    void
+    backtrack(vector<int> &nums, int begin, vector<bool> &visited, vector<int> &local, vector<vector<int>> &global);
 };
 
 #endif // PERMUTATIONS_HPP_
