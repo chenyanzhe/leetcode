@@ -1,27 +1,35 @@
 #include "PermutationSequence.hpp"
 
 string PermutationSequence::getPermutation(int n, int k) {
-    // prepare initial candidates: 1...n
-    string s(n, '0');
-
+    vector<int> nums(n, 0);
     for (int i = 0; i < n; i++)
-        s[i] += i + 1;
+        nums[i] = i + 1;
+    vector<int> global;
+    vector<int> local;
+    vector<bool> visited(n, false);
+    backtrack(nums, 0, visited, k, local, global);
 
-    // prepare the initial factorial number: (n - 1)!
-    int base = 1;
+    string ret = "";
+    for (int i = 0; i < n; i++)
+        ret += to_string(global[i]);
+    return ret;
+}
 
-    for (int i = 1; i < n; i++)
-        base *= i;
-
-    string result;
-    --k;
-
-    for (int i = n - 1; i > 0; k %= base, base /= i, i--) {
-        auto p = s.begin() + k / base;
-        result.push_back(*p);
-        s.erase(p);
+void PermutationSequence::backtrack(vector<int> &nums, int begin, vector<bool> &visited, int &k, vector<int> &local,
+                                    vector<int> &global) {
+    if (k == 0) return;
+    if (begin == nums.size()) {
+        k--;
+        global = local;
+        return;
     }
-
-    result.push_back(s[0]);
-    return result;
+    for (int i = 0; i < nums.size(); i++) {
+        if (!visited[i]) {
+            visited[i] = true;
+            local.push_back(nums[i]);
+            backtrack(nums, begin + 1, visited, k, local, global);
+            local.pop_back();
+            visited[i] = false;
+        }
+    }
 }
