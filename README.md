@@ -58,4 +58,5 @@ All tests passed (xxxx assertions in xxx test cases)
  108 | [Convert Sorted Array to Binary Search Tree](src/ConvertSortedArrayToBinarySearchTree.cpp) | Medium |
  110 | [Balanced Binary Tree](src/BalancedBinaryTree.cpp) | Easy |
  111 | [Minimum Depth of Binary Tree](src/MinimumDepthOfBinaryTree.cpp) | Easy |
+ 366 | [Find Leaves of Binary Tree](src/FindLeavesOfBinaryTree.cpp) | Medium |
  404 | [Sum of Left Leaves](src/SumOfLeftLeaves.cpp) | Easy |
