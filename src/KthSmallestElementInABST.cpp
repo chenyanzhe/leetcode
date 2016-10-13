@@ -27,27 +27,19 @@ int KthSmallestElementInABST::countNodes(TreeNode *root) {
 }
 
 int KthSmallestElementInABST::kthSmallestIterative(TreeNode *root, int k) {
-    stack<TreeNode *> S;
-    TreeNode *current = root;
+    stack<TreeNode *> s;
+    TreeNode *cur = root;
 
-    while (current != nullptr) {
-        S.push(current);
-        current = current->left;
-    }
-
-    while (k != 0) {
-        TreeNode *current = S.top();
-        S.pop();
-        k--;
-
-        if (k == 0)
-            return current->val;
-
-        current = current->right;
-
-        while (current != nullptr) {
-            S.push(current);
-            current = current->left;
+    while (!s.empty() || cur) {
+        if (cur) {
+            s.push(cur);
+            cur = cur->left;
+        } else {
+            cur = s.top();
+            s.pop();
+            k--;
+            if (k == 0) return cur->val;
+            cur = cur->right;
         }
     }
 
