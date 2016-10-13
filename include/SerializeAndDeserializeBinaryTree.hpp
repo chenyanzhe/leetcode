@@ -4,7 +4,6 @@
 #include "TreeNode.hpp"
 
 #include <string>
-#include <sstream>
 
 using namespace std;
 
@@ -17,9 +16,9 @@ public:
     TreeNode *deserialize(string data);
 
 private:
-    void serializeHelper(TreeNode *root, ostringstream &out);
+    TreeNode *helper(string &data);
 
-    TreeNode *deserialzeHelper(istringstream &in);
+    int decode(string &data);
 };
 
 #endif // SERIALIZE_AND_DESERIALIZE_BINARY_TREE_HPP_

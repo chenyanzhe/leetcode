@@ -1,34 +1,29 @@
 #include "SerializeAndDeserializeBinaryTree.hpp"
 
 string Codec::serialize(TreeNode *root) {
-    ostringstream out;
-    serializeHelper(root, out);
-    return out.str();
+    if (root == nullptr) return "#";
+    return to_string(root->val) + "," + serialize(root->left) + "," + serialize(root->right);
 }
 
 TreeNode *Codec::deserialize(string data) {
-    istringstream in(data);
-    return deserialzeHelper(in);
+    return helper(data);
 }
 
-void Codec::serializeHelper(TreeNode *root, ostringstream &out) {
-    if (root != nullptr) {
-        out << root->val << ' ';
-        serializeHelper(root->left, out);
-        serializeHelper(root->right, out);
-    } else
-        out << '#' << ' ';
-}
-
-TreeNode *Codec::deserialzeHelper(istringstream &in) {
-    string val;
-    in >> val;
-
-    if (val == "#")
+TreeNode *Codec::helper(string &data) {
+    if (data[0] == '#') {
+        if (data.size() > 1) data = data.substr(2);
         return nullptr;
+    } else {
+        TreeNode *root = new TreeNode(decode(data));
+        root->left = helper(data);
+        root->right = helper(data);
+        return root;
+    }
+}
 
-    TreeNode *root = new TreeNode(stoi(val));
-    root->left = deserialzeHelper(in);
-    root->right = deserialzeHelper(in);
-    return root;
+int Codec::decode(string &data) {
+    int pos = data.find(',');
+    int val = stoi(data.substr(0, pos));
+    data = data.substr(pos + 1);
+    return val;
 }
