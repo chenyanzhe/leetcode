@@ -8,7 +8,7 @@ TEST_CASE("Kth Smallest Element in a BST") {
     SECTION("Sample test") {
         //   2
         //  / \
-    // 1   3
+        // 1   3
         TreeNode *l1 = new TreeNode(1);
         TreeNode *l3 = new TreeNode(3);
         root = new TreeNode(2, l1, l3);
