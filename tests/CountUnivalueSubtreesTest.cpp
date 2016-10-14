@@ -14,7 +14,6 @@ TEST_CASE("Count Univalue Subtrees") {
          *   / \   \
          *  5  5    5
          */
-        /*
         TreeNode *_5_1 = new TreeNode(5);
         TreeNode *_5_2 = new TreeNode(5);
         TreeNode *_5_3 = new TreeNode(5);
@@ -24,8 +23,6 @@ TEST_CASE("Count Univalue Subtrees") {
         root = _5_5;
 
         REQUIRE(s.countUnivalSubtrees(root) == 4);
-        */
-        REQUIRE(1 == 1);
     }
     tree_free(root);
 }
