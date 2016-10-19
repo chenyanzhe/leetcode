@@ -12,7 +12,7 @@ public:
 
     ~TrieNode();
 
-    TrieNode *children[26];
+    TrieNode *child[26];
 
     bool isWord;
 };
@@ -35,10 +35,6 @@ public:
 
 private:
     TrieNode *root;
-
-    bool search(TrieNode *root, const char *head);
-
-    bool startsWith(TrieNode *root, const char *head);
 };
 
 #endif // IMPLEMENT_TRIE_HPP_

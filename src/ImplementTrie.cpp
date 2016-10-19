@@ -2,14 +2,14 @@
 
 TrieNode::TrieNode() {
     for (int i = 0; i < 26; i++)
-        children[i] = nullptr;
+        child[i] = nullptr;
     isWord = false;
 }
 
 TrieNode::~TrieNode() {
     for (int i = 0; i < 26; i++)
-        if (children[i])
-            delete children[i];
+        if (child[i])
+            delete child[i];
 }
 
 Trie::Trie() {
@@ -21,43 +21,30 @@ Trie::~Trie() {
 }
 
 void Trie::insert(string word) {
-    TrieNode *now = root;
-
+    TrieNode *tail = root;
     for (auto c : word) {
-        if (now->children[c - 'a'] == nullptr)
-            now->children[c - 'a'] = new TrieNode();
-        now = now->children[c - 'a'];
+        if (tail->child[c - 'a'] == nullptr) {
+            tail->child[c - 'a'] = new TrieNode();
+            tail = tail->child[c - 'a'];
+        }
     }
-
-    now->isWord = true;
+    tail->isWord = true;
 }
 
 bool Trie::search(string word) {
-    return search(root, word.c_str());
+    TrieNode *tail = root;
+    for (auto c : word) {
+        tail = tail->child[c - 'a'];
+        if (tail == nullptr) return false;
+    }
+    return tail->isWord;
 }
 
 bool Trie::startsWith(string prefix) {
-    return startsWith(root, prefix.c_str());
-}
-
-bool Trie::search(TrieNode *root, const char *head) {
-    if (root == nullptr)
-        return false;
-
-    if (*head == '\0')
-        return root->isWord;
-
-    int idx = *head - 'a';
-    return search(root->children[idx], head + 1);
-}
-
-bool Trie::startsWith(TrieNode *root, const char *head) {
-    if (root == nullptr)
-        return false;
-
-    if (*head == '\0')
-        return true;
-
-    int idx = *head - 'a';
-    return startsWith(root->children[idx], head + 1);
+    TrieNode *tail = root;
+    for (auto c : prefix) {
+        tail = tail->child[c - 'a'];
+        if (tail == nullptr) return false;
+    }
+    return true;
 }
