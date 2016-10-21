@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int LongestSubstringWithoutRepeatingCharacters::lengthOfLongestSubstring(
-        string s) {
+int LongestSubstringWithoutRepeatingCharacters::lengthOfLongestSubstring(string s) {
     int map[256];
     fill(map, map + 256, -1);
     int ret = 0;
