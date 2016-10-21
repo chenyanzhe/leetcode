@@ -1,9 +1,5 @@
 #include "MaximalRectangle.hpp"
 
-#include <iostream>
-
-using namespace std;
-
 int MaximalRectangle::maximalRectangle(vector<vector<char>> &matrix) {
     int m = matrix.size();
 
@@ -51,7 +47,7 @@ int MaximalRectangle::maximalRectangle(vector<vector<char>> &matrix) {
             }
         }
 
-        // comput area for every matrix[i][j], height is height[j], width is right[j] - left[j]
+        // compute area for every matrix[i][j], height is height[j], width is right[j] - left[j]
         for (int j = 0; j < n; j++)
             ret = max(ret, (right[j] - left[j]) * height[j]);
     }
