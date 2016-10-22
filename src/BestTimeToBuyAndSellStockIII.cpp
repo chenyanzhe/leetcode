@@ -3,22 +3,28 @@
 using namespace std;
 
 int BestTimeToBuyAndSellStockIII::maxProfit(vector<int> &prices) {
-    int n = prices.size();
+    if (prices.size() <= 1) return 0;
 
-    if (n <= 1)
-        return 0;
+    size_t n = prices.size();
 
-    int k = 2;
-    vector<vector<int>> dp(k + 1, vector<int>(n, 0));
-
-    for (int i = 1; i <= k; i++) {
-        int maxV = dp[i - 1][0] - prices[0];
-
-        for (int j = 1; j < n; j++) {
-            dp[i][j] = max(dp[i][j - 1], prices[j] + maxV);
-            maxV = max(maxV, dp[i - 1][j] - prices[j]);
-        }
+    vector<int> preProfit(n, 0);
+    int minPrice = prices[0];
+    for (int i = 1; i < n; i++) {
+        preProfit[i] = max(preProfit[i - 1], prices[i] - minPrice);
+        minPrice = min(minPrice, prices[i]);
     }
 
-    return dp[k][n - 1];
+    vector<int> postProfit(n, 0);
+    int maxPrice = prices[n - 1];
+    for (int i = 1; i < n; i++) {
+        postProfit[n - 1 - i] = max(postProfit[n - i], maxPrice - prices[n - 1 - i]);
+        maxPrice = max(maxPrice, prices[n - 1 - i]);
+    }
+
+    int profit = 0;
+    for (int i = 0; i < n; i++) {
+        profit = max(profit, preProfit[i] + postProfit[i]);
+    }
+
+    return profit;
 }
