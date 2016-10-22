@@ -1,5 +1,7 @@
 #include "MaximumProductSubarray.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
 int MaximumProductSubarray::maxProduct(vector<int> &nums) {
