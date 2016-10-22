@@ -3,15 +3,13 @@
 NumMatrix::NumMatrix(vector<vector<int>> &matrix) {
     m = matrix.size();
 
-    if (m == 0)
-        return;
+    if (m == 0) return;
 
     n = matrix[0].size();
 
-    if (n == 0)
-        return;
+    if (n == 0) return;
 
-    vector<vector<int>> acc(m, vector<int>(n, 0));
+    acc.resize(m, vector<int>(n, 0));
     acc[0][0] = matrix[0][0];
 
     for (int i = 1; i < m; i++)
@@ -23,8 +21,6 @@ NumMatrix::NumMatrix(vector<vector<int>> &matrix) {
     for (int i = 1; i < m; i++)
         for (int j = 1; j < n; j++)
             acc[i][j] = acc[i - 1][j] + acc[i][j - 1] - acc[i - 1][j - 1] + matrix[i][j];
-
-    this->acc = acc;
 }
 
 int NumMatrix::sumRegion(int row1, int col1, int row2, int col2) {
