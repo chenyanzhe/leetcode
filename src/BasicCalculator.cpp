@@ -1,90 +1,60 @@
 #include "BasicCalculator.hpp"
 
 #include <stack>
+#include <cctype>
 
 using namespace std;
 
 int BasicCalculator::calculate(string s) {
-    vector<BasicCalculator::Token> tks = parse(s);
-    stack<char> ops;
-    stack<int> vals;
+    stack<int> val;
+    stack<char> op;
 
-    for (auto &t : tks) {
-        if (t.type == BasicCalculator::Token::OPERAND)
-            vals.push(t.tk.val);
-        else if (t.tk.op == ')') {
-            if (ops.top() != '(') {
-                int second = vals.top();
-                vals.pop();
-                int first = vals.top();
-                vals.pop();
-                vals.push(calc(first, second, ops.top()));
-                ops.pop();
+    for (int i = 0; i < s.size(); i++) {
+        if (isdigit(s[i])) {
+            int res = 0;
+            while (i < s.size() && isdigit(s[i])) {
+                res = res * 10 + s[i] - '0';
+                i++;
             }
-
-            ops.pop();
-        } else if (t.tk.op == '(')
-            ops.push(t.tk.op);
-        else {
-            if (!ops.empty() && (ops.top() == '+' || ops.top() == '-')) {
-                int second = vals.top();
-                vals.pop();
-                int first = vals.top();
-                vals.pop();
-                vals.push(calc(first, second, ops.top()));
-                ops.pop();
+            val.push(res);
+            i--;
+        } else if (s[i] == '(') {
+            op.push(s[i]);
+        } else if (s[i] == '+' || s[i] == '-') {
+            while (!op.empty() && op.top() != '(') {
+                int r = val.top();
+                val.pop();
+                int l = val.top();
+                val.pop();
+                val.push(calc(l, r, op.top()));
+                op.pop();
             }
-
-            ops.push(t.tk.op);
+            op.push(s[i]);
+        } else if (s[i] == ')') {
+            while (!op.empty() && op.top() != '(') {
+                int r = val.top();
+                val.pop();
+                int l = val.top();
+                val.pop();
+                val.push(calc(l, r, op.top()));
+                op.pop();
+            }
+            op.pop();
         }
     }
 
-    if (!ops.empty()) {
-        int second = vals.top();
-        vals.pop();
-        int first = vals.top();
-        vals.pop();
-        vals.push(calc(first, second, ops.top()));
-        ops.pop();
+    while (!op.empty()) {
+        int r = val.top();
+        val.pop();
+        int l = val.top();
+        val.pop();
+        val.push(calc(l, r, op.top()));
+        op.pop();
     }
 
-    return vals.top();
+    return val.top();
 }
 
-vector<BasicCalculator::Token> BasicCalculator::parse(string s) {
-    vector<BasicCalculator::Token> res;
-    int i = 0;
-    int j = 0;
-
-    while (i < s.size()) {
-        BasicCalculator::Token t;
-        j = i;
-
-        if (s[j] == '(' || s[j] == ')' || s[j] == '+' || s[j] == '-') {
-            t.type = BasicCalculator::Token::OPERATOR;
-            t.tk.op = s[j];
-            res.push_back(t);
-            i++;
-        } else if (s[j] == ' ')
-            i++;
-        else {
-            do {
-                j++;
-            } while (j < s.size() && isdigit(s[j]));
-
-            t.type = BasicCalculator::Token::OPERAND;
-            t.tk.val = stoi(s.substr(i, j - i));
-            res.push_back(t);
-            i = j;
-        }
-    }
-
-    return res;
-}
-
-int BasicCalculator::calc(int first, int second, char op) {
-    if (op == '+')
-        return first + second;
-    else
-        return first - second;
+int BasicCalculator::calc(int left, int right, char op) {
+    return op == '+' ? left + right : left - right;
 }
