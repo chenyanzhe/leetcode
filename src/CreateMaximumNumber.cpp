@@ -1,9 +1,10 @@
 #include "CreateMaximumNumber.hpp"
 
+#include <algorithm>
+
 using namespace std;
 
-vector<int> CreateMaximumNumber::maxNumber(vector<int> &nums1,
-                                           vector<int> &nums2, int k) {
+vector<int> CreateMaximumNumber::maxNumber(vector<int> &nums1, vector<int> &nums2, int k) {
     int n1 = nums1.size();
     int n2 = nums2.size();
     int m1 = min(k, n1);
@@ -12,38 +13,20 @@ vector<int> CreateMaximumNumber::maxNumber(vector<int> &nums1,
     if (n1 + n2 == k)
         return mergeNums(nums1, nums2);
 
-    vector<vector<int>> dp1(m1 + 1);
-    vector<vector<int>> dp2(m2 + 1);
-    helper(nums1, dp1, n1, m1);
-    helper(nums2, dp2, n2, m2);
     vector<int> ret;
 
     for (int a = k - m2; a <= m1; a++) {
         int b = k - a;
-        vector<int> t = mergeNums(dp1[a], dp2[b]);
+
+        vector<int> part1 = findMaxKNumbers(nums1, a);
+        vector<int> part2 = findMaxKNumbers(nums2, b);
+        vector<int> t = mergeNums(part1, part2);
 
         if (greaterThan(t, 0, ret, 0))
             ret = t;
     }
 
     return ret;
-}
-
-void CreateMaximumNumber::helper(vector<int> &nums, vector<vector<int>> &dp,
-                                 int n, int m) {
-    for (int i = 1; i <= n; i++) {
-        vector<int> pre = dp[0];
-
-        for (int j = 1; j <= m; j++) {
-            vector<int> backup = dp[j];
-            pre.push_back(nums[i - 1]);
-
-            if (greaterThan(pre, 0, dp[j], 0))
-                dp[j] = pre;
-
-            pre = backup;
-        }
-    }
 }
 
 vector<int> CreateMaximumNumber::mergeNums(vector<int> &a, vector<int> &b) {
@@ -67,4 +50,19 @@ bool CreateMaximumNumber::greaterThan(vector<int> &nums1, int i,
     }
 
     return j == nums2.size() || (i < nums1.size() && nums1[i] > nums2[j]);
+}
+
+vector<int> CreateMaximumNumber::findMaxKNumbers(vector<int> &nums, int k) {
+    vector<int> ret(k, 0);
+    if (k == 0) return ret;
+
+    int j = 0; // head of the stack
+    int sz = nums.size();
+    for (int i = 0; i < sz; i++) {
+        while (j > 0 && sz - i + j > k && ret[j - 1] < nums[i])
+            j--;
+        if (j < k)
+            ret[j++] = nums[i];
+    }
+    return ret;
 }
