@@ -1,51 +1,35 @@
 #include "RemoveDuplicatesFromSortedListII.hpp"
 
 ListNode *RemoveDuplicatesFromSortedListII::deleteDuplicates(ListNode *head) {
-    ListNode *first;
-    ListNode *second;
+    if (head == nullptr) return head;
 
-    while (head != nullptr && head->next != nullptr) {
-        ListNode *first = head;
-        ListNode *second = head->next;
+    ListNode dummyHead(0);
+    dummyHead.next = head;
 
-        while (second != nullptr && first->val == second->val) {
-            first = second;
-            second = second->next;
-        }
+    ListNode *a = &dummyHead;
+    ListNode *b = head;
+    ListNode *c = head->next;
 
-        if (second == nullptr)
-            head = nullptr;
-        else if (head != first)
-            head = second;
-        else
-            break;
-    }
+    bool dup = false;
 
-    ListNode *prevItem = head;
-
-    while (prevItem != nullptr) {
-        ListNode *nextItem = prevItem->next;
-
-        while (nextItem != nullptr && nextItem->next != nullptr) {
-            first = nextItem;
-            second = nextItem->next;
-
-            while (second != nullptr && first->val == second->val) {
-                first = second;
-                second = second->next;
+    while (c) {
+        if (b->val == c->val) {
+            dup = true;
+            c = c->next;
+            if (c == nullptr) a->next = nullptr;
+        } else {
+            if (dup) {
+                a->next = c;
+                b = c;
+                c = c->next;
+                dup = false;
+            } else {
+                a = b;
+                b = c;
+                c = c->next;
             }
-
-            if (second == nullptr)
-                nextItem = nullptr;
-            else if (nextItem != first)
-                nextItem = second;
-            else
-                break;
         }
-
-        prevItem->next = nextItem;
-        prevItem = nextItem;
     }
 
-    return head;
+    return dummyHead.next;
 }
