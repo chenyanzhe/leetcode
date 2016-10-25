@@ -1,24 +1,15 @@
 #include "RemoveLinkedListElements.hpp"
 
 ListNode *RemoveLinkedListElements::removeElements(ListNode *head, int val) {
-    while (head != nullptr && head->val == val)
-        head = head->next;
+    ListNode dummy(0);
+    dummy.next = head;
 
-    if (head == nullptr)
-        return nullptr;
+    ListNode *cur = &dummy;
 
-    ListNode *p = head;
-    ListNode *q = head->next;
-
-    while (q != nullptr) {
-        if (q->val == val) {
-            p->next = q->next;
-            q = q->next;
-        } else {
-            p = q;
-            q = q->next;
-        }
+    while (cur) {
+        if (cur->next && cur->next->val == val) cur->next = cur->next->next;
+        else cur = cur->next;
     }
 
-    return head;
+    return dummy.next;
 }
