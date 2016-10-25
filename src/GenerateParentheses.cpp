@@ -10,8 +10,7 @@ vector<string> GenerateParentheses::generateParenthesis(int n) {
     return ret;
 }
 
-void GenerateParentheses::helper(vector<string> &ret, string paren, int left,
-                                 int right) {
+void GenerateParentheses::helper(vector<string> &ret, string paren, int left, int right) {
     if (left == 0 && right == 0) {
         ret.push_back(paren);
         return;
