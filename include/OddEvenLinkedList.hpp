@@ -1,0 +1,11 @@
+#ifndef ODD_EVEN_LINKED_LIST_HPP_
+#define ODD_EVEN_LINKED_LIST_HPP_
+
+#include "ListNode.hpp"
+
+class OddEvenLinkedList {
+public:
+    ListNode *oddEvenList(ListNode *head);
+};
+
+#endif // ODD_EVEN_LINKED_LIST_HPP_
