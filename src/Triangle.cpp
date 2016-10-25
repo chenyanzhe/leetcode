@@ -1,31 +1,19 @@
 #include "Triangle.hpp"
 
 int Triangle::minimumTotal(vector<vector<int>> &triangle) {
+    if (triangle.empty()) return 0;
+
     int n = triangle.size();
-
-    if (n == 0)
-        return 0;
-
     vector<int> dp(n, 0);
-    dp[0] = triangle[0][0];
 
-    for (int i = 1; i < n; i++) {
-        int oldv = dp[0];
-        dp[0] = triangle[i][0] + dp[0];
+    for (int i = 0; i < n; i++)
+        dp[i] = triangle[n - 1][i];
 
-        for (int j = 1; j < i; j++) {
-            int newv = dp[j];
-            dp[j] = triangle[i][j] + min(dp[j], oldv);
-            oldv = newv;
+    for (int i = n - 2; i >= 0; i--) {
+        for (int j = 0; j <= i; j++) {
+            dp[j] = triangle[i][j] + min(dp[j], dp[j + 1]);
         }
-
-        dp[i] = triangle[i][i] + oldv;
     }
 
-    int ret = dp[0];
-
-    for (int j = 1; j < n; j++)
-        ret = min(ret, dp[j]);
-
-    return ret;
+    return dp[0];
 }
