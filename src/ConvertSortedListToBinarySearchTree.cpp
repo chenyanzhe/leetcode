@@ -1,22 +1,23 @@
 #include "ConvertSortedListToBinarySearchTree.hpp"
 
 TreeNode *ConvertSortedListToBinarySearchTree::sortedListToBST(ListNode *head) {
-    this->head = head;
-    int len = list_len(head);
-    return sortedListToBST(0, len - 1);
+    return helper(head, nullptr);
 }
 
-TreeNode *ConvertSortedListToBinarySearchTree::sortedListToBST(int start,
-                                                               int end) {
-    if (start > end)
-        return nullptr;
+TreeNode *ConvertSortedListToBinarySearchTree::helper(ListNode *start, ListNode *end) {
+    if (start == end) return nullptr;
 
-    int mid = (start + end) / 2;
-    TreeNode *left = sortedListToBST(start, mid - 1);
-    TreeNode *root = new TreeNode(head->val);
-    head = head->next;
-    TreeNode *right = sortedListToBST(mid + 1, end);
-    root->left = left;
-    root->right = right;
+    ListNode *fast = start;
+    ListNode *slow = start;
+
+    while (fast != end && fast->next != end) {
+        fast = fast->next->next;
+        slow = slow->next;
+    }
+
+    TreeNode *root = new TreeNode(slow->val);
+    root->left = helper(start, slow);
+    root->right = helper(slow->next, end);
+
     return root;
 }

@@ -2,8 +2,6 @@
 
 #include "ConvertSortedListToBinarySearchTree.hpp"
 
-using namespace std;
-
 TEST_CASE("Convert Sorted List to Binary Search Tree") {
     ConvertSortedListToBinarySearchTree s;
     TreeNode *root = nullptr;
@@ -31,7 +29,7 @@ TEST_CASE("Convert Sorted List to Binary Search Tree") {
          *       \            /
          *        4          1
          */
-        vector<string> expected{"2 1 # # 3 # 4 # # ", "3 2 1 # 4 # # "};
+        vector<string> expected{"2 1 # # 3 # 4 # # ", "3 2 1 # # # 4 # # "};
         REQUIRE_FALSE(find(expected.begin(), expected.end(),
                            tree_serialize(root)) == expected.end());
     }
