@@ -4,8 +4,7 @@
 
 using namespace std;
 
-vector<int> SubstringWithConcatenationOfAllWords::findSubstring(string s,
-                                                                vector<string> &words) {
+vector<int> SubstringWithConcatenationOfAllWords::findSubstring(string s, vector<string> &words) {
     vector<int> ret;
     int n = s.size();
     int cnt = words.size();
