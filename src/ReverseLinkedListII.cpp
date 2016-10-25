@@ -1,29 +1,28 @@
 #include "ReverseLinkedListII.hpp"
 
 ListNode *ReverseLinkedListII::reverseBetween(ListNode *head, int m, int n) {
-    ListNode *rprev = nullptr;
-    ListNode *rhead = head;
+    if (head == nullptr) return head;
 
-    for (int i = 1; i < m; i++) {
-        rprev = rhead;
-        rhead = rhead->next;
+    ListNode dummyHead(0);
+    dummyHead.next = head;
+
+    ListNode *prev = &dummyHead;
+    for (int i = 0; i < m - 1; i++)
+        prev = prev->next;
+
+    ListNode *start = prev->next;
+    ListNode *a = start;
+    ListNode *b = a->next;
+
+    for (int i = 0; i < n - m; i++) {
+        ListNode *bnext = b->next;
+        b->next = a;
+        a = b;
+        b = bnext;
     }
 
-    ListNode *p1 = rhead, *p2 = rhead->next;
+    prev->next = a;
+    start->next = b;
 
-    for (int j = m; j <= n - 1; j++) {
-        ListNode *tmp = p2->next;
-        p2->next = p1;
-        p1 = p2;
-        p2 = tmp;
-    }
-
-    rhead->next = p2;
-
-    if (rprev != nullptr)
-        rprev->next = p1;
-    else
-        head = p1;
-
-    return head;
+    return dummyHead.next;
 }
