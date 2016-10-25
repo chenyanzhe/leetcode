@@ -1,46 +1,25 @@
 #include "PartitionList.hpp"
 
 ListNode *PartitionList::partition(ListNode *head, int x) {
-    ListNode *l = nullptr, *lp = nullptr;
-    ListNode *r = nullptr, *rp = nullptr;
-    ListNode *p = head;
+    ListNode dummyL(0);
+    ListNode *tailL = &dummyL;
+    ListNode dummyR(0);
+    ListNode *tailR = &dummyR;
 
-    while (p != nullptr) {
-        if (p->val < x) {
-            // insert in l
-            if (lp == nullptr) {
-                l = p;
-                lp = p;
-            } else {
-                lp->next = p;
-                lp = p;
-            }
+    ListNode *tail = head;
+
+    while (tail) {
+        if (tail->val < x) {
+            tailL->next = tail;
+            tailL = tail;
         } else {
-            // insert in r
-            if (rp == nullptr) {
-                r = p;
-                rp = p;
-            } else {
-                rp->next = p;
-                rp = p;
-            }
+            tailR->next = tail;
+            tailR = tail;
         }
-
-        p = p->next;
+        tail = tail->next;
     }
 
-    // fix tail
-    if (lp != nullptr)
-        lp->next = nullptr;
-
-    if (rp != nullptr)
-        rp->next = nullptr;
-
-    // merge l and r
-    if (lp == nullptr)
-        return r;
-    else {
-        lp->next = r;
-        return l;
-    }
+    tailL->next = dummyR.next;
+    tailR->next = nullptr;
+    return dummyL.next;
 }
