@@ -11,7 +11,7 @@ public:
     vector<string> generateParenthesis(int n);
 
 private:
-    void helper(vector<string> &ret, string paren, int left, int right);
+    void helper(vector<string> &global, string &local, int left, int right);
 };
 
 #endif // GENERTATE_PARENTHESES_HPP_
