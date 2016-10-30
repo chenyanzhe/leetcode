@@ -5,8 +5,8 @@
 using namespace std;
 
 int EditDistance::minDistance(string word1, string word2) {
-    int n1 = word1.size();
-    int n2 = word2.size();
+    size_t n1 = word1.size();
+    size_t n2 = word2.size();
     vector<vector<int>> dp(n1 + 1, vector<int>(n2 + 1, 0));
 
     for (int i = 1; i <= n1; i++)
