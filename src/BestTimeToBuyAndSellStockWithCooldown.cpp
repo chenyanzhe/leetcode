@@ -1,20 +1,17 @@
 #include "BestTimeToBuyAndSellStockWithCooldown.hpp"
 
-#include <algorithm>
-
-using namespace std;
-
 int BestTimeToBuyAndSellStockWithCooldown::maxProfit(vector<int> &prices) {
-    int n = prices.size();
+    size_t n = prices.size();
     if (n <= 1) return 0;
 
     vector<int> buy(n + 1, 0);
     vector<int> sell(n + 1, 0);
     buy[1] = -prices[0];
 
-    for (int i = 1; i < n; i++) {
-        sell[i + 1] = max(buy[i] + prices[i], sell[i] - prices[i - 1] + prices[i]);
-        buy[i + 1] = max(sell[i - 1] - prices[i], buy[i] + prices[i - 1] - prices[i]);
+    for (int i = 2; i <= n; i++) {
+        int diff = prices[i - 1] - prices[i - 2];
+        sell[i] = max(buy[i - 1] + prices[i - 1], sell[i - 1] + diff);
+        buy[i] = max(sell[i - 2] - prices[i - 1], buy[i - 1] - diff);
     }
 
     int profit = 0;
