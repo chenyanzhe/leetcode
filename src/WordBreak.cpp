@@ -5,12 +5,16 @@
 using namespace std;
 
 bool WordBreak::wordBreak(string s, unordered_set<string> &wordDict) {
-    int sz = s.size();
+    size_t sz = s.size();
     vector<bool> dp(sz + 1, false);
-    dp[0] = true;
 
-    for (int i = 1; i <= sz; i++) {
-        for (int j = 0; j < i; j++) {
+    for (size_t i = 1; i <= sz; i++) {
+        if (wordDict.find(s.substr(0, i)) != wordDict.end()) {
+            dp[i] = true;
+            continue;
+        }
+
+        for (size_t j = i - 1; j > 0; j--) {
             if (dp[j] && wordDict.find(s.substr(j, i - j)) != wordDict.end()) {
                 dp[i] = true;
                 break;
