@@ -1,9 +1,5 @@
 #include "LongestIncreasingSubsequence.hpp"
 
-#include <climits>
-
-using namespace std;
-
 int LongestIncreasingSubsequence::lengthOfLIS(vector<int> &nums) {
     return lengthOfLIS_BinarySearch(nums);
 }
@@ -11,7 +7,7 @@ int LongestIncreasingSubsequence::lengthOfLIS(vector<int> &nums) {
 int LongestIncreasingSubsequence::lengthOfLIS_DynamicProgramming(vector<int> &nums) {
     if (nums.empty()) return 0;
 
-    int n = nums.size();
+    size_t n = nums.size();
     vector<int> dp(n, 1);
     int ret = 1;
     for (int i = 1; i < n; i++) {
@@ -28,7 +24,7 @@ int LongestIncreasingSubsequence::lengthOfLIS_DynamicProgramming(vector<int> &nu
 int LongestIncreasingSubsequence::lengthOfLIS_BinarySearch(vector<int> &nums) {
     if (nums.empty()) return 0;
 
-    int n = nums.size();
+    size_t n = nums.size();
     int end = 0;
     vector<int> tails(n, 0);
 
