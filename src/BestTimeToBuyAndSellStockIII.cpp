@@ -1,30 +1,21 @@
 #include "BestTimeToBuyAndSellStockIII.hpp"
 
-using namespace std;
-
 int BestTimeToBuyAndSellStockIII::maxProfit(vector<int> &prices) {
     if (prices.size() <= 1) return 0;
 
     size_t n = prices.size();
+    size_t k = 2;
 
-    vector<int> preProfit(n, 0);
-    int minPrice = prices[0];
-    for (int i = 1; i < n; i++) {
-        preProfit[i] = max(preProfit[i - 1], prices[i] - minPrice);
-        minPrice = min(minPrice, prices[i]);
+    vector<vector<int>> global(n + 1, vector<int>(k + 1, 0));
+    vector<vector<int>> local(n + 1, vector<int>(k + 1, 0));
+
+    for (int i = 2; i <= n; i++) {
+        for (int j = 1; j <= 2; j++) {
+            int diff = prices[i - 1] - prices[i - 2];
+            local[i][j] = max(local[i - 1][j] + diff, global[i - 1][j - 1] + max(diff, 0));
+            global[i][j] = max(global[i - 1][j], local[i][j]);
+        }
     }
 
-    vector<int> postProfit(n, 0);
-    int maxPrice = prices[n - 1];
-    for (int i = 1; i < n; i++) {
-        postProfit[n - 1 - i] = max(postProfit[n - i], maxPrice - prices[n - 1 - i]);
-        maxPrice = max(maxPrice, prices[n - 1 - i]);
-    }
-
-    int profit = 0;
-    for (int i = 0; i < n; i++) {
-        profit = max(profit, preProfit[i] + postProfit[i]);
-    }
-
-    return profit;
+    return global[n][k];
 }
