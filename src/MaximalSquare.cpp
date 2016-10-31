@@ -1,13 +1,11 @@
 #include "MaximalSquare.hpp"
 
-using namespace std;
-
 int MaximalSquare::maximalSquare(vector<vector<char>> &matrix) {
-    int n = matrix.size();
+    size_t n = matrix.size();
 
     if (n == 0) return 0;
 
-    int m = matrix[0].size();
+    size_t m = matrix[0].size();
 
     if (m == 0) return 0;
 
