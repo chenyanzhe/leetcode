@@ -5,9 +5,9 @@
 using namespace std;
 
 bool InterleavingString::isInterleave(string s1, string s2, string s3) {
-    int n1 = s1.size();
-    int n2 = s2.size();
-    int n3 = s3.size();
+    size_t n1 = s1.size();
+    size_t n2 = s2.size();
+    size_t n3 = s3.size();
 
     if (n1 + n2 != n3) return false;
 
