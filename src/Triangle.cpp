@@ -1,5 +1,9 @@
 #include "Triangle.hpp"
 
+#include <climits>
+
+using namespace std;
+
 int Triangle::minimumTotal(vector<vector<int>> &triangle) {
     if (triangle.empty()) return 0;
 

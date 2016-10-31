@@ -1,5 +1,9 @@
 #include "PalindromePairs.hpp"
 
+#include <algorithm>
+
+using namespace std;
+
 vector<vector<int>> PalindromePairs::palindromePairs(vector<string> &words) {
     vector<vector<int>> ret;
 
