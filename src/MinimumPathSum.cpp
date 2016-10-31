@@ -1,19 +1,15 @@
 #include "MinimumPathSum.hpp"
 
-#include <climits>
-
-using namespace std;
-
 int MinimumPathSum::minPathSum(vector<vector<int>> &grid) {
-    int m = grid.size();
+    size_t m = grid.size();
 
     if (m == 0) return 0;
 
-    int n = grid[0].size();
+    size_t n = grid[0].size();
 
     if (n == 0) return 0;
 
-    vector<vector<int>> dp(m, vector<int>(n, INT_MAX));
+    vector<vector<int>> dp(m, vector<int>(n, 0));
     dp[0][0] = grid[0][0];
 
     for (int i = 1; i < m; i++)
