@@ -1,21 +1,27 @@
 #include "PartitionEqualSubsetSum.hpp"
 
+#include <numeric>
+
+using namespace std;
+
 bool PartitionEqualSubsetSum::canPartition(vector<int> &nums) {
-    int total = 0;
-    for (auto d : nums)
-        total += d;
+    int sum = accumulate(nums.begin(), nums.end(), 0);
 
-    if (total & 0x1) return false;
+    // if sum is odd, can not be partitioned equally
+    if (sum & 0x1) return false;
 
-    vector<bool> dp(total / 2 + 1, 0);
+    int half = sum >> 1;
+
+    vector<bool> dp(half + 1, false);
 
     dp[0] = true;
 
     for (auto d : nums) {
-        for (int i = total / 2; i >= d; i--) {
+        // for every element d in nums, update dp array accordingly
+        for (int i = half; i >= d; i--) {
             dp[i] = dp[i] || dp[i - d];
         }
     }
 
-    return dp[total / 2];
+    return dp[half];
 }
