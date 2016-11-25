@@ -33,7 +33,7 @@ Expected output:
 All tests passed (xxxx assertions in xxx test cases)
 ```
 
-### Problems
+## Problems
 
   #  | Title | Difficulty |
 -----|-------| ---------- |
