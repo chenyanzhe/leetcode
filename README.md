@@ -2,9 +2,6 @@
 
 ![Language](https://img.shields.io/badge/language-C++-f34b7d.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-![Editorial Progress](https://img.shields.io/badge/editorial_progress-1%20%2F%20465-orange.svg)
-
-Solutions to LeetCode in C++.
 
 ## Getting Started
 
@@ -33,8 +30,12 @@ Expected output:
 All tests passed (xxxx assertions in xxx test cases)
 ```
 
-## Editorials 
+## Categories
 
-  #  | Title | Difficulty |
------|-------| ---------- |
- 416 | [Partition Equal Subset Sum](https://chenyanzhe.com/2016/11/04/leetcode-416-partition-equal-subset-sum/) | Medium |
+* [Array](https://github.com/yanzhe-chen/leetcode#array)
+
+## Array
+
+| # | Title | Solution | Difficulty | Tag | Note |
+|---|-------|----------|------------|-----|------|
+1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [src](./src/TwoSum.cpp) [test](./tests/TwoSumTest.cpp) | Easy ||
