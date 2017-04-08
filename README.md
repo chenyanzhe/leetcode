@@ -39,3 +39,4 @@ All tests passed (xxxx assertions in xxx test cases)
 | # | Title | Solution | Difficulty | Tag | Note |
 |---|-------|----------|------------|-----|------|
 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [src](./src/TwoSum.cpp) [test](./tests/TwoSumTest.cpp) | Easy ||
+548 | [Split Array with Equal Sum](https://leetcode.com/problems/split-array-with-equal-sum/) | [src](./src/SplitArrayWithEqualSum.cpp) [test](./tests/SplitArrayWithEqualSumTest.cpp) | Medium | 🔒 |
